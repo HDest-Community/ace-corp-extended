@@ -171,6 +171,11 @@ class AceCorpsWepsHandler : EventHandler {
 		wep_battery.push("HDRedline");
 		addAmmo('HDBattery', wep_battery);
 
+		// 35mm
+		Array<string> wep_35mm;
+		wep_35mm.push("HDScorpion");
+		addAmmo("BrontornisRound", wep_35mm);
+
 		// .500 S&W Light
 		Array<string> wep_500swl;
 		wep_500swl.push("HDMajestic");
@@ -228,6 +233,10 @@ class AceCorpsWepsHandler : EventHandler {
 		spawns_redline.push(addItemEntry("Thunderbuster", redline_thunderbuster_spawn_bias));
 		addItem("RedlineRandom", spawns_redline, redline_persistent_spawning);
 
+		// Scorpion
+		Array<AceCorpsSpawnItemEntry> spawns_scorpion;
+		spawns_scorpion.push(addItemEntry("BrontornisSpawner", scorpion_bronto_spawn_bias));
+		addItem("ScorpionSpawner", spawns_scorpion, scorpion_persistent_spawning);
 
 
 		//------------

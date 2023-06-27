@@ -41,6 +41,10 @@ server bool majestic_persistent_spawning = false;
 server int redline_thunderbuster_spawn_bias = 9;
 server bool redline_persistent_spawning = false;
 
+// Scorpion
+server int scorpion_bronto_spawn_bias = 9;
+server bool scorpion_persistent_spawning = false;
+
 
 //------------
 // Ammunition
