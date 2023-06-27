@@ -1,0 +1,1 @@
+alias blackhawk_reset_cvars    "resetcvar blackhawk_launcher_spawn_bias;                                                                                 resetcvar blackhawkBolts_rocket_spawn_bias;                                                                             resetcvar blackhawk_persistent_spawning;    resetcvar blackhawkBolts_persistent_spawning;"

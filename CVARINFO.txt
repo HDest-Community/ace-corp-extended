@@ -10,8 +10,14 @@
 // Weapons
 // --------------------
 
+// Blackhawk
+server int  blackhawk_launcher_spawn_bias = 14;
+server bool blackhawk_persistent_spawning = false;
+
 
 //------------
 // Ammunition
 //------------
 
+server int  blackhawkBolts_rocket_spawn_bias   = 19;
+server bool blackhawkBolts_persistent_spawning = false;
