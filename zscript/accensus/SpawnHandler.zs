@@ -162,6 +162,7 @@ class AceCorpsWepsHandler : EventHandler {
 		// HDBattery. 
 		Array<string> wep_battery;  
 		wep_battery.push("HDGungnir");
+		wep_battery.push("HDHammerhead");
 		addAmmo('HDBattery', wep_battery);
 
 		// Blackhawk Bolts
@@ -192,6 +193,12 @@ class AceCorpsWepsHandler : EventHandler {
 		Array<AceCorpsSpawnItemEntry> spawns_gungnir;
 		spawns_gungnir.push(addItemEntry("BFG9K", gungnir_bfg_spawn_bias));
 		addItem("GungnirRandom", spawns_gungnir, gungnir_persistent_spawning);
+
+		// Hammerhead
+		Array<AceCorpsSpawnItemEntry> spawns_hammerhead;
+		spawns_hammerhead.push(addItemEntry("Vulcanette", hammerhead_chaingun_spawn_bias));
+		spawns_hammerhead.push(addItemEntry("Thunderbuster", hammerhead_thunderbuster_spawn_bias));
+		addItem("HammerheadRandom", spawns_hammerhead, hammerhead_persistent_spawning);
 
 
 		//------------

@@ -22,6 +22,11 @@ server bool blackjack_persistent_spawning = false;
 server int gungnir_bfg_spawn_bias = 99;
 server bool gungnir_persistent_spawning = false;
 
+// Hammerhead
+server int hammerhead_chaingun_spawn_bias = 14;
+server int hammerhead_thunderbuster_spawn_bias = 9;
+server bool hammerhead_persistent_spawning = false;
+
 
 //------------
 // Ammunition
