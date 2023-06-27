@@ -78,3 +78,9 @@ This mod aims to maintain and improve Accensus' Arsenal, by updating them to the
 - Configuration codes are:
 	- `hframe`: Heavier frame. Gun weighs more but has less recoil.
 	- `extended`: Extended barrel. Higher projectile velocity but heavier gun.
+
+### Wyvern
+---
+- The loadout code is `wyv`.
+- Configuration codes are:
+	- `auto`: Autoloader. Makes reloading from side saddles a bit faster.

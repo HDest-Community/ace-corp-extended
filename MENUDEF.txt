@@ -207,6 +207,31 @@ OptionMenu "scorpionSpawning" {
 	SafeCommand "Reset all options", "scorpion_reset_cvars"
 }
 
+OptionMenu "wyvernSpawning" {
+    Title "------ 'Wyvern' .50 OMG Double-Barrel Rifle Options ------"
+   	StaticText "Notice:", "Orange"
+    StaticText  "Setting 'spawn rate' to Replace All will suppress", "white"
+    StaticText  "spawns of that given type.", "white"
+    StaticText ""
+
+	StaticText "Spawn Options", "Orange"
+    StaticText  "Control the spawn rate of the Wyvern on:", "white"
+	Option "Hunter shotguns: ", "wyvern_hunter_spawn_bias", "SpawnBias"
+	SafeCommand "Reset Wyvern options", "resetcvar wyvern_hunter_spawn_bias"
+	Option "Slayer shotguns: ", "wyvern_slayer_spawn_bias", "SpawnBias"
+	SafeCommand "Reset Wyvern options", "resetcvar wyvern_slayer_spawn_bias"
+    StaticText ""
+
+    StaticText  "Control whether replacements happen after a mapload.", "white"
+	Option "Persistent Spawns: ", "wyvern_persistent_spawning", "OnOff"
+	SafeCommand "Reset persistence options", "resetcvar wyvern_persistent_spawning"
+ 	StaticText ""
+   	StaticText ""
+
+	StaticText "Reset Options", "Orange"
+	SafeCommand "Reset all options", "wyvern_reset_cvars"
+}
+
 // Energy weapons
 
 OptionMenu "gungnirSpawning" {
@@ -309,6 +334,8 @@ OptionMenu "AceCorpsMenu" {
     Submenu "'Blackhawk' Hi-Tech Crossbow", "blackhawkSpawning", 0, 1
 	StaticText ""
     Submenu "'Scorpion' 35mm Sniper Rifle", "scorpionSpawning", 0, 1
+	StaticText ""
+    Submenu "'Wyvern' .50 OMG Double-Barrel Rifle", "wyvernSpawning", 0, 1
 	StaticText ""
 
     StaticText "--- Energy Weapons ---", "cyan"

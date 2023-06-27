@@ -186,6 +186,11 @@ class AceCorpsWepsHandler : EventHandler {
 		wep_500swl.push("HDMajestic");
 		addAmmo("HD500SWLightAmmo", wep_500swl);
 
+		// .50 OMG
+		Array<string> wep_OMG;
+		wep_OMG.push("HDWyvern");
+		addAmmo("HD50OMGAmmo", wep_OMG);
+
 		// Blackhawk Bolts
 		Array<string> wep_bolts;
 		wep_bolts.push("HDBlackhawk");
@@ -248,6 +253,12 @@ class AceCorpsWepsHandler : EventHandler {
 		spawns_viper.push(addItemEntry("HDPistol", viper_pistol_spawn_bias));
 		spawns_viper.push(addItemEntry("Hunter", viper_hunter_spawn_bias));
 		addItem("ViperRandom", spawns_viper, viper_persistent_spawning);
+
+		// Wyvern
+		Array<AceCorpsSpawnItemEntry> spawns_wyvern;
+		spawns_wyvern.push(addItemEntry("Hunter", wyvern_hunter_spawn_bias));
+		spawns_wyvern.push(addItemEntry("Slayer", wyvern_slayer_spawn_bias));
+		addItem("WyvernRandom", spawns_wyvern, wyvern_persistent_spawning);
 
 
 		//------------
