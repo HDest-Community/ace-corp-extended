@@ -176,6 +176,11 @@ class AceCorpsWepsHandler : EventHandler {
 		wep_35mm.push("HDScorpion");
 		addAmmo("BrontornisRound", wep_35mm);
 
+		// .50 AE
+		Array<string> wep_50ae;
+		wep_50ae.push("HDViper");
+		addAmmo("HD50AEAmmo", wep_50ae);
+
 		// .500 S&W Light
 		Array<string> wep_500swl;
 		wep_500swl.push("HDMajestic");
@@ -238,6 +243,12 @@ class AceCorpsWepsHandler : EventHandler {
 		spawns_scorpion.push(addItemEntry("BrontornisSpawner", scorpion_bronto_spawn_bias));
 		addItem("ScorpionSpawner", spawns_scorpion, scorpion_persistent_spawning);
 
+		// Viper
+		Array<AceCorpsSpawnItemEntry> spawns_viper;
+		spawns_viper.push(addItemEntry("HDPistol", viper_pistol_spawn_bias));
+		spawns_viper.push(addItemEntry("Hunter", viper_hunter_spawn_bias));
+		addItem("ViperRandom", spawns_viper, viper_persistent_spawning);
+
 
 		//------------
 		// Ammunition
@@ -262,6 +273,11 @@ class AceCorpsWepsHandler : EventHandler {
 		Array<AceCorpsSpawnItemEntry> spawns_majesticmag;
 		spawns_majesticmag.push(addItemEntry("HD9mMag15", majesticmag_clipmag_spawn_bias));
 		addItem("HDMajesticMag", spawns_majesticmag, majesticmag_persistent_spawning);
+
+		// Viper Magazine
+		Array<AceCorpsSpawnItemEntry> spawns_vipermag;
+		spawns_vipermag.push(addItemEntry("HD9mMag15", vipermag_clipmag_spawn_bias));
+		addItem("HDViperMag", spawns_vipermag, vipermag_persistent_spawning);
 
 
 		// --------------------

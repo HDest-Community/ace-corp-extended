@@ -45,6 +45,12 @@ server bool redline_persistent_spawning = false;
 server int scorpion_bronto_spawn_bias = 9;
 server bool scorpion_persistent_spawning = false;
 
+// Viper
+server int viper_pistol_spawn_bias = 19;
+server int viper_hunter_spawn_bias = 49;
+server int viper_slayer_spawn_bias = 49;
+server bool viper_persistent_spawning = false;
+
 
 //------------
 // Ammunition
@@ -66,3 +72,6 @@ server bool blackjackshellmag_persistent_spawning = false;
 server int majesticmag_clipmag_spawn_bias = 24;
 server bool majesticmag_persistent_spawning = false;
 
+// Viper Magazine
+server int vipermag_clipmag_spawn_bias = 24;
+server bool vipermag_persistent_spawning = false;
