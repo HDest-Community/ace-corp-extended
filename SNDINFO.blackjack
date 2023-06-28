@@ -1,0 +1,11 @@
+Blackjack/Fire BJCKFIRE
+$pitchset Blackjack/Fire 0.9
+
+$alias Blackjack/AltFire weapons/hunter
+Blackjack/MagIn BJCKMGIN
+Blackjack/MagOut BJCKMGOT
+
+Blackjack/BoltPull BJCKBOLT
+$pitchset Blackjack/BoltPull 1.5
+
+$alias Blackjack/ChamberQuick weapons/smgchamber

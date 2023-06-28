@@ -14,10 +14,22 @@
 server int  blackhawk_launcher_spawn_bias = 14;
 server bool blackhawk_persistent_spawning = false;
 
+// Blackjack
+server int  blackjack_clipbox_spawn_bias  = 9;
+server bool blackjack_persistent_spawning = false;
 
 //------------
 // Ammunition
 //------------
 
+// Blackhawk Bolts
 server int  blackhawkBolts_rocket_spawn_bias   = 19;
 server bool blackhawkBolts_persistent_spawning = false;
+
+// Blackjack .355 Mag
+server int  blackjack355mag_clip_spawn_bias     = 14;
+server bool blackjack355mag_persistent_spawning = false;
+
+// Blackjack Shell Mag
+server int  blackjackshellmag_shell_spawn_bias    = 14;
+server bool blackjackshellmag_persistent_spawning = false;

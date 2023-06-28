@@ -149,6 +149,16 @@ class AceCorpsWepsHandler : EventHandler {
 		// Ammunition
 		//------------
 
+		// .355
+		Array<string> wep_355;
+		wep_355.push("HDBlackjack");
+		addAmmo("HDRevolverAmmo", wep_355);
+
+		// 12 gauge Buckshot Ammo.
+		Array<string> wep_12gaShell;
+		wep_12gaShell.push("HDBlackjack");
+		addAmmo("HDShellAmmo", wep_12gaShell);
+
 		// Blackhawk Bolts
 		Array<string> wep_bolts;
 		wep_bolts.push("HDBlackhawk");
@@ -167,6 +177,12 @@ class AceCorpsWepsHandler : EventHandler {
 		spawns_blackhawk.push(addItemEntry("HDRL", blackhawk_launcher_spawn_bias));
 		addItem("BlackhawkRandom", spawns_blackhawk, blackhawk_persistent_spawning);
 
+		// Blackjack
+		Array<AceCorpsSpawnItemEntry> spawns_blackjack;
+		spawns_blackjack.push(addItemEntry("HDAmBoxUnarmed", blackjack_clipbox_spawn_bias));
+		spawns_blackjack.push(addItemEntry("HDAmBox", blackjack_clipbox_spawn_bias));
+		addItem("BlackjackRandom", spawns_blackjack, blackjack_persistent_spawning);
+
 
 		//------------
 		// Ammunition
@@ -176,6 +192,16 @@ class AceCorpsWepsHandler : EventHandler {
 		Array<AceCorpsSpawnItemEntry> spawns_blackhawkBolts;
 		spawns_blackhawkBolts.push(addItemEntry("HDRocketAmmo", blackhawkBolts_rocket_spawn_bias));
 		addItem("HDBlackhawkBoltBundle", spawns_blackhawkBolts, blackhawkBolts_persistent_spawning);
+
+		// Blackjack .355 Mag
+		Array<AceCorpsSpawnItemEntry> spawns_blackjack_355mag;
+		spawns_blackjack_355mag.push(addItemEntry("ClipMagPickup", blackjack355mag_clip_spawn_bias));
+		addItem("HDBlackjackMag355", spawns_blackjack_355mag, blackjack355mag_persistent_spawning);
+
+		// Blackjack 12ga Shell Mag
+		Array<AceCorpsSpawnItemEntry> spawns_blackjack_shellmag;
+		spawns_blackjack_shellmag.push(addItemEntry("HDShellAmmo", blackjackshellmag_shell_spawn_bias));
+		addItem("HDBlackjackMagShells", spawns_blackjack_shellmag, blackjackshellmag_persistent_spawning);
 
 
 		// --------------------

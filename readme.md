@@ -21,3 +21,9 @@ This mod aims to maintain and improve Accensus' Arsenal, by updating them to the
 	- `semiauto`: Automatically pull the string back after firing. Only works when cycling to the next bolt. Reloading on a relaxed string requires manual pulling for the first time.
 	- `bolts:<codes>`: start with these specific bolts. Example: `bolts:rneir` will start you with Regular, Nuclear, Electric, Incendiary, Regular, in that order.
 - The crossbow does not have sights. That is intentional. Turns out most crossbows don't have factory sights. This one is one of those. Sorry, the AceCorp budget got spent on nukes. One day I might add sights if the lack of any starts to bother me too much. For now that's off the table.
+
+### Blackjack
+---
+- The loadout codes are `bjk`, `bm3`, and `bms` for weapon, 355 mag, and shell mag, respectively.
+- CVars are:
+	- `bj_invert [true/false]`: Inverts the primary/secondary fire modes and reload keys. Client-side CVar.

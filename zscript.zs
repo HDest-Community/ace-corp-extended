@@ -9,3 +9,5 @@ version "4.10"
 #include "zscript/accensus/weapons/Blackhawk/bolts/incendiaryBolts.zs"
 #include "zscript/accensus/weapons/Blackhawk/bolts/electricBolts.zs"
 #include "zscript/accensus/weapons/Blackhawk/bolts/nuclearBolts.zs"
+
+#include "zscript/accensus/weapons/Blackjack/blackjack.zs"

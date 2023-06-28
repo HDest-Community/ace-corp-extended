@@ -22,6 +22,43 @@ OptionValue "SpawnBias" {
 
 // Machine Guns
 
+OptionMenu "blackjackSpawning" {
+    Title "------ 'Blackjack' .355 Rifle Options ------"
+   	StaticText "Notice:", "green"
+    StaticText  "Setting 'spawn rate' to Replace All will suppress", "white"
+    StaticText  "spawns of that given type.", "white"
+    StaticText ""
+
+	StaticText "Spawn Options", "green"
+    StaticText  "Control the spawn rate of the blackjack on Clip Boxes:", "white"
+	Option "Blackjack Spawn Rate: ", "blackjack_clipbox_spawn_bias", "SpawnBias"
+	SafeCommand "Reset Blackjack options", "resetcvar blackjack_clipbox_spawn_bias"
+    StaticText ""
+
+	StaticText "Spawn Options", "green"
+    StaticText  "Control the spawn rate of the .355 Magazines on Clip Magazines:", "white"
+	Option ".355 Mag Spawn Rate: ", "blackjack355mag_clip_spawn_bias", "SpawnBias"
+	SafeCommand "Reset .355 Mag options", "resetcvar blackjack355mag_clip_spawn_bias"
+    StaticText ""
+
+	StaticText "Spawn Options", "green"
+    StaticText  "Control the spawn rate of the 12ga Shell Magazines on Shell Pickups:", "white"
+	Option "Shell Mag Spawn Rate: ", "blackjackshellmag_shell_spawn_bias", "SpawnBias"
+	SafeCommand "Reset Shell Mag options", "resetcvar blackjackshellmag_shell_spawn_bias"
+    StaticText ""
+
+    StaticText  "Control whether replacements happen after a mapload.", "white"
+	Option "Persistent Spawns (Blackjack): ", "blackjack_persistent_spawning", "OnOff"
+	Option "Persistent Spawns (.355 Mags): ", "blackjack355mag_persistent_spawning", "OnOff"
+	Option "Persistent Spawns (Shell Mags): ", "blackjackshellmag_persistent_spawning", "OnOff"
+	SafeCommand "Reset persistence options", "resetcvar blackjack_persistent_spawning; resetcvar blackjack355mag_persistent_spawning; resetcvar blackjackshellmag_persistent_spawning"
+ 	StaticText ""
+   	StaticText ""
+
+	StaticText "Reset Options", "green"
+	SafeCommand "Reset all options", "blackjack_reset_cvars"
+}
+
 
 // Explosives
 
@@ -71,6 +108,8 @@ OptionMenu "AceCorpsMenu" {
     StaticText ""
 
 	StaticText "--- Machine Guns ---", "green"
+	StaticText ""
+    Submenu "'Blackjack' .355 Rifle", "blackjackSpawning", 0, 1
 	StaticText ""
 
 	StaticText "--- Explosives ---", "Brown"
