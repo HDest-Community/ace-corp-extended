@@ -159,6 +159,11 @@ class AceCorpsWepsHandler : EventHandler {
 		wep_12gaShell.push("HDBlackjack");
 		addAmmo("HDShellAmmo", wep_12gaShell);
 
+		// HDBattery. 
+		Array<string> wep_battery;  
+		wep_battery.push("HDGungnir");
+		addAmmo('HDBattery', wep_battery);
+
 		// Blackhawk Bolts
 		Array<string> wep_bolts;
 		wep_bolts.push("HDBlackhawk");
@@ -182,6 +187,11 @@ class AceCorpsWepsHandler : EventHandler {
 		spawns_blackjack.push(addItemEntry("HDAmBoxUnarmed", blackjack_clipbox_spawn_bias));
 		spawns_blackjack.push(addItemEntry("HDAmBox", blackjack_clipbox_spawn_bias));
 		addItem("BlackjackRandom", spawns_blackjack, blackjack_persistent_spawning);
+
+		// Gungnir
+		Array<AceCorpsSpawnItemEntry> spawns_gungnir;
+		spawns_gungnir.push(addItemEntry("BFG9K", gungnir_bfg_spawn_bias));
+		addItem("GungnirRandom", spawns_gungnir, gungnir_persistent_spawning);
 
 
 		//------------

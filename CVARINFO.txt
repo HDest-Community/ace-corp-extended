@@ -18,6 +18,11 @@ server bool blackhawk_persistent_spawning = false;
 server int  blackjack_clipbox_spawn_bias  = 9;
 server bool blackjack_persistent_spawning = false;
 
+// Gungnir
+server int gungnir_bfg_spawn_bias = 99;
+server bool gungnir_persistent_spawning = false;
+
+
 //------------
 // Ammunition
 //------------

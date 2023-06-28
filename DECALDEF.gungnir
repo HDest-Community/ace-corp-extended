@@ -1,0 +1,22 @@
+decal GungnirScorchBlack
+{
+	pic ACESCR1
+	shade "00 00 00"
+	x-scale 0.2
+	y-scale 0.2
+	randomflipx
+	randomflipy
+}
+
+decal GungnirScorch
+{
+	pic ACESCR1
+	shade "88 FF 00"
+	x-scale 0.1
+	y-scale 0.1
+	randomflipx
+	randomflipy
+	Fullbright
+	animator GoAway
+	LowerDecal "GungnirScorchBlack"
+}
