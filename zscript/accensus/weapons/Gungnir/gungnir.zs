@@ -436,11 +436,10 @@ class HDGungnir : HDCellWeapon
 		}
 		A_RailAttack(random(minDamage, maxDamage), 0, false, "", "", RGF_NORANDOMPUFFZ | RGF_SILENT | RGF_NOPIERCING, 0, puff, 0, 0, HDCONST_ONEMETRE * 300, 0, 10.0, 0, "GungnirRaySegment", player.crouchfactor < 1.0 ? 0.9 : 1.8);
 
-		A_Recoil((2.25 ** tier) * (HDPlayerPawn(self).gunbraced ? 0.3 : 1.0)); //culprit????
+		A_Recoil((2.25 * tier) * (HDPlayerPawn(self).gunbraced ? 0.3 : 1.0));
 		A_AlertMonsters();
 		A_SetBlend(0xDFFF66, 0.33 * tier, 30);
-		A_ZoomRecoil(0.95);
-		//A_ZoomRecoil(1.00 + 2 ** tier); //culprit...YEP YOU BREAK SHIT :(
+		A_ZoomRecoil(1.00 - 0.2 * tier);
 		A_ResetWeapon();
 
 		double cMult = 1.0 + tier / 3.0;
