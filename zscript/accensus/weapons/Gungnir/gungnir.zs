@@ -1,3 +1,215 @@
+class HDGungnirRayZapper : HDFireball
+{
+	int GungRayRipDmg;
+	default{
+		-notelestomp +telestomp
+		+skyexplode +forceradiusdmg +ripper -noteleport +notarget
+		+bright
+		decal "HDBFGLightning";
+		renderstyle "add";
+		damagefunction(GungRayRipDmg);
+		seesound "weapons/plasmaf";
+		deathsound "weapons/bfgx";
+		obituary "$OB_MPBFG_BOOM";
+		translation "160:160=115:115", "224:229=112:116";
+		scale 0.6;
+		alpha 0.9;
+		height 6;
+		radius 6;
+		speed 35;
+		gravity 0;
+		 ReactionTime 16;
+	}
+	void A_GungirBlastZap(){
+		if(pos.z-floorz<12)vel.z+=1;
+		else if(ceilingz-pos.z<19)vel.z-=1;
+
+		for(int i=0;i<10;i++){
+			A_SpawnParticle(0xAAFF42, SPF_FULLBRIGHT | SPF_RELATIVE, 0, 0, 0, 0, 12, sizestep: 4.0);
+		}
+
+		vector2 oldaim=(angle,pitch);
+		blockthingsiterator it=blockthingsiterator.create(self,2048);
+		while(it.Next()){
+			actor itt=it.thing;
+			if(
+				(itt.bismonster||itt.player)
+				&&itt!=target
+				&&itt.health>0
+				&&target.ishostile(itt)
+				&&checksight(itt)
+			){
+				A_Face(itt,0,0);
+				A_CustomRailgun((0),0,"","55 ff 88",
+					RGF_CENTERZ|RGF_SILENT|RGF_NOPIERCING|RGF_FULLBRIGHT,
+					0,50.0,"GungnirZAPRayPuff",0,0,2048,18,0.2,1.0
+				);
+				break;
+			}
+		}
+		angle=oldaim.x;pitch=oldaim.y;
+	}
+	void A_GungnirRaySplodeZap(){
+		blockthingsiterator it=blockthingsiterator.create(self,2048);
+		while(it.Next()){
+			actor itt=it.thing;
+			if(
+				(itt.bismonster||itt.player)
+				&&itt!=target
+				&&itt.health>0
+				&&!target.isfriend(itt)
+				&&!target.isteammate(itt)
+				&&checksight(itt)
+			){
+				A_Face(itt,0,0);
+				int hhh=min(itt.health,4096);
+				for(int i=0;i<hhh;i+=1024){
+					A_CustomRailgun((0),0,"","55 ff 88",
+						RGF_CENTERZ|RGF_SILENT|RGF_NOPIERCING|RGF_FULLBRIGHT,
+						0,50.0,"GungnirZAPRayPuff",3,3,2048,18,0.2,1.0
+					);
+				}
+			}
+		}
+	}
+	states{
+	spawn:
+		TNT1 A 0
+		{
+			GungRayRipDmg=1;
+			let hdp=hdplayerpawn(target);
+			if(hdp){
+				pitch=hdp.gunpitch;
+				angle=hdp.gunangle;
+			}else if(
+				!!target
+				&&IsMoving.Count(target)>=6
+			){
+				pitch+=frandom(-3,3);
+				angle+=frandom(-1,1);
+			}
+		}
+		APLS  AB 2 A_SpawnItemEx("GungnirRayZAPTail",0,0,0,vel.x*0.2,vel.y*0.2,vel.z*0.2,0,168,0);
+		APLS  A 0{
+			GungRayRipDmg=random(100,200);
+			bripper=false;
+		}
+		goto spawn2;
+	spawn2:
+		APLS AB 1 A_Corkscrew();
+		---- A 0 A_GungirBlastZap();
+		APLS AB 1 A_Corkscrew();
+		---- A 0 A_GungirBlastZap();
+		APLS AB 1 A_Corkscrew();
+		---- A 0 A_GungirBlastZap();
+		TNT1 A 0 A_Countdown;
+		loop;
+	death:
+		APBX A 2;
+		//APBX B 2 A_Explode(80,256,1,1,20);
+		APBX B 2{
+					DistantQuaker.Quake(self,6,100,16384,10,256,512,128);
+					DistantNoise.Make(self,"world/bfgfar");
+				}
+		TNT1 AAAAA 0 A_SpawnItemEx("HDSmokeChunk",random(-2,0),random(-3,3),random(-2,2),random(-5,0),random(-5,5),random(0,5),random(100,260),SXF_TRANSFERPOINTERS|SXF_NOCHECKPOSITION,16);
+		APBX CCCC 2 A_GungnirRaySplodeZap();
+		APBX CCC 0 A_SpawnItemEx("HDSmoke",random(-4,0),random(-3,3),random(0,4),random(-1,1),random(-1,1),random(1,3),0,SXF_TRANSFERPOINTERS|SXF_NOCHECKPOSITION,16);
+		APBX DEF 6;
+		APBX F 3 A_FadeOut(0.1);
+		wait;
+	}
+}
+
+class GungnirRayZAPTail:IdleDummy{
+	default{
+		+forcexybillboard
+		scale 0.5;renderstyle "add";
+	}
+	states{
+	spawn:
+		APLS AB 2 bright A_FadeOut(0.2);
+		loop;
+	}
+}
+
+class GungnirZAPRayPuff:IdleDummy{
+	string pcol;
+	default{
+		-invisible +forcexybillboard +bloodlessimpact
+		+noblood +alwayspuff -allowparticles +puffonactors +puffgetsowner +forceradiusdmg
+		+hittracer
+		renderstyle "add";
+		damagetype "BFGBallAttack";
+		scale 0.8;
+		obituary "$OB_MPBFG_BOOM";
+	}
+	states{
+	spawn:
+		BFE2 A 1 bright nodelay{
+			pcol=(Wads.CheckNumForName("FREEDOOM",0)!=-1)?"55 88 ff":"55 ff 88";
+			if(target)target=target.target;
+			A_StartSound("misc/bfgrail",9005);
+		}
+		BFE2 A 3 bright{
+			A_Explode(random(196,320),320,0);
+
+			//teleport victim
+			if(
+				tracer
+				&&tracer!=target
+				&&!tracer.player
+				&&!tracer.special
+				&&(
+					!tracer.bismonster
+					||tracer.health<1
+				)
+				&&!random(0,3)
+			){
+				spawn("TeleFog",tracer.pos,ALLOW_REPLACE);
+
+				vector3 teleportedto=(0,0,0);
+
+				thinkeriterator mobfinder=thinkeriterator.create("HDMobBase");
+				actor mo;
+				int ccc=level.killed_monsters;
+				while(mo=HDMobBase(mobfinder.next())){
+					if(ccc<1)break;
+					if(mo.health>0)continue;
+					ccc--;
+					setz(mo.spawnpoint.z);
+					if(checkmove(mo.spawnpoint.xy)){
+						teleportedto=mo.spawnpoint;
+						break;
+					}
+				}
+
+				if(teleportedto==(0,0,0))teleportedto=(
+					frandom(-20000,20000),
+					frandom(-20000,20000),
+					frandom(-20000,20000)
+				);
+
+				tracer.setorigin(teleportedto,false);
+				tracer.setz(clamp(tracer.pos.z,tracer.floorz,max(tracer.floorz,tracer.ceilingz-tracer.height)));
+				tracer.vel=(frandom(-10,10),frandom(-10,10),frandom(10,20));
+				spawn("TeleFog",tracer.pos,ALLOW_REPLACE);
+			}
+		}
+		BFE2 ABCDE 1 bright{
+			A_FadeOut(0.05);
+			A_SpawnParticle(
+				pcol,SPF_FULLBRIGHT,35,
+				size:frandom(1,8),0,
+				frandom(-16,16),frandom(-16,16),frandom(0,8),
+				frandom(-1,1),frandom(-1,1),frandom(1,2),
+				frandom(-0.1,0.1),frandom(-0.1,0.1),-0.05
+			);
+		}
+		TNT1 A 0 A_SpawnItemEx("BFGNecroShard",0,0,10,10,0,0,random(0,360),SXF_NOCHECKPOSITION|SXF_TRANSFERPOINTERS,254);
+		stop;
+	}
+}
+
 class HDGungnir : HDCellWeapon
 {
 	enum GungnirFlags
@@ -224,10 +436,11 @@ class HDGungnir : HDCellWeapon
 		}
 		A_RailAttack(random(minDamage, maxDamage), 0, false, "", "", RGF_NORANDOMPUFFZ | RGF_SILENT | RGF_NOPIERCING, 0, puff, 0, 0, HDCONST_ONEMETRE * 300, 0, 10.0, 0, "GungnirRaySegment", player.crouchfactor < 1.0 ? 0.9 : 1.8);
 
-		A_Recoil((2.25 ** tier) * (HDPlayerPawn(self).gunbraced ? 0.3 : 1.0));
+		A_Recoil((2.25 ** tier) * (HDPlayerPawn(self).gunbraced ? 0.3 : 1.0)); //culprit????
 		A_AlertMonsters();
 		A_SetBlend(0xDFFF66, 0.33 * tier, 30);
-		A_ZoomRecoil(1.00 + 2 ** tier);
+		A_ZoomRecoil(0.95);
+		//A_ZoomRecoil(1.00 + 2 ** tier); //culprit...YEP YOU BREAK SHIT :(
 		A_ResetWeapon();
 
 		double cMult = 1.0 + tier / 3.0;
@@ -569,6 +782,14 @@ class GungnirRayImpact : Actor abstract
 		}
 	}
 
+	protected void SpawnZapper(int num)
+	{
+		for (let i = 0; i < num; i++)
+		{
+			A_SpawnItemEx("HDGungnirRayZapper", frandom(-359, 359), frandom(-359, 359), frandom(-359, 359), 0, 0, 0, frandom(0, 359), SXF_NOCHECKPOSITION|SXF_TRANSFERPOINTERS);
+		}
+	}
+
 	Default
 	{
 		+FORCEDECAL
@@ -603,6 +824,7 @@ class GungnirRayImpactT1 : GungnirRayImpact
 		A_Explode(random(200, 300), int(HDCONST_ONEMETRE * 3), XF_HURTSOURCE, false, damageType: 'Electrical');
 		A_StartSound("Gungnir/RayHit", 8, attenuation: 0.5);
 		DistantQuaker.Quake(self, 2, 50, HDCONST_ONEMETRE * 30, 10, 256, 512, 128);
+		SpawnZapper(4);
 		SpawnBlastEffects(0, miss);
 	}
 }
@@ -615,6 +837,7 @@ class GungnirRayImpactT2 : GungnirRayImpact
 		A_Explode(random(750, 1000), int(HDCONST_ONEMETRE * 4), XF_HURTSOURCE, false, damageType: 'Electrical');
 		A_StartSound("Gungnir/RayHit", 8, attenuation: 0.2, pitch: 0.8);
 		DistantQuaker.Quake(self, 4, 50, HDCONST_ONEMETRE * 70, 10, 256, 512, 128);
+		SpawnZapper(8);
 		SpawnBlastEffects(1, miss);
 	}
 }
@@ -627,52 +850,24 @@ class GungnirRayImpactT3 : GungnirRayImpact
 		A_Explode(random(1500, 2000), int(HDCONST_ONEMETRE * 5), XF_HURTSOURCE, false, damageType: 'Electrical');
 		A_StartSound("Gungnir/RayHit", 8, attenuation: ATTN_NONE, pitch: 0.6);
 		DistantQuaker.Quake(self, 6, 50, HDCONST_ONEMETRE * 200, 10, 256, 512, 128);
+		SpawnZapper(12);
 		SpawnBlastEffects(2, miss);
 	}
 }
-/*
+
 class GungnirRayImpactT3OP : GungnirRayImpactT3
 {
 	override void OnBlast(bool miss)
 	{
-		let necro = Necromancer(tracer);
-		if (necro && !necro.bFRIENDLY)
-		{
-			for (int i = 0; i < 4 * necro.hitsleft; ++i)
-			{
-				necro.A_SpawnItemEx("BFGNecroShard", 0, 0, 42, flags: SXF_SETMASTER | SXF_TRANSFERPOINTERS);
-			}
-			necro.hitsleft = 0;
-			necro.A_ChangeNecroFlags(true);
-			necro.DamageMobj(self, target, 2000, 'Extreme', DMG_FORCED);
-			let forcer = new('CurseForcer');
-			forcer.Necro = necro;
-		}
+		DoorDestroyer.DestroyDoor(self, 384, 96, dedicated: true); 
+		A_Explode(random(2500, 3500), int(HDCONST_ONEMETRE * 5), XF_HURTSOURCE, false, damageType: 'Electrical');
+		A_StartSound("Gungnir/RayHit", 8, attenuation: ATTN_NONE, pitch: 0.6);
+		DistantQuaker.Quake(self, 6, 50, HDCONST_ONEMETRE * 200, 10, 256, 512, 128);
+		SpawnZapper(16);
 		Super.OnBlast(miss);
 	}
 }
 
-class CurseForcer : Thinker
-{
-	private int Ticker;
-	Necromancer Necro;
-	override void Tick()
-	{
-		Super.Tick();
-		if (!Necro)
-		{
-			Destroy();
-			return;
-		}
-		if (Ticker++ == 45)
-		{
-			Necro.SetStateLabel('ghost');
-			Destroy();
-			return;
-		}
-	}
-}
-*/
 class GungnirRaySegment : Actor
 {
 	override void PostBeginPlay()
