@@ -27,6 +27,10 @@ server int hammerhead_chaingun_spawn_bias = 14;
 server int hammerhead_thunderbuster_spawn_bias = 9;
 server bool hammerhead_persistent_spawning = false;
 
+// Jackdaw
+server int jackdaw_vulcanette_spawn_bias = 49;
+server bool jackdaw_persistent_spawning = false;
+
 
 //------------
 // Ammunition

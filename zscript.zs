@@ -15,3 +15,5 @@ version "4.10"
 #include "zscript/accensus/weapons/Gungnir/gungnir.zs"
 
 #include "zscript/accensus/weapons/Hammerhead/hammerhead.zs"
+
+#include "zscript/accensus/weapons/Jackdaw/jackdaw.zs"
