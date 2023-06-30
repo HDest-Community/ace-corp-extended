@@ -176,10 +176,10 @@ class AceCorpsWepsHandler : EventHandler {
 		wep_35mm.push("HDScorpion");
 		addAmmo("BrontornisRound", wep_35mm);
 
-		// .50 AE
-		Array<string> wep_50ae;
-		wep_50ae.push("HDViper");
-		addAmmo("HD50AEAmmo", wep_50ae);
+		// .50 AM
+		Array<string> wep_50am;
+		wep_50am.push("HDViper");
+		addAmmo("HD50AM_Ammo", wep_50am);
 
 		// .500 S&W Light
 		Array<string> wep_500swl;
