@@ -201,6 +201,29 @@ OptionMenu "hammerheadSpawning" {
 	SafeCommand "Reset all options", "hammerhead_reset_cvars"
 }
 
+OptionMenu "redlineSpawning" {
+    Title "------ RDL-N3 'Redline' Thermal Lance Options ------"
+   	StaticText "Notice:", "cyan"
+    StaticText  "Setting 'spawn rate' to Replace All will suppress", "white"
+    StaticText  "spawns of that given type.", "white"
+    StaticText ""
+
+	StaticText "Spawn Options", "cyan"
+    StaticText  "Control the spawn rate of the Redline on Thunderbusters:", "white"
+	Option "Redline Spawn Rate: ", "redline_thunderbuster_spawn_bias", "SpawnBias"
+	SafeCommand "Reset Redline options", "resetcvar redline_thunderbuster_spawn_bias"
+ 	StaticText ""
+
+    StaticText  "Control whether replacements happen after a mapload.", "white"
+	Option "Persistent Spawns: ", "redline_persistent_spawning", "OnOff"
+	SafeCommand "Reset persistence options", "resetcvar redline_persistent_spawning"
+ 	StaticText ""
+   	StaticText ""
+
+	StaticText "Reset Options", "cyan"
+	SafeCommand "Reset all options", "redline_reset_cvars"
+}
+
 
 OptionMenu "AceCorpsMenu" {
 	Title "$AceCorpsMenu"
@@ -233,6 +256,8 @@ OptionMenu "AceCorpsMenu" {
     Submenu "'Gungnir' Frag Beam Rifle", "gungnirSpawning", 0, 1
 	StaticText ""
     Submenu "CIR-37 'Hammerhead' Plasma Minigun", "hammerheadSpawning", 0, 1
+	StaticText ""
+    Submenu "RDL-N3 'Redline' Thermal Lance", "redlineSpawning", 0, 1
 	StaticText ""
 	
 	StaticText "--- Reset Options ---", "red"

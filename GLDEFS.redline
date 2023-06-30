@@ -1,0 +1,7 @@
+PointLight ImpactRedSmall
+{
+	color 1.0 0.1 0.1
+	size 24
+}
+
+Object RedlineRayImpact { Frame TNT1 { Light ImpactRedSmall } }

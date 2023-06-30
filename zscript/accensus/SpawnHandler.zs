@@ -168,6 +168,7 @@ class AceCorpsWepsHandler : EventHandler {
 		Array<string> wep_battery;  
 		wep_battery.push("HDGungnir");
 		wep_battery.push("HDHammerhead");
+		wep_battery.push("HDRedline");
 		addAmmo('HDBattery', wep_battery);
 
 		// .500 S&W Light
@@ -221,6 +222,12 @@ class AceCorpsWepsHandler : EventHandler {
 		spawns_majestic.push(addItemEntry("Hunter", majestic_hunter_spawn_bias));
 		spawns_majestic.push(addItemEntry("Slayer", majestic_slayer_spawn_bias));
 		addItem("MajesticRandom", spawns_majestic, majestic_persistent_spawning);
+
+		// Redline
+		Array<AceCorpsSpawnItemEntry> spawns_redline;
+		spawns_redline.push(addItemEntry("Thunderbuster", redline_thunderbuster_spawn_bias));
+		addItem("RedlineRandom", spawns_redline, redline_persistent_spawning);
+
 
 
 		//------------
