@@ -21,3 +21,5 @@ version "4.10"
 #include "zscript/accensus/weapons/Majestic/majestic.zs"
 
 #include "zscript/accensus/weapons/Redline/redline.zs"
+
+#include "zscript/accensus/weapons/Scorpion/scorpion.zs"
