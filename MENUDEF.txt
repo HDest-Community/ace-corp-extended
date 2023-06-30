@@ -49,6 +49,39 @@ OptionMenu "majesticSpawning" {
 	SafeCommand "Reset all options", "majestic_reset_cvars"
 }
 
+OptionMenu "viperSpawning" {
+    Title "------ 'Viper' .50 AE Handgun Options ------"
+   	StaticText "Notice:", "cyan"
+    StaticText  "Setting 'spawn rate' to Replace All will suppress", "white"
+    StaticText  "spawns of that given type.", "white"
+    StaticText ""
+
+	StaticText "Spawn Options", "cyan"
+    StaticText  "Control the spawn rate of the Viper on:", "white"
+	Option "Pistols: ", "viper_pistol_spawn_bias", "SpawnBias"
+	SafeCommand "Reset Pistol option", "resetcvar viper_pistol_spawn_bias"
+	Option "Hunter shotguns: ", "viper_hunter_spawn_bias", "SpawnBias"
+	SafeCommand "Reset Hunter option", "resetcvar viper_hunter_spawn_bias"
+	Option "Slayer shotguns: ", "viper_slayer_spawn_bias", "SpawnBias"
+	SafeCommand "Reset Slayer option", "resetcvar viper_slayer_spawn_bias"
+ 	StaticText ""
+
+    StaticText  "Control the spawn rate of the Viper's Magazine on:", "white"
+	Option "Clip Magazines: ", "vipermag_clipmag_spawn_bias", "SpawnBias"
+	SafeCommand "Reset Clip Magazine option", "resetcvar vipermag_clipmag_spawn_bias"
+    StaticText ""
+
+    StaticText  "Control whether replacements happen after a mapload.", "white"
+	Option "Persistent Spawns (Gun): ", "viper_persistent_spawning", "OnOff"
+    Option "Persistent Spawns (Magazine): ", "vipermag_persistent_spawning", "OnOff"
+	SafeCommand "Reset persistence options", "resetcvar viper_persistent_spawning; vipermag_persistent_spawning"
+ 	StaticText ""
+   	StaticText ""
+
+	StaticText "Reset Options", "cyan"
+	SafeCommand "Reset all options", "viper_reset_cvars"
+}
+
 
 // Shotguns
 
@@ -254,6 +287,8 @@ OptionMenu "AceCorpsMenu" {
 	StaticText "--- Pistols ---", "yellow"
 	StaticText ""
     Submenu "'Majestic' .500 S&W Railgun", "majesticSpawning", 0, 1
+	StaticText ""
+    Submenu "'Viper' .50 AE Handgun", "viperSpawning", 0, 1
 	StaticText ""
 
 	StaticText "--- Shotguns ---", "red"
