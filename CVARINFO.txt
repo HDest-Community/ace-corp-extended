@@ -51,6 +51,11 @@ server int viper_hunter_spawn_bias = 49;
 server int viper_slayer_spawn_bias = 49;
 server bool viper_persistent_spawning = false;
 
+// Wyvern
+server int wyvern_hunter_spawn_bias = 99;
+server int wyvern_slayer_spawn_bias = 49;
+server bool wyvern_persistent_spawning = false;
+
 
 //------------
 // Ammunition
