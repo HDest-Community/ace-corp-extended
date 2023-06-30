@@ -1,0 +1,10 @@
+Gungnir/DeathRayFire GUNGRAY
+Gungnir/RayHit GNRAYHIT
+Gungnir/Charge GUNGCHRG
+
+Gungnir/Lock GUNGLOCK
+$volume Gungnir/Lock 0.5
+$pitchset Gungnir/Lock 1.25
+
+Gungnir/Unlock GUNGLOCK
+$volume Gungnir/Unlock 0.5

@@ -27,3 +27,11 @@ This mod aims to maintain and improve Accensus' Arsenal, by updating them to the
 - The loadout codes are `bjk`, `bm3`, and `bms` for weapon, 355 mag, and shell mag, respectively.
 - CVars are:
 	- `bj_invert [true/false]`: Inverts the primary/secondary fire modes and reload keys. Client-side CVar.
+
+### Gungnir
+---
+- The loadout code is `gnr`.
+- Configuration codes are:
+	- `accel`: Accelerator - increases charge speed.
+	- `cap`: Capacitor - gives an extra shot.
+	- `proc`: Processor - makes battery consumption more efficient.

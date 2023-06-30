@@ -97,6 +97,29 @@ OptionMenu "blackhawkSpawning" {
 
 // Energy weapons
 
+OptionMenu "gungnirSpawning" {
+    Title "------ 'Gungnir' Frag Beam Rifle Options ------"
+   	StaticText "Notice:", "cyan"
+    StaticText  "Setting 'spawn rate' to Replace All will suppress", "white"
+    StaticText  "spawns of that given type.", "white"
+    StaticText ""
+
+	StaticText "Spawn Options", "cyan"
+    StaticText  "Control the spawn rate of the Gungnir on BFG-9000s:", "white"
+	Option "Gungnir Spawn Rate: ", "gungnir_bfg_spawn_bias", "SpawnBias"
+	SafeCommand "Reset Gungnir options", "resetcvar gungnir_bfg_spawn_bias"
+ 	StaticText ""
+
+    StaticText  "Control whether replacements happen after a mapload.", "white"
+	Option "Persistent Spawns: ", "gungnir_persistent_spawning", "OnOff"
+	SafeCommand "Reset persistence options", "resetcvar gungnir_persistent_spawning"
+ 	StaticText ""
+   	StaticText ""
+
+	StaticText "Reset Options", "cyan"
+	SafeCommand "Reset all options", "gungnir_reset_cvars"
+}
+
 
 OptionMenu "AceCorpsMenu" {
 	Title "$AceCorpsMenu"
@@ -121,6 +144,8 @@ OptionMenu "AceCorpsMenu" {
 	StaticText ""
 
     StaticText "--- Energy Weapons ---", "cyan"
+	StaticText ""
+    Submenu "'Gungnir' Frag Beam Rifle", "gungnirSpawning", 0, 1
 	StaticText ""
 	
 	StaticText "--- Reset Options ---", "red"

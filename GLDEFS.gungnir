@@ -1,0 +1,7 @@
+PointLight ImpactGreenSmall
+{
+	color 0.6 1.0 0.3
+	size 256
+}
+
+Object GungnirRayImpact { Frame TNT1 { Light ImpactGreenSmall } }
