@@ -28,6 +28,35 @@ OptionValue "SpawnBias" {
 
 // Rifles
 
+OptionMenu "blackhawkSpawning" {
+    Title "------ 'Blackhawk' Hi-Tech Crossbow Options ------"
+   	StaticText "Notice:", "Orange"
+    StaticText  "Setting 'spawn rate' to Replace All will suppress", "white"
+    StaticText  "spawns of that given type.", "white"
+    StaticText ""
+
+	StaticText "Spawn Options", "Orange"
+    StaticText  "Control the spawn rate of the blackhawk on Rocket Launchers:", "white"
+	Option "Blackhawk Spawn Rate: ", "blackhawk_launcher_spawn_bias", "SpawnBias"
+	SafeCommand "Reset Blackhawk options", "resetcvar blackhawk_launcher_spawn_bias"
+    StaticText ""
+
+	StaticText "Spawn Options", "Orange"
+    StaticText  "Control the spawn rate of the bolt bundles on Rockets:", "white"
+	Option "Bolt Bundle Spawn Rate: ", "blackhawkBolts_rocket_spawn_bias", "SpawnBias"
+	SafeCommand "Reset Bolt Bundle options", "resetcvar blackhawkBolts_rocket_spawn_bias"
+    StaticText ""
+
+    StaticText  "Control whether replacements happen after a mapload.", "white"
+	Option "Persistent Spawns (Crossbow): ", "blackhawk_persistent_spawning", "OnOff"
+	Option "Persistent Spawns (Bolt Bundles): ", "blackhawkBolts_persistent_spawning", "OnOff"
+	SafeCommand "Reset persistence options", "resetcvar blackhawk_persistent_spawning; resetcvar blackhawkBolts_persistent_spawning"
+ 	StaticText ""
+   	StaticText ""
+
+	StaticText "Reset Options", "Orange"
+	SafeCommand "Reset all options", "blackhawk_reset_cvars"
+}
 
 // Energy weapons
 
@@ -48,6 +77,8 @@ OptionMenu "AceCorpsMenu" {
 	StaticText ""
 
 	StaticText "--- Rifles ---", "orange"
+	StaticText ""
+    Submenu "'Blackhawk' Hi-Tech Crossbow", "blackhawkSpawning", 0, 1
 	StaticText ""
 
     StaticText "--- Energy Weapons ---", "cyan"

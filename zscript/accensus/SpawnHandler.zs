@@ -149,19 +149,34 @@ class AceCorpsWepsHandler : EventHandler {
 		// Ammunition
 		//------------
 
+		// Blackhawk Bolts
+		Array<string> wep_bolts;
+		wep_bolts.push("HDBlackhawk");
+		addAmmo("HDBlackhawkBoltRegular", wep_bolts);
+		addAmmo("HDBlackhawkBoltIncendiary", wep_bolts);
+		addAmmo("HDBlackhawkBoltElectric", wep_bolts);
+		addAmmo("HDBlackhawkBoltNuclear", wep_bolts);
 
 
 		//------------
 		// Weaponry
 		//------------
 
+		// Blackhawk
+		Array<AceCorpsSpawnItemEntry> spawns_blackhawk;
+		spawns_blackhawk.push(addItemEntry("HDRL", blackhawk_launcher_spawn_bias));
+		addItem("BlackhawkRandom", spawns_blackhawk, blackhawk_persistent_spawning);
 
 
 		//------------
 		// Ammunition
 		//------------
 
-        
+		// Blackhawk Bolts
+		Array<AceCorpsSpawnItemEntry> spawns_blackhawkBolts;
+		spawns_blackhawkBolts.push(addItemEntry("HDRocketAmmo", blackhawkBolts_rocket_spawn_bias));
+		addItem("HDBlackhawkBoltBundle", spawns_blackhawkBolts, blackhawkBolts_persistent_spawning);
+
 
 		// --------------------
 		// Item Spawns
