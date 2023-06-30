@@ -31,6 +31,12 @@ server bool hammerhead_persistent_spawning = false;
 server int jackdaw_vulcanette_spawn_bias = 49;
 server bool jackdaw_persistent_spawning = false;
 
+// Majestic
+server int majestic_pistol_spawn_bias = 49;
+server int majestic_hunter_spawn_bias = 9;
+server int majestic_slayer_spawn_bias = 4;
+server bool majestic_persistent_spawning = false;
+
 
 //------------
 // Ammunition
@@ -47,3 +53,8 @@ server bool blackjack355mag_persistent_spawning = false;
 // Blackjack Shell Mag
 server int  blackjackshellmag_shell_spawn_bias    = 14;
 server bool blackjackshellmag_persistent_spawning = false;
+
+// Majestic Magazine
+server int majesticmag_clipmag_spawn_bias = 24;
+server bool majesticmag_persistent_spawning = false;
+

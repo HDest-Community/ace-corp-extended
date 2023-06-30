@@ -48,3 +48,12 @@ This mod aims to maintain and improve Accensus' Arsenal, by updating them to the
 - Configuration codes are:
 	- `rapid`: Locks the weapon to hyperburst RoF, except it's full-auto.
 - The weapon feeds ammo directly from any HDBackpack item (Backpacks, Ammo Pouches, Dimensional Storage Devices, etc.)
+
+### Majestic
+---
+- The loadout codes are `maj` and `mjm` for the weapon and mag respectively.
+- Configuration codes are:
+	- `accel`: Accelerator. Makes the gun charge a little faster.
+#### Mechanics
+- The weapon requires both a battery and a drum to fire a charged shot. Otherwise only a drum is required.
+- Holding primary fire charges a shot. The higher the charge, the higher the projectile's velocity and explosion damage. Charging is not necessary and the gun can be quickfired in a pinch.

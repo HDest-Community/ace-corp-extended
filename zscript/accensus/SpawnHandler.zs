@@ -170,6 +170,11 @@ class AceCorpsWepsHandler : EventHandler {
 		wep_battery.push("HDHammerhead");
 		addAmmo('HDBattery', wep_battery);
 
+		// .500 S&W Light
+		Array<string> wep_500swl;
+		wep_500swl.push("HDMajestic");
+		addAmmo("HD500SWLightAmmo", wep_500swl);
+
 		// Blackhawk Bolts
 		Array<string> wep_bolts;
 		wep_bolts.push("HDBlackhawk");
@@ -210,6 +215,13 @@ class AceCorpsWepsHandler : EventHandler {
 		spawns_jackdaw.push(addItemEntry("Vulcanette", jackdaw_vulcanette_spawn_bias));
 		addItem("JackdawRandom", spawns_jackdaw, jackdaw_persistent_spawning);
 
+		// Majestic
+		Array<AceCorpsSpawnItemEntry> spawns_majestic;
+		spawns_majestic.push(addItemEntry("HDPistol", majestic_pistol_spawn_bias));
+		spawns_majestic.push(addItemEntry("Hunter", majestic_hunter_spawn_bias));
+		spawns_majestic.push(addItemEntry("Slayer", majestic_slayer_spawn_bias));
+		addItem("MajesticRandom", spawns_majestic, majestic_persistent_spawning);
+
 
 		//------------
 		// Ammunition
@@ -229,6 +241,11 @@ class AceCorpsWepsHandler : EventHandler {
 		Array<AceCorpsSpawnItemEntry> spawns_blackjack_shellmag;
 		spawns_blackjack_shellmag.push(addItemEntry("HDShellAmmo", blackjackshellmag_shell_spawn_bias));
 		addItem("HDBlackjackMagShells", spawns_blackjack_shellmag, blackjackshellmag_persistent_spawning);
+
+		// Majestic Magazine
+		Array<AceCorpsSpawnItemEntry> spawns_majesticmag;
+		spawns_majesticmag.push(addItemEntry("HD9mMag15", majesticmag_clipmag_spawn_bias));
+		addItem("HDMajesticMag", spawns_majesticmag, majesticmag_persistent_spawning);
 
 
 		// --------------------

@@ -17,3 +17,5 @@ version "4.10"
 #include "zscript/accensus/weapons/Hammerhead/hammerhead.zs"
 
 #include "zscript/accensus/weapons/Jackdaw/jackdaw.zs"
+
+#include "zscript/accensus/weapons/Majestic/majestic.zs"
