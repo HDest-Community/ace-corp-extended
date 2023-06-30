@@ -149,6 +149,11 @@ class AceCorpsWepsHandler : EventHandler {
 		// Ammunition
 		//------------
 
+		// 9mm
+		Array<string> wep_9mm;
+		wep_9mm.push("HDJackdaw");
+		addAmmo("HDPistolAmmo", wep_9mm);
+
 		// .355
 		Array<string> wep_355;
 		wep_355.push("HDBlackjack");
@@ -199,6 +204,11 @@ class AceCorpsWepsHandler : EventHandler {
 		spawns_hammerhead.push(addItemEntry("Vulcanette", hammerhead_chaingun_spawn_bias));
 		spawns_hammerhead.push(addItemEntry("Thunderbuster", hammerhead_thunderbuster_spawn_bias));
 		addItem("HammerheadRandom", spawns_hammerhead, hammerhead_persistent_spawning);
+
+		// Jackdaw
+		Array<AceCorpsSpawnItemEntry> spawns_jackdaw;
+		spawns_jackdaw.push(addItemEntry("Vulcanette", jackdaw_vulcanette_spawn_bias));
+		addItem("JackdawRandom", spawns_jackdaw, jackdaw_persistent_spawning);
 
 
 		//------------

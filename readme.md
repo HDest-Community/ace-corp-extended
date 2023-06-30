@@ -41,3 +41,10 @@ This mod aims to maintain and improve Accensus' Arsenal, by updating them to the
 - There are 3 firing modes: 1 battery, 2 batteries, and full barrage. Lowest setting is for low-heat sustained fire. Highest setting is for maximizing damage at the expense of much faster heat build-up and battery drain rate.
 - Batteries are cycled after each shot to deplete them evenly.
 - If the heat bar turns orange, vent the gun or you will get set on fire.
+
+### Jackdaw
+---
+- The loadout codes is `jdw`.
+- Configuration codes are:
+	- `rapid`: Locks the weapon to hyperburst RoF, except it's full-auto.
+- The weapon feeds ammo directly from any HDBackpack item (Backpacks, Ammo Pouches, Dimensional Storage Devices, etc.)

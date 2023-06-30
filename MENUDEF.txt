@@ -59,6 +59,29 @@ OptionMenu "blackjackSpawning" {
 	SafeCommand "Reset all options", "blackjack_reset_cvars"
 }
 
+OptionMenu "jackdawSpawning" {
+    Title "------ 'Jackdaw' 9mm SMG Options ------"
+   	StaticText "Notice:", "green"
+    StaticText  "Setting 'spawn rate' to Replace All will suppress", "white"
+    StaticText  "spawns of that given type.", "white"
+    StaticText ""
+
+	StaticText "Spawn Options", "green"
+    StaticText  "Control the spawn rate of the jackdaw on Vulcanettes:", "white"
+	Option "Jackdaw Spawn Rate: ", "jackdaw_vulcanette_spawn_bias", "SpawnBias"
+	SafeCommand "Reset Jackdaw options", "resetcvar jackdaw_vulcanette_spawn_bias"
+    StaticText ""
+
+    StaticText  "Control whether replacements happen after a mapload.", "white"
+	Option "Persistent Spawns: ", "jackdaw_persistent_spawning", "OnOff"
+	SafeCommand "Reset persistence options", "resetcvar jackdaw_persistent_spawning"
+ 	StaticText ""
+   	StaticText ""
+
+	StaticText "Reset Options", "green"
+	SafeCommand "Reset all options", "jackdaw_reset_cvars"
+}
+
 
 // Explosives
 
@@ -158,6 +181,8 @@ OptionMenu "AceCorpsMenu" {
 	StaticText "--- Machine Guns ---", "green"
 	StaticText ""
     Submenu "'Blackjack' .355 Rifle", "blackjackSpawning", 0, 1
+	StaticText ""
+    Submenu "'Jackdaw' 9mm SMG", "jackdawSpawning", 0, 1
 	StaticText ""
 
 	StaticText "--- Explosives ---", "Brown"
