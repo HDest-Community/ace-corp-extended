@@ -16,6 +16,39 @@ OptionValue "SpawnBias" {
 
 // Pistols
 
+OptionMenu "majesticSpawning" {
+    Title "------ 'Majestic' .500 S&W Railgun Options ------"
+   	StaticText "Notice:", "cyan"
+    StaticText  "Setting 'spawn rate' to Replace All will suppress", "white"
+    StaticText  "spawns of that given type.", "white"
+    StaticText ""
+
+	StaticText "Spawn Options", "cyan"
+    StaticText  "Control the spawn rate of the Majestic on:", "white"
+	Option "Pistols: ", "majestic_pistol_spawn_bias", "SpawnBias"
+	SafeCommand "Reset Pistol option", "resetcvar majestic_pistol_spawn_bias"
+	Option "Hunter shotguns: ", "majestic_hunter_spawn_bias", "SpawnBias"
+	SafeCommand "Reset Hunter option", "resetcvar majestic_hunter_spawn_bias"
+	Option "Slayer shotguns: ", "majestic_slayer_spawn_bias", "SpawnBias"
+	SafeCommand "Reset Slayer option", "resetcvar majestic_slayer_spawn_bias"
+ 	StaticText ""
+
+    StaticText  "Control the spawn rate of the Majestic's Magazine on:", "white"
+	Option "Clip Magazines: ", "majesticmag_clipmag_spawn_bias", "SpawnBias"
+	SafeCommand "Reset Clip Magazine option", "resetcvar majesticmag_clipmag_spawn_bias"
+    StaticText ""
+
+    StaticText  "Control whether replacements happen after a mapload.", "white"
+	Option "Persistent Spawns (Gun): ", "majestic_persistent_spawning", "OnOff"
+    Option "Persistent Spawns (Magazine): ", "majesticmag_persistent_spawning", "OnOff"
+	SafeCommand "Reset persistence options", "resetcvar majestic_persistent_spawning; majesticmag_persistent_spawning"
+ 	StaticText ""
+   	StaticText ""
+
+	StaticText "Reset Options", "cyan"
+	SafeCommand "Reset all options", "majestic_reset_cvars"
+}
+
 
 // Shotguns
 
@@ -173,6 +206,8 @@ OptionMenu "AceCorpsMenu" {
 	Title "$AceCorpsMenu"
 
 	StaticText "--- Pistols ---", "yellow"
+	StaticText ""
+    Submenu "'Majestic' .500 S&W Railgun", "majesticSpawning", 0, 1
 	StaticText ""
 
 	StaticText "--- Shotguns ---", "red"
