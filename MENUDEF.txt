@@ -120,6 +120,31 @@ OptionMenu "gungnirSpawning" {
 	SafeCommand "Reset all options", "gungnir_reset_cvars"
 }
 
+OptionMenu "hammerheadSpawning" {
+    Title "------ CIR-37 'Hammerhead' Plasma Minigun Options ------"
+   	StaticText "Notice:", "cyan"
+    StaticText  "Setting 'spawn rate' to Replace All will suppress", "white"
+    StaticText  "spawns of that given type.", "white"
+    StaticText ""
+
+	StaticText "Spawn Options", "cyan"
+    StaticText  "Control the spawn rate of the Hammerhead on:", "white"
+	Option "Vulcanettes: ", "hammerhead_chaingun_spawn_bias", "SpawnBias"
+	SafeCommand "Reset Hammerhead options", "resetcvar hammerhead_chaingun_spawn_bias"
+	Option "Thunderbusters: ", "hammerhead_thunderbuster_spawn_bias", "SpawnBias"
+	SafeCommand "Reset Hammerhead options", "resetcvar hammerhead_thunderbuster_spawn_bias"
+ 	StaticText ""
+
+    StaticText  "Control whether replacements happen after a mapload.", "white"
+	Option "Persistent Spawns: ", "hammerhead_persistent_spawning", "OnOff"
+	SafeCommand "Reset persistence options", "resetcvar hammerhead_persistent_spawning"
+ 	StaticText ""
+   	StaticText ""
+
+	StaticText "Reset Options", "cyan"
+	SafeCommand "Reset all options", "hammerhead_reset_cvars"
+}
+
 
 OptionMenu "AceCorpsMenu" {
 	Title "$AceCorpsMenu"
@@ -146,6 +171,8 @@ OptionMenu "AceCorpsMenu" {
     StaticText "--- Energy Weapons ---", "cyan"
 	StaticText ""
     Submenu "'Gungnir' Frag Beam Rifle", "gungnirSpawning", 0, 1
+	StaticText ""
+    Submenu "CIR-37 'Hammerhead' Plasma Minigun", "hammerheadSpawning", 0, 1
 	StaticText ""
 	
 	StaticText "--- Reset Options ---", "red"
