@@ -1,0 +1,14 @@
+Redline/Fire RDLNFIRE
+
+Redline/Impact RDLNHIT
+$limit Redline/Impact 0
+
+Redline/Unlock RDBOLTBK
+Redline/Eject RDEJECT
+Redline/CellOut RDCLLOUT
+Redline/CellIn RDCLLIN
+Redline/Charge RDBOLTCH
+$pitchset Redline/Charge 0.7
+
+Redline/Overload RDOVERLD
+Redline/LockOn RDLLOCK

@@ -57,3 +57,13 @@ This mod aims to maintain and improve Accensus' Arsenal, by updating them to the
 #### Mechanics
 - The weapon requires both a battery and a drum to fire a charged shot. Otherwise only a drum is required.
 - Holding primary fire charges a shot. The higher the charge, the higher the projectile's velocity and explosion damage. Charging is not necessary and the gun can be quickfired in a pinch.
+
+### RDL-N3 'Redline' Thermal Lance
+---
+- The loadout code is `rdl`.
+- Configuration codes are:
+	- `lockon`: Lock-on capabilities.
+#### Mechanics
+- Firing the weapon generates heat. Firing while overheated does 1.5 damage but takes 2 battery charges per shot. If you deplete the battery on an odd charge (basically 1) with an overheated shot, it will overload the battery and it will explode. It's harmless, but you will lose the battery.
+- Holding fire turns on lock-on mode after a few milliseconds (if available). Hovering over an enemy within 50m will mark them. Letting go of the trigger will automatically fire in their direction. The number of enemies you can lock onto depends on the number of charges. There is an angle limit and you cannot do 360 noscopes with this.
+- The autoaiming feature isn't too smart. Sometimes it will fail to fire at enemies that are behind a low wall. Use freefire against those.
