@@ -349,6 +349,7 @@ OptionMenu "AceCorpsMenu" {
 	
 	StaticText "--- Reset Options ---", "red"
 	StaticText ""
+	SafeCommand "Reset all options for Ace Corps Extended", "AceCorps_Reset_Cvars"
 }
 
 AddOptionMenu "OptionsMenu" {
