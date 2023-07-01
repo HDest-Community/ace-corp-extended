@@ -50,7 +50,7 @@ OptionMenu "majesticSpawning" {
 }
 
 OptionMenu "viperSpawning" {
-    Title "------ 'Viper' .50 AE Handgun Options ------"
+    Title "------ 'Viper' .50 AM Handgun Options ------"
    	StaticText "Notice:", "cyan"
     StaticText  "Setting 'spawn rate' to Replace All will suppress", "white"
     StaticText  "spawns of that given type.", "white"
@@ -313,7 +313,7 @@ OptionMenu "AceCorpsMenu" {
 	StaticText ""
     Submenu "'Majestic' .500 S&W Railgun", "majesticSpawning", 0, 1
 	StaticText ""
-    Submenu "'Viper' .50 AE Handgun", "viperSpawning", 0, 1
+    Submenu "'Viper' .50 AM Handgun", "viperSpawning", 0, 1
 	StaticText ""
 
 	StaticText "--- Shotguns ---", "red"
