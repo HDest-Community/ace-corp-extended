@@ -95,7 +95,8 @@ Code:
 - Accensus
 
 Sprites:
-- [Joshua McCarthy](https://www.artstation.com/artwork/X2Dyn), sprited by Mor'ladim.
+- Weapon Sprites: Mor'ladim
+  - Original Model: [Joshua McCarthy](https://www.artstation.com/artwork/X2Dyn)
 - Bolts: Mor'ladim
 - Bolt Bundles: Pillowblaster
 
@@ -122,13 +123,13 @@ Code:
 - Accensus
 
 Sprites:
-- [Tim Kaminski](https://www.artstation.com/artwork/l5BXo)
-- Pickup sprite and reshade: Mor'ladim.
+- Pickup sprite: Mor'ladim
+  - Original Model: [Tim Kaminski](https://www.artstation.com/artwork/l5BXo)
 
 Sounds:
 - [Ribbon](https://gamebanana.com/sounds/31093)
-- Charging is from Bullet-Eye.
-- Locking is from Russian Overkill
+- Charging Sounds: Bullet-Eye
+- Locking Sounds: Russian Overkill
 
 Name Idea:
 - Yholl
