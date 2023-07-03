@@ -363,6 +363,8 @@ OptionMenu "AceCorpsMenu" {
 
 	StaticText "--- Shotguns ---", "red"
     StaticText ""
+	StaticText "TODO: Get some Shotguns", "DarkGray"
+	StaticText ""
 
 	StaticText "--- Machine Guns ---", "green"
 	StaticText ""
@@ -372,6 +374,8 @@ OptionMenu "AceCorpsMenu" {
 	StaticText ""
 
 	StaticText "--- Explosives ---", "Brown"
+	StaticText ""
+	StaticText "TODO: Get some Explosives", "DarkGray"
 	StaticText ""
 
 	StaticText "--- Rifles ---", "orange"
@@ -394,7 +398,7 @@ OptionMenu "AceCorpsMenu" {
 	
 	StaticText "--- Reset Options ---", "red"
 	StaticText ""
-	SafeCommand "Reset all options for Ace Corps Extended", "AceCorps_Reset_Cvars"
+	SafeCommand "Reset all options for AceCorps: Engineering Dept.", "AceCorps_Reset_Cvars"
 }
 
 AddOptionMenu "OptionsMenu" {

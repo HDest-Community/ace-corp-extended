@@ -1,4 +1,4 @@
-# Ace Corps, Extended
+# AceCorp: Engineering Dept.
 
 _Requires [BulletLib - Recasted](https://github.com/HDest-Community/HDBulletLib-Recasted) and [AceCoreLib](https://github.com/HDest-Community/AceCoreLib), by the HDest Community._
 
@@ -37,6 +37,7 @@ This mod aims to maintain and improve Accensus' Arsenal, by updating them to the
 	- `proc`: Processor - makes battery consumption more efficient.
 
 ### Hammerhead
+---
 - The loadout code is `hhd`.
 - There are 3 firing modes: 1 battery, 2 batteries, and full barrage. Lowest setting is for low-heat sustained fire. Highest setting is for maximizing damage at the expense of much faster heat build-up and battery drain rate.
 - Batteries are cycled after each shot to deplete them evenly.
