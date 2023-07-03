@@ -18,12 +18,12 @@ OptionValue "SpawnBias" {
 
 OptionMenu "majesticSpawning" {
     Title "------ 'Majestic' .500 S&W Railgun Options ------"
-   	StaticText "Notice:", "cyan"
+   	StaticText "Notice:", "yellow"
     StaticText  "Setting 'spawn rate' to Replace All will suppress", "white"
     StaticText  "spawns of that given type.", "white"
     StaticText ""
 
-	StaticText "Spawn Options", "cyan"
+	StaticText "Spawn Options", "yellow"
     StaticText  "Control the spawn rate of the Majestic on:", "white"
 	Option "Pistols: ", "majestic_pistol_spawn_bias", "SpawnBias"
 	SafeCommand "Reset Pistol option", "resetcvar majestic_pistol_spawn_bias"
@@ -37,6 +37,11 @@ OptionMenu "majesticSpawning" {
 	Option "Clip Magazines: ", "majesticmag_clipmag_spawn_bias", "SpawnBias"
 	SafeCommand "Reset Clip Magazine option", "resetcvar majesticmag_clipmag_spawn_bias"
     StaticText ""
+	
+	StaticText "Enable/Disable the Majestic from spawning in Backpacks.", "yellow"
+	Option "Majestic:", "majestic_allowBackpacks", "OnOff"
+	Option "Majestic Magazines:", "majesticmag_allowBackpacks", "OnOff"
+ 	StaticText ""
 
     StaticText  "Control whether replacements happen after a mapload.", "white"
 	Option "Persistent Spawns (Gun): ", "majestic_persistent_spawning", "OnOff"
@@ -45,18 +50,18 @@ OptionMenu "majesticSpawning" {
  	StaticText ""
    	StaticText ""
 
-	StaticText "Reset Options", "cyan"
+	StaticText "Reset Options", "yellow"
 	SafeCommand "Reset all options", "majestic_reset_cvars"
 }
 
 OptionMenu "viperSpawning" {
     Title "------ 'Viper' .50 AM Handgun Options ------"
-   	StaticText "Notice:", "cyan"
+   	StaticText "Notice:", "yellow"
     StaticText  "Setting 'spawn rate' to Replace All will suppress", "white"
     StaticText  "spawns of that given type.", "white"
     StaticText ""
 
-	StaticText "Spawn Options", "cyan"
+	StaticText "Spawn Options", "yellow"
     StaticText  "Control the spawn rate of the Viper on:", "white"
 	Option "Pistols: ", "viper_pistol_spawn_bias", "SpawnBias"
 	SafeCommand "Reset Pistol option", "resetcvar viper_pistol_spawn_bias"
@@ -70,6 +75,11 @@ OptionMenu "viperSpawning" {
 	Option "Clip Magazines: ", "vipermag_clipmag_spawn_bias", "SpawnBias"
 	SafeCommand "Reset Clip Magazine option", "resetcvar vipermag_clipmag_spawn_bias"
     StaticText ""
+	
+	StaticText "Enable/Disable the Viper from spawning in Backpacks.", "yellow"
+	Option "Viper:", "viper_allowBackpacks", "OnOff"
+	Option "Viper Magazines:", "vipermag_allowBackpacks", "OnOff"
+ 	StaticText ""
 
     StaticText  "Control whether replacements happen after a mapload.", "white"
 	Option "Persistent Spawns (Gun): ", "viper_persistent_spawning", "OnOff"
@@ -78,7 +88,7 @@ OptionMenu "viperSpawning" {
  	StaticText ""
    	StaticText ""
 
-	StaticText "Reset Options", "cyan"
+	StaticText "Reset Options", "yellow"
 	SafeCommand "Reset all options", "viper_reset_cvars"
 }
 
@@ -112,6 +122,12 @@ OptionMenu "blackjackSpawning" {
 	Option "Shell Mag Spawn Rate: ", "blackjackshellmag_shell_spawn_bias", "SpawnBias"
 	SafeCommand "Reset Shell Mag options", "resetcvar blackjackshellmag_shell_spawn_bias"
     StaticText ""
+	
+	StaticText "Enable/Disable the Blackjack from spawning in Backpacks.", "green"
+	Option "Blackjack:", "blackjack_allowBackpacks", "OnOff"
+	Option "Blackjack .355 Magazines:", "blackjack355mag_allowBackpacks", "OnOff"
+	Option "Blackjack Shell Magazines:", "blackjackshellmag_allowBackpacks", "OnOff"
+ 	StaticText ""
 
     StaticText  "Control whether replacements happen after a mapload.", "white"
 	Option "Persistent Spawns (Blackjack): ", "blackjack_persistent_spawning", "OnOff"
@@ -137,6 +153,10 @@ OptionMenu "jackdawSpawning" {
 	Option "Jackdaw Spawn Rate: ", "jackdaw_vulcanette_spawn_bias", "SpawnBias"
 	SafeCommand "Reset Jackdaw options", "resetcvar jackdaw_vulcanette_spawn_bias"
     StaticText ""
+	
+	StaticText "Enable/Disable the Jackdaw from spawning in Backpacks.", "green"
+	Option "Jackdaw:", "jackdaw_allowBackpacks", "OnOff"
+ 	StaticText ""
 
     StaticText  "Control whether replacements happen after a mapload.", "white"
 	Option "Persistent Spawns: ", "jackdaw_persistent_spawning", "OnOff"
@@ -172,6 +192,11 @@ OptionMenu "blackhawkSpawning" {
 	Option "Bolt Bundle Spawn Rate: ", "blackhawkBolts_rocket_spawn_bias", "SpawnBias"
 	SafeCommand "Reset Bolt Bundle options", "resetcvar blackhawkBolts_rocket_spawn_bias"
     StaticText ""
+	
+	StaticText "Enable/Disable the Blackhawk from spawning in Backpacks.", "orange"
+	Option "Blackhawk:", "blackhawk_allowBackpacks", "OnOff"
+	Option "Blackhawk Bolts:", "blackhawkBolts_allowBackpacks", "OnOff"
+ 	StaticText ""
 
     StaticText  "Control whether replacements happen after a mapload.", "white"
 	Option "Persistent Spawns (Crossbow): ", "blackhawk_persistent_spawning", "OnOff"
@@ -196,6 +221,10 @@ OptionMenu "scorpionSpawning" {
 	Option "Scorpion Spawn Rate: ", "scorpion_bronto_spawn_bias", "SpawnBias"
 	SafeCommand "Reset Scorpion options", "resetcvar scorpion_bronto_spawn_bias"
     StaticText ""
+	
+	StaticText "Enable/Disable the Scorpion from spawning in Backpacks.", "orange"
+	Option "Scorpion:", "scorpion_allowBackpacks", "OnOff"
+ 	StaticText ""
 
     StaticText  "Control whether replacements happen after a mapload.", "white"
 	Option "Persistent Spawns: ", "scorpion_persistent_spawning", "OnOff"
@@ -221,6 +250,10 @@ OptionMenu "wyvernSpawning" {
 	Option "Slayer shotguns: ", "wyvern_slayer_spawn_bias", "SpawnBias"
 	SafeCommand "Reset Wyvern options", "resetcvar wyvern_slayer_spawn_bias"
     StaticText ""
+	
+	StaticText "Enable/Disable the Wyvern from spawning in Backpacks.", "orange"
+	Option "Wyvern:", "wyvern_allowBackpacks", "OnOff"
+ 	StaticText ""
 
     StaticText  "Control whether replacements happen after a mapload.", "white"
 	Option "Persistent Spawns: ", "wyvern_persistent_spawning", "OnOff"
@@ -245,6 +278,10 @@ OptionMenu "gungnirSpawning" {
     StaticText  "Control the spawn rate of the Gungnir on BFG-9000s:", "white"
 	Option "Gungnir Spawn Rate: ", "gungnir_bfg_spawn_bias", "SpawnBias"
 	SafeCommand "Reset Gungnir options", "resetcvar gungnir_bfg_spawn_bias"
+ 	StaticText ""
+	
+	StaticText "Enable/Disable the Gungnir from spawning in Backpacks.", "cyan"
+	Option "Gungnir:", "gungnir_allowBackpacks", "OnOff"
  	StaticText ""
 
     StaticText  "Control whether replacements happen after a mapload.", "white"
@@ -271,6 +308,10 @@ OptionMenu "hammerheadSpawning" {
 	Option "Thunderbusters: ", "hammerhead_thunderbuster_spawn_bias", "SpawnBias"
 	SafeCommand "Reset Hammerhead options", "resetcvar hammerhead_thunderbuster_spawn_bias"
  	StaticText ""
+	
+	StaticText "Enable/Disable the Hammerhead from spawning in Backpacks.", "cyan"
+	Option "Hammerhead:", "hammerhead_allowBackpacks", "OnOff"
+ 	StaticText ""
 
     StaticText  "Control whether replacements happen after a mapload.", "white"
 	Option "Persistent Spawns: ", "hammerhead_persistent_spawning", "OnOff"
@@ -293,6 +334,10 @@ OptionMenu "redlineSpawning" {
     StaticText  "Control the spawn rate of the Redline on Thunderbusters:", "white"
 	Option "Redline Spawn Rate: ", "redline_thunderbuster_spawn_bias", "SpawnBias"
 	SafeCommand "Reset Redline options", "resetcvar redline_thunderbuster_spawn_bias"
+ 	StaticText ""
+	
+	StaticText "Enable/Disable the Redline from spawning in Backpacks.", "cyan"
+	Option "Redline:", "redline_allowBackpacks", "OnOff"
  	StaticText ""
 
     StaticText  "Control whether replacements happen after a mapload.", "white"
