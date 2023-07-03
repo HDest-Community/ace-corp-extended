@@ -84,3 +84,148 @@ This mod aims to maintain and improve Accensus' Arsenal, by updating them to the
 - The loadout code is `wyv`.
 - Configuration codes are:
 	- `auto`: Autoloader. Makes reloading from side saddles a bit faster.
+
+## Credits
+---
+
+### Blackhawk
+---
+Code:
+- Accensus
+
+Sprites:
+- [Joshua McCarthy](https://www.artstation.com/artwork/X2Dyn), sprited by Mor'ladim.
+- Bolts: Mor'ladim
+- Bolt Bundles: Pillowblaster
+
+Sounds:
+- Firing and String Pull Sounds: [Navaro](https://gamebanana.com/sounds/21075)
+
+### Blackjack
+---
+Code:
+- Accensus
+
+Sprites:
+- Weapon model for pickup sprite: Accensus
+- Actual pickup sprite: Mor'ladim.
+- First person sprites: Icarus, Sonik.o.fan
+
+Sounds:
+- Mag In/Mag Out/Bolt Pull: https://gamebanana.com/sounds/download/32256
+- Firing Sound: https://gamebanana.com/sounds/download/4857
+
+### Gungnir
+---
+Code:
+- Accensus
+
+Sprites:
+- [Tim Kaminski](https://www.artstation.com/artwork/l5BXo)
+- Pickup sprite and reshade: Mor'ladim.
+
+Sounds:
+- [Ribbon](https://gamebanana.com/sounds/31093)
+- Charging is from Bullet-Eye.
+- Locking is from Russian Overkill
+
+Name Idea:
+- Yholl
+
+Scope fixes:
+- TooFewSecrets(TooFewSecrets#4217)
+
+### Hammerhead
+---
+Code:
+- Accensus
+
+Sprites:
+- First Person Sprites: Icarus, frankensprited from various sources
+- Pickup Sprite: Pillowblaster
+
+### Jackdaw
+---
+Code:
+- Accensus
+
+Sprites:
+- Weapon Sprite: Sonik.O
+- Original Model: [Samuel & Joshua McCarthy](https://www.artstation.com/artwork/GRwO4)
+- Pickup sprite: Mor'ladim
+
+Sounds:
+- Fire Sound: LakeDown
+
+- Reloading Sounds: [MSKyuuni](https://gamebanana.com/sounds/21690)
+
+### Majestic
+---
+Code:
+- Accensus
+
+Sounds:
+- Firing Sound: Bullet-Eye's Assassin Vulcan weapon.
+- Charging Sounds: Bullet-Eye's Triple Wyvern.
+- Magmacow
+  - [Hammer](https://gamebanana.com/sounds/54036)
+  - [Battery Reload](https://gamebanana.com/sounds/35140)
+- Navaro
+  - [Everything Else](https://gamebanana.com/sounds/19952)
+
+Sprites:
+- Mor'ladim
+  - Original Model: [Ibrahim Aysan](https://www.artstation.com/artwork/3orQlD)0
+
+### Redline
+---
+Code:
+- Accensus
+
+Sprites:
+- Pillowblaster
+  - Original Model: [CaptainToggle](https://sketchfab.com/3d-models/nemesis-sniper-rifle-c68434f1190f48e1902be623971b4031)
+
+Sounds:
+- Fallout (Interplay/Bethesda)
+  - Fire/Bolt Sounds: [Magmacow](https://gamebanana.com/sounds/33348)
+  - Reloading Sounds: [Navaro](https://gamebanana.com/sounds/35140)
+
+Feedback:
+- Massive thanks to Eric and Daerik for their feedback on the bolt-action iterations.
+
+### Scorpion
+---
+Code:
+- Accensus
+
+Sprites:
+- Accensus
+
+Sounds:
+- Fire, Bolt Sounds: [KillerExe_01, NightmareMutant](https://gamebanana.com/sounds/18650)
+
+### Viper
+---
+Code:
+- Accensus
+
+Sprites:
+- Mor'ladim, iamcarrotmaster, DoomNukem, iamcarrotmaster
+  - Taken from Project Brutality
+
+Sounds:
+- Firing sound by [RUS[PROTOTYPE]](https://gamebanana.com/sounds/18109), edited by a1337spy
+- Rest of the sounds by various sources, compiled by [Magmacow](https://gamebanana.com/sounds/31009)
+
+### Wyvern
+---
+Code:
+- Accensus
+
+Sprites:
+- PillowBlaster, DoomNukem
+
+Sounds:
+- Firing Sound: Guncaster Team, most likely Marisa Kirisame
+- Reload-related sounds are by magmacow.
