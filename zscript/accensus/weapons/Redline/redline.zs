@@ -434,20 +434,14 @@ class RedlineRandom : IdleDummy
 		Spawn:
 			TNT1 A 0 NoDelay
 			{
-				A_SpawnItemEx("HDBattery", -3, flags: SXF_NOCHECKPOSITION);
 				let wpn = HDRedline(Spawn("HDRedline", pos, ALLOW_REPLACE));
-				if (!wpn)
-				{
-					return;
-				}
+				if (!wpn) return;
 
 				HDF.TransferSpecials(self, wpn);
-				if (!random(0, 3))
-				{
-					wpn.WeaponStatus[wpn.RDProp_Flags] |= wpn.RDF_LockOn;
-				}
-
+				if (!random(0, 3)) wpn.WeaponStatus[wpn.RDProp_Flags] |= wpn.RDF_LockOn;
 				wpn.InitializeWepStats(false);
+
+				A_SpawnItemEx("HDBattery", -3, flags: SXF_NOCHECKPOSITION);
 			}
 			Stop;
 	}

@@ -1,58 +1,3 @@
-class MajesticHandler : EventHandler
-{
-	override void CheckReplacement(ReplaceEvent e)
-	{
-		if (!e.Replacement)
-		{
-			return;
-		}
-
-		switch (e.Replacement.GetClassName())
-		{
-			case 'ShotgunReplaces':
-				if (random[majrand]() < AceCore.GetScaledChance(-6, 12, acl_spawnscale_min, acl_spawnscale_max))
-				{
-					e.Replacement = "MajesticRandom";
-				}
-				break;
-			case 'HDPistol':
-				if (random[majrand]() < AceCore.GetScaledChance(16, 64, acl_spawnscale_min, acl_spawnscale_max))
-				{
-					e.Replacement = "MajesticRandom";
-				}
-				break;
-			case 'ShellBoxRandom':
-				if (random[majrand]() < 10)
-				{
-					e.Replacement = "HD500SWLightBoxPickup";
-				}
-				break;
-			case 'ClipMagPickup':
-				if (random[majrand]() < AceCore.GetScaledChance(0, 24, acl_spawnscale_min, acl_spawnscale_max))
-				{
-					e.Replacement = "HDMajesticMag";
-				}
-				break;
-		}
-	}
-
-	override void WorldThingSpawned(WorldEvent e)
-	{
-		let MajesticAmmo = HDAmmo(e.Thing);
-		if (!MajesticAmmo)
-		{
-			return;
-		}
-
-		switch (MajesticAmmo.GetClassName())
-		{
-			case 'HD500SWLightAmmo': MajesticAmmo.ItemsThatUseThis.Push("HDMajestic"); break;
-			case 'HDMajesticMag': MajesticAmmo.ItemsThatUseThis.Push("HDMajestic"); break;
-			case 'HDBattery': MajesticAmmo.ItemsThatUseThis.Push("HDMajestic"); break;
-		}
-	}
-}
-
 class HDMajestic : HDHandgun
 {
 	enum MajesticFlags
@@ -589,19 +534,14 @@ class MajesticRandom : IdleDummy
 		Spawn:
 			TNT1 A 0 NoDelay
 			{
-				A_SpawnItemEx("HDMajesticMag", -1, flags: SXF_NOCHECKPOSITION);
 				let wpn = HDMajestic(Spawn("HDMajestic", pos, ALLOW_REPLACE));
-				if (!wpn)
-				{
-					return;
-				}
-				if (!random(0, 4))
-				{
-					wpn.WeaponStatus[wpn.MJProp_Flags] |= wpn.MJF_Accelerator;
-				}
+				if (!wpn) return;
 
 				HDF.TransferSpecials(self, wpn);
+				if (!random(0, 4)) wpn.WeaponStatus[wpn.MJProp_Flags] |= wpn.MJF_Accelerator;
 				wpn.InitializeWepStats(false);
+
+				A_SpawnItemEx("HDMajesticMag", -1, flags: SXF_NOCHECKPOSITION);
 			}
 			Stop;
 	}

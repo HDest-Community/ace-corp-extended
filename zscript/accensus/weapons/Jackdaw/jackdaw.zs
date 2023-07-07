@@ -1,33 +1,3 @@
-class JackdawHandler : EventHandler
-{
-	override void CheckReplacement(ReplaceEvent e)
-	{
-		if (!e.Replacement)
-		{
-			return;
-		}
-
-		switch (e.Replacement.GetClassName())
-		{
-			case 'ChaingunReplaces':
-				if (random[jackrand]() <= 64)
-				{
-					e.Replacement = "JackdawRandom";
-				}
-				break;
-		}
-	}
-
-	override void WorldThingSpawned(WorldEvent e)
-	{
-		let JackdawAmmo = HDPistolAmmo(e.Thing);
-		if (JackdawAmmo && JackdawAmmo.GetClassName() == 'HDPistolAmmo')
-		{
-			JackdawAmmo.ItemsThatUseThis.Push("HDJackdaw");
-		}
-	}
-}
-
 class HDJackdaw : HDWeapon
 {
 	enum JackdawFlags
@@ -243,16 +213,10 @@ class JackdawRandom : IdleDummy
 			TNT1 A 0 NoDelay
 			{
 				let wpn = HDJackdaw(Spawn("HDJackdaw", pos, ALLOW_REPLACE));
-				if (!wpn)
-				{
-					return;
-				}
+				if (!wpn) return;
 
 				HDF.TransferSpecials(self, wpn);
-				if (!random(0, 3))
-				{
-					wpn.WeaponStatus[wpn.JDProp_Flags] |= wpn.JDF_RapidFire;
-				}
+				if (!random(0, 3)) wpn.WeaponStatus[wpn.JDProp_Flags] |= wpn.JDF_RapidFire;
 				wpn.InitializeWepStats(false);
 			}
 			Stop;
