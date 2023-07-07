@@ -174,8 +174,9 @@ class HDMajestic : HDHandgun
 
 	override string PickupMessage()
 	{
-		string accStr = WeaponStatus[MJProp_Flags] & MJF_Accelerator ? "accelerated " : "";
-		return String.Format("You got the %s'Majestic' magnum railgun.", accStr);
+		string accStr = WeaponStatus[MJProp_Flags] & MJF_Accelerator ? Stringtable.localize("$PICKUP_MAJESTIC_ACCELERATOR") : "";
+	
+		return Stringtable.localize("$PICKUP_MAJESTIC_PREFIX")..accStr..Stringtable.localize("$TAG_MAJESTIC")..Stringtable.localize("$PICKUP_MAJESTIC_SUFFIX");
 	}
 
 	override void DrawHUDStuff(HDStatusBar sb, HDWeapon hdw, HDPlayerPawn hpl)
@@ -293,8 +294,8 @@ class HDMajestic : HDHandgun
 		Weapon.SlotPriority 3;
 		HDWeapon.BarrelSize 13, 0.35, 0.5;
 		Scale 0.2;
-		Tag "'Majestic' magnum railgun";
-		HDWeapon.Refid "maj";
+		Tag "$TAG_MAJESTIC";
+		HDWeapon.Refid HDLD_MAJESTIC;
 	}
 
 	States
@@ -608,6 +609,11 @@ class MajesticRandom : IdleDummy
 
 class HDMajesticMag : HDMagAmmo
 {
+	override string PickupMessage()
+	{
+		return Stringtable.localize("$PICKUP_MAJESTICMAG_PREFIX")..Stringtable.localize("$TAG_MAJESTICMAG")..Stringtable.localize("$PICKUP_MAJESTICMAG_SUFFIX");
+	}
+
 	override string, string, name, double GetMagSprite(int thismagamt)
 	{
 		return String.Format("MJMG%c0", 67 + thismagamt), "SWRNA0", "HD500SWLightAmmo", 0.5;
@@ -631,9 +637,8 @@ class HDMajesticMag : HDMagAmmo
 		HDMagAmmo.RoundType "HD500SWLightAmmo";
 		HDMagAmmo.RoundBulk ENC_50SW_LOADED;
 		HDMagAmmo.MagBulk EncMagEmpty;
-		Tag "'Majestic' cylinder";
-		Inventory.PickupMessage "Picked up a Majestic cylinder.";
-		HDPickup.RefId "mjm";
+		Tag "$TAG_MAJESTIC";
+		HDPickup.RefId HDLD_MAJESTICMAG;
 		Scale 0.25;
 	}
 

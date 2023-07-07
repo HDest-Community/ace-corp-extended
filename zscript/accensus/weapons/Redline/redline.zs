@@ -89,8 +89,9 @@ class HDRedline : HDCellWeapon
 
 	override string PickupMessage()
 	{
-		string lockStr = WeaponStatus[RDProp_Flags] & RDF_LockOn ? "lock-on " : "";
-		return String.Format("You got the %sRDL-N3 'Redline' thermal lance.", lockStr);
+		string lockStr = WeaponStatus[RDProp_Flags] & RDF_LockOn ? Stringtable.localize("$PICKUP_REDLINE_LOCKON") : "";
+
+		return Stringtable.localize("$PICKUP_REDLINE_PREFIX")..lockStr..Stringtable.localize("$TAG_REDLINE")..Stringtable.localize("$PICKUP_REDLINE_SUFFIX");
 	}
 
 	override void DrawHUDStuff(HDStatusBar sb, HDWeapon hdw, HDPlayerPawn hpl)
@@ -208,8 +209,8 @@ class HDRedline : HDCellWeapon
 		Weapon.SlotPriority 1.5;
 		HDWeapon.BarrelSize 35, 1.5, 3;
 		Scale 0.34;
-		Tag "RDL-N3 'Redline' Thermal Lance";
-		HDWeapon.Refid "rdl";
+		Tag "$TAG_REDLINE";
+		HDWeapon.Refid HDLD_REDLINE;
 	}
 
 	States

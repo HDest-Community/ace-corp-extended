@@ -226,7 +226,8 @@ class HDBlackhawk : HDWeapon
 	override string PickupMessage()
 	{
 		string autoStr = WeaponStatus[BHProp_Flags] & BHF_SemiAuto ? "semi-auto " : "";
-		return String.Format("You got the %s'Blackhawk' high-tech crossbow.", autoStr);
+
+		return Stringtable.localize("$PICKUP_BLACKHAWK_PREFIX")..autoStr..Stringtable.localize("$TAG_BLACKHAWK")..Stringtable.localize("$PICKUP_BLACKHAWK_SUFFIX");
 	}
 
 	override void DrawHUDStuff(HDStatusBar sb, HDWeapon hdw, HDPlayerPawn hpl)
@@ -278,8 +279,8 @@ class HDBlackhawk : HDWeapon
 		Weapon.SlotPriority 0.5;
 		HDWeapon.BarrelSize 10, 10, 2;
 		Scale 0.25;
-		Tag "Blackhawk";
-		HDWeapon.Refid "bhk";
+		Tag "$TAG_BLACKHAWK";
+		HDWeapon.Refid HDLD_BLACKHAWK;
 	}
 
 	States

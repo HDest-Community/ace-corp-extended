@@ -2,11 +2,15 @@ class HDBlackhawkBoltIncendiary : HDBlackhawkBolt
 {
 	Default
 	{
-		Tag "Incendiary bolt";
-		Inventory.PickupMessage "Picked up an incendiary bolt.";
+		Tag "$TAG_BLACKHAWKBOLT_I";
 		Inventory.Icon "BHBIB0";
 		HDPickup.Bulk 5.0;
-		HDPickup.RefId "bbi";
+		HDPickup.RefId HDLD_BLACKHAWKBOLT_I;
+	}
+
+	override string PickupMessage()
+	{
+		return Stringtable.localize("$PICKUP_BLACKHAWKBOLT_I_PREFIX")..Stringtable.localize("$TAG_BLACKHAWKBOLT_I")..Stringtable.localize("$PICKUP_BLACKHAWKBOLT_I_SUFFIX");
 	}
 
 	States
@@ -68,7 +72,7 @@ class HDBlackhawkProjectileIncendiary : HDBlackhawkProjectile
 	{
 		Mass 100;
 		Speed HDCONST_MPSTODUPT * 150;
-		Obituary "%o felt a little cold so %k warmed %h up.";
+		Obituary "$OB_BLACKHAWKBOLT_I";
 		+BRIGHT
 	}
 

@@ -281,10 +281,11 @@ class HDGungnir : HDCellWeapon
 
 	override string PickupMessage()
 	{
-		string AccStr = WeaponStatus[GNProp_Flags] & GNF_Accelerator ? "accelerated " : "";
-		string CapStr = WeaponStatus[GNProp_Flags] & GNF_Capacitor ? "high-capacity " : "";
-		string ProcStr = WeaponStatus[GNProp_Flags] & GNF_Processor ? " with high-efficiency processor" : "";
-		return String.Format("You got the %s%s'Gungnir' frag beam rifle%s.", AccStr, CapStr, ProcStr);
+		string AccStr = WeaponStatus[GNProp_Flags] & GNF_Accelerator ? Stringtable.localize("$PICKUP_GUNGNIR_ACCELERATOR") : "";
+		string CapStr = WeaponStatus[GNProp_Flags] & GNF_Capacitor ? Stringtable.localize("$PICKUP_GUNGNIR_CAPACITOR") : "";
+		string ProcStr = WeaponStatus[GNProp_Flags] & GNF_Processor ? Stringtable.localize("$PICKUP_GUNGNIR_PROCESSOR") : "";
+		
+		return Stringtable.localize("$PICKUP_GUNGNIR_PREFIX")..AccStr..CapStr..Stringtable.localize("$TAG_GUNGNIR")..ProcStr..Stringtable.localize("$PICKUP_GUNGNIR_SUFFIX");
 	}
 
 	protected clearscope int GetMaxCharge()
@@ -462,8 +463,8 @@ class HDGungnir : HDCellWeapon
 		Weapon.SlotPriority 1.5;
 		HDWeapon.BarrelSize 35, 1.6, 3;
 		Scale 0.5;
-		Tag "Gungnir";
-		HDWeapon.Refid "gnr";
+		Tag "$TAG_GUNGNIR";
+		HDWeapon.Refid HDLD_GUNGNIR;
 	}
 
 	States

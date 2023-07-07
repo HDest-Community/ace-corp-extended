@@ -13,8 +13,8 @@ class HDWyvern : HDWeapon {
 		Scale 0.55;
 		weapon.BobRangeX 0.18;
 		weapon.BobRangeY 0.7;
-		tag "Wyvern";
-		HDWeapon.Refid "wyv";
+		tag "$TAG_WYVERN";
+		HDWeapon.Refid HDLD_WYVERN;
 	}
 
 	override string, double GetPickupSprite() {
@@ -145,9 +145,11 @@ class HDWyvern : HDWeapon {
 		}
 	}
 
-	override string PickupMessage() {
-		string autoStr = weaponStatus[WYVS_FLAGS] & WYVF_AUTOLOADER ? "autoloading " : "";
-		return String.Format("You picked up the %s'Wyvern' .50 cal. double barreled rifle.", autoStr);
+	override string PickupMessage()
+	{
+		string autoStr = weaponStatus[WYVS_FLAGS] & WYVF_AUTOLOADER ? Stringtable.localize("$PICKUP_WYVERN_AUTOLOADER") : "";
+
+		return Stringtable.localize("$PICKUP_WYVERN_PREFIX")..autoStr..Stringtable.localize("$TAG_WYVERN")..Stringtable.localize("$PICKUP_WYVERN_SUFFIX");
 	}
 
 	protected action void A_WyvernFire(int barrel) {

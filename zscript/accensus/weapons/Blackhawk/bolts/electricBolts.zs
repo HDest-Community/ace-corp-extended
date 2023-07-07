@@ -2,11 +2,15 @@ class HDBlackhawkBoltElectric : HDBlackhawkBolt
 {
 	Default
 	{
-		Tag "Electric bolt";
-		Inventory.PickupMessage "Picked up an electric bolt.";
+		Tag "$TAG_BLACKHAWKBOLT_E";
 		Inventory.Icon "BHBIC0";
 		HDPickup.Bulk 3.5;
-		HDPickup.RefId "bbe";
+		HDPickup.RefId HDLD_BLACKHAWKBOLT_E;
+	}
+
+	override string PickupMessage()
+	{
+		return Stringtable.localize("$PICKUP_BLACKHAWKBOLT_E_PREFIX")..Stringtable.localize("$TAG_BLACKHAWKBOLT_E")..Stringtable.localize("$PICKUP_BLACKHAWKBOLT_E_SUFFIX");
 	}
 
 	States
@@ -84,7 +88,7 @@ class HDBlackhawkProjectileElectric : HDBlackhawkProjectile
 	{
 		Mass 60;
 		Speed HDCONST_MPSTODUPT * 150;
-		Obituary "%k helped %o make a shocking discovery - electricity can kill.";
+		Obituary "$OB_BLACKHAWKBOLT_E";
 		+BRIGHT
 	}
 

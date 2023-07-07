@@ -1,4 +1,77 @@
 [enu default]
 
 // Options Menu Titles
-AceCorpsMenu = "\c[Ice]Ⓐ\c- AceCorp: Engineering Dept.";
+ACE_MENU                         = "\c[Ice]Ⓐ\c- AceCorp: Engineering Dept.";
+
+// Item Tags
+TAG_BLACKHAWK                    = "'Blackhawk' high-tech crossbow";
+TAG_BLACKHAWKBOLT                = "Regular Bolt";
+TAG_BLACKHAWKBOLT_E              = "Electric Bolt";
+TAG_BLACKHAWKBOLT_I              = "Incendiary Bolt";
+TAG_BLACKHAWKBOLT_N              = "Nuclear Bolt";
+TAG_BLACKJACK                    = "'Blackjack' .355 rifle";
+TAG_BLACKJACKMAG_355             = "Blackjack .355 Magazine";
+TAG_BLACKJACKMAG_SHELL           = "Blackjack Shell Magazine";
+TAG_GUNGNIR                      = "'Gungnir' Frag Beam Rifle";
+TAG_HAMMERHEAD                   = "CIR-37 'Hammerhead' Plasma Minigun";
+TAG_JACKDAW                      = "'Jackdaw' 9mm SMG";
+TAG_MAJESTIC                     = "'Majestic' .500 S&W Magnum Railgun";
+TAG_MAJESTICMAG                  = "'Majestic' Cylinder";
+TAG_REDLINE                      = "RDL-N3 'Redline' Termal Lance";
+TAG_SCORPION                     = "'Scorpion' 35mm Sniper Cannon";
+TAG_VIPER                        = "'Viper' .50 cal. Handgun";
+TAG_VIPERMAG                     = ".50 AM 'Viper' Magazine";
+TAG_WYVERN                       = "'Wyvern' .50 cal. Double-Barrel Rifle";
+
+// Obituaries
+OB_BLACKHAWKBOLT                 = "%o was assassinated by %k's bolt.";
+OB_BLACKHAWKBOLT_E               = "%k helped %o make a shocking discovery - electricity can kill.";
+OB_BLACKHAWKBOLT_I               = "%o felt a little cold so %k warmed %h up.";
+OB_BLACKHAWKBOLT_N               = "%k split the atom too close in the vicinity of %o.";
+
+// Pickup Messages
+PICKUP_BLACKHAWK_PREFIX          = "You got the ";
+PICKUP_BLACKHAWK_SUFFIX          = ".";
+PICKUP_BLACKHAWKBOLT_PREFIX      = "You got an ";
+PICKUP_BLACKHAWKBOLT_SUFFIX      = ".";
+PICKUP_BLACKHAWKBOLT_E_PREFIX    = "You got an ";
+PICKUP_BLACKHAWKBOLT_E_SUFFIX    = ".";
+PICKUP_BLACKHAWKBOLT_I_PREFIX    = "You got an ";
+PICKUP_BLACKHAWKBOLT_I_SUFFIX    = ".";
+PICKUP_BLACKHAWKBOLT_N_PREFIX    = "You got a ";
+PICKUP_BLACKHAWKBOLT_N_SUFFIX    = ".";
+PICKUP_BLACKJACK_PREFIX          = "You got the ";
+PICKUP_BLACKJACK_SUFFIX          = ".";
+PICKUP_BLACKJACKMAG_355_PREFIX   = "You got a 25-round ";
+PICKUP_BLACKJACKMAG_355_SUFFIX   = ".";
+PICKUP_BLACKJACKMAG_SHELL_PREFIX = "You got a 5-round ";
+PICKUP_BLACKJACKMAG_SHELL_SUFFIX = ".";
+PICKUP_GUNGNIR_PREFIX            = "You got the ";
+PICKUP_GUNGNIR_ACCELERATOR       = "accelerated ";
+PICKUP_GUNGNIR_CAPACITOR         = "High-Capacity ";
+PICKUP_GUNGNIR_PROCESSOR         = " with a High-Efficiency processor";
+PICKUP_GUNGNIR_SUFFIX            = ".";
+PICKUP_HAMMERHEAD_PREFIX         = "You got the ";
+PICKUP_HAMMERHEAD_SUFFIX         = ".";
+PICKUP_JACKDAW_PREFIX            = "You got the ";
+PICKUP_JACKDAW_RAPIDFIRE         = "Rapid-Fire ";
+PICKUP_JACKDAW_SUFFIX            = ".";
+PICKUP_MAJESTIC_PREFIX           = "You got the ";
+PICKUP_MAJESTIC_ACCELERATOR      = "accelerated ";
+PICKUP_MAJESTIC_SUFFIX           = ".";
+PICKUP_MAJESTICMAG_PREFIX        = "You got a ";
+PICKUP_MAJESTICMAG_SUFFIX        = ".";
+PICKUP_REDLINE_PREFIX            = "You got the ";
+PICKUP_REDLINE_LOCKON            = "Lock-on ";
+PICKUP_REDLINE_SUFFIX            = ".";
+PICKUP_SCORPION_PREFIX           = "You got the ";
+PICKUP_SCORPION_SUFFIX           = ".";
+PICKUP_VIPER_PREFIX              = "You got the ";
+PICKUP_VIPER_HEAVYFRAME          = "Heavy-Framed ";
+PICKUP_VIPER_EXTENDEDBARREL      = "extended ";
+PICKUP_VIPER_SUFFIX              = ". Blast 'em.";
+PICKUP_VIPERMAG_PREFIX           = "You got a ";
+PICKUP_VIPERMAG_SUFFIX           = ".";
+PICKUP_WYVERN_PREFIX             = "You got the ";
+PICKUP_WYVERN_AUTOLOADER         = "Auto-loading ";
+PICKUP_WYVERN_SUFFIX             = ".";

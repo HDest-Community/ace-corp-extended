@@ -68,8 +68,9 @@ class HDJackdaw : HDWeapon
 
 	override string PickupMessage()
 	{
-		string RapidStr = WeaponStatus[JDProp_Flags] & JDF_RapidFire ? "rapid-fire " : "";
-		return String.Format("You picked up the %s'Jackdaw' 9mm SMG.", RapidStr);
+		string RapidStr = WeaponStatus[JDProp_Flags] & JDF_RapidFire ? Stringtable.localize("$PICKUP_JACKDAW_RAPIDFIRE") : "";
+
+		return Stringtable.localize("$PICKUP_JACKDAW_PREFIX")..RapidStr..Stringtable.localize("$TAG_JACKDAW")..Stringtable.localize("$PICKUP_JACKDAW_SUFFIX");
 	}
 
 	override void DrawHUDStuff(HDStatusBar sb, HDWeapon hdw, HDPlayerPawn hpl)
@@ -151,8 +152,8 @@ class HDJackdaw : HDWeapon
 		Weapon.SlotPriority 1.5;
 		HDWeapon.BarrelSize 25, 2, 4;
 		Scale 0.28;
-		Tag "'Jackdaw' 9mm SMG";
-		HDWeapon.Refid "jdw";
+		Tag "$TAG_JACKDAW";
+		HDWeapon.Refid HDLD_JACKDAW;
 	}
 
 	States

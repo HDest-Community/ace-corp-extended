@@ -106,7 +106,7 @@ class HDHammerhead : HDCellWeapon
 
 	override string PickupMessage()
 	{
-		return String.Format("You got the CIR-37 'Hammerhead' plasma minigun.");
+		return Stringtable.localize("$PICKUP_HAMMERHEAD_PREFIX")..Stringtable.localize("$TAG_HAMMERHEAD")..Stringtable.localize("$PICKUP_HAMMERHEAD_SUFFIX");
 	}
 
 	override void DrawHUDStuff(HDStatusBar sb, HDWeapon hdw, HDPlayerPawn hpl)
@@ -300,8 +300,8 @@ class HDHammerhead : HDCellWeapon
 		Weapon.SlotPriority 0.5;
 		HDWeapon.BarrelSize 30, 3, 3;
 		Scale 0.45;
-		Tag "CIR-37 'Hammerhead' Plasma Minigun";
-		HDWeapon.Refid "hhd";
+		Tag "$TAG_HAMMERHEAD";
+		HDWeapon.Refid HDLD_HAMMERHEAD;
 	}
 
 	States

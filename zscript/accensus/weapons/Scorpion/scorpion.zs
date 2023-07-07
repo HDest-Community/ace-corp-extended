@@ -43,7 +43,17 @@ class HDScorpion : HDWeapon
 	{
 		return 200 + (WeaponStatus[SCRProp_Chamber] > 1 ? ENC_BRONTOSHELLLOADED : 0) + WeaponStatus[SCRProp_Mag] * ENC_BRONTOSHELLLOADED;
 	}
-	override string, double GetPickupSprite() { return "SCRPZ0", 0.5; }
+
+	override string PickupMessage()
+	{
+		return Stringtable.localize("$PICKUP_SCORPION_PREFIX")..Stringtable.localize("$TAG_SCORPION")..Stringtable.localize("$PICKUP_SCORPION_SUFFIX");
+	}
+
+	override string, double GetPickupSprite()
+	{
+		return "SCRPZ0", 0.5;
+	}
+
 	override void InitializeWepStats(bool idfa)
 	{
 		WeaponStatus[SCRProp_Chamber] = 2;
@@ -186,10 +196,9 @@ class HDScorpion : HDWeapon
 		Weapon.BobRangeX 0.21;
 		Weapon.BobRangeY 0.86;
 		Scale 0.3;
-		Inventory.PickupMessage "You got the 'Scorpion' 35mm sniper cannon.";
 		HDWeapon.BarrelSize 45, 1.4, 2;
-		Tag "Scorpion";
-		HDWeapon.Refid "scr";
+		Tag "$TAG_SCORPION";
+		HDWeapon.Refid HDLD_SCORPION;
 	}
 
 	States

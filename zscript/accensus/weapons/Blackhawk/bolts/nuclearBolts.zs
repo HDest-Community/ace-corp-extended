@@ -2,12 +2,16 @@ class HDBlackhawkBoltNuclear : HDBlackhawkBolt
 {
 	Default
 	{
-		Tag "Nuclear bolt";
-		Inventory.PickupMessage "Picked up a nuclear bolt.";
+		Tag "$TAG_BLACKHAWKBOLT_N";
 		Inventory.Icon "BHBID0";
 		HDPickup.Bulk 12.0;
-		HDPickup.RefId "bbn";
+		HDPickup.RefId HDLD_BLACKHAWKBOLT_N;
 		+HDPICKUP.NORANDOMBACKPACKSPAWN
+	}
+
+	override string PickupMessage()
+	{
+		return Stringtable.localize("$PICKUP_BLACKHAWKBOLT_N_PREFIX")..Stringtable.localize("$TAG_BLACKHAWKBOLT_N")..Stringtable.localize("$PICKUP_BLACKHAWKBOLT_N_SUFFIX");
 	}
 
 	States
@@ -126,7 +130,7 @@ class HDBlackhawkProjectileNuclear : HDBlackhawkProjectile
 	{
 		Mass 150;
 		Speed HDCONST_MPSTODUPT * 100;
-		Obituary "%k split the atom too close in the vicinity of %o.";
+		Obituary "$OB_BLACKHAWKBOLT_N";
 		+NODAMAGETHRUST
 		+BRIGHT
 	}

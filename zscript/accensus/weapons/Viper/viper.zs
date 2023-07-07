@@ -136,9 +136,10 @@ class HDViper : HDHandgun
 
 	override string PickupMessage()
 	{
-		string HFrameStr = WeaponStatus[VPProp_Flags] & VPF_HeavyFrame ? " heavy-framed" : "";
-		string ExBarrelStr = WeaponStatus[VPProp_Flags] & VPF_ExtendedBarrel ? " extended" : "";
-		return String.Format("You got the%s%s 'Viper' .50 cal. handgun. Blast 'em.", HFrameStr, ExBarrelStr);
+		string HFrameStr = WeaponStatus[VPProp_Flags] & VPF_HeavyFrame ? Stringtable.localize("$PICKUP_VIPER_HEAVYFRAME") : "";
+		string ExBarrelStr = WeaponStatus[VPProp_Flags] & VPF_ExtendedBarrel ? Stringtable.localize("$PICKUP_VIPER_EXTENDEDBARREL") : "";
+
+		return Stringtable.localize("$PICKUP_VIPER_PREFIX")..HFrameStr..ExBarrelStr..Stringtable.localize("$TAG_VIPER")..Stringtable.localize("$PICKUP_VIPER_SUFFIX");
 	}
 
 	override void DrawHUDStuff(HDStatusBar sb, HDWeapon hdw, HDPlayerPawn hpl)
@@ -188,8 +189,8 @@ class HDViper : HDHandgun
 		Weapon.SlotPriority 4;
 		HDWeapon.BarrelSize 13, 0.35, 0.5;
 		Scale 0.5;
-		Tag "'Viper' .50 cal. handgun";
-		HDWeapon.Refid "vpr";
+		Tag "$TAG_VIPER";
+		HDWeapon.Refid HDLD_VIPER;
 	}
 
 	States
@@ -564,6 +565,11 @@ class ViperRandom : IdleDummy
 
 class HDViperMag : HDMagAmmo
 {
+	override string PickupMessage()
+	{
+		return Stringtable.localize("$PICKUP_VIPERMAG_PREFIX")..Stringtable.localize("$TAG_VIPERMAG")..Stringtable.localize("$PICKUP_VIPERMAG_SUFFIX");
+	}
+
 	override string, string, name, double GetMagSprite(int thismagamt)
 	{
 		return (thismagamt > 0) ? "VPMGA0" : "VPMGB0", "PRNDA0", "HD50AM_Ammo", 1.25;
@@ -586,9 +592,8 @@ class HDViperMag : HDMagAmmo
 		HDMagAmmo.RoundType "HD50AM_Ammo";
 		//HDMagAmmo.RoundBulk ENC_50AM;
 		HDMagAmmo.MagBulk EncMagEmpty;
-		Tag ".50 AM Viper magazine";
-		Inventory.PickupMessage "Picked up a .50 AM Viper magazine.";
-		HDPickup.RefId "vpm";
+		Tag "$TAG_VIPERMAG";
+		HDPickup.RefId HDLD_VIPERMAG;
 
 	}
 

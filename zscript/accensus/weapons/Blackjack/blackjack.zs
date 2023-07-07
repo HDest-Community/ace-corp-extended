@@ -90,7 +90,7 @@ class HDBlackjack : HDWeapon
 
 	override string PickupMessage()
 	{
-		return String.Format("You picked up the 'Blackjack' .355 rifle.");
+		return Stringtable.localize("$PICKUP_BLACKJACK_PREFIX")..Stringtable.localize("$TAG_BLACKJACK")..Stringtable.localize("$PICKUP_BLACKJACK_SUFFIX");
 	}
 
 	override void DrawHUDStuff(HDStatusBar sb, HDWeapon hdw, HDPlayerPawn hpl)
@@ -234,8 +234,8 @@ class HDBlackjack : HDWeapon
 		Weapon.SlotPriority 0.4;
 		HDWeapon.BarrelSize 20, 2, 3;
 		Scale 0.5;
-		Tag "'Blackjack' .355 rifle";
-		HDWeapon.Refid "bjk";
+		Tag "$TAG_BLACKJACK";
+		HDWeapon.Refid HDLD_BLACKJACK;
 	}
 
 	States
@@ -596,6 +596,11 @@ class BlackjackRandom : IdleDummy
 
 class HDBlackjackMag355 : HDMagAmmo
 {
+	override string PickupMessage()
+	{
+		return Stringtable.localize("$PICKUP_BLACKJACKMAG_355_PREFIX")..Stringtable.localize("$TAG_BLACKJACKMAG_355")..Stringtable.localize("$PICKUP_BLACKJACKMAG_355_SUFFIX");
+	}
+
 	override string, string, name, double GetMagSprite(int thismagamt)
 	{
 		return (thismagamt > 0) ? "BJM3A0" : "BJM3B0", "PRNDA0", "HDRevolverAmmo", 1.0;
@@ -618,9 +623,8 @@ class HDBlackjackMag355 : HDMagAmmo
 		HDMagAmmo.RoundType "HDRevolverAmmo";
 		HDMagAmmo.RoundBulk ENC_355_LOADED;
 		HDMagAmmo.MagBulk EncMagEmpty;
-		Tag "Blackjack .355 magazine";
-		Inventory.PickupMessage "Picked up a 25-round Blackjack .355 magazine.";
-		HDPickup.RefId "bm3";
+		Tag "$TAG_BLACKJACKMAG_355";
+		HDPickup.RefId HDLD_BLACKJACKMAG_355;
 		XScale 0.5;
 		YScale 0.7;
 	}
@@ -643,6 +647,11 @@ class HDBlackjackMag355 : HDMagAmmo
 
 class HDBlackjackMagShells : HDMagAmmo
 {
+	override string PickupMessage()
+	{
+		return Stringtable.localize("$PICKUP_BLACKJACKMAG_SHELL_PREFIX")..Stringtable.localize("$TAG_BLACKJACKMAG_SHELL")..Stringtable.localize("$PICKUP_BLACKJACKMAG_SHELL_SUFFIX");
+	}
+
 	override string, string, name, double GetMagSprite(int thismagamt)
 	{
 		return (thismagamt > 0) ? "BJMSA0" : "BJMSB0", "SHL1A0", "HDShellAmmo", 1.0;
@@ -665,9 +674,8 @@ class HDBlackjackMagShells : HDMagAmmo
 		HDMagAmmo.RoundType "HDShellAmmo";
 		HDMagAmmo.RoundBulk ENC_SHELLLOADED;
 		HDMagAmmo.MagBulk EncMagEmpty;
-		Tag "Blackjack shell magazine";
-		Inventory.PickupMessage "Picked up a 5-round Blackjack shell magazine.";
-		HDPickup.RefId "bms";
+		Tag "$TAG_BLACKJACKMAG_SHELL";
+		HDPickup.RefId HDLD_BLACKJACKMAG_SHELL;
 		Scale 0.5;
 	}
 
