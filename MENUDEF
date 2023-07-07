@@ -351,8 +351,8 @@ OptionMenu "redlineSpawning" {
 }
 
 
-OptionMenu "AceCorpsMenu" {
-	Title "$AceCorpsMenu"
+OptionMenu "AceCorpMenu" {
+	Title "$AceCorpMenu"
 
 	StaticText "--- Pistols ---", "yellow"
 	StaticText ""
@@ -398,13 +398,13 @@ OptionMenu "AceCorpsMenu" {
 	
 	StaticText "--- Reset Options ---", "red"
 	StaticText ""
-	SafeCommand "Reset all options for AceCorps: Engineering Dept.", "AceCorps_Reset_Cvars"
+	SafeCommand "Reset all options for AceCorp: Engineering Dept.", "AceCorp_Reset_Cvars"
 }
 
 AddOptionMenu "OptionsMenu" {
-	Submenu "$AceCorpsMenu", "AceCorpsMenu"
+	Submenu "$ACE_MENU", "AceCorpMenu"
 }
 
 AddOptionMenu "HDAddonMenu" {
-	Submenu "$AceCorpsMenu", "AceCorpsMenu"
+	Submenu "$ACE_MENU", "AceCorpMenu"
 }
