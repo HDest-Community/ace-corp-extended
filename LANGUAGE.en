@@ -1,77 +1,195 @@
 [enu default]
 
 // Options Menu Titles
-ACE_MENU                         = "\c[Ice]Ⓐ\c- AceCorp: Engineering Dept.";
+ACE_MENU                                = "\c[Ice]Ⓐ\c- AceCorp: Engineering Dept.";
+MENU_PISTOLS_TITLE                      = "--- Pistols ---";
+MENU_SHOTGUNS_TITLE                     = "--- Shotguns ---";
+MENU_MACHINEGUNS_TITLE                  = "--- Machine Guns ---";
+MENU_EXPLOSIVES_TITLE                   = "--- Explosives ---";
+MENU_RIFLES_TITLE                       = "--- Rifles ---";
+MENU_ENERGYWEAPONS_TITLE                = "--- Energy Weapons ---";
+MENU_ARMOUR_TITLE                       = "--- Armour ---";
+MENU_RESETOPTIONS_TITLE                 = "--- Reset Options ---";
+
+// Menu Section Headers
+MENU_SPAWNOPTIONS                       = "Spawn Options";
+MENU_WEPSPAWNOPTIONS                    = "Weapon Spawn Options";
+MENU_MAGSPAWNOPTIONS                    = "Magazine Spawn Options";
+MENU_PERSISTENCYOPTIONS                 = "Spawn Persistence Options";
+MENU_RESETOPTIONS                       = "Reset Options";
+MENU_RESETALLOPTIONS                    = "Reset all Options";
+
+// Menu Static Text
+MENU_SPAWNRATE_TEXT1                    = "Setting 'spawn rate' to Replace All will suppress";
+MENU_SPAWNRATE_TEXT2                    = "spawns of that given type.";
+MENU_PERSISTENCY_TEXT                   = "Control whether replacements happen after a mapload:";
+
+// Menu Option Labels
+MENU_NOTICE                             = "Notice:";
+MENU_BACKPACKSALLOWED                   = "Allowed in Ammo Boxes and/or Backpacks: ";
+MENU_SPAWNRATE                          = "Spawn Rate: ";
+MENU_WEPSPAWNRATE                       = "Weapon Spawn Rate: ";
+MENU_MAGSPAWNRATE                       = "Magazine Spawn Rate: ";
+MENU_PERSISTENCY                        = "Persistent Spawns: ";
+MENU_WEPPERSISTENCY                     = "Persistent Weapon Spawns: ";
+MENU_MAGPERSISTENCY                     = "Persistent Magazine Spawns: ";
+
+// Menu Command Text
+MENU_RESETWEP                           = "Reset Weapon Options";
+MENU_RESETMAG                           = "Reset Magazine Options";
+MENU_RESETPERSISTENCY                   = "Reset Persistence Options";
+ACE_RESETALLOPTIONS                     = "Reset all options for AceCorp: Engineering Dept.";
+
+// Blackhawk Options Text
+MENU_BLACKHAWK_TITLE                    = "------ 'Blackhawk' Hi-Tech Crossbow Options ------";
+MENU_BLACKHAWK_LAUNCHER_SPAWNTEXT       = "Control the spawn rate of the blackhawk on Rocket Launchers:";
+MENU_BLACKHAWK_BACKPACKS                = "Control whether the Blackhawk spawns in Backpacks:";
+
+MENU_BOLTBUNDLE_SPAWNOPTIONS            = "Bolt Bundle Spawn Options";
+MENU_BOLTBUNDLE_ROCKET_SPAWNTEXT        = "Control the spawn rate of the bolt bundles on Rockets:";
+MENU_BOLTBUNDLE_BACKPACKS               = "Control whether bolt bundles spawn in Backpacks:";
+
+MENU_BOLTBUNDLE_SPAWNRATE               = "Bolt Bundle Spawn Rate: ";
+MENU_BOLTBUNDLE_PERSISTENCY             = "Persistent Bolt Bundle Spawns: ";
+MENU_RESETBOLTBUNDLE                    = "Reset Bolt Bundle Options";
+
+// Blackjack Options Text
+MENU_BLACKJACK_TITLE                    = "------ 'Blackjack' .355 Rifle Options ------";
+MENU_BLACKJACK_CLIPBOX_SPAWNTEXT        = "Control the spawn rate of the blackjack on Clip Boxes:";
+MENU_BLACKJACK_BACKPACKS                = "Control whether the Blackjack spawns in Backpacks:";
+
+MENU_BLACKJACKMAG_355_CLIPMAG_SPAWNTEXT = "Control the spawn rate of the .355 Magazines on Clip Magazines:";
+MENU_BLACKJACKMAG_355_BACKPACKS         = "Control whether .355 Magazines spawn in Backpacks:";
+
+MENU_BLACKJACKMAG_SHELL_SHELL_SPAWNTEXT = "Control the spawn rate of the 12ga Shell Magazines on Shell Pickups:";
+MENU_BLACKJACKMAG_SHELL_BACKPACKS       = "Control whether Shell Magazines spawn in Backpacks:";
+
+MENU_BLACKJACKMAG_355_PERSISTENCY       = "Persistent .355 Magazine Spawns: ";
+MENU_BLACKJACKMAG_SHELL_PERSISTENCY     = "Persistent Shell Magazine Spawns: ";
+
+// Gungnir Options Text
+MENU_GUNGNIR_TITLE                      = "------ 'Gungnir' Frag Beam Rifle Options ------";
+MENU_GUNGNIR_BFG_SPAWNTEXT              = "Control the spawn rate of the Gungnir on BFG-9000s:";
+MENU_GUNGNIR_BACKPACKS                  = "Control whether the Gungnir spawns in Backpacks:";
+
+// Hammerhead Options Text
+MENU_HAMMERHEAD_TITLE                   = "------ CIR-37 'Hammerhead' Plasma Minigun Options ------";
+MENU_HAMMERHEAD_CHAINGUN_SPAWNTEXT      = "Control the spawn rate of the Hammerhead on Vulcanettes:";
+MENU_HAMMERHEAD_PLASMA_SPAWNTEXT        = "Control the spawn rate of the Hammerhead on Thunderbusters:";
+MENU_HAMMERHEAD_BACKPACKS               = "Control whether the Hammerhead spawns in Backpacks:";
+
+// Jackdaw Options Text
+MENU_JACKDAW_TITLE                      = "------ 'Jackdaw' 9mm SMG Options ------";
+MENU_JACKDAW_CHAINGUN_SPAWNTEXT         = "Control the spawn rate of the jackdaw on Vulcanettes:";
+MENU_JACKDAW_BACKPACKS                  = "Control whether the Jackdaw spawns in Backpacks:";
+
+// Majestic Options Text
+MENU_MAJESTIC_TITLE                     = "------ 'Majestic' .500 S&W Magnum Railgun Options ------";
+MENU_MAJESTIC_PISTOL_SPAWNTEXT          = "Control the spawn rate of the Majestic on Pistols:";
+MENU_MAJESTIC_HUNTER_SPAWNTEXT          = "Control the spawn rate of the Majestic on Hunter Shotguns:";
+MENU_MAJESTIC_SLAYER_SPAWNTEXT          = "Control the spawn rate of the Majestic on Slayer Shotguns:";
+MENU_MAJESTIC_BACKPACKS                 = "Control whether the Majestic spawns in Backpacks:";
+
+MENU_MAJESTICMAG_CLIPMAG_SPAWNTEXT      = "Control the spawn rate of Majestic Cylinders on Clip Magazines:";
+MENU_MAJESTICMAG_BACKPACKS              = "Control whether Majestic Cylinders spawn in Backpacks:";
+
+MENU_MAJESTICMAG_PERSISTENCY            = "Persistent Cylinder Spawns: ";
+
+// Redline Options Text
+MENU_REDLINE_TITLE                      = "------ RDL-N3 'Redline' Thermal Lance Options ------";
+MENU_REDLINE_PLASMA_SPAWNTEXT           = "Control the spawn rate of the Redline on Thunderbusters:";
+MENU_REDLINE_BACKPACKS                  = "Control whether the Redline spawns in Backpacks:";
+
+// Scorpion Options Text
+MENU_SCORPION_TITLE                     = "------ 'Scorpion' 35mm Sniper Cannon Options ------";
+MENU_SCORPION_BRONTORNIS_SPAWNTEXT      = "Control the spawn rate of the Scorpion on the Brontornis Rifle:";
+MENU_SCORPION_BACKPACKS                 = "Control whether the Scorpion spawns in Backpacks:";
+
+// Viper Options Text
+MENU_VIPER_TITLE                        = "------ 'Viper' .50 cal. Handgun Options ------";
+MENU_VIPER_PISTOL_SPAWNTEXT             = "Control the spawn rate of the Viper on Pistols:";
+MENU_VIPER_HUNTER_SPAWNTEXT             = "Control the spawn rate of the Viper on Hunter Shotguns:";
+MENU_VIPER_SLAYER_SPAWNTEXT             = "Control the spawn rate of the Viper on Slayer Shotguns:";
+MENU_VIPER_BACKPACKS                    = "Control whether the Viper spawns in Backpacks:";
+
+MENU_VIPERMAG_CLIPMAG_SPAWNTEXT         = "Control the spawn rate of Viper Magazines on Clip Magazines:";
+MENU_VIPERMAG_BACKPACKS                 = "Control whether Viper Magazines spawn in Backpacks:";
+
+// Wyvern Options Text
+MENU_WYVERN_TITLE                       = "------ 'Wyvern' .50 cal. Double-Barrel Rifle Options ------";
+MENU_WYVERN_HUNTER_SPAWNTEXT            = "Control the spawn rate of the Wyvern on Hunter Shotguns:";
+MENU_WYVERN_SLAYER_SPAWNTEXT            = "Control the spawn rate of the Wyvern on Slayer Shotguns:";
+MENU_WYVERN_BACKPACKS                   = "Control whether the Wyvern spawns in Backpacks:";
 
 // Item Tags
-TAG_BLACKHAWK                    = "'Blackhawk' high-tech crossbow";
-TAG_BLACKHAWKBOLT                = "Regular Bolt";
-TAG_BLACKHAWKBOLT_E              = "Electric Bolt";
-TAG_BLACKHAWKBOLT_I              = "Incendiary Bolt";
-TAG_BLACKHAWKBOLT_N              = "Nuclear Bolt";
-TAG_BLACKJACK                    = "'Blackjack' .355 rifle";
-TAG_BLACKJACKMAG_355             = "Blackjack .355 Magazine";
-TAG_BLACKJACKMAG_SHELL           = "Blackjack Shell Magazine";
-TAG_GUNGNIR                      = "'Gungnir' Frag Beam Rifle";
-TAG_HAMMERHEAD                   = "CIR-37 'Hammerhead' Plasma Minigun";
-TAG_JACKDAW                      = "'Jackdaw' 9mm SMG";
-TAG_MAJESTIC                     = "'Majestic' .500 S&W Magnum Railgun";
-TAG_MAJESTICMAG                  = "'Majestic' Cylinder";
-TAG_REDLINE                      = "RDL-N3 'Redline' Termal Lance";
-TAG_SCORPION                     = "'Scorpion' 35mm Sniper Cannon";
-TAG_VIPER                        = "'Viper' .50 cal. Handgun";
-TAG_VIPERMAG                     = ".50 AM 'Viper' Magazine";
-TAG_WYVERN                       = "'Wyvern' .50 cal. Double-Barrel Rifle";
+TAG_BLACKHAWK                           = "'Blackhawk' Hi-Tech Crossbow";
+TAG_BLACKHAWKBOLT                       = "Regular Bolt";
+TAG_BLACKHAWKBOLT_E                     = "Electric Bolt";
+TAG_BLACKHAWKBOLT_I                     = "Incendiary Bolt";
+TAG_BLACKHAWKBOLT_N                     = "Nuclear Bolt";
+TAG_BLACKJACK                           = "'Blackjack' .355 Rifle";
+TAG_BLACKJACKMAG_355                    = "Blackjack .355 Magazine";
+TAG_BLACKJACKMAG_SHELL                  = "Blackjack Shell Magazine";
+TAG_GUNGNIR                             = "'Gungnir' Frag Beam Rifle";
+TAG_HAMMERHEAD                          = "CIR-37 'Hammerhead' Plasma Minigun";
+TAG_JACKDAW                             = "'Jackdaw' 9mm SMG";
+TAG_MAJESTIC                            = "'Majestic' .500 S&W Magnum Railgun";
+TAG_MAJESTICMAG                         = "'Majestic' Cylinder";
+TAG_REDLINE                             = "RDL-N3 'Redline' Thermal Lance";
+TAG_SCORPION                            = "'Scorpion' 35mm Sniper Cannon";
+TAG_VIPER                               = "'Viper' .50 cal. Handgun";
+TAG_VIPERMAG                            = ".50 AM 'Viper' Magazine";
+TAG_WYVERN                              = "'Wyvern' .50 cal. Double-Barrel Rifle";
 
 // Obituaries
-OB_BLACKHAWKBOLT                 = "%o was assassinated by %k's bolt.";
-OB_BLACKHAWKBOLT_E               = "%k helped %o make a shocking discovery - electricity can kill.";
-OB_BLACKHAWKBOLT_I               = "%o felt a little cold so %k warmed %h up.";
-OB_BLACKHAWKBOLT_N               = "%k split the atom too close in the vicinity of %o.";
+OB_BLACKHAWKBOLT                        = "%o was assassinated by %k's bolt.";
+OB_BLACKHAWKBOLT_E                      = "%k helped %o make a shocking discovery - electricity can kill.";
+OB_BLACKHAWKBOLT_I                      = "%o felt a little cold so %k warmed %h up.";
+OB_BLACKHAWKBOLT_N                      = "%k split the atom too close in the vicinity of %o.";
 
 // Pickup Messages
-PICKUP_BLACKHAWK_PREFIX          = "You got the ";
-PICKUP_BLACKHAWK_SUFFIX          = ".";
-PICKUP_BLACKHAWKBOLT_PREFIX      = "You got an ";
-PICKUP_BLACKHAWKBOLT_SUFFIX      = ".";
-PICKUP_BLACKHAWKBOLT_E_PREFIX    = "You got an ";
-PICKUP_BLACKHAWKBOLT_E_SUFFIX    = ".";
-PICKUP_BLACKHAWKBOLT_I_PREFIX    = "You got an ";
-PICKUP_BLACKHAWKBOLT_I_SUFFIX    = ".";
-PICKUP_BLACKHAWKBOLT_N_PREFIX    = "You got a ";
-PICKUP_BLACKHAWKBOLT_N_SUFFIX    = ".";
-PICKUP_BLACKJACK_PREFIX          = "You got the ";
-PICKUP_BLACKJACK_SUFFIX          = ".";
-PICKUP_BLACKJACKMAG_355_PREFIX   = "You got a 25-round ";
-PICKUP_BLACKJACKMAG_355_SUFFIX   = ".";
-PICKUP_BLACKJACKMAG_SHELL_PREFIX = "You got a 5-round ";
-PICKUP_BLACKJACKMAG_SHELL_SUFFIX = ".";
-PICKUP_GUNGNIR_PREFIX            = "You got the ";
-PICKUP_GUNGNIR_ACCELERATOR       = "accelerated ";
-PICKUP_GUNGNIR_CAPACITOR         = "High-Capacity ";
-PICKUP_GUNGNIR_PROCESSOR         = " with a High-Efficiency processor";
-PICKUP_GUNGNIR_SUFFIX            = ".";
-PICKUP_HAMMERHEAD_PREFIX         = "You got the ";
-PICKUP_HAMMERHEAD_SUFFIX         = ".";
-PICKUP_JACKDAW_PREFIX            = "You got the ";
-PICKUP_JACKDAW_RAPIDFIRE         = "Rapid-Fire ";
-PICKUP_JACKDAW_SUFFIX            = ".";
-PICKUP_MAJESTIC_PREFIX           = "You got the ";
-PICKUP_MAJESTIC_ACCELERATOR      = "accelerated ";
-PICKUP_MAJESTIC_SUFFIX           = ".";
-PICKUP_MAJESTICMAG_PREFIX        = "You got a ";
-PICKUP_MAJESTICMAG_SUFFIX        = ".";
-PICKUP_REDLINE_PREFIX            = "You got the ";
-PICKUP_REDLINE_LOCKON            = "Lock-on ";
-PICKUP_REDLINE_SUFFIX            = ".";
-PICKUP_SCORPION_PREFIX           = "You got the ";
-PICKUP_SCORPION_SUFFIX           = ".";
-PICKUP_VIPER_PREFIX              = "You got the ";
-PICKUP_VIPER_HEAVYFRAME          = "Heavy-Framed ";
-PICKUP_VIPER_EXTENDEDBARREL      = "extended ";
-PICKUP_VIPER_SUFFIX              = ". Blast 'em.";
-PICKUP_VIPERMAG_PREFIX           = "You got a ";
-PICKUP_VIPERMAG_SUFFIX           = ".";
-PICKUP_WYVERN_PREFIX             = "You got the ";
-PICKUP_WYVERN_AUTOLOADER         = "Auto-loading ";
-PICKUP_WYVERN_SUFFIX             = ".";
+PICKUP_BLACKHAWK_PREFIX                 = "You got the ";
+PICKUP_BLACKHAWK_SUFFIX                 = ".";
+PICKUP_BLACKHAWKBOLT_PREFIX             = "You got an ";
+PICKUP_BLACKHAWKBOLT_SUFFIX             = ".";
+PICKUP_BLACKHAWKBOLT_E_PREFIX           = "You got an ";
+PICKUP_BLACKHAWKBOLT_E_SUFFIX           = ".";
+PICKUP_BLACKHAWKBOLT_I_PREFIX           = "You got an ";
+PICKUP_BLACKHAWKBOLT_I_SUFFIX           = ".";
+PICKUP_BLACKHAWKBOLT_N_PREFIX           = "You got a ";
+PICKUP_BLACKHAWKBOLT_N_SUFFIX           = ".";
+PICKUP_BLACKJACK_PREFIX                 = "You got the ";
+PICKUP_BLACKJACK_SUFFIX                 = ".";
+PICKUP_BLACKJACKMAG_355_PREFIX          = "You got a 25-round ";
+PICKUP_BLACKJACKMAG_355_SUFFIX          = ".";
+PICKUP_BLACKJACKMAG_SHELL_PREFIX        = "You got a 5-round ";
+PICKUP_BLACKJACKMAG_SHELL_SUFFIX        = ".";
+PICKUP_GUNGNIR_PREFIX                   = "You got the ";
+PICKUP_GUNGNIR_ACCELERATOR              = "accelerated ";
+PICKUP_GUNGNIR_CAPACITOR                = "High-Capacity ";
+PICKUP_GUNGNIR_PROCESSOR                = " with a High-Efficiency processor";
+PICKUP_GUNGNIR_SUFFIX                   = ".";
+PICKUP_HAMMERHEAD_PREFIX                = "You got the ";
+PICKUP_HAMMERHEAD_SUFFIX                = ".";
+PICKUP_JACKDAW_PREFIX                   = "You got the ";
+PICKUP_JACKDAW_RAPIDFIRE                = "Rapid-Fire ";
+PICKUP_JACKDAW_SUFFIX                   = ".";
+PICKUP_MAJESTIC_PREFIX                  = "You got the ";
+PICKUP_MAJESTIC_ACCELERATOR             = "accelerated ";
+PICKUP_MAJESTIC_SUFFIX                  = ".";
+PICKUP_MAJESTICMAG_PREFIX               = "You got a ";
+PICKUP_MAJESTICMAG_SUFFIX               = ".";
+PICKUP_REDLINE_PREFIX                   = "You got the ";
+PICKUP_REDLINE_LOCKON                   = "Lock-on ";
+PICKUP_REDLINE_SUFFIX                   = ".";
+PICKUP_SCORPION_PREFIX                  = "You got the ";
+PICKUP_SCORPION_SUFFIX                  = ".";
+PICKUP_VIPER_PREFIX                     = "You got the ";
+PICKUP_VIPER_HEAVYFRAME                 = "Heavy-Framed ";
+PICKUP_VIPER_EXTENDEDBARREL             = "extended ";
+PICKUP_VIPER_SUFFIX                     = ". Blast 'em.";
+PICKUP_VIPERMAG_PREFIX                  = "You got a ";
+PICKUP_VIPERMAG_SUFFIX                  = ".";
+PICKUP_WYVERN_PREFIX                    = "You got the ";
+PICKUP_WYVERN_AUTOLOADER                = "Auto-loading ";
+PICKUP_WYVERN_SUFFIX                    = ".";

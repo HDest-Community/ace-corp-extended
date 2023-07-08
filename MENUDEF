@@ -17,79 +17,93 @@ OptionValue "SpawnBias" {
 // Pistols
 
 OptionMenu "majesticSpawning" {
-    Title "------ 'Majestic' .500 S&W Railgun Options ------"
-   	StaticText "Notice:", "yellow"
-    StaticText  "Setting 'spawn rate' to Replace All will suppress", "white"
-    StaticText  "spawns of that given type.", "white"
+    Title "$MENU_MAJESTIC_TITLE"
+   	StaticText "$MENU_NOTICE", "Yellow"
+    StaticText "$MENU_SPAWNRATE_TEXT1", "White"
+    StaticText "$MENU_SPAWNRATE_TEXT2", "White"
     StaticText ""
 
-	StaticText "Spawn Options", "yellow"
-    StaticText  "Control the spawn rate of the Majestic on:", "white"
-	Option "Pistols: ", "majestic_pistol_spawn_bias", "SpawnBias"
-	SafeCommand "Reset Pistol option", "resetcvar majestic_pistol_spawn_bias"
-	Option "Hunter shotguns: ", "majestic_hunter_spawn_bias", "SpawnBias"
-	SafeCommand "Reset Hunter option", "resetcvar majestic_hunter_spawn_bias"
-	Option "Slayer shotguns: ", "majestic_slayer_spawn_bias", "SpawnBias"
-	SafeCommand "Reset Slayer option", "resetcvar majestic_slayer_spawn_bias"
+	StaticText "$MENU_WEPSPAWNOPTIONS", "Yellow"
+    StaticText "$MENU_MAJESTIC_PISTOL_SPAWNTEXT", "White"
+	Option "$MENU_WEPSPAWNRATE", "majestic_pistol_spawn_bias", "SpawnBias"
+	SafeCommand "$MENU_RESETWEP", "resetcvar majestic_pistol_spawn_bias"
+    StaticText "$MENU_MAJESTIC_HUNTER_SPAWNTEXT", "White"
+	Option "$MENU_WEPSPAWNRATE", "majestic_hunter_spawn_bias", "SpawnBias"
+	SafeCommand "$MENU_RESETWEP", "resetcvar majestic_hunter_spawn_bias"
+    StaticText "$MENU_MAJESTIC_SLAYER_SPAWNTEXT", "White"
+	Option "$MENU_WEPSPAWNRATE", "majestic_slayer_spawn_bias", "SpawnBias"
+	SafeCommand "$MENU_RESETWEP", "resetcvar majestic_slayer_spawn_bias"
  	StaticText ""
 
-    StaticText  "Control the spawn rate of the Majestic's Magazine on:", "white"
-	Option "Clip Magazines: ", "majesticmag_clipmag_spawn_bias", "SpawnBias"
-	SafeCommand "Reset Clip Magazine option", "resetcvar majesticmag_clipmag_spawn_bias"
+	StaticText "$MENU_MAJESTIC_BACKPACKS", "White"
+	Option "$MENU_BACKPACKSALLOWED", "majestic_allowBackpacks", "OnOff"
+ 	StaticText ""
+
+	StaticText "$MENU_MAGSPAWNOPTIONS", "Yellow"
+    StaticText "$MENU_MAJESTICMAG_CLIPMAG_SPAWNTEXT", "White"
+	Option "$MENU_MAGSPAWNRATE", "majesticmag_clipmag_spawn_bias", "SpawnBias"
+	SafeCommand "$MENU_RESETMAG", "resetcvar majesticmag_clipmag_spawn_bias"
     StaticText ""
-	
-	StaticText "Enable/Disable the Majestic from spawning in Backpacks.", "yellow"
-	Option "Majestic:", "majestic_allowBackpacks", "OnOff"
-	Option "Majestic Magazines:", "majesticmag_allowBackpacks", "OnOff"
+
+	StaticText "$MENU_MAJESTICMAG_BACKPACKS", "White"
+	Option "$MENU_BACKPACKSALLOWED", "majesticmag_allowBackpacks", "OnOff"
  	StaticText ""
 
-    StaticText  "Control whether replacements happen after a mapload.", "white"
-	Option "Persistent Spawns (Gun): ", "majestic_persistent_spawning", "OnOff"
-    Option "Persistent Spawns (Magazine): ", "majesticmag_persistent_spawning", "OnOff"
-	SafeCommand "Reset persistence options", "resetcvar majestic_persistent_spawning; majesticmag_persistent_spawning"
+	StaticText "$MENU_PERSISTENCYOPTIONS", "Yellow"
+    StaticText "$MENU_PERSISTENCY_TEXT", "White"
+	Option "$MENU_WEPPERSISTENCY", "majestic_persistent_spawning", "OnOff"
+    Option "$MENU_MAJESTICMAG_PERSISTENCY", "majesticmag_persistent_spawning", "OnOff"
+	SafeCommand "$MENU_RESETPERSISTENCY", "resetcvar majestic_persistent_spawning; majesticmag_persistent_spawning"
  	StaticText ""
    	StaticText ""
 
-	StaticText "Reset Options", "yellow"
-	SafeCommand "Reset all options", "majestic_reset_cvars"
+	StaticText "$MENU_RESETOPTIONS", "Yellow"
+	SafeCommand "$MENU_RESETALLOPTIONS", "majestic_reset_cvars"
 }
 
 OptionMenu "viperSpawning" {
-    Title "------ 'Viper' .50 AM Handgun Options ------"
-   	StaticText "Notice:", "yellow"
-    StaticText  "Setting 'spawn rate' to Replace All will suppress", "white"
-    StaticText  "spawns of that given type.", "white"
+    Title "$MENU_VIPER_TITLE"
+   	StaticText "$MENU_NOTICE", "Yellow"
+    StaticText "$MENU_SPAWNRATE_TEXT1", "White"
+    StaticText "$MENU_SPAWNRATE_TEXT2", "White"
     StaticText ""
 
-	StaticText "Spawn Options", "yellow"
-    StaticText  "Control the spawn rate of the Viper on:", "white"
-	Option "Pistols: ", "viper_pistol_spawn_bias", "SpawnBias"
-	SafeCommand "Reset Pistol option", "resetcvar viper_pistol_spawn_bias"
-	Option "Hunter shotguns: ", "viper_hunter_spawn_bias", "SpawnBias"
-	SafeCommand "Reset Hunter option", "resetcvar viper_hunter_spawn_bias"
-	Option "Slayer shotguns: ", "viper_slayer_spawn_bias", "SpawnBias"
-	SafeCommand "Reset Slayer option", "resetcvar viper_slayer_spawn_bias"
+	StaticText "$MENU_WEPSPAWNOPTIONS", "Yellow"
+    StaticText "$MENU_VIPER_PISTOL_SPAWNTEXT", "White"
+	Option "$MENU_WEPSPAWNRATE", "viper_pistol_spawn_bias", "SpawnBias"
+	SafeCommand "$MENU_RESETWEP", "resetcvar viper_pistol_spawn_bias"
+    StaticText "$MENU_VIPER_HUNTER_SPAWNTEXT", "White"
+	Option "$MENU_WEPSPAWNRATE", "viper_hunter_spawn_bias", "SpawnBias"
+	SafeCommand "$MENU_RESETWEP", "resetcvar viper_hunter_spawn_bias"
+    StaticText "$MENU_VIPER_SLAYER_SPAWNTEXT", "White"
+	Option "$MENU_WEPSPAWNRATE", "viper_slayer_spawn_bias", "SpawnBias"
+	SafeCommand "$MENU_RESETWEP", "resetcvar viper_slayer_spawn_bias"
  	StaticText ""
 
-    StaticText  "Control the spawn rate of the Viper's Magazine on:", "white"
-	Option "Clip Magazines: ", "vipermag_clipmag_spawn_bias", "SpawnBias"
-	SafeCommand "Reset Clip Magazine option", "resetcvar vipermag_clipmag_spawn_bias"
+	StaticText "$MENU_VIPER_BACKPACKS", "White"
+	Option "$MENU_BACKPACKSALLOWED", "viper_allowBackpacks", "OnOff"
+ 	StaticText ""
+
+	StaticText "$MENU_MAGSPAWNOPTIONS", "Yellow"
+    StaticText "$MENU_VIPERMAG_CLIPMAG_SPAWNTEXT", "White"
+	Option "$MENU_MAGSPAWNRATE", "vipermag_clipmag_spawn_bias", "SpawnBias"
+	SafeCommand "$MENU_RESETMAG", "resetcvar vipermag_clipmag_spawn_bias"
     StaticText ""
 	
-	StaticText "Enable/Disable the Viper from spawning in Backpacks.", "yellow"
-	Option "Viper:", "viper_allowBackpacks", "OnOff"
-	Option "Viper Magazines:", "vipermag_allowBackpacks", "OnOff"
+	StaticText "$MENU_VIPERMAG_BACKPACKS", "White"
+	Option "$MENU_BACKPACKSALLOWED", "vipermag_allowBackpacks", "OnOff"
  	StaticText ""
 
-    StaticText  "Control whether replacements happen after a mapload.", "white"
-	Option "Persistent Spawns (Gun): ", "viper_persistent_spawning", "OnOff"
-    Option "Persistent Spawns (Magazine): ", "vipermag_persistent_spawning", "OnOff"
-	SafeCommand "Reset persistence options", "resetcvar viper_persistent_spawning; vipermag_persistent_spawning"
+	StaticText "$MENU_PERSISTENCYOPTIONS", "Yellow"
+    StaticText "$MENU_PERSISTENCY_TEXT", "White"
+	Option "$MENU_WEPPERSISTENCY", "viper_persistent_spawning", "OnOff"
+    Option "$MENU_MAGPERSISTENCY", "vipermag_persistent_spawning", "OnOff"
+	SafeCommand "$MENU_RESETPERSISTENCY", "resetcvar viper_persistent_spawning; vipermag_persistent_spawning"
  	StaticText ""
    	StaticText ""
 
-	StaticText "Reset Options", "yellow"
-	SafeCommand "Reset all options", "viper_reset_cvars"
+	StaticText "$MENU_RESETOPTIONS", "Yellow"
+	SafeCommand "$MENU_RESETALLOPTIONS", "viper_reset_cvars"
 }
 
 
@@ -99,73 +113,80 @@ OptionMenu "viperSpawning" {
 // Machine Guns
 
 OptionMenu "blackjackSpawning" {
-    Title "------ 'Blackjack' .355 Rifle Options ------"
-   	StaticText "Notice:", "green"
-    StaticText  "Setting 'spawn rate' to Replace All will suppress", "white"
-    StaticText  "spawns of that given type.", "white"
+    Title "$MENU_BLACKJACK_TITLE"
+   	StaticText "$MENU_NOTICE", "Green"
+    StaticText "$MENU_SPAWNRATE_TEXT1", "White"
+    StaticText "$MENU_SPAWNRATE_TEXT2", "White"
     StaticText ""
 
-	StaticText "Spawn Options", "green"
-    StaticText  "Control the spawn rate of the blackjack on Clip Boxes:", "white"
-	Option "Blackjack Spawn Rate: ", "blackjack_clipbox_spawn_bias", "SpawnBias"
-	SafeCommand "Reset Blackjack options", "resetcvar blackjack_clipbox_spawn_bias"
-    StaticText ""
-
-	StaticText "Spawn Options", "green"
-    StaticText  "Control the spawn rate of the .355 Magazines on Clip Magazines:", "white"
-	Option ".355 Mag Spawn Rate: ", "blackjack355mag_clip_spawn_bias", "SpawnBias"
-	SafeCommand "Reset .355 Mag options", "resetcvar blackjack355mag_clip_spawn_bias"
-    StaticText ""
-
-	StaticText "Spawn Options", "green"
-    StaticText  "Control the spawn rate of the 12ga Shell Magazines on Shell Pickups:", "white"
-	Option "Shell Mag Spawn Rate: ", "blackjackshellmag_shell_spawn_bias", "SpawnBias"
-	SafeCommand "Reset Shell Mag options", "resetcvar blackjackshellmag_shell_spawn_bias"
+	StaticText "$MENU_WEPSPAWNOPTIONS", "Green"
+    StaticText "$MENU_BLACKJACK_CLIPBOX_SPAWNTEXT", "White"
+	Option "$MENU_WEPSPAWNRATE", "blackjack_clipbox_spawn_bias", "SpawnBias"
+	SafeCommand "$MENU_RESETWEP", "resetcvar blackjack_clipbox_spawn_bias"
     StaticText ""
 	
-	StaticText "Enable/Disable the Blackjack from spawning in Backpacks.", "green"
-	Option "Blackjack:", "blackjack_allowBackpacks", "OnOff"
-	Option "Blackjack .355 Magazines:", "blackjack355mag_allowBackpacks", "OnOff"
-	Option "Blackjack Shell Magazines:", "blackjackshellmag_allowBackpacks", "OnOff"
+	StaticText "$MENU_BLACKJACK_BACKPACKS", "White"
+	Option "$MENU_BACKPACKSALLOWED", "blackjack_allowBackpacks", "OnOff"
  	StaticText ""
 
-    StaticText  "Control whether replacements happen after a mapload.", "white"
-	Option "Persistent Spawns (Blackjack): ", "blackjack_persistent_spawning", "OnOff"
-	Option "Persistent Spawns (.355 Mags): ", "blackjack355mag_persistent_spawning", "OnOff"
-	Option "Persistent Spawns (Shell Mags): ", "blackjackshellmag_persistent_spawning", "OnOff"
-	SafeCommand "Reset persistence options", "resetcvar blackjack_persistent_spawning; resetcvar blackjack355mag_persistent_spawning; resetcvar blackjackshellmag_persistent_spawning"
+	StaticText "$MENU_MAGSPAWNOPTIONS", "Green"
+    StaticText "$MENU_BLACKJACKMAG_355_CLIPMAG_SPAWNTEXT", "White"
+	Option "$MENU_MAGSPAWNRATE", "blackjack355mag_clip_spawn_bias", "SpawnBias"
+	SafeCommand "$MENU_RESETMAG", "resetcvar blackjack355mag_clip_spawn_bias"
+    StaticText ""
+
+	StaticText "$MENU_BLACKJACKMAG_355_BACKPACKS", "White"
+	Option "$MENU_BACKPACKSALLOWED", "blackjack355mag_allowBackpacks", "OnOff"
+ 	StaticText ""
+
+    StaticText "$MENU_BLACKJACKMAG_SHELL_SHELL_SPAWNTEXT", "White"
+	Option "$MENU_MAGSPAWNRATE", "blackjackshellmag_shell_spawn_bias", "SpawnBias"
+	SafeCommand "$MENU_RESETMAG", "resetcvar blackjackshellmag_shell_spawn_bias"
+    StaticText ""
+
+	StaticText "$MENU_BLACKJACKMAG_SHELL_BACKPACKS", "White"
+	Option "$MENU_BACKPACKSALLOWED", "blackjackshellmag_allowBackpacks", "OnOff"
+ 	StaticText ""
+
+	StaticText "$MENU_PERSISTENCYOPTIONS", "Green"
+    StaticText "$MENU_PERSISTENCY_TEXT", "White"
+	Option "$MENU_WEPPERSISTENCY", "blackjack_persistent_spawning", "OnOff"
+	Option "$MENU_BLACKJACKMAG_355_PERSISTENCY", "blackjack355mag_persistent_spawning", "OnOff"
+	Option "$MENU_BLACKJACKMAG_SHELL_PERSISTENCY", "blackjackshellmag_persistent_spawning", "OnOff"
+	SafeCommand "$MENU_RESETPERSISTENCY", "resetcvar blackjack_persistent_spawning; resetcvar blackjack355mag_persistent_spawning; resetcvar blackjackshellmag_persistent_spawning"
  	StaticText ""
    	StaticText ""
 
-	StaticText "Reset Options", "green"
-	SafeCommand "Reset all options", "blackjack_reset_cvars"
+	StaticText "$MENU_RESETOPTIONS", "Green"
+	SafeCommand "$MENU_RESETALLOPTIONS", "blackjack_reset_cvars"
 }
 
 OptionMenu "jackdawSpawning" {
-    Title "------ 'Jackdaw' 9mm SMG Options ------"
-   	StaticText "Notice:", "green"
-    StaticText  "Setting 'spawn rate' to Replace All will suppress", "white"
-    StaticText  "spawns of that given type.", "white"
+    Title "$MENU_JACKDAW_TITLE"
+   	StaticText "$MENU_NOTICE", "Green"
+    StaticText "$MENU_SPAWNRATE_TEXT1", "White"
+    StaticText "$MENU_SPAWNRATE_TEXT2", "White"
     StaticText ""
 
-	StaticText "Spawn Options", "green"
-    StaticText  "Control the spawn rate of the jackdaw on Vulcanettes:", "white"
-	Option "Jackdaw Spawn Rate: ", "jackdaw_vulcanette_spawn_bias", "SpawnBias"
-	SafeCommand "Reset Jackdaw options", "resetcvar jackdaw_vulcanette_spawn_bias"
+	StaticText "$MENU_SPAWNOPTIONS", "Green"
+    StaticText "$MENU_JACKDAW_CHAINGUN_SPAWNTEXT", "White"
+	Option "$MENU_WEPSPAWNRATE", "jackdaw_vulcanette_spawn_bias", "SpawnBias"
+	SafeCommand "$MENU_RESETWEP", "resetcvar jackdaw_vulcanette_spawn_bias"
     StaticText ""
 	
-	StaticText "Enable/Disable the Jackdaw from spawning in Backpacks.", "green"
-	Option "Jackdaw:", "jackdaw_allowBackpacks", "OnOff"
+	StaticText "$MENU_JACKDAW_BACKPACKS", "Green"
+	Option "$MENU_BACKPACKSALLOWED", "jackdaw_allowBackpacks", "OnOff"
  	StaticText ""
 
-    StaticText  "Control whether replacements happen after a mapload.", "white"
-	Option "Persistent Spawns: ", "jackdaw_persistent_spawning", "OnOff"
-	SafeCommand "Reset persistence options", "resetcvar jackdaw_persistent_spawning"
+	StaticText "$MENU_PERSISTENCYOPTIONS", "Green"
+    StaticText "$MENU_PERSISTENCY_TEXT", "White"
+	Option "$MENU_PERSISTENCY", "jackdaw_persistent_spawning", "OnOff"
+	SafeCommand "$MENU_RESETPERSISTENCY", "resetcvar jackdaw_persistent_spawning"
  	StaticText ""
    	StaticText ""
 
-	StaticText "Reset Options", "green"
-	SafeCommand "Reset all options", "jackdaw_reset_cvars"
+	StaticText "$MENU_RESETOPTIONS", "Green"
+	SafeCommand "$MENU_RESETALLOPTIONS", "jackdaw_reset_cvars"
 }
 
 
@@ -175,230 +196,241 @@ OptionMenu "jackdawSpawning" {
 // Rifles
 
 OptionMenu "blackhawkSpawning" {
-    Title "------ 'Blackhawk' Hi-Tech Crossbow Options ------"
-   	StaticText "Notice:", "Orange"
-    StaticText  "Setting 'spawn rate' to Replace All will suppress", "white"
-    StaticText  "spawns of that given type.", "white"
+    Title "$MENU_BLACKHAWK_TITLE"
+   	StaticText "$MENU_NOTICE", "Orange"
+    StaticText "$MENU_SPAWNRATE_TEXT1", "White"
+    StaticText "$MENU_SPAWNRATE_TEXT2", "White"
     StaticText ""
 
-	StaticText "Spawn Options", "Orange"
-    StaticText  "Control the spawn rate of the blackhawk on Rocket Launchers:", "white"
-	Option "Blackhawk Spawn Rate: ", "blackhawk_launcher_spawn_bias", "SpawnBias"
-	SafeCommand "Reset Blackhawk options", "resetcvar blackhawk_launcher_spawn_bias"
-    StaticText ""
-
-	StaticText "Spawn Options", "Orange"
-    StaticText  "Control the spawn rate of the bolt bundles on Rockets:", "white"
-	Option "Bolt Bundle Spawn Rate: ", "blackhawkBolts_rocket_spawn_bias", "SpawnBias"
-	SafeCommand "Reset Bolt Bundle options", "resetcvar blackhawkBolts_rocket_spawn_bias"
+	StaticText "$MENU_WEPSPAWNOPTIONS", "Orange"
+    StaticText "$MENU_BLACKHAWK_LAUNCHER_SPAWNTEXT", "White"
+	Option "$MENU_WEPSPAWNRATE", "blackhawk_launcher_spawn_bias", "SpawnBias"
+	SafeCommand "$MENU_RESETWEP", "resetcvar blackhawk_launcher_spawn_bias"
     StaticText ""
 	
-	StaticText "Enable/Disable the Blackhawk from spawning in Backpacks.", "orange"
-	Option "Blackhawk:", "blackhawk_allowBackpacks", "OnOff"
-	Option "Blackhawk Bolts:", "blackhawkBolts_allowBackpacks", "OnOff"
+	StaticText "$MENU_BLACKHAWK_BACKPACKS", "White"
+	Option "$MENU_BACKPACKSALLOWED", "blackhawk_allowBackpacks", "OnOff"
  	StaticText ""
 
-    StaticText  "Control whether replacements happen after a mapload.", "white"
-	Option "Persistent Spawns (Crossbow): ", "blackhawk_persistent_spawning", "OnOff"
-	Option "Persistent Spawns (Bolt Bundles): ", "blackhawkBolts_persistent_spawning", "OnOff"
-	SafeCommand "Reset persistence options", "resetcvar blackhawk_persistent_spawning; resetcvar blackhawkBolts_persistent_spawning"
+	StaticText "$MENU_BOLTBUNDLE_SPAWNOPTIONS", "Orange"
+    StaticText "$MENU_BOLTBUNDLE_ROCKET_SPAWNTEXT", "White"
+	Option "$MENU_BOLTBUNDLE_SPAWNRATE", "blackhawkBolts_rocket_spawn_bias", "SpawnBias"
+	SafeCommand "$MENU_RESETBOLTBUNDLE", "resetcvar blackhawkBolts_rocket_spawn_bias"
+    StaticText ""
+
+	StaticText "$MENU_BOLTBUNDLE_BACKPACKS", "White"
+	Option "$MENU_BACKPACKSALLOWED", "blackhawkBolts_allowBackpacks", "OnOff"
+ 	StaticText ""
+
+	StaticText "$MENU_PERSISTENCYOPTIONS", "Orange"
+    StaticText "$MENU_PERSISTENCY_TEXT", "White"
+	Option "$MENU_WEPPERSISTENCY", "blackhawk_persistent_spawning", "OnOff"
+	Option "$MENU_BOLTBUNDLE_PERSISTENCY", "blackhawkBolts_persistent_spawning", "OnOff"
+	SafeCommand "$MENU_RESETPERSISTENCY", "resetcvar blackhawk_persistent_spawning; resetcvar blackhawkBolts_persistent_spawning"
  	StaticText ""
    	StaticText ""
 
-	StaticText "Reset Options", "Orange"
-	SafeCommand "Reset all options", "blackhawk_reset_cvars"
+	StaticText "$MENU_RESETOPTIONS", "Orange"
+	SafeCommand "$MENU_RESETALLOPTIONS", "blackhawk_reset_cvars"
 }
 
 OptionMenu "scorpionSpawning" {
-    Title "------ 'Scorpion' 35mm Sniper Rifle Options ------"
-   	StaticText "Notice:", "Orange"
-    StaticText  "Setting 'spawn rate' to Replace All will suppress", "white"
-    StaticText  "spawns of that given type.", "white"
+    Title "$MENU_SCORPION_TITLE"
+   	StaticText "$MENU_NOTICE", "Orange"
+    StaticText "$MENU_SPAWNRATE_TEXT1", "White"
+    StaticText "$MENU_SPAWNRATE_TEXT2", "White"
     StaticText ""
 
-	StaticText "Spawn Options", "Orange"
-    StaticText  "Control the spawn rate of the scorpion on the Brontornis Rifle:", "white"
-	Option "Scorpion Spawn Rate: ", "scorpion_bronto_spawn_bias", "SpawnBias"
-	SafeCommand "Reset Scorpion options", "resetcvar scorpion_bronto_spawn_bias"
+	StaticText "$MENU_SPAWNOPTIONS", "Orange"
+    StaticText "$MENU_SCORPION_BRONTORNIS_SPAWNTEXT", "White"
+	Option "$MENU_WEPSPAWNRATE", "scorpion_bronto_spawn_bias", "SpawnBias"
+	SafeCommand "$MENU_RESETWEP", "resetcvar scorpion_bronto_spawn_bias"
     StaticText ""
 	
-	StaticText "Enable/Disable the Scorpion from spawning in Backpacks.", "orange"
-	Option "Scorpion:", "scorpion_allowBackpacks", "OnOff"
+	StaticText "$MENU_SCORPION_BACKPACKS", "Orange"
+	Option "$MENU_BACKPACKSALLOWED", "scorpion_allowBackpacks", "OnOff"
  	StaticText ""
 
-    StaticText  "Control whether replacements happen after a mapload.", "white"
-	Option "Persistent Spawns: ", "scorpion_persistent_spawning", "OnOff"
-	SafeCommand "Reset persistence options", "resetcvar scorpion_persistent_spawning"
+	StaticText "$MENU_PERSISTENCYOPTIONS", "Orange"
+    StaticText "$MENU_PERSISTENCY_TEXT", "White"
+	Option "$MENU_PERSISTENCY", "scorpion_persistent_spawning", "OnOff"
+	SafeCommand "$MENU_RESETPERSISTENCY", "resetcvar scorpion_persistent_spawning"
  	StaticText ""
    	StaticText ""
 
-	StaticText "Reset Options", "Orange"
-	SafeCommand "Reset all options", "scorpion_reset_cvars"
+	StaticText "$MENU_RESETOPTIONS", "Orange"
+	SafeCommand "$MENU_RESETALLOPTIONS", "scorpion_reset_cvars"
 }
 
 OptionMenu "wyvernSpawning" {
-    Title "------ 'Wyvern' .50 OMG Double-Barrel Rifle Options ------"
-   	StaticText "Notice:", "Orange"
-    StaticText  "Setting 'spawn rate' to Replace All will suppress", "white"
-    StaticText  "spawns of that given type.", "white"
+    Title "$MENU_WYVERN_TITLE"
+   	StaticText "$MENU_NOTICE", "Orange"
+    StaticText "$MENU_SPAWNRATE_TEXT1", "White"
+    StaticText "$MENU_SPAWNRATE_TEXT2", "White"
     StaticText ""
 
-	StaticText "Spawn Options", "Orange"
-    StaticText  "Control the spawn rate of the Wyvern on:", "white"
-	Option "Hunter shotguns: ", "wyvern_hunter_spawn_bias", "SpawnBias"
-	SafeCommand "Reset Wyvern options", "resetcvar wyvern_hunter_spawn_bias"
-	Option "Slayer shotguns: ", "wyvern_slayer_spawn_bias", "SpawnBias"
-	SafeCommand "Reset Wyvern options", "resetcvar wyvern_slayer_spawn_bias"
+	StaticText "$MENU_SPAWNOPTIONS", "Orange"
+    StaticText "$MENU_WYVERN_HUNTER_SPAWNTEXT", "White"
+	Option "$MENU_WEPSPAWNRATE", "wyvern_hunter_spawn_bias", "SpawnBias"
+	SafeCommand "$MENU_RESETWEP", "resetcvar wyvern_hunter_spawn_bias"
+    StaticText "$MENU_WYVERN_SLAYER_SPAWNTEXT", "White"
+	Option "$MENU_WEPSPAWNRATE", "wyvern_slayer_spawn_bias", "SpawnBias"
+	SafeCommand "$MENU_RESETWEP", "resetcvar wyvern_slayer_spawn_bias"
     StaticText ""
 	
-	StaticText "Enable/Disable the Wyvern from spawning in Backpacks.", "orange"
-	Option "Wyvern:", "wyvern_allowBackpacks", "OnOff"
+	StaticText "$MENU_WYVERN_BACKPACKS", "Orange"
+	Option "$MENU_BACKPACKSALLOWED", "wyvern_allowBackpacks", "OnOff"
  	StaticText ""
 
-    StaticText  "Control whether replacements happen after a mapload.", "white"
-	Option "Persistent Spawns: ", "wyvern_persistent_spawning", "OnOff"
-	SafeCommand "Reset persistence options", "resetcvar wyvern_persistent_spawning"
+	StaticText "$MENU_PERSISTENCYOPTIONS", "Orange"
+    StaticText "$MENU_PERSISTENCY_TEXT", "White"
+	Option "$MENU_PERSISTENCY", "wyvern_persistent_spawning", "OnOff"
+	SafeCommand "$MENU_RESETPERSISTENCY", "resetcvar wyvern_persistent_spawning"
  	StaticText ""
    	StaticText ""
 
-	StaticText "Reset Options", "Orange"
-	SafeCommand "Reset all options", "wyvern_reset_cvars"
+	StaticText "$MENU_RESETOPTIONS", "Orange"
+	SafeCommand "$MENU_RESETALLOPTIONS", "wyvern_reset_cvars"
 }
 
 // Energy weapons
 
 OptionMenu "gungnirSpawning" {
-    Title "------ 'Gungnir' Frag Beam Rifle Options ------"
-   	StaticText "Notice:", "cyan"
-    StaticText  "Setting 'spawn rate' to Replace All will suppress", "white"
-    StaticText  "spawns of that given type.", "white"
+    Title "$MENU_GUNGNIR_TITLE"
+   	StaticText "$MENU_NOTICE", "Cyan"
+    StaticText "$MENU_SPAWNRATE_TEXT1", "White"
+    StaticText "$MENU_SPAWNRATE_TEXT2", "White"
     StaticText ""
 
-	StaticText "Spawn Options", "cyan"
-    StaticText  "Control the spawn rate of the Gungnir on BFG-9000s:", "white"
-	Option "Gungnir Spawn Rate: ", "gungnir_bfg_spawn_bias", "SpawnBias"
-	SafeCommand "Reset Gungnir options", "resetcvar gungnir_bfg_spawn_bias"
+	StaticText "$MENU_SPAWNOPTIONS", "Cyan"
+    StaticText "$MENU_GUNGNIR_BFG_SPAWNTEXT", "White"
+	Option "$MENU_WEPSPAWNRATE", "gungnir_bfg_spawn_bias", "SpawnBias"
+	SafeCommand "$MENU_RESETWEP", "resetcvar gungnir_bfg_spawn_bias"
  	StaticText ""
 	
-	StaticText "Enable/Disable the Gungnir from spawning in Backpacks.", "cyan"
-	Option "Gungnir:", "gungnir_allowBackpacks", "OnOff"
+	StaticText "$MENU_GUNGNIR_BACKPACKS", "White"
+	Option "$MENU_BACKPACKSALLOWED", "gungnir_allowBackpacks", "OnOff"
  	StaticText ""
 
-    StaticText  "Control whether replacements happen after a mapload.", "white"
-	Option "Persistent Spawns: ", "gungnir_persistent_spawning", "OnOff"
-	SafeCommand "Reset persistence options", "resetcvar gungnir_persistent_spawning"
+	StaticText "$MENU_PERSISTENCYOPTIONS", "Cyan"
+    StaticText "$MENU_PERSISTENCY_TEXT", "White"
+	Option "$MENU_PERSISTENCY", "gungnir_persistent_spawning", "OnOff"
+	SafeCommand "$MENU_RESETPERSISTENCY", "resetcvar gungnir_persistent_spawning"
  	StaticText ""
    	StaticText ""
 
-	StaticText "Reset Options", "cyan"
-	SafeCommand "Reset all options", "gungnir_reset_cvars"
+	StaticText "$MENU_RESETOPTIONS", "Cyan"
+	SafeCommand "$MENU_RESETALLOPTIONS", "gungnir_reset_cvars"
 }
 
 OptionMenu "hammerheadSpawning" {
-    Title "------ CIR-37 'Hammerhead' Plasma Minigun Options ------"
-   	StaticText "Notice:", "cyan"
-    StaticText  "Setting 'spawn rate' to Replace All will suppress", "white"
-    StaticText  "spawns of that given type.", "white"
+    Title ""
+   	StaticText "$MENU_NOTICE", "Cyan"
+    StaticText "$MENU_SPAWNRATE_TEXT1", "White"
+    StaticText "$MENU_SPAWNRATE_TEXT2", "White"
     StaticText ""
 
-	StaticText "Spawn Options", "cyan"
-    StaticText  "Control the spawn rate of the Hammerhead on:", "white"
-	Option "Vulcanettes: ", "hammerhead_chaingun_spawn_bias", "SpawnBias"
-	SafeCommand "Reset Hammerhead options", "resetcvar hammerhead_chaingun_spawn_bias"
-	Option "Thunderbusters: ", "hammerhead_thunderbuster_spawn_bias", "SpawnBias"
-	SafeCommand "Reset Hammerhead options", "resetcvar hammerhead_thunderbuster_spawn_bias"
+	StaticText "$MENU_SPAWNOPTIONS", "Cyan"
+    StaticText "$MENU_HAMMERHEAD_CHAINGUN_SPAWNTEXT", "White"
+	Option "$MENU_WEPSPAWNRATE", "hammerhead_chaingun_spawn_bias", "SpawnBias"
+	SafeCommand "$MENU_RESETWEP", "resetcvar hammerhead_chaingun_spawn_bias"
+    StaticText "$MENU_HAMMERHEAD_PLASMA_SPAWNTEXT", "White"
+	Option "$MENU_WEPSPAWNRATE", "hammerhead_thunderbuster_spawn_bias", "SpawnBias"
+	SafeCommand "$MENU_RESETWEP", "resetcvar hammerhead_thunderbuster_spawn_bias"
  	StaticText ""
 	
-	StaticText "Enable/Disable the Hammerhead from spawning in Backpacks.", "cyan"
-	Option "Hammerhead:", "hammerhead_allowBackpacks", "OnOff"
+	StaticText "$MENU_HAMMERHEAD_BACKPACKS", "White"
+	Option "$MENU_BACKPACKSALLOWED", "hammerhead_allowBackpacks", "OnOff"
  	StaticText ""
 
-    StaticText  "Control whether replacements happen after a mapload.", "white"
-	Option "Persistent Spawns: ", "hammerhead_persistent_spawning", "OnOff"
-	SafeCommand "Reset persistence options", "resetcvar hammerhead_persistent_spawning"
+	StaticText "$MENU_PERSISTENCYOPTIONS", "Cyan"
+    StaticText "$MENU_PERSISTENCY_TEXT", "White"
+	Option "$MENU_PERSISTENCY", "hammerhead_persistent_spawning", "OnOff"
+	SafeCommand "$MENU_RESETPERSISTENCY", "resetcvar hammerhead_persistent_spawning"
  	StaticText ""
    	StaticText ""
 
-	StaticText "Reset Options", "cyan"
-	SafeCommand "Reset all options", "hammerhead_reset_cvars"
+	StaticText "$MENU_RESETOPTIONS", "Cyan"
+	SafeCommand "$MENU_RESETALLOPTIONS", "hammerhead_reset_cvars"
 }
 
 OptionMenu "redlineSpawning" {
-    Title "------ RDL-N3 'Redline' Thermal Lance Options ------"
-   	StaticText "Notice:", "cyan"
-    StaticText  "Setting 'spawn rate' to Replace All will suppress", "white"
-    StaticText  "spawns of that given type.", "white"
+    Title "$MENU_REDLINE_TITLE"
+   	StaticText "$MENU_NOTICE", "Cyan"
+    StaticText "$MENU_SPAWNRATE_TEXT1", "White"
+    StaticText "$MENU_SPAWNRATE_TEXT2", "White"
     StaticText ""
 
-	StaticText "Spawn Options", "cyan"
-    StaticText  "Control the spawn rate of the Redline on Thunderbusters:", "white"
-	Option "Redline Spawn Rate: ", "redline_thunderbuster_spawn_bias", "SpawnBias"
-	SafeCommand "Reset Redline options", "resetcvar redline_thunderbuster_spawn_bias"
+	StaticText "$MENU_SPAWNOPTIONS", "Cyan"
+    StaticText "$MENU_REDLINE_PLASMA_SPAWNTEXT", "White"
+	Option "$MENU_WEPSPAWNRATE", "redline_thunderbuster_spawn_bias", "SpawnBias"
+	SafeCommand "$MENU_RESETWEP", "resetcvar redline_thunderbuster_spawn_bias"
  	StaticText ""
 	
-	StaticText "Enable/Disable the Redline from spawning in Backpacks.", "cyan"
-	Option "Redline:", "redline_allowBackpacks", "OnOff"
+	StaticText "$MENU_REDLINE_BACKPACKS", "White"
+	Option "$MENU_BACKPACKSALLOWED", "redline_allowBackpacks", "OnOff"
  	StaticText ""
 
-    StaticText  "Control whether replacements happen after a mapload.", "white"
-	Option "Persistent Spawns: ", "redline_persistent_spawning", "OnOff"
-	SafeCommand "Reset persistence options", "resetcvar redline_persistent_spawning"
+	StaticText "$MENU_PERSISTENCYOPTIONS", "Cyan"
+    StaticText "$MENU_PERSISTENCY_TEXT", "White"
+	Option "$MENU_PERSISTENCY", "redline_persistent_spawning", "OnOff"
+	SafeCommand "$MENU_RESETPERSISTENCY", "resetcvar redline_persistent_spawning"
  	StaticText ""
    	StaticText ""
 
-	StaticText "Reset Options", "cyan"
-	SafeCommand "Reset all options", "redline_reset_cvars"
+	StaticText "$MENU_RESETOPTIONS", "Cyan"
+	SafeCommand "$MENU_RESETALLOPTIONS", "redline_reset_cvars"
 }
 
 
 OptionMenu "AceCorpMenu" {
 	Title "$AceCorpMenu"
 
-	StaticText "--- Pistols ---", "yellow"
+	StaticText "$MENU_PISTOLS_TITLE", "Yellow"
 	StaticText ""
-    Submenu "'Majestic' .500 S&W Railgun", "majesticSpawning", 0, 1
+    Submenu "$TAG_MAJESTIC", "majesticSpawning", 0, 1
 	StaticText ""
-    Submenu "'Viper' .50 AM Handgun", "viperSpawning", 0, 1
+    Submenu "$TAG_VIPER", "viperSpawning", 0, 1
 	StaticText ""
 
-	StaticText "--- Shotguns ---", "red"
+	StaticText "$MENU_SHOTGUNS_TITLE", "Red"
     StaticText ""
 	StaticText "TODO: Get some Shotguns", "DarkGray"
 	StaticText ""
 
-	StaticText "--- Machine Guns ---", "green"
+	StaticText "$MENU_MACHINEGUNS_TITLE", "Green"
 	StaticText ""
-    Submenu "'Blackjack' .355 Rifle", "blackjackSpawning", 0, 1
+    Submenu "$TAG_BLACKJACK", "blackjackSpawning", 0, 1
 	StaticText ""
-    Submenu "'Jackdaw' 9mm SMG", "jackdawSpawning", 0, 1
+    Submenu "$TAG_JACKDAW", "jackdawSpawning", 0, 1
 	StaticText ""
 
-	StaticText "--- Explosives ---", "Brown"
+	StaticText "$MENU_EXPLOSIVES_TITLE", "Brown"
 	StaticText ""
 	StaticText "TODO: Get some Explosives", "DarkGray"
 	StaticText ""
 
-	StaticText "--- Rifles ---", "orange"
+	StaticText "$MENU_RIFLES_TITLE", "Orange"
 	StaticText ""
-    Submenu "'Blackhawk' Hi-Tech Crossbow", "blackhawkSpawning", 0, 1
+    Submenu "$TAG_BLACKHAWK", "blackhawkSpawning", 0, 1
 	StaticText ""
-    Submenu "'Scorpion' 35mm Sniper Rifle", "scorpionSpawning", 0, 1
+    Submenu "$TAG_SCORPION", "scorpionSpawning", 0, 1
 	StaticText ""
-    Submenu "'Wyvern' .50 OMG Double-Barrel Rifle", "wyvernSpawning", 0, 1
+    Submenu "$TAG_WYVERN", "wyvernSpawning", 0, 1
 	StaticText ""
 
-    StaticText "--- Energy Weapons ---", "cyan"
+    StaticText "$MENU_ENERGYWEAPONS_TITLE", "Cyan"
 	StaticText ""
-    Submenu "'Gungnir' Frag Beam Rifle", "gungnirSpawning", 0, 1
+    Submenu "$TAG_GUNGNIR", "gungnirSpawning", 0, 1
 	StaticText ""
-    Submenu "CIR-37 'Hammerhead' Plasma Minigun", "hammerheadSpawning", 0, 1
+    Submenu "$TAG_HAMMERHEAD", "hammerheadSpawning", 0, 1
 	StaticText ""
-    Submenu "RDL-N3 'Redline' Thermal Lance", "redlineSpawning", 0, 1
+    Submenu "$TAG_REDLINE", "redlineSpawning", 0, 1
 	StaticText ""
 	
-	StaticText "--- Reset Options ---", "red"
+	StaticText "$MENU_RESETOPTIONS_TITLE", "Red"
 	StaticText ""
-	SafeCommand "Reset all options for AceCorp: Engineering Dept.", "AceCorp_Reset_Cvars"
+	SafeCommand "$ACE_RESETALLOPTIONS", "AceCorp_Reset_Cvars"
 }
 
 AddOptionMenu "OptionsMenu" {
