@@ -18,6 +18,8 @@ OptionValue "SpawnBias" {
 
 OptionMenu "majesticSpawning" {
     Title "$MENU_MAJESTIC_TITLE"
+    StaticText ""
+
    	StaticText "$MENU_NOTICE", "Yellow"
     StaticText "$MENU_SPAWNRATE_TEXT1", "White"
     StaticText "$MENU_SPAWNRATE_TEXT2", "White"
@@ -63,6 +65,8 @@ OptionMenu "majesticSpawning" {
 
 OptionMenu "viperSpawning" {
     Title "$MENU_VIPER_TITLE"
+    StaticText ""
+
    	StaticText "$MENU_NOTICE", "Yellow"
     StaticText "$MENU_SPAWNRATE_TEXT1", "White"
     StaticText "$MENU_SPAWNRATE_TEXT2", "White"
@@ -114,6 +118,11 @@ OptionMenu "viperSpawning" {
 
 OptionMenu "blackjackSpawning" {
     Title "$MENU_BLACKJACK_TITLE"
+    StaticText ""
+
+	Option "$MENU_BLACKJACK_INVERT", "bj_invert", "YesNo"
+    StaticText ""
+
    	StaticText "$MENU_NOTICE", "Green"
     StaticText "$MENU_SPAWNRATE_TEXT1", "White"
     StaticText "$MENU_SPAWNRATE_TEXT2", "White"
@@ -163,6 +172,8 @@ OptionMenu "blackjackSpawning" {
 
 OptionMenu "jackdawSpawning" {
     Title "$MENU_JACKDAW_TITLE"
+    StaticText ""
+
    	StaticText "$MENU_NOTICE", "Green"
     StaticText "$MENU_SPAWNRATE_TEXT1", "White"
     StaticText "$MENU_SPAWNRATE_TEXT2", "White"
@@ -197,6 +208,11 @@ OptionMenu "jackdawSpawning" {
 
 OptionMenu "blackhawkSpawning" {
     Title "$MENU_BLACKHAWK_TITLE"
+    StaticText ""
+
+	Option "$MENU_BLACKHAWK_INVERT", "bh_invertscroll", "YesNo"
+    StaticText ""
+
    	StaticText "$MENU_NOTICE", "Orange"
     StaticText "$MENU_SPAWNRATE_TEXT1", "White"
     StaticText "$MENU_SPAWNRATE_TEXT2", "White"
@@ -236,6 +252,8 @@ OptionMenu "blackhawkSpawning" {
 
 OptionMenu "scorpionSpawning" {
     Title "$MENU_SCORPION_TITLE"
+    StaticText ""
+
    	StaticText "$MENU_NOTICE", "Orange"
     StaticText "$MENU_SPAWNRATE_TEXT1", "White"
     StaticText "$MENU_SPAWNRATE_TEXT2", "White"
@@ -264,6 +282,8 @@ OptionMenu "scorpionSpawning" {
 
 OptionMenu "wyvernSpawning" {
     Title "$MENU_WYVERN_TITLE"
+    StaticText ""
+
    	StaticText "$MENU_NOTICE", "Orange"
     StaticText "$MENU_SPAWNRATE_TEXT1", "White"
     StaticText "$MENU_SPAWNRATE_TEXT2", "White"
@@ -297,6 +317,8 @@ OptionMenu "wyvernSpawning" {
 
 OptionMenu "gungnirSpawning" {
     Title "$MENU_GUNGNIR_TITLE"
+    StaticText ""
+
    	StaticText "$MENU_NOTICE", "Cyan"
     StaticText "$MENU_SPAWNRATE_TEXT1", "White"
     StaticText "$MENU_SPAWNRATE_TEXT2", "White"
@@ -324,7 +346,9 @@ OptionMenu "gungnirSpawning" {
 }
 
 OptionMenu "hammerheadSpawning" {
-    Title ""
+    Title "$MENU_HAMMERHEAD_TITLE"
+    StaticText ""
+
    	StaticText "$MENU_NOTICE", "Cyan"
     StaticText "$MENU_SPAWNRATE_TEXT1", "White"
     StaticText "$MENU_SPAWNRATE_TEXT2", "White"
@@ -356,6 +380,8 @@ OptionMenu "hammerheadSpawning" {
 
 OptionMenu "redlineSpawning" {
     Title "$MENU_REDLINE_TITLE"
+    StaticText ""
+
    	StaticText "$MENU_NOTICE", "Cyan"
     StaticText "$MENU_SPAWNRATE_TEXT1", "White"
     StaticText "$MENU_SPAWNRATE_TEXT2", "White"
@@ -384,7 +410,8 @@ OptionMenu "redlineSpawning" {
 
 
 OptionMenu "AceCorpMenu" {
-	Title "$AceCorpMenu"
+	Title "$ACE_MENU"
+    StaticText ""
 
 	StaticText "$MENU_PISTOLS_TITLE", "Yellow"
 	StaticText ""

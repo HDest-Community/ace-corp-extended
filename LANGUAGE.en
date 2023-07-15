@@ -53,6 +53,8 @@ MENU_BOLTBUNDLE_SPAWNRATE               = "Bolt Bundle Spawn Rate: ";
 MENU_BOLTBUNDLE_PERSISTENCY             = "Persistent Bolt Bundle Spawns: ";
 MENU_RESETBOLTBUNDLE                    = "Reset Bolt Bundle Options";
 
+MENU_BLACKHAWK_INVERT                   = "Invert Bolt Selection Order";
+
 // Blackjack Options Text
 MENU_BLACKJACK_TITLE                    = "------ 'Blackjack' .355 Rifle Options ------";
 MENU_BLACKJACK_CLIPBOX_SPAWNTEXT        = "Control the spawn rate of the blackjack on Clip Boxes:";
@@ -66,6 +68,8 @@ MENU_BLACKJACKMAG_SHELL_BACKPACKS       = "Control whether Shell Magazines spawn
 
 MENU_BLACKJACKMAG_355_PERSISTENCY       = "Persistent .355 Magazine Spawns: ";
 MENU_BLACKJACKMAG_SHELL_PERSISTENCY     = "Persistent Shell Magazine Spawns: ";
+
+MENU_BLACKJACK_INVERT                   = "Invert Primary/Secondary Fire & Reloads";
 
 // Gungnir Options Text
 MENU_GUNGNIR_TITLE                      = "------ 'Gungnir' Frag Beam Rifle Options ------";
