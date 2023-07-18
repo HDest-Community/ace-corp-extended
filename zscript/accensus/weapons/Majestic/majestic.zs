@@ -225,6 +225,13 @@ class HDMajestic : HDHandgun
 		}
 	}
 
+	action void A_CheckMajesticHand()
+	{
+		bool right = !invoker.wronghand;
+		right = right && Wads.CheckNumForName("id", 0) != -1 || !right && Wads.CheckNumForName("id", 0) == -1;
+		player.GetPSprite(PSP_WEAPON).sprite = GetSpriteIndex(right ? "MJCGA0" : "MJ2GA0");
+	}
+
 	const MaxCharge = 60;
 	const Tiers = 3;
 	private int Charge;
@@ -254,6 +261,7 @@ class HDMajestic : HDHandgun
 		Ready:
 			MJCG # 1
 			{
+				A_CheckMajesticHand();
 				A_WeaponReady(WRF_NOFIRE | (invoker.Charge == 0 ? WRF_ALL : 0));
 				
 				if (PressingFire() && invoker.WeaponStatus[MJProp_Mag] > 0 || invoker.Charge > 0 && player.GetPSprite(PSP_WEAPON).frame == 1)
@@ -311,10 +319,12 @@ class HDMajestic : HDHandgun
 			}
 			Goto ReadyEnd;
 		Select0:
-			MJCG A 1 A_CheckMajesticFrame();
+			MJCG A 0 A_CheckMajesticHand();
+			#### A 1 A_CheckMajesticFrame();
 			Goto Select0Small;
 		Deselect0:
-			MJCG A 1
+			MJCG A 0 A_CheckMajesticHand();
+			#### A 1
 			{
 				invoker.MustCancel = false;
 				A_CheckMajesticFrame();
@@ -326,15 +336,15 @@ class HDMajestic : HDHandgun
 			Goto Ready;
 
 		Fire:
-			MJCG B 1;
-			MJCG A 1
+			#### B 1;
+			#### A 1
 			{
 				HDPlayerPawn(self).gunbraced = false;
 			}
-			MJCF A 1 Bright A_FireMajestic(false);
-			MJCF B 1;
-			MJCF C 1;
-			MJCG A 2 A_CheckMajesticFrame();
+			#### E 1 Bright A_FireMajestic(false);
+			#### F 1;
+			#### G 1;
+			#### A 2 A_CheckMajesticFrame();
 			Goto Ready;
 
 		Reload:
@@ -448,6 +458,71 @@ class HDMajestic : HDHandgun
 			#### # 1 Offset(2, 42);
 			#### # 1 Offset(2, 38);
 			#### # 1 Offset(1, 34);
+			Goto Nope;
+
+
+		Firemode:
+		SwapPistols:
+			#### A 0 A_SwapHandguns();
+			#### A 0 A_JumpIf(player.GetPSprite(PSP_WEAPON).sprite == GetSpriteIndex("MJCGA0"), "SwapPistols2");
+		SwapPistols1:
+			TNT1 A 0 A_Overlay(1026, "lowerleft");
+			TNT1 A 0 A_Overlay(1025, "raiseright");
+			TNT1 A 5;
+			MJCG A 0;
+			Goto Nope;
+		SwapPistols2:
+			TNT1 A 0 A_Overlay(1026, "lowerright");
+			TNT1 A 0 A_Overlay(1025, "raiseleft");
+			TNT1 A 5;
+			MJ2G A 0;
+			Goto Nope;
+		LowerLeft:
+			MJCG # 0 A_WeaponBusy(true);
+			#### # 1 Offset(-6, 38);
+			#### # 1 Offset(-12, 48);
+			#### # 1 Offset(-20, 60);
+			#### # 1 Offset(-34, 76);
+			#### # 1 Offset(-50, 86);
+			stop;
+		LowerRight:
+			MJ2G # 0 A_WeaponBusy(true);
+			#### # 1 Offset(6, 38);
+			#### # 1 Offset(12, 48);
+			#### # 1 Offset(20, 60);
+			#### # 1 Offset(34, 76);
+			#### # 1 Offset(50, 86);
+			Stop;
+		RaiseLeft:
+			MJCG # 0 A_WeaponBusy(false);
+			#### # 1 Offset(-50, 86);
+			#### # 1 Offset(-34, 76);
+			#### # 1 Offset(-20, 60);
+			#### # 1 Offset(-12, 48);
+			#### # 1 Offset(-6, 38);
+			Stop;
+		RaiseRight:
+			MJ2G # 0 A_WeaponBusy(false);
+			#### # 1 Offset(50, 86);
+			#### # 1 Offset(34, 76);
+			#### # 1 Offset(20, 60);
+			#### # 1 Offset(12, 48);
+			#### # 1 Offset(6, 38);
+			Stop;
+		WhyAreYouSmiling:
+			#### A 0 A_WeaponBusy(true);
+			#### # 1 Offset(0, 48);
+			#### # 1 Offset(0, 60);
+			#### # 1 Offset(0, 76);
+			TNT1 A 7;
+			TNT1 A 0
+			{
+				invoker.wronghand = !invoker.wronghand;
+				A_CheckMajesticHand();
+			}
+			#### # 1 Offset(0, 76);
+			#### # 1 Offset(0, 60);
+			#### # 1 Offset(0, 48);
 			Goto Nope;
 	}
 }
