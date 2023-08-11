@@ -194,13 +194,7 @@ class HDWyvern : HDWeapon {
 		}
 	}
 
-	States
-	{
-		Spawn:
-			WYVZ ABCDEFG -1 NoDelay
-			{
-				frame = 6 - invoker.weaponStatus[SHOTS_SIDESADDLE] / 2;
-			}
+	States{
 		Select0:
 			WYVG D 0;
 			Goto Select0Small;
@@ -211,8 +205,7 @@ class HDWyvern : HDWeapon {
 		AltFire:
 			WYVG # 0 A_ClearRefire();
 		Ready:
-			WYVG # 1
-			{
+			WYVG # 1 {
 				A_CheckIdleHammer();
 
 				if (PressingFiremode()) {
@@ -283,54 +276,33 @@ class HDWyvern : HDWeapon {
 			Goto Ready;
 
 		AltReload:
-			WYVG # 0
-			{
+			WYVG # 0 {
 				if (
-					CountInv("HD50OMGAmmo") > 0
-					&& (
+					CountInv("HD50OMGAmmo")
+					&&(
 						invoker.weaponStatus[WYVS_CHAMBER1] < 2
-						|| invoker.weaponStatus[WYVS_CHAMBER2] < 2
+						||invoker.weaponStatus[WYVS_CHAMBER2] < 2
 					)
-				) {
-					invoker.weaponStatus[0] |= WYVF_FROMPOCKETS;
-					invoker.weaponStatus[0] &= ~WYVF_JUSTUNLOAD;
-				} else {
-					SetWeaponState('Nope');
+				){
+					invoker.weaponStatus[WYVS_FLAGS] |= WYVF_FROMPOCKETS;
+					invoker.weaponStatus[WYVS_FLAGS] &= ~WYVF_JUSTUNLOAD;
 				}
-			}
-			Goto ReloadStart;
+				else SetWeaponState('Nope');
+			}Goto ReloadStart;
 		Reload:
-			WYVG # 0
-			{
+			WYVG # 0 {
 				if(
 					invoker.weaponStatus[WYVS_CHAMBER1] > 1
 					&& invoker.weaponStatus[WYVS_CHAMBER2] > 1
-				) {
-					SetWeaponState('ReloadSS');
-				}
+				) SetWeaponState('ReloadSS');
 
 				invoker.weaponStatus[WYVS_FLAGS] &= ~WYVF_JUSTUNLOAD;
-
-				if (invoker.weaponStatus[SHOTS_SIDESADDLE] > 0) {
+				if (invoker.weaponStatus[SHOTS_SIDESADDLE] > 0)
 					invoker.weaponStatus[WYVS_FLAGS] &= ~WYVF_FROMPOCKETS;
-				} else if (CountInv("HD50OMGAmmo")) {
+				else if (CountInv("HD50OMGAmmo"))
 					invoker.weaponStatus[WYVS_FLAGS] |= WYVF_FROMPOCKETS;
-				} else {
-					SetWeaponState('Nope');
-				}
-			}
-			Goto ReloadStart;
-		Unload:
-			WYVG # 2 Offset(0, 34)
-			{
-				if (invoker.weaponStatus[SHOTS_SIDESADDLE] > 0) {
-					SetWeaponState('UnloadSS');
-				} else {
-					invoker.weaponStatus[WYVS_FLAGS] |= WYVF_JUSTUNLOAD;
-				}
-			}
-			Goto UnloadStart;
-
+				else SetWeaponState('Nope');
+			}Goto ReloadStart;
 		ReloadStart:
 		UnloadStart:
 			WYVG # 2 Offset(0, 34);
@@ -344,26 +316,23 @@ class HDWyvern : HDWeapon {
 			);
 			WYVR C 3 Offset(0, 36) {
 				// Eject whatever is already loaded
-				for (int i = 0; i < 2; ++i) {
+				for (int i = 0; i < 2; i++) {
 					int chamber = invoker.weaponStatus[WYVS_CHAMBER1 + i];
 					invoker.weaponStatus[WYVS_CHAMBER1 + i] = 0;
-					
+
 					actor sss = null;
 
-					if (chamber > 1) {
-						sss = Spawn("HDUnSpent50OMG", pos + HDMath.GetGunPos(self),ALLOW_REPLACE);
-					} else if (chamber == 1) {
-						sss = Spawn("HDSpent50OMG", pos + HDMath.GetGunPos(self),ALLOW_REPLACE);
-					}
+					if (chamber > 1) sss = Spawn("HDUnSpent50OMG", pos + HDMath.GetGunPos(self),ALLOW_REPLACE);
+					else if (chamber == 1) sss = Spawn("HDSpent50OMG", pos + HDMath.GetGunPos(self),ALLOW_REPLACE);
 
 					if (!!sss) {
 						double aaa = angle + frandom(-20,20);
 						sss.pitch = pitch;
 						sss.angle = angle;
 						sss.vel = (cos(aaa),sin(aaa),2);
-						
+
 						if(chamber > 1) sss.vel*=frandom(0.5,2);
-						
+
 						sss.vel += vel;
 						sss.target = self;
 					}
@@ -372,8 +341,7 @@ class HDWyvern : HDWeapon {
 			WYVR C 2 Offset(1, 34);
 			WYVR C 2 Offset(2, 34);
 			WYVR C 2 Offset(4, 34);
-			WYVR C 8 Offset(0, 36)
-			{
+			WYVR C 8 Offset(0, 36) {
 				if (invoker.weaponStatus[WYVS_FLAGS] & WYVF_JUSTUNLOAD) {
 					SetWeaponState('UnloadEnd');
 					return;
@@ -399,13 +367,13 @@ class HDWyvern : HDWeapon {
 			WYVR C 4 Offset(0, 35);
 			WYVR C 4 Offset(0, 34);
 		ReloadContinue:
-			WYVR C 5 Offset(1, 35);
-			WYVR C 2 Offset(0, 36);
-			WYVR D 2 Offset(0, 40);
-			WYVR D 1 Offset(0, 46);
+			WYVR D 5 Offset(1, 35);
+			WYVR D 2 Offset(0, 36);
+			WYVR E 2 Offset(0, 40);
+			WYVR E 1 Offset(0, 46);
 			WYVR E 2 Offset(0, 54);
-			TNT1 A 4
-			{
+
+			TNT1 A 4{
 				// Take up to 2 rounds in hand
 				int handRounds = 0;
 				if (invoker.weaponStatus[WYVS_FLAGS] & WYVF_FROMPOCKETS) {
@@ -418,7 +386,7 @@ class HDWyvern : HDWeapon {
 				}
 
 				// If the above leaves you with nothing, abort
-				if (handRounds == 0) {
+				if (handRounds < 1) {
 					A_SetTics(0);
 					return;
 				}
@@ -431,11 +399,19 @@ class HDWyvern : HDWeapon {
 				}
 			}
 			TNT1 A 4 A_StartSound("Wyvern/Insert", 8);
-			WYVR F 2 Offset(0, 46) A_StartSound("Wyvern/Close", 9);
+			WYVR F 2 Offset(0, 46);
 			WYVR F 1 Offset(0, 42);
-			WYVG D 2 Offset(0, 42);
+			WYVG D 2 Offset(0, 42) A_StartSound("Wyvern/Close", 9);
 			WYVG D 2;
 			Goto Ready;
+		UnloadEnd:
+			WYVR B 5;
+		UnloadEndQuick:
+			WYVR B 2 Offset(0, 46) A_StartSound("Wyvern/Insert", 8);
+			WYVR B 1 Offset(0, 42);
+			WYVG B 2 Offset(0, 42) A_StartSound("Wyvern/Close", 9);
+			WYVG D 1;
+			Goto Nope;
 
 		ReloadSS:
 			WYVG # 0 A_JumpIf(invoker.weaponStatus[SHOTS_SIDESADDLE] >= MaxSideRounds,"Nope");
@@ -446,100 +422,86 @@ class HDWyvern : HDWeapon {
 			WYVG # 6 Offset(3, 35);
 			WYVG # 9 Offset(4, 34) A_StartSound("weapons/pocket", 9);
 		ReloadSSLoop:
-			WYVG # 0
-			{
-				if (invoker.weaponStatus[SHOTS_SIDESADDLE] == 6) {
-					SetWeaponState('ReloadSSEnd');
-				}
+			WYVG # 0 {
+				if (invoker.weaponStatus[SHOTS_SIDESADDLE] >= MaxSideRounds) SetWeaponState('ReloadSSEnd');
 
-				int handRounds = min(2, CountInv("HD50OMGAmmo"));
+				// Load rounds into hand
+				int handRounds = min(
+					2,
+					MaxSideRounds - invoker.weaponStatus[SHOTS_SIDESADDLE],
+					CountInv("HD50OMGAmmo")
+				);
 				if (handRounds < 1) {
 					SetWeaponState("ReloadSSEnd");
 					return;
 				}
-				handRounds = min(handRounds, max(1, health / 20), MaxSideRounds - invoker.weaponStatus[SHOTS_SIDESADDLE]);
 				invoker.weaponStatus[SHOTS_SIDESADDLE] += handRounds;
 				A_TakeInventory("HD50OMGAmmo", handRounds, TIF_NOTAKEINFINITE);
 			}
 		ReloadSSEnd:
 			WYVG # 4 Offset(3, 34);
-			WYVG # 0
-			{
+			WYVG # 0 {
 				if (
 					invoker.weaponStatus[SHOTS_SIDESADDLE] < MaxSideRounds
-				 	&& (PressingReload() || PressingAltReload())
+					&& (PressingReload() || PressingAltReload())
 					&& CountInv("HD50OMGAmmo") > 0
-				) {
-					SetWeaponState("ReloadSSRestart");
-				}
+				) SetWeaponState("ReloadSSRestart");
 			}
 			WYVG # 3 Offset(2, 34);
 			WYVG # 1 Offset(1, 34);
 			Goto Nope;
-
 		UnloadSS:
 			WYVG # 2 Offset(2, 34) A_JumpIf(invoker.weaponStatus[SHOTS_SIDESADDLE] < 1, "Nope");
 			WYVG # 1 Offset(3, 36);
 		UnloadSSLoop:
 			WYVG # 4 Offset(4, 36);
-			WYVG # 4 Offset(5, 37)
-			{
+			WYVG # 4 Offset(5, 37) {
 				int handRounds = clamp(invoker.weaponStatus[SHOTS_SIDESADDLE], 0, 2);
-				if (handRounds == 0)
-				{
-					return;
-				}
+				if (handRounds == 0) return;
+
 				A_StartSound("weapons/pocket", 9);
 
 				invoker.weaponStatus[SHOTS_SIDESADDLE] -= handRounds;
 				int MaxPocket = min(handRounds, HDPickup.MaxGive(self, "HD50OMGAmmo", ENC_50OMG));
-				if (MaxPocket > 0 && PressingUnload())
-				{
+				if (MaxPocket > 0 && PressingUnload()) {
 					A_SetTics(16);
 					handRounds -= MaxPocket;
 					A_GiveInventory("HD50OMGAmmo", MaxPocket);
-				}
-				else
-				{
-					while (handRounds > 0)
-					{
-						if (PressingUnload() && A_JumpIfInventory("HD50OMGAmmo", 0, "Null"))
-						{
+				} else {
+					while (handRounds > 0) {
+						if (PressingUnload() && A_JumpIfInventory("HD50OMGAmmo", 0, "Null")) {
 							handRounds--;
 							HDF.Give(self, "HD50OMGAmmo", 1);
 							A_SetTics(16);
-						}
-						else
-						{
+						} else {
 							handRounds--;
 							A_SpawnItemEx("HDLoose50OMG", cos(pitch) * 0.5, 1, height - 7 - sin(pitch) * 1, cos(pitch) * cos(angle) * frandom(1, 2) + vel.x, cos(pitch) * sin(angle) * frandom(1, 2) + vel.y, -sin(pitch) + vel.z, 0, SXF_ABSOLUTEMOMENTUM | SXF_NOCHECKPOSITION | SXF_TRANSFERPITCH);
 						}
 					}
 				}
 			}
-			WYVG # 3 Offset(4, 36)
-			{
+			WYVG # 3 Offset(4, 36) {
 				if (
 					invoker.weaponStatus[SHOTS_SIDESADDLE] > 0
 					&& !PressingFire()
 					&& !PressingAltfire()
 					&& !PressingReload()
-				) {
-					SetWeaponState("UnloadSSLoop");
-				}
+				) SetWeaponState("UnloadSSLoop");
 			}
 			WYVG # 3 Offset(4, 35);
 			WYVG # 2 Offset(3, 35);
 			WYVG # 1 Offset(2, 34);
 			Goto Nope;
-		UnloadEnd:
-			WYVR B 5;
-		UnloadEndQuick:
-			WYVR B 2 Offset(0, 46) A_StartSound("Wyvern/Close", 9);
-			WYVR B 1 Offset(0, 42);
-			WYVG B 2 Offset(0, 42);
-			WYVG D 1;
-			Goto Nope;
+		Unload:
+			WYVG # 2 Offset(0, 34) {
+				if (invoker.weaponStatus[SHOTS_SIDESADDLE] > 0) SetWeaponState('UnloadSS');
+				else invoker.weaponStatus[WYVS_FLAGS] |= WYVF_JUSTUNLOAD;
+			}Goto UnloadStart;
+		
+		Spawn:
+			WYVZ ABCDEFG -1 NoDelay {
+				frame = 6 - invoker.weaponStatus[SHOTS_SIDESADDLE] / 2;
+			}
 	}
 	override void InitializeWepStats(bool idfa)
 	{
