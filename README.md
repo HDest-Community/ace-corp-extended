@@ -89,6 +89,10 @@ This mod aims to maintain and improve Accensus' Arsenal, by updating them to the
 ## Credits
 ---
 
+Original Mod Credits are displayed below.
+- Cryomundus, for porting original mods to HDest Community Organization, updating mods as needed, rechambering Viper into .50 AM.
+- Undead Zeratul, for aggregating weapons into this pack, updating as needed, adding spawning handler & menus, fixing Wyvern.
+
 ### Blackhawk
 ---
 Code:
