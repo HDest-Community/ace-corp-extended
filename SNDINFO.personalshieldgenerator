@@ -1,0 +1,15 @@
+PSG/Adjust PSGADJST
+PSG/Toggle PSGTOGGL
+$volume PSG/Toggle 0.5
+
+PSG/Upgrade PSGUPGRD
+$volume PSG/Upgrade 0.5
+
+PSG/ShieldUp PSGSLDUP
+PSG/ShieldBreak PSGSLDBR
+
+PSG/ShieldBlock PSGBLOCK
+$pitchset PSG/ShieldBlock 0.90 1.05
+
+PSG/VentFlux PSGVENT
+$pitchset PSG/VentFlux 1.05

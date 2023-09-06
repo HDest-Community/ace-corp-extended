@@ -86,6 +86,31 @@ This mod aims to maintain and improve Accensus' Arsenal, by updating them to the
 - Configuration codes are:
 	- `auto`: Autoloader. Makes reloading from side saddles a bit faster.
 
+## Items
+---
+
+### Deployable Barricade
+
+- Use Item: Drops barricade and deploys it.
+- Spam Use on the barricade to make it collapse back into a pickup.
+
+#### Notes
+---
+- The loadout code for the barricade is `dab`.
+- The barricade has 5000 health. Mind the damage. Can only be repaired with Arcanum.
+
+### Dimensional Storage Device
+---
+- Loadout code is `dsd`.
+- Configuration codes are:
+	- `cap`: overrides the starting storage capacity.
+- Some HDPickup items cannot be inserted into the backpack. That is intentional as there is no way to save some variables, which results in various exploits caused by packing and unpacking an item.
+- Each player gets their own storage.
+- Order of items is First-In-First-Out. New items are put at the end of the list.
+- Each operation costs 2 battery charges. Device will be useless without batteries.
+- The device itself does not hold any items. Meaning two different devices will point to the same storage.
+- To expand your storage, hold Zoom and Firemode when picking up a DSD to consume the item and gain extra storage
+
 ## Credits
 ---
 
@@ -235,3 +260,92 @@ Sprites:
 Sounds:
 - Firing Sound: Guncaster Team, most likely Marisa Kirisame
 - Reload-related sounds are by magmacow.
+
+### Booster Jets
+---
+Code:
+- Accensus
+
+### Dimensional Storage Device
+---
+Code:
+- Accensus
+
+Name idea:
+- D2Icarus
+
+Sprites:
+- Teleport fog is from Doom (no shit) by id Software. Recolor by Accensus.
+- Pickup sprite taken from Trailblazer. Probably done by PillowerBlaster or DoomNukem. Or both.
+
+### Field Assembly Kit
+---
+Code:
+- Accensus
+
+Sprites:
+- Mor'ladim for the assembly cores. Took them from Bullet-Eye.
+
+Bugtesting:
+- Icarus
+
+### Ladder Launcher
+---
+Code:
+- Accensus
+
+Sprites:
+- Combine_Kegan, based on work by HyperUltra64
+
+### Magazine Reloader
+---
+Code:
+- Accensus
+
+Sprites:
+- Reloader sprite by Mor'ladim.
+
+Sounds:
+- Bell ding is from Blood 2 (Monolith).
+
+### Personal Shield Generator
+---
+Sprites:
+- Conveniently taken from Russian Overkill.
+- Extra shield graphics by PillowBlaster.
+
+Sounds:
+- UI sounds conveniently taken from Bullet-Eye.
+- Shield break/restore (The Halo Vaccinator): https://gamebanana.com/sounds/40287
+- Flux vent sound by Fractal Softworks (Starsector).
+
+Idea:
+- LSWraith
+- Fractal Softworks for coming up with the flux idea in the first place. I took it from Starsector.
+
+### Rearview Mirror
+---
+Sprites:
+- Mor'ladim
+
+### Roomba
+---
+Code:
+- Accensus
+
+Sprites:
+- Hege Cactus for the roomba.
+
+Sounds:
+- Vacuum sound taken from Extreme Weapon Pack
+
+### Super Stimpack
+---
+Code:
+- Accensus
+
+Sprites:
+- Super stim: id Software
+- Injector: ???
+
+All edits by Accensus.

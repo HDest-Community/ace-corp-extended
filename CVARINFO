@@ -98,3 +98,14 @@ server bool majesticmag_persistent_spawning = false;
 server bool vipermag_allowBackpacks = true;
 server int vipermag_clipmag_spawn_bias = 24;
 server bool vipermag_persistent_spawning = false;
+
+
+//------------
+// Miscellaneous
+//------------
+
+// Soul Cube
+server bool hdsc_archermode = false;
+
+// Supply Beacon
+user int sb_skin = 0;

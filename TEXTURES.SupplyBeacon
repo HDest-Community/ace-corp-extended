@@ -1,0 +1,371 @@
+Sprite "SPDPA1A5", 50, 79
+{
+	XScale 1.400
+	YScale 1.400
+	Offset 25, 79
+	Patch "SPLDRPA0", 0, 0
+}
+
+Sprite "SPDPA2A8", 61, 79
+{
+	XScale 1.400
+	YScale 1.400
+	Offset 30, 79
+	Patch "SPLDRPA1", 0, 0
+}
+
+Sprite "SPDPA3A7", 50, 79
+{
+	XScale 1.400
+	YScale 1.400
+	Offset 25, 79
+	Patch "SPLDRPA0", 0, 0
+}
+
+Sprite "SPDPA4A6", 61, 79
+{
+	XScale 1.400
+	YScale 1.400
+	Offset 30, 79
+	Patch "SPLDRPA1", 0, 0
+}
+
+Sprite "SPDPB1B5", 82, 79
+{
+	XScale 1.400
+	YScale 1.400
+	Offset 41, 79
+	Patch "SPLDRPB0", 0, 0
+}
+
+Sprite "SPDPB2B8", 125, 79
+{
+	XScale 1.400
+	YScale 1.400
+	Offset 62, 79
+	Patch "SPLDRPB1", 0, 0
+}
+
+Sprite "SPDPB3B7", 82, 79
+{
+	XScale 1.400
+	YScale 1.400
+	Offset 41, 79
+	Patch "SPLDRPB0", 0, 0
+}
+
+Sprite "SPDPB4B6", 125, 79
+{
+	XScale 1.400
+	YScale 1.400
+	Offset 62, 79
+	Patch "SPLDRPB1", 0, 0
+}
+
+Sprite "SPDPC1C5", 100, 79
+{
+	XScale 1.400
+	YScale 1.400
+	Offset 50, 79
+	Patch "SPLDRPC0", 0, 0
+}
+
+Sprite "SPDPC2C8", 127, 79
+{
+	XScale 1.400
+	YScale 1.400
+	Offset 63, 79
+	Patch "SPLDRPC1", 0, 0
+}
+
+Sprite "SPDPC3C7", 100, 79
+{
+	XScale 1.400
+	YScale 1.400
+	Offset 50, 79
+	Patch "SPLDRPC0", 0, 0
+}
+
+Sprite "SPDPC4C6", 127, 79
+{
+	XScale 1.400
+	YScale 1.400
+	Offset 63, 79
+	Patch "SPLDRPC1", 0, 0
+}
+
+Sprite "SPDPD1D5", 130, 79
+{
+	XScale 1.400
+	YScale 1.400
+	Offset 65, 79
+	Patch "SPLDRPD0", 0, 0
+}
+
+Sprite "SPDPD2D8", 131, 79
+{
+	XScale 1.400
+	YScale 1.400
+	Offset 65, 79
+	Patch "SPLDRPD1", 0, 0
+}
+
+Sprite "SPDPD3D7", 130, 79
+{
+	XScale 1.400
+	YScale 1.400
+	Offset 65, 79
+	Patch "SPLDRPD0", 0, 0
+}
+
+Sprite "SPDPD4D6", 131, 79
+{
+	XScale 1.400
+	YScale 1.400
+	Offset 65, 79
+	Patch "SPLDRPD1", 0, 0
+}
+
+Sprite "SPDPE1E5", 172, 79
+{
+	XScale 1.400
+	YScale 1.400
+	Offset 86, 79
+	Patch "SPLDRPE0", 0, 0
+}
+
+Sprite "SPDPE2E8", 182, 79
+{
+	XScale 1.400
+	YScale 1.400
+	Offset 91, 79
+	Patch "SPLDRPE1", 0, 0
+}
+
+Sprite "SPDPE3E7", 172, 79
+{
+	XScale 1.400
+	YScale 1.400
+	Offset 86, 79
+	Patch "SPLDRPE0", 0, 0
+}
+
+Sprite "SPDPE4E6", 182, 79
+{
+	XScale 1.400
+	YScale 1.400
+	Offset 91, 79
+	Patch "SPLDRPE1", 0, 0
+}
+
+Sprite "SPDPF1F5", 190, 79
+{
+	XScale 1.400
+	YScale 1.400
+	Offset 95, 79
+	Patch "SPLDRPF0", 0, 0
+}
+
+Sprite "SPDPF2F8", 207, 79
+{
+	XScale 1.400
+	YScale 1.400
+	Offset 103, 79
+	Patch "SPLDRPF1", 0, 0
+}
+
+Sprite "SPDPF3F7", 190, 79
+{
+	XScale 1.400
+	YScale 1.400
+	Offset 95, 79
+	Patch "SPLDRPF0", 0, 0
+}
+
+Sprite "SPDPF4F6", 207, 79
+{
+	XScale 1.400
+	YScale 1.400
+	Offset 103, 79
+	Patch "SPLDRPF1", 0, 0
+}
+
+Sprite "SPDBA1", 29, 37
+{
+	Offset 14, 37
+	Patch "DAINAPOD", 0, 0
+}
+
+Sprite "SPDBA2A8", 29, 37
+{
+	Offset 14, 37
+	Patch "DAINAPOD", 0, 0
+}
+
+Sprite "SPDBA3A7", 33, 37
+{
+	Offset 16, 36
+	Patch "DAINAPOD", -69, -1
+}
+
+Sprite "SPDBA4A6", 23, 37
+{
+	Offset 11, 37
+	Patch "DAINAPOD", -143, -1
+}
+
+Sprite "SPDBA5", 23, 37
+{
+	Offset 11, 37
+	Patch "DAINAPOD", -143, -1
+}
+
+Sprite "SPDBB1", 29, 37
+{
+	Offset 14, 37
+	Patch "DAINAPOD", 0, -43
+}
+
+Sprite "SPDBB2B8", 29, 37
+{
+	Offset 14, 37
+	Patch "DAINAPOD", 0, -43
+}
+
+Sprite "SPDBB3B7", 33, 37
+{
+	Offset 16, 36
+	Patch "DAINAPOD", -69, -44
+}
+
+Sprite "SPDBB4B6", 23, 37
+{
+	Offset 11, 37
+	Patch "DAINAPOD", -143, -1
+}
+
+Sprite "SPDBB5", 23, 37
+{
+	Offset 11, 37
+	Patch "DAINAPOD", -143, -1
+}
+
+Sprite "SPDBC1", 29, 37
+{
+	Offset 14, 37
+	Patch "DAINAPOD", 0, -92
+}
+
+Sprite "SPDBC2C8", 29, 37
+{
+	Offset 14, 37
+	Patch "DAINAPOD", 0, -92
+}
+
+Sprite "SPDBC3C7", 33, 37
+{
+	Offset 16, 36
+	Patch "DAINAPOD", -69, -88
+}
+
+Sprite "SPDBC4C6", 23, 37
+{
+	Offset 11, 37
+	Patch "DAINAPOD", -143, -1
+}
+
+Sprite "SPDBC5", 23, 37
+{
+	Offset 11, 37
+	Patch "DAINAPOD", -143, -1
+}
+
+Sprite "SPDBD1", 29, 37
+{
+	Offset 14, 37
+	Patch "DAINAPOD", -36, 0
+}
+
+Sprite "SPDBD2D8", 29, 37
+{
+	Offset 14, 37
+	Patch "DAINAPOD", -36, 0
+}
+
+Sprite "SPDBD3D7", 33, 37
+{
+	Offset 16, 36
+	Patch "DAINAPOD", -106, -1
+}
+
+Sprite "SPDBD4D6", 23, 37
+{
+	Offset 11, 37
+	Patch "DAINAPOD", -143, -1
+}
+
+Sprite "SPDBD5", 23, 37
+{
+	Offset 11, 37
+	Patch "DAINAPOD", -143, -1
+}
+
+Sprite "SPDBE1", 29, 37
+{
+	Offset 14, 37
+	Patch "DAINAPOD", -36, -42
+}
+
+Sprite "SPDBE2E8", 29, 37
+{
+	Offset 14, 37
+	Patch "DAINAPOD", -36, -42
+}
+
+Sprite "SPDBE3E7", 33, 37
+{
+	Offset 16, 36
+	Patch "DAINAPOD", -106, -44
+}
+
+Sprite "SPDBE4E6", 23, 37
+{
+	Offset 11, 37
+	Patch "DAINAPOD", -143, -46
+}
+
+Sprite "SPDBE5", 23, 37
+{
+	Offset 11, 37
+	Patch "DAINAPOD", -143, -46
+}
+
+Sprite "SPDBF1", 29, 37
+{
+	Offset 14, 37
+	Patch "DAINAPOD", -36, -89
+}
+
+Sprite "SPDBF2F8", 29, 37
+{
+	Offset 14, 37
+	Patch "DAINAPOD", -36, -89
+}
+
+Sprite "SPDBF3F7", 33, 37
+{
+	Offset 16, 36
+	Patch "DAINAPOD", -106, -87
+}
+
+Sprite "SPDBF4F6", 23, 37
+{
+	Offset 11, 37
+	Patch "DAINAPOD", -143, -87
+}
+
+Sprite "SPDBF5", 23, 37
+{
+	Offset 11, 37
+	Patch "DAINAPOD", -143, -87
+}

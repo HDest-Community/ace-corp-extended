@@ -1,0 +1,6 @@
+SupplyBeacon/Idle SPBCIDLE
+SupplyPod/Slam SPBCSLAM
+SupplyPod/Open SPBCOPEN
+
+$limit SupplyPod/Slam 6
+$limit SupplyPod/Open 6

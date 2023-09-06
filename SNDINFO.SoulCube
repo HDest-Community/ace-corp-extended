@@ -1,0 +1,301 @@
+SC/Activate SCACTIVT
+$limit SC/Activate 3
+SC/Ammo SCAMMO
+$alias SC/Action SC/Ammo
+$pitchset SC/Action 1.5
+
+// --------------- MISCELLANEOUS ---------------
+
+SC/Archer/JokerStairs SCJKRSTR
+
+// --------------- PICKUP ---------------
+
+SC/Archer/PickupNormal1 SCPKUP01
+SC/Archer/PickupNormal2 SCPKUP02
+SC/Archer/PickupNormal3 SCPKUP03
+SC/Archer/PickupNormal4 SCPKUP04
+SC/Archer/PickupNormal5 SCPKUP05
+SC/Archer/PickupNormal6 SCPKUP06
+SC/Archer/PickupNormal7 SCPKUP07
+SC/Archer/PickupNormal8 SCPKUP08
+
+$random SC/Archer/PickupNormal
+{
+	SC/Archer/PickupNormal1
+	SC/Archer/PickupNormal2
+	SC/Archer/PickupNormal3
+	SC/Archer/PickupNormal4
+	SC/Archer/PickupNormal5
+	SC/Archer/PickupNormal6
+	SC/Archer/PickupNormal7
+	SC/Archer/PickupNormal8
+}
+
+SC/Archer/PickupRare1 SCPKUP11
+SC/Archer/PickupRare2 SCPKUP12
+SC/Archer/PickupRare3 SCPKUP13
+SC/Archer/PickupRare4 SCPKUP14
+SC/Archer/PickupRare5 SCPKUP15
+
+$random SC/Archer/PickupRare
+{
+	SC/Archer/PickupRare1
+	SC/Archer/PickupRare2
+	SC/Archer/PickupRare3
+	SC/Archer/PickupRare4
+	SC/Archer/PickupRare5
+}
+
+SC/Archer/PickupSpecial1 SCPKUP21
+SC/Archer/PickupSpecial2 SCPKUP22
+
+$random SC/Archer/PickupSpecial
+{
+	SC/Archer/PickupSpecial1
+	SC/Archer/PickupSpecial2
+}
+
+// --------------- READY ---------------
+
+SC/Original/Ready SCREADY0
+SC/Archer/Ready1 SCREADY1
+SC/Archer/Ready2 SCREADY2
+SC/Archer/Ready3 SCREADY3
+SC/Archer/Ready4 SCREADY4
+SC/Archer/Ready5 SCREADY5
+SC/Archer/Ready6 SCREADY6
+SC/Archer/Ready7 SCREADY7
+
+$random SC/Archer/Ready
+{
+	SC/Archer/Ready1
+	SC/Archer/Ready2
+	SC/Archer/Ready3
+	SC/Archer/Ready4
+	SC/Archer/Ready5
+	SC/Archer/Ready6
+	SC/Archer/Ready7
+}
+
+// --------------- LEVEL UP ---------------
+
+SC/Archer/LevelUp1 SCLEVUP1
+SC/Archer/LevelUp2 SCLEVUP2
+SC/Archer/LevelUp3 SCLEVUP3
+SC/Archer/LevelUp4 SCLEVUP4
+SC/Archer/LevelUp5 SCLEVUP5
+
+$random SC/Archer/LevelUp
+{
+	SC/Archer/LevelUp1
+	SC/Archer/LevelUp2
+	SC/Archer/LevelUp3
+	SC/Archer/LevelUp4
+	SC/Archer/LevelUp5
+}
+
+// ---------------CONSUME ---------------
+
+SC/Archer/ConsumeNormal1 SCCNSM01
+SC/Archer/ConsumeNormal2 SCCNSM02
+SC/Archer/ConsumeNormal3 SCCNSM03
+SC/Archer/ConsumeNormal4 SCCNSM04
+SC/Archer/ConsumeNormal5 SCCNSM05
+
+$random SC/Archer/ConsumeNormal
+{
+	SC/Archer/ConsumeNormal1
+	SC/Archer/ConsumeNormal2
+	SC/Archer/ConsumeNormal3
+	SC/Archer/ConsumeNormal4
+	SC/Archer/ConsumeNormal5
+}
+
+// --------------- USE ---------------
+
+SC/Archer/UseNormal1 SCUSE01
+SC/Archer/UseNormal2 SCUSE02
+SC/Archer/UseNormal3 SCUSE03
+SC/Archer/UseNormal4 SCUSE04
+SC/Archer/UseNormal5 SCUSE05
+SC/Archer/UseNormal6 SCUSE06
+SC/Archer/UseNormal7 SCUSE07
+SC/Archer/UseNormal8 SCUSE08
+SC/Archer/UseNormal9 SCUSE09
+
+$random SC/Archer/UseNormal
+{
+	SC/Archer/UseNormal1
+	SC/Archer/UseNormal2
+	SC/Archer/UseNormal3
+	SC/Archer/UseNormal4
+	SC/Archer/UseNormal5
+	SC/Archer/UseNormal6
+	SC/Archer/UseNormal7
+	SC/Archer/UseNormal8
+	SC/Archer/UseNormal9
+}
+
+SC/Archer/UseRare1 SCUSE11
+SC/Archer/UseRare2 SCUSE12
+SC/Archer/UseRare3 SCUSE13
+SC/Archer/UseRare4 SCUSE14
+
+$random SC/Archer/UseRare
+{
+	SC/Archer/UseRare1
+	SC/Archer/UseRare2
+	SC/Archer/UseRare3
+	SC/Archer/UseRare4
+}
+
+// --------------- SPIRITUAL ARMOR/PRAISE ---------------
+
+SC/Archer/Praise1 SCPRASE1
+SC/Archer/Praise2 SCPRASE2
+SC/Archer/Praise3 SCPRASE3
+SC/Archer/Praise4 SCPRASE4
+SC/Archer/Praise5 SCPRASE5
+SC/Archer/Praise6 SCPRASE6
+SC/Archer/Praise7 SCPRASE7
+
+$random SC/Archer/Praise
+{
+	SC/Archer/Praise1
+	SC/Archer/Praise2
+	SC/Archer/Praise3
+	SC/Archer/Praise4
+	SC/Archer/Praise5
+	SC/Archer/Praise6
+	SC/Archer/Praise7
+}
+
+// ---------------FULL ---------------
+
+SC/Archer/FullNormal1 SCFULL01
+SC/Archer/FullNormal2 SCFULL02
+SC/Archer/FullNormal3 SCFULL03
+SC/Archer/FullNormal4 SCFULL04
+SC/Archer/FullNormal5 SCFULL05
+
+$random SC/Archer/FullNormal
+{
+	SC/Archer/FullNormal1
+	SC/Archer/FullNormal2
+	SC/Archer/FullNormal3
+	SC/Archer/FullNormal4
+	SC/Archer/FullNormal5
+}
+
+SC/Archer/FullRare1 SCFULL11
+SC/Archer/FullRare2 SCFULL12
+
+$random SC/Archer/FullRare
+{
+	SC/Archer/FullRare1
+	SC/Archer/FullRare2
+}
+
+// --------------- POWER DOWN ---------------
+
+SC/Archer/PowerDownNormal1 SCPDWN01
+SC/Archer/PowerDownNormal2 SCPDWN02
+SC/Archer/PowerDownNormal3 SCPDWN03
+SC/Archer/PowerDownNormal4 SCPDWN04
+SC/Archer/PowerDownNormal5 SCPDWN05
+SC/Archer/PowerDownNormal6 SCPDWN06
+
+$random SC/Archer/PowerDownNormal
+{
+	SC/Archer/PowerDownNormal1
+	SC/Archer/PowerDownNormal2
+	SC/Archer/PowerDownNormal3
+	SC/Archer/PowerDownNormal4
+	SC/Archer/PowerDownNormal5
+	SC/Archer/PowerDownNormal6
+}
+
+SC/Archer/PowerDownRare1 SCPDWN11
+SC/Archer/PowerDownRare2 SCPDWN12
+
+$random SC/Archer/PowerDownRare
+{
+	SC/Archer/PowerDownRare1
+	SC/Archer/PowerDownRare2
+}
+
+// --------------- MAXED OUT ---------------
+
+SC/Archer/MaxedOut1 SCMAXED1
+SC/Archer/MaxedOut2 SCMAXED2
+
+$random SC/Archer/MaxedOut
+{
+	SC/Archer/MaxedOut1
+	SC/Archer/MaxedOut2
+}
+
+// --------------- ARCHVILE HUNT ---------------
+
+SC/Archer/ArchHuntNormal1 SCARHN01
+SC/Archer/ArchHuntNormal2 SCARHN02
+SC/Archer/ArchHuntNormal3 SCARHN03
+
+$random SC/Archer/ArchHuntNormal
+{
+	SC/Archer/ArchHuntNormal1
+	SC/Archer/ArchHuntNormal2
+	SC/Archer/ArchHuntNormal3
+}
+
+SC/Archer/ArchHuntRare1 SCARHN11
+
+$random SC/Archer/ArchHuntRare
+{
+	SC/Archer/ArchHuntRare1
+}
+
+// --------------- PET ---------------
+
+SC/Archer/PetNormal1 SCPET01
+SC/Archer/PetNormal2 SCPET02
+SC/Archer/PetNormal3 SCPET03
+SC/Archer/PetNormal4 SCPET04
+SC/Archer/PetNormal5 SCPET05
+
+$random SC/Archer/PetNormal
+{
+	SC/Archer/PetNormal1
+	SC/Archer/PetNormal2
+	SC/Archer/PetNormal3
+	SC/Archer/PetNormal4
+	SC/Archer/PetNormal5
+}
+
+SC/Archer/PetRare1 SCPET11
+SC/Archer/PetRare2 SCPET12
+SC/Archer/PetRare3 SCPET13
+SC/Archer/PetRare4 SCPET14
+SC/Archer/PetRare5 SCPET15
+SC/Archer/PetRare6 SCPET16
+SC/Archer/PetRare7 SCPET17
+
+$random SC/Archer/PetRare
+{
+	SC/Archer/PetRare1
+	SC/Archer/PetRare2
+	SC/Archer/PetRare3
+	SC/Archer/PetRare4
+	SC/Archer/PetRare5
+	SC/Archer/PetRare6
+	SC/Archer/PetRare7
+}
+
+SC/Archer/PetUltraRare1 SCPET21
+SC/Archer/PetUltraRare2 SCPET22
+
+$random SC/Archer/PetUltraRare
+{
+	SC/Archer/PetUltraRare1
+	SC/Archer/PetUltraRare2
+}

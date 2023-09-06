@@ -1,0 +1,59 @@
+PointLight PSGRed
+{
+	Color 1.0 0.1 0.1
+	Size 8
+}
+
+PointLight PSGOrange
+{
+	Color 1.0 0.5 0.1
+	Size 10
+}
+
+PointLight PSGYellow
+{
+	Color 1.0 1.0 0.1
+	Size 12
+}
+
+PointLight PSGGreen
+{
+	Color 0.25 1.0 0.1
+	Size 14
+}
+
+PointLight PSGCyan
+{
+	Color 0.1 1.0 1.0
+	Size 16
+}
+
+PointLight PSGBlue
+{
+	Color 0.1 0.1 1.0
+	Size 18
+}
+
+PointLight PSGPurple
+{
+	Color 0.5 0.1 1.0
+	Size 20
+}
+
+PointLight PSGPink
+{
+	Color 0.9 0.1 1.0
+	Size 24
+}
+
+Object HDPersonalShieldGenerator
+{
+	Frame PSG0 { Light PSGRed }
+	Frame PSG1 { Light PSGOrange }
+	Frame PSG2 { Light PSGYellow }
+	Frame PSG3 { Light PSGGreen }
+	Frame PSG4 { Light PSGCyan }
+	Frame PSG5 { Light PSGBlue }
+	Frame PSG6 { Light PSGPurple }
+	Frame PSG7 { Light PSGPink }
+}
