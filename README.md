@@ -349,3 +349,14 @@ Sprites:
 - Injector: ???
 
 All edits by Accensus.
+
+### Hacked Reloader
+---
+Code:
+- Accensus
+
+Sprites:
+- Taken from HD, originally by BloodyAcid. Recolored by Accensus.
+
+Base Idea:
+- HexaDoken

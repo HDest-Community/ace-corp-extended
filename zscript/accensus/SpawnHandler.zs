@@ -185,12 +185,17 @@ class AceCorpsWepsHandler : EventHandler {
         if (!secretfinder_allowBackpacks)      backpackBlacklist.push((Class<Inventory>)('HDSecretFinder'));
         if (!superstim_allowBackpacks)         backpackBlacklist.push((Class<Inventory>)('PortableSuperStimpack'));
         if (!fak_allowBackpacks)               backpackBlacklist.push((Class<Inventory>)('HDFieldAssemblyKit'));
+        // I'm gonna have the FAK toggle disable assembly cores also, they should have no use outside of the Field Assembly Kit and Merchant and it was part of the original mod so I think it's fine. - [Ted]
+        if (!fak_allowBackpacks)               backpackBlacklist.push((Class<Inventory>)('AssemblyCore'));
         if (!boosterJets_allowBackpacks)       backpackBlacklist.push((Class<Inventory>)('HDBoosterJets'));
         if (!dsd_allowBackpacks)               backpackBlacklist.push((Class<Inventory>)('DSDInterface'));
         if (!rearviewmirror_allowBackpacks)    backpackBlacklist.push((Class<Inventory>)('HDRearviewMirror'));
         if (!roomba_allowBackpacks)            backpackBlacklist.push((Class<Inventory>)('HDRoomba'));
         if (!supplybeacon_allowBackpacks)      backpackBlacklist.push((Class<Inventory>)('HDSupplyBeacon'));
         if (!teleporter_allowBackpacks)        backpackBlacklist.push((Class<Inventory>)('HDTeleporter'));
+        if (!soulcube_allowBackpacks)          backpackBlacklist.push((Class<Inventory>)('HDSoulCube'));
+        if (!magreloader_allowBackpacks)       backpackBlacklist.push((Class<Inventory>)('HDMagazineReloader'));
+        if (!hackedreloader_allowBackpacks)    backpackBlacklist.push((Class<Inventory>)('HackedReloader'));
 
         //------------
         // Ammunition
@@ -351,7 +356,7 @@ class AceCorpsWepsHandler : EventHandler {
         // Ladder Launcher
         Array<AceCorpsSpawnItemEntry> spawns_ladderlauncher;
         spawns_ladderlauncher.push(addItemEntry('RocketBigPickup', ladderlauncher_rocketbox_spawn_bias));
-        spawns_ladderlauncher.push(addItemEntry('RocketBigPickup', ladderlauncher_cellpack_spawn_bias));
+        spawns_ladderlauncher.push(addItemEntry('HDBattery', ladderlauncher_cellpack_spawn_bias));
         addItem('LadderLauncher', spawns_ladderlauncher, ladderlauncher_persistent_spawning);
 
         // Personal Shield Generator
@@ -366,8 +371,8 @@ class AceCorpsWepsHandler : EventHandler {
 
         // Soul Cube
         Array<AceCorpsSpawnItemEntry> spawns_soulcube;
-        spawns_soulcube.push(addItemEntry('Lumberjack', secretfinder_map_spawn_bias));
-        addItem('HDSoulCube', spawns_soulcube, secretfinder_persistent_spawning);
+        spawns_soulcube.push(addItemEntry('Lumberjack', soulcube_chainsaw_spawn_bias));
+        addItem('HDSoulCube', spawns_soulcube, soulcube_persistent_spawning);
 
         // Super Stimpack
         Array<AceCorpsSpawnItemEntry> spawns_superstim;
@@ -378,6 +383,11 @@ class AceCorpsWepsHandler : EventHandler {
         Array<AceCorpsSpawnItemEntry> spawns_weaponcrate;
         spawns_weaponcrate.push(addItemEntry('HDRL', weaponcrate_rl_spawn_bias));
         addItem('HDWeaponCrate', spawns_weaponcrate, weaponcrate_persistent_spawning);
+
+        // Dimensional Storage Device
+        Array<AceCorpsSpawnItemEntry> spawns_dsd;
+        spawns_dsd.push(addItemEntry('WildBackpack', dsd_backpack_spawn_bias));
+        addItem('DSDInterface', spawns_dsd, dsd_persistent_spawning);
     }
 
     // Random stuff, stores it and forces negative values just to be 0.
