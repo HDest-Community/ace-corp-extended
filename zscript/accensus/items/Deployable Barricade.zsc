@@ -1,24 +1,3 @@
-class BarricadeHandler : EventHandler
-{
-	override void CheckReplacement(ReplaceEvent e)
-	{
-		if (!e.Replacement)
-		{
-			return;
-		}
-
-		switch (e.Replacement.GetClassName())
-		{
-			case 'RLReplaces':
-				if (random[redrand]() <= 24)
-				{
-					e.Replacement = "HDDeployableBarricade";
-				}
-				break;
-		}
-	}
-}
-
 class HDDeployableBarricade : HDPickup
 {
 	override int DisplayAmount()

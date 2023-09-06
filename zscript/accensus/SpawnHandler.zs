@@ -180,6 +180,17 @@ class AceCorpsWepsHandler : EventHandler {
         if (!majesticmag_allowBackpacks)       backpackBlacklist.push((Class<Inventory>)('HDMajesticMag'));
         if (!vipermag_allowBackpacks)          backpackBlacklist.push((Class<Inventory>)('HDViperMag'));
 
+        if (!ladderlauncher_allowBackpacks)    backpackBlacklist.push((Class<Inventory>)('LadderLauncher'));
+        if (!psg_allowBackpacks)               backpackBlacklist.push((Class<Inventory>)('HDPersonalShieldGenerator'));
+        if (!secretfinder_allowBackpacks)      backpackBlacklist.push((Class<Inventory>)('HDSecretFinder'));
+        if (!superstim_allowBackpacks)         backpackBlacklist.push((Class<Inventory>)('PortableSuperStimpack'));
+        if (!fak_allowBackpacks)               backpackBlacklist.push((Class<Inventory>)('HDFieldAssemblyKit'));
+        if (!boosterJets_allowBackpacks)       backpackBlacklist.push((Class<Inventory>)('HDBoosterJets'));
+        if (!dsd_allowBackpacks)               backpackBlacklist.push((Class<Inventory>)('DSDInterface'));
+        if (!rearviewmirror_allowBackpacks)    backpackBlacklist.push((Class<Inventory>)('HDRearviewMirror'));
+        if (!roomba_allowBackpacks)            backpackBlacklist.push((Class<Inventory>)('HDRoomba'));
+        if (!supplybeacon_allowBackpacks)      backpackBlacklist.push((Class<Inventory>)('HDSupplyBeacon'));
+        if (!teleporter_allowBackpacks)        backpackBlacklist.push((Class<Inventory>)('HDTeleporter'));
 
         //------------
         // Ammunition
@@ -205,6 +216,7 @@ class AceCorpsWepsHandler : EventHandler {
         wep_battery.push('HDGungnir');
         wep_battery.push('HDHammerhead');
         wep_battery.push('HDRedline');
+        wep_battery.push('HDTeleporter');
         addAmmo('HDBattery', wep_battery);
 
         // 35mm
@@ -330,6 +342,42 @@ class AceCorpsWepsHandler : EventHandler {
         // --------------------
         // Item Spawns
         // --------------------
+
+        // Deployable Barricade
+        Array<AceCorpsSpawnItemEntry> spawns_deployablebarricade;
+        spawns_deployablebarricade.push(addItemEntry('HDRL', deployablebarricade_rl_spawn_bias));
+        addItem('HDDeployableBarricade', spawns_deployablebarricade, deployablebarricade_persistent_spawning);
+
+        // Ladder Launcher
+        Array<AceCorpsSpawnItemEntry> spawns_ladderlauncher;
+        spawns_ladderlauncher.push(addItemEntry('RocketBigPickup', ladderlauncher_rocketbox_spawn_bias));
+        spawns_ladderlauncher.push(addItemEntry('RocketBigPickup', ladderlauncher_cellpack_spawn_bias));
+        addItem('LadderLauncher', spawns_ladderlauncher, ladderlauncher_persistent_spawning);
+
+        // Personal Shield Generator
+        Array<AceCorpsSpawnItemEntry> spawns_psg;
+        spawns_psg.push(addItemEntry('BattleArmour', psg_battlearmor_spawn_bias));
+        addItem('PsgRandom', spawns_psg, psg_persistent_spawning);
+
+        // Secret Finder
+        Array<AceCorpsSpawnItemEntry> spawns_secretfinder;
+        spawns_secretfinder.push(addItemEntry('HDMap', secretfinder_map_spawn_bias));
+        addItem('HDSecretFinder', spawns_secretfinder, secretfinder_persistent_spawning);
+
+        // Soul Cube
+        Array<AceCorpsSpawnItemEntry> spawns_soulcube;
+        spawns_soulcube.push(addItemEntry('Lumberjack', secretfinder_map_spawn_bias));
+        addItem('HDSoulCube', spawns_soulcube, secretfinder_persistent_spawning);
+
+        // Super Stimpack
+        Array<AceCorpsSpawnItemEntry> spawns_superstim;
+        spawns_superstim.push(addItemEntry('PortableMedicalItem', superstim_medical_spawn_bias));
+        addItem('PortableSuperStimpack', spawns_superstim, superstim_persistent_spawning);
+
+        // Weapon Crate
+        Array<AceCorpsSpawnItemEntry> spawns_weaponcrate;
+        spawns_weaponcrate.push(addItemEntry('HDRL', weaponcrate_rl_spawn_bias));
+        addItem('HDWeaponCrate', spawns_weaponcrate, weaponcrate_persistent_spawning);
     }
 
     // Random stuff, stores it and forces negative values just to be 0.

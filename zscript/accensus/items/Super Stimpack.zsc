@@ -1,24 +1,3 @@
-class SuperStimHandler : EventHandler
-{
-	override void CheckReplacement(ReplaceEvent e)
-	{
-		if (!e.Replacement)
-		{
-			return;
-		}
-
-		switch (e.Replacement.GetClassName())
-		{
-			case 'PortableHealingItem':
-				if (random[superstimrand]() <= 10)
-				{
-					e.Replacement = "PortableSuperStimpack";
-				}
-				break;
-		}
-	}
-}
-
 class PortableSuperStimpack : PortableStimpack
 {
 	override void DoEffect()

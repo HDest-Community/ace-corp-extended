@@ -2,24 +2,6 @@ class DSDHandler : EventHandler
 {
 	DSDStorage Storages[MAXPLAYERS];
 
-	override void CheckReplacement(ReplaceEvent e)
-	{
-		if (!e.Replacement)
-		{
-			return;
-		}
-
-		switch (e.Replacement.GetClassName())
-		{
-			case 'WildBackpack':
-				if (random[dsdrand]() <= 64)
-				{
-					e.Replacement = "DSDInterface";
-				}
-				break;
-		}
-	}
-
 	override void WorldThingSpawned(WorldEvent e)
 	{
 		HDBattery bat = HDBattery(e.Thing);

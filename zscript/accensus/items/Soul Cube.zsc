@@ -1,23 +1,5 @@
 class SoulCubeHandler : EventHandler
 {
-	override void CheckReplacement(ReplaceEvent e)
-	{
-		if (!e.Replacement)
-		{
-			return;
-		}
-
-		switch (e.Replacement.GetClassName())
-		{
-			case 'Lumberjack':
-				if (random[cuberand]() <= 64)
-				{
-					e.Replacement = "HDSoulCube";
-				}
-				break;
-		}
-	}
-
 	override void NetworkProcess(ConsoleEvent e)
 	{
 		if (e.Name ~== "SC_ReturnToOwner")

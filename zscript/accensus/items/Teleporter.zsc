@@ -18,26 +18,6 @@ class TeleporterThinker : Thinker
 	string LastLevel;
 }
 
-class HDTeleporterHandler : EventHandler
-{
-	override void CheckReplacement(ReplaceEvent e)
-	{
-		if (!e.Replacement)
-		{
-			return;
-		}
-	}
-
-	override void WorldThingSpawned(WorldEvent e)
-	{
-		let TeleporterAmmo = HDBattery(e.Thing);
-		if (TeleporterAmmo)
-		{
-			TeleporterAmmo.ItemsThatUseThis.Push("HDTeleporter");
-		}
-	}
-}
-
 class HDTeleporter : HDWeaponGrabber
 {
 	enum TeleporterFlags

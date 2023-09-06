@@ -1,24 +1,3 @@
-class WeaponCrateHandler : EventHandler
-{
-	override void CheckReplacement(ReplaceEvent e)
-	{
-		if (!e.Replacement)
-		{
-			return;
-		}
-
-		switch (e.Replacement.GetClassName())
-		{
-			case 'RLReplaces':
-				if (!random[craterand](0, 6))
-				{
-					e.Replacement = "HDWeaponCrate";
-				}
-				break;
-		}
-	}
-}
-
 class HDWeaponCrate : HDUPK
 {
 	static const class<HDWeapon> Blacklist[] =

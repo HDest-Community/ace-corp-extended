@@ -1,25 +1,3 @@
-class LadderLauncherHandler : EventHandler
-{
-	override void CheckReplacement(ReplaceEvent e)
-	{
-		if (!e.Replacement)
-		{
-			return;
-		}
-
-		switch (e.Replacement.GetClassName())
-		{
-			case 'CellPackReplacer':
-			case 'RocketBoxRandom':
-				if (random[ladderrand]() <= 8)
-				{
-					e.Replacement = "LadderLauncher";
-				}
-				break;
-		}
-	}
-}
-
 class LadderLauncher : HDWeapon
 {
 	enum LadderWeaponFlags
