@@ -246,8 +246,8 @@ class HDTeleporter : HDWeaponGrabber
 		+HDWEAPON.FITSINBACKPACK
 		HDWeapon.RefID "ptp";
 		Inventory.Icon "TPRTZ0";
-		Inventory.PickupMessage "Picked up a portable teleporter.";
-		Tag "Portable teleporter";
+		Inventory.PickupMessage "$PICKUP_TELEPORTER";
+		Tag "$TAG_TELEPORTER";
 	}
 
 	States

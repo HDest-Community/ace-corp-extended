@@ -621,9 +621,9 @@ class DSDInterface : HDBackpack
 		HDWeapon.WornLayer 0;
 		Weapon.SelectionOrder 1010;
 		Inventory.Icon "DSDDA0";
-		Inventory.PickupMessage "Picked up a Dimensional Storage Device(tm). For the hoard!";
+		Inventory.PickupMessage "$PICKUP_DSD";
 		Inventory.PickupSound "weapons/pocket";
-		Tag "Dimensional Storage Device";
+		Tag "$TAG_DSD";
 		HDWeapon.RefId "dsd";
 		Scale 0.5;
 	}

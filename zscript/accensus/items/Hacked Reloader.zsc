@@ -63,7 +63,7 @@ class HackedReloader : AutoReloader
 
 	Default
 	{
-		Tag "7.76mm Hacked Reloading Device";
+		Tag "$TAG_HACKEDRELOADER";
 		HDWeapon.RefId "7hr";
 	}
 

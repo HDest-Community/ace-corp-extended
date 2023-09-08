@@ -493,14 +493,14 @@ class HDSoulCube : HDWeapon
 
 	override string PickupMessage()
 	{
-		string BaseMessage = "Picked up the soul cube.";
+		string BaseMessage = Stringtable.Localize("$PICKUP_SOULCUBE_BASE");
 		if (hdsc_archermode)
 		{
-			BaseMessage = BaseMessage.." You hear strange voices coming out of it. It is... speaking to you?";
+			BaseMessage = BaseMessage..Stringtable.Localize("$PICKUP_SOULCUBE_ARCHER");
 		}
 		if (!random(0, 32))
 		{
-			BaseMessage.."\nEternal blues and spiritual armor will come to you if you say \"thank you cuob\".";
+			BaseMessage..Stringtable.Localize("$PICKUP_SOULCUBE_THANKYOUCUOB");
 		}
 		return BaseMessage;
 	}
@@ -623,7 +623,7 @@ class HDSoulCube : HDWeapon
 		Inventory.PickupSound "weapons/pocket";
 		Scale 0.5;
 		HDWeapon.RefId "slc";
-		Tag "Soul Cube";
+		Tag "$TAG_SOULCUBE";
 	}
 
 	States

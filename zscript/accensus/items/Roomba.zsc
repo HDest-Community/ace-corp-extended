@@ -9,8 +9,8 @@ class HDRoomba : HDPickup
 		HDPickup.RefID "rmb";
 		Inventory.MaxAmount 3;
 		Inventory.Icon "RMBAA1";
-		Inventory.PickupMessage "Picked up a roomba.";
-		Tag "Roomba";
+		Inventory.PickupMessage "$PICKUP_ROOMBA";
+		Tag "$TAG_ROOMBA";
 	}
 
 	States

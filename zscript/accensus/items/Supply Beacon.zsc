@@ -236,9 +236,9 @@ class HDSupplyBeacon : HDWeapon
 		HDWeapon.RefID "spb";
 		Inventory.MaxAmount 5;
 		Inventory.Icon "SPBCZ0";
-		Inventory.PickupMessage "Picked up a supply drop beacon.";
+		Inventory.PickupMessage "$PICKUP_SUPPLYBEACON";
 		Inventory.PickupSound "weapons/pocket";
-		Tag "Supply Beacon";
+		Tag "$TAG_SUPPLYBEACON";
 	}
 
 	States

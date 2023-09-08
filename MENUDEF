@@ -773,7 +773,7 @@ OptionMenu "hrlSpawning" {
     StaticText "$MENU_SPAWNRATE_TEXT2", "White"
     StaticText ""
 
-	StaticText "$MENU_TELEPORTER_BACKPACKS", "White"
+	StaticText "$MENU_HRL_BACKPACKS", "White"
 	Option "$MENU_BACKPACKSALLOWED", "hackedreloader_allowBackpacks", "OnOff"
  	StaticText ""
 
@@ -840,7 +840,7 @@ OptionMenu "AceCorpMenu" {
 	StaticText ""
     Submenu "$TAG_FAK", "fakSpawning", 0, 1
 	StaticText ""
-    Submenu "$TAG_BOOSTJET", "boosterSpawning", 0, 1
+    Submenu "$TAG_BOOSTERJETS", "boosterSpawning", 0, 1
 	StaticText ""
     Submenu "$TAG_DSD", "dsdSpawning", 0, 1
 	StaticText ""

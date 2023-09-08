@@ -38,8 +38,8 @@ class HDDeployableBarricade : HDPickup
 		HDPickup.RefID "dab";
 		Inventory.MaxAmount 1;
 		Inventory.Icon "DABRB0";
-		Inventory.PickupMessage "Picked up a deployable barricade.";
-		Tag "Deployable barricade";
+		Inventory.PickupMessage "$PICKUP_DEPLOYABLEBARRICADEs";
+		Tag "$TAG_DEPLOYABLEBARRICADE";
 		XScale 1.4;
 		YScale 1.16;
 	}

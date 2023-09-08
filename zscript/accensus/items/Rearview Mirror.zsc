@@ -111,11 +111,11 @@ class HDRearviewMirror : HDPickup
 		+HDPICKUP.FITSINBACKPACK
 		-HDPICKUP.DROPTRANSLATION
 		HDPickup.Bulk 10;
-		Inventory.PickupMessage "You picked up a rearview mirror. Lookin' good.";
+		Inventory.PickupMessage "$PICKUP_REARVIEWMIRROR";
 		Inventory.PickupSound "weapons/pocket";
 		Inventory.Icon "RVMGZ0";
 		Scale 0.28;
-		Tag "Rearview mirror";
+		Tag "$TAG_REARVIEWMIRROR";
 		HDPickup.RefId "rvm";
 	}
 

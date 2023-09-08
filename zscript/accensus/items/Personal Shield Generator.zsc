@@ -1,33 +1,3 @@
-class PsgHandler : EventHandler
-{
-	override void CheckReplacement(ReplaceEvent e)
-	{
-		if (!e.Replacement)
-		{
-			return;
-		}
-
-		switch (e.Replacement.GetClassName())
-		{
-			case 'BattleArmour':
-				if (random[psgrand]() <= 48)
-				{
-					e.Replacement = 'PsgRandom';
-				}
-				break;
-		}
-	}
-
-	override void WorldThingSpawned(WorldEvent e)
-	{
-		let bat = HDBattery(e.Thing);
-		if (bat)
-		{
-			bat.ItemsThatUseThis.Push("HDPersonalShieldGenerator");
-		}
-	}
-}
-
 class HDPersonalShieldGenerator : HDWeapon
 {
 	enum PSlags
@@ -642,7 +612,7 @@ class HDPersonalShieldGenerator : HDWeapon
 		Inventory.Icon "PSG0A0";
 		Inventory.PickupSound "weapons/pocket";
 		Inventory.PickupMessage "You picked up a personal shield generator.";
-		Tag "Personal Shield Generator";
+		Tag "$TAG_PSG";
 		HDWeapon.RefId "psg";
 		Scale 0.35;
 	}

@@ -444,10 +444,10 @@ class HDFieldAssemblyKit : HDWeapon
 		+INVENTORY.INVBAR
 		+HDWEAPON.FITSINBACKPACK
 		Inventory.PickupSound "weapons/pocket";
-		Inventory.PickupMessage "Picked up a field assembly kit.";
+		Inventory.PickupMessage "$PICKUP_FAK";
 		Scale 0.3;
 		HDWeapon.RefId "FAK";
-		Tag "Field assembly kit";
+		Tag "$TAG_FAK";
 	}
 
 	States
@@ -518,9 +518,9 @@ class AssemblyCore : HDPickup
 		+HDPICKUP.FITSINBACKPACK
 		-INVENTORY.INVBAR
 		+HDPICKUP.CHEATNOGIVE
-		Tag "Assembly Core";
+		Tag "$TAG_ASSEMBLYCORE";
 		Inventory.Icon "ASCRA0";
-		Inventory.PickupMessage "Picked up an assembly core.";
+		Inventory.PickupMessage "$PICKUP_ASSEMBLYCORE";
 		Inventory.PickupSound "weapons/pocket";
 		HDPickup.Bulk 15;
 		Scale 0.6;

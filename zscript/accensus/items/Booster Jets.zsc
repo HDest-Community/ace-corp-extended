@@ -128,9 +128,9 @@ class HDBoosterJets : HDPickup
 		HDPickup.RefID "bsj";
 		Inventory.MaxAmount 1;
 		Inventory.Icon "BSJTA0";
-		Inventory.PickupMessage "Picked up the booster jets.";
+		Inventory.PickupMessage "$PICKUP_BOOSTERJETS";
 		Scale 0.7;
-		Tag "Booster Jets";
+		Tag "$TAG_BOOSTERJETS";
 	}
 
 	States
