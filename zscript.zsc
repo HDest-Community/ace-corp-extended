@@ -66,6 +66,7 @@ const HDLD_WYVERN             = "wyv";
 #include "zscript/accensus/items/Teleporter.zsc"
 #include "zscript/accensus/items/Weapon Crate.zsc"
 #include "zscript/accensus/items/Hacked Reloader.zsc"
+#include "zscript/accensus/items/Armor Patch Kit.zsc"
 
 // Field Assembly Kit shenanagins
 #include "zscript/accensus/items/FAK Upgrades/FAK Thinkers.zsc"

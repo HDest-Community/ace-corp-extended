@@ -763,7 +763,6 @@ OptionMenu "magreloaderSpawning" {
 	SafeCommand "$MENU_RESETALLOPTIONS", "magreloader_reset_cvars"
 }
 
-
 OptionMenu "hrlSpawning" {
     Title "$MENU_HRL_TITLE"
     StaticText ""
@@ -781,6 +780,22 @@ OptionMenu "hrlSpawning" {
 	SafeCommand "$MENU_RESETALLOPTIONS", "hrl_reset_cvars"
 }
 
+OptionMenu "apkSpawning" {
+    Title "$MENU_APK_TITLE"
+    StaticText ""
+
+   	StaticText "$MENU_NOTICE", "FAK_Blue"
+    StaticText "$MENU_SPAWNRATE_TEXT1", "White"
+    StaticText "$MENU_SPAWNRATE_TEXT2", "White"
+    StaticText ""
+
+	StaticText "$MENU_APK_BACKPACKS", "White"
+	Option "$MENU_BACKPACKSALLOWED", "armorpatchkit_allowBackpacks", "OnOff"
+ 	StaticText ""
+
+	StaticText "$MENU_RESETOPTIONS", "FAK_Blue"
+	SafeCommand "$MENU_RESETALLOPTIONS", "apk_reset_cvars"
+}
 
 OptionMenu "AceCorpMenu" {
 	Title "$ACE_MENU"
@@ -861,6 +876,8 @@ OptionMenu "AceCorpMenu" {
     Submenu "$TAG_MAGAZINERELOADER", "magreloaderSpawning", 0, 1
 	StaticText ""
     Submenu "$TAG_HACKEDRELOADER", "hrlSpawning", 0, 1
+	StaticText ""
+	Submenu "$TAG_ARMORPATCHKIT", "apkSpawning", 0, 1
 	StaticText ""
 	
 	StaticText "$MENU_RESETOPTIONS_TITLE", "Red"

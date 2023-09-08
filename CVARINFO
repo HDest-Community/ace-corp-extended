@@ -142,6 +142,7 @@ server bool supplybeacon_allowBackpacks = true;
 server bool teleporter_allowBackpacks = true;
 server bool hackedreloader_allowBackpacks = true;
 server bool magreloader_allowBackpacks = true;
+server bool armorpatchkit_allowBackpacks = true;
 
 //------------
 // Miscellaneous

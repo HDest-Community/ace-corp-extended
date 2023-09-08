@@ -196,6 +196,7 @@ class AceCorpsWepsHandler : EventHandler {
         if (!soulcube_allowBackpacks)          backpackBlacklist.push((Class<Inventory>)('HDSoulCube'));
         if (!magreloader_allowBackpacks)       backpackBlacklist.push((Class<Inventory>)('HDMagazineReloader'));
         if (!hackedreloader_allowBackpacks)    backpackBlacklist.push((Class<Inventory>)('HackedReloader'));
+        if (!armorpatchkit_allowBackpacks)     backpackBlacklist.push((Class<Inventory>)('HDArmorPatchKit'));
 
         //------------
         // Ammunition

@@ -202,6 +202,10 @@ MENU_MAGRELOADER_BACKPACKS              = "Control whether the Magazine Reloader
 MENU_HRL_TITLE                          = "------ Hacked Reloader Options ------";
 MENU_HRL_BACKPACKS                      = "Control whether the Hacked Reloader spawns in Backpacks:";
 
+// Armor Patch Kit Options Text
+MENU_APK_TITLE                          = "------ Armor Patch Kit Options ------";
+MENU_APK_BACKPACKS                      = "Control whether the Armor Patch Kit spawns in Backpacks:";
+
 // Item Tags
 TAG_BLACKHAWK                           = "'Blackhawk' Hi-Tech Crossbow";
 TAG_BLACKHAWKBOLT                       = "Regular Bolt";
@@ -240,6 +244,7 @@ TAG_SUPPLYBEACON                        = "Supply Beacon";
 TAG_TELEPORTER                          = "Portable teleporter";
 // i don't think this is used but i don't fuckin care!!!!!!!!!!!!!!!!!! - [ted]
 TAG_WEAPONCRATE                         = "Weapon Crate";
+TAG_ARMORPATCHKIT                       = "Armor Patch Kit";
 
 // Obituaries
 OB_BLACKHAWKBOLT                        = "%o was assassinated by %k's bolt.";
