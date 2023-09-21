@@ -1,7 +1,13 @@
 [enu default]
 
 // Options Menu Titles
-ACE_MENU                                = "\c[FAK_Blue]Ⓐ\c- AceCorp: Engineering Dept.";
+ACE_MENU                                = "\c[FAK_Blue]Ⓐ\c- AceCorp: Engineering Dept";
+ACE_MENU_WEAPONS_TEXT                   = "\c[FAK_Blue]Weapons Category";
+ACE_MENU_ITEMS_TEXT                     = "\c[FAK_Blue]Items Category";
+ACE_MENU_WEAPONS                        = "Weapons";
+ACE_MENU_ITEMS                          = "Items";
+ACE_MENU_LINES                          = "\c[FAK_Blue]---";
+
 MENU_PISTOLS_TITLE                      = "--- Pistols ---";
 MENU_SHOTGUNS_TITLE                     = "--- Shotguns ---";
 MENU_MACHINEGUNS_TITLE                  = "--- Machine Guns ---";

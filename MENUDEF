@@ -797,7 +797,7 @@ OptionMenu "apkSpawning" {
 	SafeCommand "$MENU_RESETALLOPTIONS", "apk_reset_cvars"
 }
 
-OptionMenu "AceCorpMenu" {
+OptionMenu "AceCorpMenuWeapons" {
 	Title "$ACE_MENU"
     StaticText ""
 
@@ -841,9 +841,13 @@ OptionMenu "AceCorpMenu" {
     Submenu "$TAG_HAMMERHEAD", "hammerheadSpawning", 0, 1
 	StaticText ""
     Submenu "$TAG_REDLINE", "redlineSpawning", 0, 1
+}
+
+OptionMenu "AceCorpMenuItems"{
+	Title "$ACE_MENU"
 	StaticText ""
 
-    StaticText "$MENU_ITEMS_TITLE", "FAK_Blue"
+	StaticText "$MENU_ITEMS_TITLE", "FAK_Blue"
 	StaticText ""
     Submenu "$TAG_LADDERLAUNCHER", "ladlauncherSpawning", 0, 1
 	StaticText ""
@@ -878,13 +882,29 @@ OptionMenu "AceCorpMenu" {
     Submenu "$TAG_HACKEDRELOADER", "hrlSpawning", 0, 1
 	StaticText ""
 	Submenu "$TAG_ARMORPATCHKIT", "apkSpawning", 0, 1
+}
+
+OptionMenu "AceCorpMenu"{
+	Title "$ACE_MENU"
+	StaticText ""
+
+	StaticText "$ACE_MENU_WEAPONS_TEXT"
+	StaticText "$ACE_MENU_LINES"
+	StaticText ""
+	Submenu "$ACE_MENU_WEAPONS", "AceCorpMenuWeapons", 0, 1
+	StaticText ""
+	StaticText ""
+	StaticText "$ACE_MENU_ITEMS_TEXT"
+	StaticText "$ACE_MENU_LINES"
+	StaticText ""
+	Submenu "$ACE_MENU_ITEMS", "AceCorpMenuItems", 0, 1
+	StaticText ""
 	StaticText ""
 	
 	StaticText "$MENU_RESETOPTIONS_TITLE", "Red"
 	StaticText ""
 	SafeCommand "$ACE_RESETALLOPTIONS", "AceCorp_Reset_Cvars"
 }
-
 AddOptionMenu "OptionsMenu" {
 	Submenu "$ACE_MENU", "AceCorpMenu"
 }
