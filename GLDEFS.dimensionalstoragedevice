@@ -1,0 +1,5 @@
+PointLight DSDLight
+{
+	color 0.4 0.8 1.0
+	size 24
+}

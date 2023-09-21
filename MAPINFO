@@ -1,3 +1,4 @@
 GameInfo {
-    AddEventHandlers = "AceCorpsWepsHandler"
+    // Zeratul if you want to put all of these handlers into one big awesome epic swagalicious handler go fuckin' ham but I dunno what I'm looking at so imma keep them separate. - [Ted]
+    AddEventHandlers = "AceCorpsWepsHandler", "DSDHandler", "FAK_Handler", "SoulCubeHandler"
 }

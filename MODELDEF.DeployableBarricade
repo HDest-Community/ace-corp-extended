@@ -1,0 +1,19 @@
+Model HDDeployedBarricade
+{
+	Path "Models/Barricade" DONTCULLBACKFACES Scale 10.0 10.0 10.0
+	Model 0 "BarricadeA.obj" FrameIndex DPBR A 0 0
+	Model 0 "BarricadeB.obj" FrameIndex DPBR B 0 0
+	Model 0 "BarricadeC.obj" FrameIndex DPBR C 0 0
+	Model 0 "BarricadeD.obj" FrameIndex DPBR D 0 0
+	Model 0 "BarricadeE.obj" FrameIndex DPBR E 0 0
+	Model 0 "BarricadeF.obj" FrameIndex DPBR F 0 0
+	Model 0 "BarricadeG.obj" FrameIndex DPBR G 0 0
+	Model 0 "BarricadeH.obj" FrameIndex DPBR H 0 0
+	Model 0 "BarricadeI.obj" FrameIndex DPBR I 0 0
+	Model 0 "BarricadeJ.obj" FrameIndex DPBR J 0 0
+	Model 0 "BarricadeK.obj" FrameIndex DPBR K 0 0
+	Model 0 "BarricadeL.obj" FrameIndex DPBR L 0 0
+	Model 0 "BarricadeM.obj" FrameIndex DPBR M 0 0
+	Model 0 "BarricadeN.obj" FrameIndex DPBR N 0 0
+	Model 0 "BarricadeO.obj" FrameIndex DPBR O 0 0
+}

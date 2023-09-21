@@ -1,0 +1,2 @@
+$alias DSD/Unload misc/teleport
+$limit DSD/Unload 0

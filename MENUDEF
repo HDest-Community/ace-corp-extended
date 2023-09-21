@@ -408,8 +408,396 @@ OptionMenu "redlineSpawning" {
 	SafeCommand "$MENU_RESETALLOPTIONS", "redline_reset_cvars"
 }
 
+OptionMenu "ladlauncherSpawning" {
+    Title "$MENU_LADDERLAUNCHER_TITLE"
+    StaticText ""
 
-OptionMenu "AceCorpMenu" {
+   	StaticText "$MENU_NOTICE", "FAK_Blue"
+    StaticText "$MENU_SPAWNRATE_TEXT1", "White"
+    StaticText "$MENU_SPAWNRATE_TEXT2", "White"
+    StaticText ""
+
+	StaticText "$MENU_SPAWNOPTIONS", "FAK_Blue"
+    StaticText "$MENU_LADLAUNCHER_ROCKETBOX_SPAWNTEXT", "White"
+	Option "$MENU_WEPSPAWNRATE", "ladderlauncher_rocketbox_spawn_bias", "SpawnBias"
+	SafeCommand "$MENU_RESETWEP", "resetcvar ladderlauncher_rocketbox_spawn_bias"
+ 	StaticText ""
+    StaticText "$MENU_LADLAUNCHER_CELLPACK_SPAWNTEXT", "White"
+	Option "$MENU_WEPSPAWNRATE", "ladderlauncher_cellpack_spawn_bias", "SpawnBias"
+	SafeCommand "$MENU_RESETWEP", "resetcvar ladderlauncher_cellpack_spawn_bias"
+ 	StaticText ""
+	
+	StaticText "$MENU_LADLAUNCHER_BACKPACKS", "White"
+	Option "$MENU_BACKPACKSALLOWED", "ladderlauncher_allowBackpacks", "OnOff"
+ 	StaticText ""
+
+	StaticText "$MENU_PERSISTENCYOPTIONS", "FAK_Blue"
+    StaticText "$MENU_PERSISTENCY_TEXT", "White"
+	Option "$MENU_PERSISTENCY", "ladderlauncher_persistent_spawning", "OnOff"
+	SafeCommand "$MENU_RESETPERSISTENCY", "resetcvar ladderlauncher_persistent_spawning"
+ 	StaticText ""
+   	StaticText ""
+
+	StaticText "$MENU_RESETOPTIONS", "FAK_Blue"
+	SafeCommand "$MENU_RESETALLOPTIONS", "ladlauncher_reset_cvars"
+}
+
+OptionMenu "psgSpawning" {
+    Title "$MENU_PSG_TITLE"
+    StaticText ""
+
+   	StaticText "$MENU_NOTICE", "FAK_Blue"
+    StaticText "$MENU_SPAWNRATE_TEXT1", "White"
+    StaticText "$MENU_SPAWNRATE_TEXT2", "White"
+    StaticText ""
+
+	StaticText "$MENU_SPAWNOPTIONS", "FAK_Blue"
+    StaticText "$MENU_PSG_BLUEARMOR_SPAWNTEXT", "White"
+	Option "$MENU_WEPSPAWNRATE", "psg_battlearmor_spawn_bias", "SpawnBias"
+	SafeCommand "$MENU_RESETWEP", "resetcvar psg_battlearmor_spawn_bias"
+ 	StaticText ""
+	
+	StaticText "$MENU_PSG_BACKPACKS", "White"
+	Option "$MENU_BACKPACKSALLOWED", "psg_allowBackpacks", "OnOff"
+ 	StaticText ""
+
+	StaticText "$MENU_PERSISTENCYOPTIONS", "FAK_Blue"
+    StaticText "$MENU_PERSISTENCY_TEXT", "White"
+	Option "$MENU_PERSISTENCY", "psg_persistent_spawning", "OnOff"
+	SafeCommand "$MENU_RESETPERSISTENCY", "resetcvar psg_persistent_spawning"
+ 	StaticText ""
+   	StaticText ""
+
+	StaticText "$MENU_RESETOPTIONS", "FAK_Blue"
+	SafeCommand "$MENU_RESETALLOPTIONS", "psg_reset_cvars"
+}
+
+OptionMenu "secretfinderSpawning" {
+    Title "$MENU_SECRETFINDER_TITLE"
+    StaticText ""
+
+   	StaticText "$MENU_NOTICE", "FAK_Blue"
+    StaticText "$MENU_SPAWNRATE_TEXT1", "White"
+    StaticText "$MENU_SPAWNRATE_TEXT2", "White"
+    StaticText ""
+
+	StaticText "$MENU_SPAWNOPTIONS", "FAK_Blue"
+    StaticText "$MENU_SECRETFINDER_MAP_SPAWNTEXT", "White"
+	Option "$MENU_WEPSPAWNRATE", "secretfinder_map_spawn_bias", "SpawnBias"
+	SafeCommand "$MENU_RESETWEP", "resetcvar secretfinder_map_spawn_bias"
+ 	StaticText ""
+	
+	StaticText "$MENU_SECRETFINDER_BACKPACKS", "White"
+	Option "$MENU_BACKPACKSALLOWED", "secretfinder_allowBackpacks", "OnOff"
+ 	StaticText ""
+
+	StaticText "$MENU_PERSISTENCYOPTIONS", "FAK_Blue"
+    StaticText "$MENU_PERSISTENCY_TEXT", "White"
+	Option "$MENU_PERSISTENCY", "secretfinder_persistent_spawning", "OnOff"
+	SafeCommand "$MENU_RESETPERSISTENCY", "resetcvar secretfinder_persistent_spawning"
+ 	StaticText ""
+   	StaticText ""
+
+	StaticText "$MENU_RESETOPTIONS", "FAK_Blue"
+	SafeCommand "$MENU_RESETALLOPTIONS", "secretfinder_reset_cvars"
+}
+
+OptionMenu "superstimSpawning" {
+    Title "$MENU_SUPERSTIM_TITLE"
+    StaticText ""
+
+   	StaticText "$MENU_NOTICE", "FAK_Blue"
+    StaticText "$MENU_SPAWNRATE_TEXT1", "White"
+    StaticText "$MENU_SPAWNRATE_TEXT2", "White"
+    StaticText ""
+
+	StaticText "$MENU_SPAWNOPTIONS", "FAK_Blue"
+    StaticText "$MENU_SUPERSTIM_MEDICAL_SPAWNTEXT", "White"
+	Option "$MENU_WEPSPAWNRATE", "superstim_medical_spawn_bias", "SpawnBias"
+	SafeCommand "$MENU_RESETWEP", "resetcvar superstim_medical_spawn_bias"
+ 	StaticText ""
+	
+	StaticText "$MENU_SUPERSTIM_BACKPACKS", "White"
+	Option "$MENU_BACKPACKSALLOWED", "superstim_allowBackpacks", "OnOff"
+ 	StaticText ""
+
+	StaticText "$MENU_PERSISTENCYOPTIONS", "FAK_Blue"
+    StaticText "$MENU_PERSISTENCY_TEXT", "White"
+	Option "$MENU_PERSISTENCY", "superstim_persistent_spawning", "OnOff"
+	SafeCommand "$MENU_RESETPERSISTENCY", "resetcvar superstim_persistent_spawning"
+ 	StaticText ""
+   	StaticText ""
+
+	StaticText "$MENU_RESETOPTIONS", "FAK_Blue"
+	SafeCommand "$MENU_RESETALLOPTIONS", "superstim_reset_cvars"
+}
+
+OptionMenu "fakSpawning" {
+    Title "$MENU_FAK_TITLE"
+    StaticText ""
+
+   	StaticText "$MENU_NOTICE", "FAK_Blue"
+    StaticText "$MENU_SPAWNRATE_TEXT1", "White"
+    StaticText "$MENU_SPAWNRATE_TEXT2", "White"
+    StaticText ""
+	
+	// In the future I want to make a cvar for if Assembly Cores spawn on Archviles or not, don't have that done yet though. - [Ted]
+
+	StaticText "$MENU_FAK_BACKPACKS", "White"
+	Option "$MENU_BACKPACKSALLOWED", "fak_allowBackpacks", "OnOff"
+ 	StaticText ""
+
+	StaticText "$MENU_RESETOPTIONS", "FAK_Blue"
+	SafeCommand "$MENU_RESETALLOPTIONS", "fak_reset_cvars"
+}
+
+OptionMenu "boosterSpawning" {
+    Title "$MENU_BOOSTERJET_TITLE"
+    StaticText ""
+
+   	StaticText "$MENU_NOTICE", "FAK_Blue"
+    StaticText "$MENU_SPAWNRATE_TEXT1", "White"
+    StaticText "$MENU_SPAWNRATE_TEXT2", "White"
+    StaticText ""
+
+	StaticText "$MENU_BOOSTERJET_BACKPACKS", "White"
+	Option "$MENU_BACKPACKSALLOWED", "boosterJets_allowBackpacks", "OnOff"
+ 	StaticText ""
+
+	StaticText "$MENU_RESETOPTIONS", "FAK_Blue"
+	SafeCommand "$MENU_RESETALLOPTIONS", "boosterjet_reset_cvars"
+}
+
+OptionMenu "dsdSpawning" {
+    Title "$MENU_DSD_TITLE"
+    StaticText ""
+
+   	StaticText "$MENU_NOTICE", "FAK_Blue"
+    StaticText "$MENU_SPAWNRATE_TEXT1", "White"
+    StaticText "$MENU_SPAWNRATE_TEXT2", "White"
+    StaticText ""
+
+	StaticText "$MENU_SPAWNOPTIONS", "FAK_Blue"
+    StaticText "$MENU_DSD_BACKPACK_SPAWNTEXT", "White"
+	Option "$MENU_WEPSPAWNRATE", "dsd_backpack_spawn_bias", "SpawnBias"
+	SafeCommand "$MENU_RESETWEP", "resetcvar dsd_backpack_spawn_bias"
+
+	StaticText "$MENU_DSD_BACKPACKS", "White"
+	Option "$MENU_BACKPACKSALLOWED", "dsd_allowBackpacks", "OnOff"
+ 	StaticText ""
+
+	StaticText "$MENU_PERSISTENCYOPTIONS", "FAK_Blue"
+    StaticText "$MENU_PERSISTENCY_TEXT", "White"
+	Option "$MENU_PERSISTENCY", "dsd_persistent_spawning", "OnOff"
+	SafeCommand "$MENU_RESETPERSISTENCY", "resetcvar dsd_persistent_spawning"
+ 	StaticText ""
+   	StaticText ""
+
+	StaticText "$MENU_RESETOPTIONS", "FAK_Blue"
+	SafeCommand "$MENU_RESETALLOPTIONS", "dsd_reset_cvars"
+}
+
+OptionMenu "rearviewmirrorSpawning" {
+    Title "$MENU_REARVIEWMIRROR_TITLE"
+    StaticText ""
+
+   	StaticText "$MENU_NOTICE", "FAK_Blue"
+    StaticText "$MENU_SPAWNRATE_TEXT1", "White"
+    StaticText "$MENU_SPAWNRATE_TEXT2", "White"
+    StaticText ""
+
+	StaticText "$MENU_REARVIEWMIRROR_BACKPACKS", "White"
+	Option "$MENU_BACKPACKSALLOWED", "rearviewmirror_allowBackpacks", "OnOff"
+ 	StaticText ""
+
+	StaticText "$MENU_RESETOPTIONS", "FAK_Blue"
+	SafeCommand "$MENU_RESETALLOPTIONS", "rearviewmirror_reset_cvars"
+}
+
+OptionMenu "roombaSpawning" {
+    Title "$MENU_ROOMBA_TITLE"
+    StaticText ""
+
+   	StaticText "$MENU_NOTICE", "FAK_Blue"
+    StaticText "$MENU_SPAWNRATE_TEXT1", "White"
+    StaticText "$MENU_SPAWNRATE_TEXT2", "White"
+    StaticText ""
+
+	StaticText "$MENU_ROOMBA_BACKPACKS", "White"
+	Option "$MENU_BACKPACKSALLOWED", "roomba_allowBackpacks", "OnOff"
+ 	StaticText ""
+
+	StaticText "$MENU_RESETOPTIONS", "FAK_Blue"
+	SafeCommand "$MENU_RESETALLOPTIONS", "roomba_reset_cvars"
+}
+
+OptionMenu "supplybeaconSpawning" {
+    Title "$MENU_SUPPLYBEACON_TITLE"
+    StaticText ""
+
+   	StaticText "$MENU_NOTICE", "FAK_Blue"
+    StaticText "$MENU_SPAWNRATE_TEXT1", "White"
+    StaticText "$MENU_SPAWNRATE_TEXT2", "White"
+    StaticText ""
+
+	StaticText "$MENU_SUPPLYBEACON_BACKPACKS", "White"
+	Option "$MENU_BACKPACKSALLOWED", "supplybeacon_allowBackpacks", "OnOff"
+ 	StaticText ""
+
+	StaticText "$MENU_RESETOPTIONS", "FAK_Blue"
+	SafeCommand "$MENU_RESETALLOPTIONS", "supplybeacon_reset_cvars"
+}
+
+OptionMenu "teleporterSpawning" {
+    Title "$MENU_TELEPORTER_TITLE"
+    StaticText ""
+
+   	StaticText "$MENU_NOTICE", "FAK_Blue"
+    StaticText "$MENU_SPAWNRATE_TEXT1", "White"
+    StaticText "$MENU_SPAWNRATE_TEXT2", "White"
+    StaticText ""
+
+	StaticText "$MENU_TELEPORTER_BACKPACKS", "White"
+	Option "$MENU_BACKPACKSALLOWED", "teleporter_allowBackpacks", "OnOff"
+ 	StaticText ""
+
+	StaticText "$MENU_RESETOPTIONS", "FAK_Blue"
+	SafeCommand "$MENU_RESETALLOPTIONS", "teleporter_reset_cvars"
+}
+
+OptionMenu "archerSpawning" {
+    Title "$MENU_SOULCUBE_TITLE"
+    StaticText ""
+
+   	StaticText "$MENU_NOTICE", "FAK_Blue"
+    StaticText "$MENU_SPAWNRATE_TEXT1", "White"
+    StaticText "$MENU_SPAWNRATE_TEXT2", "White"
+    StaticText ""
+
+	StaticText "$MENU_SPAWNOPTIONS", "FAK_Blue"
+    StaticText "$MENU_SOULCUBE_CHAINSAW_SPAWNTEXT", "White"
+	Option "$MENU_WEPSPAWNRATE", "soulcube_chainsaw_spawn_bias", "SpawnBias"
+	SafeCommand "$MENU_RESETWEP", "resetcvar soulcube_chainsaw_spawn_bias"
+
+	StaticText "$MENU_SOULCUBE_BACKPACKS", "White"
+	Option "$MENU_BACKPACKSALLOWED", "soulcube_allowBackpacks", "OnOff"
+ 	StaticText ""
+
+	StaticText "$MENU_PERSISTENCYOPTIONS", "FAK_Blue"
+    StaticText "$MENU_PERSISTENCY_TEXT", "White"
+	Option "$MENU_PERSISTENCY", "soulcube_persistent_spawning", "OnOff"
+	SafeCommand "$MENU_RESETPERSISTENCY", "resetcvar soulcube_persistent_spawning"
+ 	StaticText ""
+   	StaticText ""
+
+	StaticText "$MENU_RESETOPTIONS", "FAK_Blue"
+	SafeCommand "$MENU_RESETALLOPTIONS", "soulcube_reset_cvars"
+}
+
+OptionMenu "crateSpawning" {
+    Title "$MENU_WEAPONCRATE_TITLE"
+    StaticText ""
+
+   	StaticText "$MENU_NOTICE", "FAK_Blue"
+    StaticText "$MENU_SPAWNRATE_TEXT1", "White"
+    StaticText "$MENU_SPAWNRATE_TEXT2", "White"
+    StaticText ""
+
+	StaticText "$MENU_SPAWNOPTIONS", "FAK_Blue"
+    StaticText "$MENU_WEAPONCRATE_RL_SPAWNTEXT", "White"
+	Option "$MENU_WEPSPAWNRATE", "weaponcrate_rl_spawn_bias", "SpawnBias"
+	SafeCommand "$MENU_RESETWEP", "resetcvar weaponcrate_rl_spawn_bias"
+	StaticText ""
+
+	StaticText "$MENU_PERSISTENCYOPTIONS", "FAK_Blue"
+    StaticText "$MENU_PERSISTENCY_TEXT", "White"
+	Option "$MENU_PERSISTENCY", "weaponcrate_persistent_spawning", "OnOff"
+	SafeCommand "$MENU_RESETPERSISTENCY", "resetcvar weaponcrate_persistent_spawning"
+ 	StaticText ""
+   	StaticText ""
+
+	StaticText "$MENU_RESETOPTIONS", "FAK_Blue"
+	SafeCommand "$MENU_RESETALLOPTIONS", "weaponcrate_reset_cvars"
+}
+
+OptionMenu "barricadeSpawning" {
+    Title "$MENU_DEPLOYABLEBARRICADE_TITLE"
+    StaticText ""
+
+   	StaticText "$MENU_NOTICE", "FAK_Blue"
+    StaticText "$MENU_SPAWNRATE_TEXT1", "White"
+    StaticText "$MENU_SPAWNRATE_TEXT2", "White"
+    StaticText ""
+
+	StaticText "$MENU_SPAWNOPTIONS", "FAK_Blue"
+    StaticText "$MENU_DEPLOYABLEBARRICADE_RL_SPAWNTEXT", "White"
+	Option "$MENU_WEPSPAWNRATE", "deployablebarricade_rl_spawn_bias", "SpawnBias"
+	SafeCommand "$MENU_RESETWEP", "resetcvar deployablebarricade_rl_spawn_bias"
+	StaticText ""
+
+	StaticText "$MENU_PERSISTENCYOPTIONS", "FAK_Blue"
+    StaticText "$MENU_PERSISTENCY_TEXT", "White"
+	Option "$MENU_PERSISTENCY", "deployablebarricade_persistent_spawning", "OnOff"
+	SafeCommand "$MENU_RESETPERSISTENCY", "resetcvar deployablebarricade_persistent_spawning"
+ 	StaticText ""
+   	StaticText ""
+
+	StaticText "$MENU_RESETOPTIONS", "FAK_Blue"
+	SafeCommand "$MENU_RESETALLOPTIONS", "barricade_reset_cvars"
+}
+
+OptionMenu "magreloaderSpawning" {
+    Title "$MENU_MAGRELOADER_TITLE"
+    StaticText ""
+
+   	StaticText "$MENU_NOTICE", "FAK_Blue"
+    StaticText "$MENU_SPAWNRATE_TEXT1", "White"
+    StaticText "$MENU_SPAWNRATE_TEXT2", "White"
+    StaticText ""
+
+	StaticText "$MENU_MAGRELOADER_BACKPACKS", "White"
+	Option "$MENU_BACKPACKSALLOWED", "magreloader_allowBackpacks", "OnOff"
+ 	StaticText ""
+
+	StaticText "$MENU_RESETOPTIONS", "FAK_Blue"
+	SafeCommand "$MENU_RESETALLOPTIONS", "magreloader_reset_cvars"
+}
+
+OptionMenu "hrlSpawning" {
+    Title "$MENU_HRL_TITLE"
+    StaticText ""
+
+   	StaticText "$MENU_NOTICE", "FAK_Blue"
+    StaticText "$MENU_SPAWNRATE_TEXT1", "White"
+    StaticText "$MENU_SPAWNRATE_TEXT2", "White"
+    StaticText ""
+
+	StaticText "$MENU_HRL_BACKPACKS", "White"
+	Option "$MENU_BACKPACKSALLOWED", "hackedreloader_allowBackpacks", "OnOff"
+ 	StaticText ""
+
+	StaticText "$MENU_RESETOPTIONS", "FAK_Blue"
+	SafeCommand "$MENU_RESETALLOPTIONS", "hrl_reset_cvars"
+}
+
+OptionMenu "apkSpawning" {
+    Title "$MENU_APK_TITLE"
+    StaticText ""
+
+   	StaticText "$MENU_NOTICE", "FAK_Blue"
+    StaticText "$MENU_SPAWNRATE_TEXT1", "White"
+    StaticText "$MENU_SPAWNRATE_TEXT2", "White"
+    StaticText ""
+
+	StaticText "$MENU_APK_BACKPACKS", "White"
+	Option "$MENU_BACKPACKSALLOWED", "armorpatchkit_allowBackpacks", "OnOff"
+ 	StaticText ""
+
+	StaticText "$MENU_RESETOPTIONS", "FAK_Blue"
+	SafeCommand "$MENU_RESETALLOPTIONS", "apk_reset_cvars"
+}
+
+OptionMenu "AceCorpMenuWeapons" {
 	Title "$ACE_MENU"
     StaticText ""
 
@@ -453,13 +841,70 @@ OptionMenu "AceCorpMenu" {
     Submenu "$TAG_HAMMERHEAD", "hammerheadSpawning", 0, 1
 	StaticText ""
     Submenu "$TAG_REDLINE", "redlineSpawning", 0, 1
+}
+
+OptionMenu "AceCorpMenuItems"{
+	Title "$ACE_MENU"
+	StaticText ""
+
+	StaticText "$MENU_ITEMS_TITLE", "FAK_Blue"
+	StaticText ""
+    Submenu "$TAG_LADDERLAUNCHER", "ladlauncherSpawning", 0, 1
+	StaticText ""
+    Submenu "$TAG_PSG", "psgSpawning", 0, 1
+	StaticText ""
+    Submenu "$TAG_SECRETFINDER", "secretfinderSpawning", 0, 1
+	StaticText ""
+    Submenu "$TAG_SUPERSTIM", "superstimSpawning", 0, 1
+	StaticText ""
+    Submenu "$TAG_FAK", "fakSpawning", 0, 1
+	StaticText ""
+    Submenu "$TAG_BOOSTERJETS", "boosterSpawning", 0, 1
+	StaticText ""
+    Submenu "$TAG_DSD", "dsdSpawning", 0, 1
+	StaticText ""
+    Submenu "$TAG_REARVIEWMIRROR", "rearviewmirrorSpawning", 0, 1
+	StaticText ""
+    Submenu "$TAG_ROOMBA", "roombaSpawning", 0, 1
+	StaticText ""
+    Submenu "$TAG_SUPPLYBEACON", "supplybeaconSpawning", 0, 1
+	StaticText ""
+    Submenu "$TAG_TELEPORTER", "teleporterSpawning", 0, 1
+	StaticText ""
+    Submenu "$TAG_SOULCUBE", "archerSpawning", 0, 1
+	StaticText ""
+    Submenu "$TAG_WEAPONCRATE", "crateSpawning", 0, 1
+	StaticText ""
+    Submenu "$TAG_DEPLOYABLEBARRICADE", "barricadeSpawning", 0, 1
+	StaticText ""
+    Submenu "$TAG_MAGAZINERELOADER", "magreloaderSpawning", 0, 1
+	StaticText ""
+    Submenu "$TAG_HACKEDRELOADER", "hrlSpawning", 0, 1
+	StaticText ""
+	Submenu "$TAG_ARMORPATCHKIT", "apkSpawning", 0, 1
+}
+
+OptionMenu "AceCorpMenu"{
+	Title "$ACE_MENU"
+	StaticText ""
+
+	StaticText "$ACE_MENU_WEAPONS_TEXT"
+	StaticText "$ACE_MENU_LINES"
+	StaticText ""
+	Submenu "$ACE_MENU_WEAPONS", "AceCorpMenuWeapons", 0, 1
+	StaticText ""
+	StaticText ""
+	StaticText "$ACE_MENU_ITEMS_TEXT"
+	StaticText "$ACE_MENU_LINES"
+	StaticText ""
+	Submenu "$ACE_MENU_ITEMS", "AceCorpMenuItems", 0, 1
+	StaticText ""
 	StaticText ""
 	
 	StaticText "$MENU_RESETOPTIONS_TITLE", "Red"
 	StaticText ""
 	SafeCommand "$ACE_RESETALLOPTIONS", "AceCorp_Reset_Cvars"
 }
-
 AddOptionMenu "OptionsMenu" {
 	Submenu "$ACE_MENU", "AceCorpMenu"
 }

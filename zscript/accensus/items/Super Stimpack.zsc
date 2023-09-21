@@ -1,0 +1,461 @@
+class PortableSuperStimpack : PortableStimpack
+{
+	override void DoEffect()
+	{
+		Cooldown--;
+		if (TimesFumbled > 0 && Cooldown <= 0)
+		{
+			TimesFumbled--;
+			Cooldown = 9;
+		}
+
+		Super.DoEffect();
+	}
+
+	override bool Use(bool pickup)
+	{
+		let plr = HDPlayerPawn(owner);
+		if (!plr || plr.incapacitated <= 0)
+		{
+			return Super.Use(pickup);
+		}
+
+		plr.A_StartSound("weapons/pocket", 20);
+		if (++TimesFumbled >= 7)
+		{
+			// [Ace] Actual stim.
+			plr.A_SetBlend("7a 3a 18", 0.1, 4);
+			plr.A_SetPitch(plr.pitch + 2, SPF_INTERPOLATE);
+			if (HDPlayerPawn(plr))
+			{
+				plr.A_StartSound(HDPlayerPawn(plr).medsound, CHAN_VOICE);
+			}
+			else
+			{
+				plr.A_StartSound("*usemeds",CHAN_VOICE);
+			}
+			plr.A_StartSound("misc/bulletflesh", CHAN_WEAPON);
+			Actor StimEffect = Spawn("InjectSuperStimDummy", plr.pos, ALLOW_REPLACE);
+			StimEffect.target = plr;
+
+			// [Ace] Spent stim.
+			Actor s = Spawn("SpentSuperStim", plr.pos + (0, 0, plr.height - 8), ALLOW_REPLACE);
+			s.angle = plr.angle;
+			s.vel = plr.vel;
+			s.A_ChangeVelocity(3, 1, 2, CVF_RELATIVE);
+			s.A_StartSound("weapons/grenopen", 8);
+
+			Amount--;
+			if (Amount <= 0)
+			{
+				Destroy();
+				return false;
+			}
+			else if (Mags.Size() > 0)
+			{
+				Mags.Pop();
+				
+			}
+
+			TimesFumbled = 0;
+		}
+
+		return false;
+	}
+
+	private int Cooldown;
+	private int TimesFumbled;
+
+	Default
+	{
+		Inventory.PickupMessage "$PICKUP_SUPERSTIM";
+		Inventory.Icon "SSTMA0";
+		Tag "$TAG_SUPERSTIM";
+		HDPickup.RefId "sst";
+		HDInjectorMaker.InjectorType "HDSuperStimpacker";
+	}
+	
+	States
+	{
+		Spawn:
+			SSTM A -1;
+			Stop;
+	}
+}
+
+class HDSuperStimpacker : HDWoundFixer
+{
+	class<actor> injecttype;
+	class<actor> spentinjecttype;
+	class<inventory> inventorytype;
+	class<inventory> injectortype;
+	string injectoricon;
+	property injectoricon:injectoricon;
+	property injecttype:injecttype;
+	property spentinjecttype:spentinjecttype;
+	property inventorytype:inventorytype;
+	property injectortype:injectortype;
+	string noerror;
+	property noerror:noerror;
+	
+	override Inventory CreateTossable(int amount)
+	{
+		HDWoundFixer.DropMeds(owner, 0);
+		return null;
+	}
+	override string, double GetPickupSprite() { return "SSTMA0", 1; }
+	override string GetHelpText() { return WEPHELP_INJECTOR; }
+	
+	Default
+	{	
+		Tag "Super stimpack";
+		HDSuperStimpacker.InjectType "InjectSuperStimDummy";
+		HDSuperStimpacker.SpentInjectType "SpentSuperStim";
+		HDSuperStimpacker.InventoryType "PortableSuperStimpack";
+		HDSuperStimpacker.NoError "No super stimpacks.";
+		HDSuperStimpacker.InjectorIcon "SSTMA0";
+		HDSuperStimpacker.InjectorType "PortableSuperStimpack";
+	}
+
+	States
+	{
+		Spawn:
+			TNT1 A 1;
+			Stop;
+		Select:
+			TNT1 A 0
+			{
+				bool HelpText = GetCVar("hd_helptext");
+				if (!CheckInventory(invoker.InventoryType, 1))
+				{
+					if (HelpText)
+					{
+						A_WeaponMessage(invoker.NoError);
+					}
+					A_SelectWeapon("HDFist");
+				}
+				else if (HelpText)
+				{
+					A_WeaponMessage("\cd<<< \cjSUPER STIMPACK \cd>>>\c-\n\n\nSuper stimpacks give a rapid\nbut short boost to\nhealth regeneration.\n\n\Press altfire to use on someone else.\n\n\cgDO NOT OVERDOSE.");
+				}
+			}
+			goto HDWoundFixer::Select;
+		DeselectHold:
+			TNT1 A 1;
+			TNT1 A 0 A_Refire("DeselectHold");
+			TNT1 A 0
+			{
+				A_SelectWeapon("HDFist");
+				A_WeaponReady(WRF_NOFIRE);
+			}
+			Goto Nope;
+		Fire:
+		Hold:
+			TNT1 A 1;
+			TNT1 A 0
+			{
+				bool HelpText = GetCVar("hd_helptext");
+				if (!CheckInventory(invoker.InventoryType, 1))
+				{
+					if (HelpText)
+					{
+						A_WeaponMessage(invoker.NoError);
+					}
+					A_Refire("DeselectHold");
+				}
+				else if (CheckInventory("PortableRadsuit", 1) && CheckInventory("WornRadsuit", 1))
+				{
+					if (HelpText)
+					{
+						A_WeaponMessage("Take off your environment suit first!", 2);
+					}
+					A_Refire("Nope");
+				}
+				else if (pitch <55)
+				{
+					A_SetPitch(pitch + 8, SPF_INTERPOLATE);
+					A_Refire();
+				}
+				else
+				{
+					A_Refire("Inject");
+				}
+			}
+			Goto Nope;
+		Inject:
+			TNT1 A 1
+			{
+				A_TakeInjector(invoker.InventoryType);
+				A_SetBlend("7a 3a 18", 0.1, 4);
+				A_SetPitch(pitch + 2, SPF_INTERPOLATE);
+				if (HDPlayerPawn(self))
+				{
+					A_StartSound(HDPlayerPawn(self).medsound, CHAN_VOICE);
+				}
+				else
+				{
+					A_StartSound("*usemeds",CHAN_VOICE);
+				}
+				A_StartSound("misc/bulletflesh", CHAN_WEAPON);
+				Actor a = Spawn(invoker.InjectType, pos, ALLOW_REPLACE);
+				a.target = self;
+			}
+			TNT1 AAAA 1 A_SetPitch(pitch - 0.5, SPF_INTERPOLATE);
+			TNT1 A 6;
+			TNT1 A 0
+			{
+				Actor a = Spawn(invoker.SpentInjectType, pos + (0, 0, height - 8), ALLOW_REPLACE);
+				a.angle = angle;
+				a.vel = vel;
+				a.A_ChangeVelocity(3, 1, 2, CVF_RELATIVE);
+				a.A_StartSound("weapons/grenopen", 8);
+			}
+			Goto InjectedHold;
+		AltFire:
+			TNT1 A 10;
+			TNT1 A 0 A_Refire();
+			Goto Nope;
+		AltHold:
+			TNT1 A 0
+			{
+				if (!CheckInventory(invoker.InventoryType, 1))
+				{
+					if (GetCVar("hd_helptext"))
+					{
+						A_WeaponMessage(invoker.NoError);
+					}
+					A_Refire("DeselectHold");
+				}
+			}
+			TNT1 A 8
+			{
+				bool HelpText = GetCVar("hd_helptext");
+				FLineTraceData InjectorData;
+				LineTrace(angle, HDCONST_ONEMETRE, pitch, offsetz: height - 12, data: InjectorData);
+				let plr = HDPlayerPawn(InjectorData.HitActor);
+				if (!plr)
+				{
+					let mon = HDHumanoid(InjectorData.HitActor);
+					if (mon && invoker.GetClassName() == "HDSuperStimpacker")
+					{
+						if (mon.Stunned < 100 || mon.Health < 50)
+						{
+							if (HelpText)
+							{
+								A_WeaponMessage("They don't need it.", 2);
+							}
+							return ResolveState("Nope");
+						}
+						A_TakeInjector(invoker.InventoryType);
+						mon.A_StartSound(mon.painsound, CHAN_VOICE);
+						mon.Stunned = max(0, mon.stunned >> 1);
+						mon.GiveBody(-100);
+						if (!CheckInventory(invoker.InventoryType, 1))
+						{
+							return ResolveState("DeselectHold");
+						}
+						return ResolveState("Injected");
+					}
+					if (HelpText)
+					{
+						A_WeaponMessage("Nothing to be done here.\n\nStimulate thyself? (press fire)", 2);
+					}
+					return ResolveState("Nope");
+				}
+				else if (plr.CheckInventory("WornRadsuit", 1))
+				{
+					if (HelpText)
+					{
+						A_WeaponMessage("You'll need them to take off their environment suit...");
+					}
+					return ResolveState("Nope");
+				}
+				else if (plr.CheckInventory("IsMoving", 5))
+				{
+					bool PlrHelpText = plr.GetCVar("hd_helptext");
+					if (plr.CountInv('HDStim') > 0)
+					{
+						if (PlrHelpText)
+						{
+							plr.A_Print(String.Format("Run away!!!\n\n%s is trying to overdose you\n\n(and possibly bugger you)...", player.GetUsername()));
+						}
+						if (HelpText)
+						{
+							A_WeaponMessage("They seem a bit fidgety...");
+						}
+					}
+					else
+					{
+						if (PlrHelpText)
+						{
+							plr.A_Print(String.Format("Stop squirming!\n\n%s only wants to\n\ngive you some drugs...", player.GetUsername()));
+						}
+						if (HelpText)
+						{
+							A_WeaponMessage("You'll need them to stay still...");
+						}
+					}
+					return ResolveState("Nope");
+				}
+				else if ((teamplay || !deathmatch) && ((invoker.InjectType == "InjectSuperStimDummy" && plr.CountInv('HDStim') > 0) || (invoker.InjectType == "InjectZerkDummy" && HDZerk.IsZerk(plr))))
+				{
+					if (plr.GetCVar("hd_helptext"))
+					{
+						plr.A_Print(String.Format("Run away!!!\n\n%s is trying to overdose you\n\n(and possibly bugger you)...", player.GetUsername()));
+					}
+					if (GetCVar("hd_helptext"))
+					{
+						A_WeaponMessage("They seem a bit fidgety already...");
+					}
+					return ResolveState("Nope");
+				}
+				else
+				{
+					A_TakeInjector(invoker.InventoryType);
+					plr.A_StartSound(HDPlayerPawn(plr).medsound, CHAN_VOICE);
+					plr.A_SetBlend("7a 3a 18", 0.1, 4);
+					Actor a = Spawn(invoker.InjectType, plr.pos, ALLOW_REPLACE);
+					a.target = plr;
+					if (!CheckInventory(invoker.InventoryType, 1))
+					{
+						return ResolveState("DeselectHold");
+					}
+					return ResolveState("Injected");
+				}
+			}
+		Injected:
+			TNT1 A 0
+			{
+				Actor a = Spawn(invoker.SpentInjectType, pos + (0, 0, height - 8), ALLOW_REPLACE);
+				a.angle = angle;
+				a.vel = vel;
+				a.A_ChangeVelocity(-2, 1, 4, CVF_RELATIVE);
+				A_StartSound("weapons/grenopen", CHAN_VOICE);
+			}
+		InjectedHold:
+			TNT1 A 1 A_ClearRefire();
+			TNT1 A 0 A_JumpIf(PressingFire(), "InjectedHold");
+			TNT1 A 10 A_SelectWeapon("HDFist");
+			TNT1 A 1 A_WeaponReady(WRF_NOFIRE);
+			Goto ReadyEnd;
+	}
+}
+
+class InjectSuperStimDummy : InjectStimDummy
+{
+	States
+	{
+		Spawn:
+			TNT1 A 6 nodelay
+			{
+				tg = HDPlayerPawn(target);
+				if (!tg || tg.bKILLED)
+				{
+					Destroy();
+					return;
+				}
+
+				int aggro = int(ceil(tg.CountInv('HDSuperStim') / 200.0));
+				tg.aggravateddamage += aggro;
+				if (HDZerk.IsZerk(tg))
+				{
+					tg.aggravateddamage += aggro * 2;
+				}
+			}
+			TNT1 A 1
+			{
+				if (!tg || tg.bKILLED)
+				{
+					Destroy();
+					return;
+				}
+
+				// [Ace] Standard dosage. Thanks, doc.
+				tg.A_GiveInventory('HDStim', HDStim.HDSTIM_DOSE);
+				tg.fatigue += 20;
+				tg.bloodpressure += 30;
+				tg.A_GiveInventory('HDSuperStim', 200);
+				
+				Accuracy--;
+			}
+			Stop;
+	}
+}
+
+class HDSuperStim : HDDrug
+{
+	override void OnHeartbeat(HDPlayerPawn hdp)
+	{
+		if (!Comedown)
+		{
+			if (Amount > 280)
+			{
+				// [Ace] You might be able to save yourself if you have blues in your system.
+				hdp.DamageMobj(hdp, hdp, 2, 'Internal', DMG_FORCED);
+				hdp.fatigue += 2;
+				hdp.bloodpressure += 2;
+				Amount--;
+			}
+			else
+			{
+				int blues = hdp.CountInv('HealingMagic');
+				int amt = int(ceil(Amount / 25.0));
+				if (blues > 0)
+				{
+					if (!random(0, 4))
+					{
+						hdp.A_TakeInventory('HealingMagic', 1);
+						amt *= 2;
+					}
+				}
+				hdp.beatmax = min(hdp.beatmax, 14);
+				hdp.bloodpressure = max(hdp.bloodpressure, 30);
+				hdp.GiveBody(amt);
+				hdp.incaptimer = max(0, hdp.incaptimer - int(ceil(Amount / 10.0)));
+			}
+
+			Amount = max(0, Amount - 1);
+			if (Amount == 0)
+			{
+				Amount += 30;
+				hdp.A_SetBlend("20 0a 0f", 0.6, 20);
+				hdp.A_StartSound(hdp.painsound, CHAN_VOICE, volume: 0.5);
+				Comedown = true;
+			}
+		}
+		else if (Amount > 0)
+		{
+			hdp.fatigue++;
+			hdp.beatmax = min(hdp.beatmax, 3);
+			hdp.bloodpressure = max(hdp.bloodpressure, 50);
+			Amount--;
+		}
+	}
+
+	bool Comedown;
+}
+
+class SpentSuperStim : SpentZerk
+{
+	Default
+	{
+		Translation "None";
+	}
+
+	States
+	{
+		Spawn:
+			SSYR G 1 A_SetRoll(Roll + 60, SPF_INTERPOLATE);
+			Loop;
+		Death:
+			SSYR G -1
+			{
+				Roll = 0;
+				if (!random(0, 1))
+				{
+					Scale.x *= -1;
+				}
+			}
+			Stop;
+	}
+}

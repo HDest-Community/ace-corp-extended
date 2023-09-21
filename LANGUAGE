@@ -1,7 +1,13 @@
 [enu default]
 
 // Options Menu Titles
-ACE_MENU                                = "\c[Ice]Ⓐ\c- AceCorp: Engineering Dept.";
+ACE_MENU                                = "\c[FAK_Blue]Ⓐ\c- AceCorp: Engineering Dept";
+ACE_MENU_WEAPONS_TEXT                   = "\c[FAK_Blue]Weapons Category";
+ACE_MENU_ITEMS_TEXT                     = "\c[FAK_Blue]Items Category";
+ACE_MENU_WEAPONS                        = "Weapons";
+ACE_MENU_ITEMS                          = "Items";
+ACE_MENU_LINES                          = "\c[FAK_Blue]---";
+
 MENU_PISTOLS_TITLE                      = "--- Pistols ---";
 MENU_SHOTGUNS_TITLE                     = "--- Shotguns ---";
 MENU_MACHINEGUNS_TITLE                  = "--- Machine Guns ---";
@@ -9,6 +15,7 @@ MENU_EXPLOSIVES_TITLE                   = "--- Explosives ---";
 MENU_RIFLES_TITLE                       = "--- Rifles ---";
 MENU_ENERGYWEAPONS_TITLE                = "--- Energy Weapons ---";
 MENU_ARMOUR_TITLE                       = "--- Armour ---";
+MENU_ITEMS_TITLE                        = "--- Items ---";
 MENU_RESETOPTIONS_TITLE                 = "--- Reset Options ---";
 
 // Menu Section Headers
@@ -125,6 +132,86 @@ MENU_WYVERN_HUNTER_SPAWNTEXT            = "Control the spawn rate of the Wyvern 
 MENU_WYVERN_SLAYER_SPAWNTEXT            = "Control the spawn rate of the Wyvern on Slayer Shotguns:";
 MENU_WYVERN_BACKPACKS                   = "Control whether the Wyvern spawns in Backpacks:";
 
+// Ladder Launcher Options Text
+MENU_LADDERLAUNCHER_TITLE               = "------ Ladder Launcher Options ------";
+MENU_LADLAUNCHER_ROCKETBOX_SPAWNTEXT    = "Control the spawn rate of the Ladder Launcher on Rocket Boxes:";
+MENU_LADLAUNCHER_CELLPACK_SPAWNTEXT     = "Control the spawn rate of the Ladder Launcher on Cellpacks:";
+MENU_LADLAUNCHER_BACKPACKS              = "Control whether the Ladder Launcher spawns in Backpacks:";
+
+// Personal Shield Generator Options Text
+MENU_PSG_TITLE                          = "------ Personal Shield Generator Options ------";
+MENU_PSG_BLUEARMOR_SPAWNTEXT            = "Control the spawn rate of the Personal Shield Generator on Battle Armor:";
+MENU_PSG_BACKPACKS                      = "Control whether the Personal Shield Generator spawns in Backpacks:";
+
+// Secret Finder Options Text
+MENU_SECRETFINDER_TITLE                 = "------ Secret Finder Options ------";
+MENU_SECRETFINDER_MAP_SPAWNTEXT         = "Control the spawn rate of the Secret Finder on automaps:";
+MENU_SECRETFINDER_BACKPACKS             = "Control whether the Secret Finder spawns in Backpacks:";
+
+// Secret Finder Options Text
+MENU_SECRETFINDER_TITLE                 = "------ Secret Finder Options ------";
+MENU_SECRETFINDER_MAP_SPAWNTEXT         = "Control the spawn rate of the Secret Finder on automaps:";
+MENU_SECRETFINDER_BACKPACKS             = "Control whether the Secret Finder spawns in Backpacks:";
+
+// Super Stim Options Text
+MENU_SUPERSTIM_TITLE                    = "------ Super Stimpack Options ------";
+MENU_SUPERSTIM_MEDICAL_SPAWNTEXT        = "Control the spawn rate of the Super Stimpack on medical supplies:";
+MENU_SUPERSTIM_BACKPACKS                = "Control whether the Super Stimpack spawns in Backpacks:";
+
+// Field Assembly Kit Options Text
+MENU_FAK_TITLE                          = "------ Field Assembly Kit Options ------";
+MENU_FAK_BACKPACKS                      = "Control whether the Field Assembly Kit spawns in Backpacks:";
+
+// Booster Jets Options Text
+MENU_BOOSTERJET_TITLE                   = "------ Booster Jets Options ------";
+MENU_BOOSTERJET_BACKPACKS               = "Control whether the Booster Jets spawns in Backpacks:";
+
+// Dimensional Storage Device Options Text
+MENU_DSD_TITLE                          = "------ Dimensional Storage Device Options ------";
+MENU_DSD_BACKPACK_SPAWNTEXT             = "Control the spawn rate of the Dimensional Storage Device on Backpacks:";
+MENU_DSD_BACKPACKS                      = "Control whether the Dimensional Storage Device spawns in Backpacks:";
+
+// Rearview Mirror Options Text
+MENU_REARVIEWMIRROR_TITLE               = "------ Rearview Mirror Options ------";
+MENU_REARVIEWMIRROR_BACKPACKS           = "Control whether the Rearview Mirror spawns in Backpacks:";
+
+// Roomba Options Text
+MENU_ROOMBA_TITLE                       = "------ Roomba Options ------";
+MENU_ROOMBA_BACKPACKS                   = "Control whether the Roomba spawns in Backpacks:";
+
+// Supply Beacon Options Text
+MENU_SUPPLYBEACON_TITLE                 = "------ Supply Beacon Options ------";
+MENU_SUPPLYBEACON_BACKPACKS             = "Control whether the Supply Beacon spawns in Backpacks:";
+
+// Portable Teleporter Options Text
+MENU_TELEPORTER_TITLE                   = "------ Portable Teleporter Options ------";
+MENU_TELEPORTER_BACKPACKS               = "Control whether the Portable Teleporter spawns in Backpacks:";
+
+// Soul Cube Options Text
+MENU_SOULCUBE_TITLE                     = "------ Soul Cube Options ------";
+MENU_SOULCUBE_CHAINSAW_SPAWNTEXT        = "Control the spawn rate of the Soul Cube on Chainsaws:";
+MENU_SOULCUBE_BACKPACKS                 = "Control whether the Soul Cube spawns in Backpacks:";
+
+// Weapon Crate Options Text
+MENU_WEAPONCRATE_TITLE                  = "------ Weapon Crate Options ------";
+MENU_WEAPONCRATE_RL_SPAWNTEXT           = "Control the spawn rate of the Weapon Crate on Rocket Launchers:";
+
+// Deployable Barricade Options Text
+MENU_DEPLOYABLEBARRICADE_TITLE          = "------ Deployable Barricade Options ------";
+MENU_DEPLOYABLEBARRICADE_RL_SPAWNTEXT   = "Control the spawn rate of the Deployable Barricade on Rocket Launchers:";
+
+// Magazine Reloader Options Text
+MENU_MAGRELOADER_TITLE                  = "------ Magazine Reloader Options ------";
+MENU_MAGRELOADER_BACKPACKS              = "Control whether the Magazine Reloader spawns in Backpacks:";
+
+// Hacked Reloader Options Text
+MENU_HRL_TITLE                          = "------ Hacked Reloader Options ------";
+MENU_HRL_BACKPACKS                      = "Control whether the Hacked Reloader spawns in Backpacks:";
+
+// Armor Patch Kit Options Text
+MENU_APK_TITLE                          = "------ Armor Patch Kit Options ------";
+MENU_APK_BACKPACKS                      = "Control whether the Armor Patch Kit spawns in Backpacks:";
+
 // Item Tags
 TAG_BLACKHAWK                           = "'Blackhawk' Hi-Tech Crossbow";
 TAG_BLACKHAWKBOLT                       = "Regular Bolt";
@@ -145,11 +232,33 @@ TAG_VIPER                               = "'Viper' .50 cal. Handgun";
 TAG_VIPERMAG                            = ".50 AM 'Viper' Magazine";
 TAG_WYVERN                              = "'Wyvern' .50 cal. Double-Barrel Rifle";
 
+TAG_HACKEDRELOADER                      = "7.76mm Hacked Reloading Device";
+TAG_LADDERLAUNCHER                      = "Ladder launcher";
+TAG_MAGAZINERELOADER                    = "Magazine reloading device";
+TAG_PSG                                 = "Personal Shield Generator";
+TAG_DEPLOYABLEBARRICADE                 = "Deployable barricade";
+TAG_BOOSTERJETS                         = "Booster Jets";
+TAG_DSD                                 = "Dimensional Storage Device";
+TAG_FAK                                 = "Field assembly kit";
+TAG_ASSEMBLYCORE                        = "Assembly Core";
+TAG_REARVIEWMIRROR                      = "Rearview mirror";
+TAG_ROOMBA                              = "Roomba";
+TAG_SECRETFINDER                        = "Secret finder";
+TAG_SOULCUBE                            = "Soul Cube";
+TAG_SUPERSTIM                           = "Super stimpack";
+TAG_SUPPLYBEACON                        = "Supply Beacon";
+TAG_TELEPORTER                          = "Portable teleporter";
+// i don't think this is used but i don't fuckin care!!!!!!!!!!!!!!!!!! - [ted]
+TAG_WEAPONCRATE                         = "Weapon Crate";
+TAG_ARMORPATCHKIT                       = "Armor Patch Kit";
+
 // Obituaries
 OB_BLACKHAWKBOLT                        = "%o was assassinated by %k's bolt.";
 OB_BLACKHAWKBOLT_E                      = "%k helped %o make a shocking discovery - electricity can kill.";
 OB_BLACKHAWKBOLT_I                      = "%o felt a little cold so %k warmed %h up.";
 OB_BLACKHAWKBOLT_N                      = "%k split the atom too close in the vicinity of %o.";
+
+OB_LADDERLAUNCHER                       = "%o took %k's ladder to Heaven.";
 
 // Pickup Messages
 PICKUP_BLACKHAWK_PREFIX                 = "You got the ";
@@ -197,3 +306,20 @@ PICKUP_VIPERMAG_SUFFIX                  = ".";
 PICKUP_WYVERN_PREFIX                    = "You got the ";
 PICKUP_WYVERN_AUTOLOADER                = "Auto-loading ";
 PICKUP_WYVERN_SUFFIX                    = ".";
+
+PICKUP_LADDERLAUNCHER                   = "You got the ladder launcher!";
+PICKUP_MAGRELOADER                      = "Picked up a magazine reloading device.";
+PICKUP_DEPLOYABLEBARRICADE              = "Picked up a deployable barricade.";
+PICKUP_BOOSTERJETS                      = "Picked up the booster jets.";
+PICKUP_DSD                              = "Picked up a Dimensional Storage Device(tm). For the hoard!";
+PICKUP_FAK                              = "Picked up a field assembly kit.";
+PICKUP_ASSEMBLYCORE                     = "Picked up an assembly core.";
+PICKUP_REARVIEWMIRROR                   = "You picked up a rearview mirror. Lookin' good.";
+PICKUP_ROOMBA                           = "Picked up a roomba.";
+PICKUP_SECRETFINDER                     = "Picked up a secret finder. Go explore!";
+PICKUP_SOULCUBE_BASE                    = "Picked up the soul cube.";
+PICKUP_SOULCUBE_ARCHER                  = " You hear strange voices coming out of it. It is... speaking to you?";
+PICKUP_SOULCUBE_THANKYOUCUOB            = "\nEternal blues and spiritual armor will come to you if you say \"thank you cuob\".";
+PICKUP_SUPERSTIM                        = "Picked up a super stimpack.";
+PICKUP_SUPPLYBEACON                     = "Picked up a supply drop beacon.";
+PICKUP_TELEPORTER                       = "Picked up a portable teleporter.";

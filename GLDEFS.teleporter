@@ -1,0 +1,11 @@
+FlickerLight RiftAntiGlow
+{
+	Color 0.35 0.2 0.5
+	Size 128
+	Chance 0.5
+	SecondarySize 144
+	Subtractive 1
+	DontLightSelf 1
+}
+
+Object HDTeleporterRift { Frame TNT1 { Light RiftAntiGlow } }
