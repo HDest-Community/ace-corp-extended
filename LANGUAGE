@@ -323,3 +323,5 @@ PICKUP_SOULCUBE_THANKYOUCUOB            = "\nEternal blues and spiritual armor w
 PICKUP_SUPERSTIM                        = "Picked up a super stimpack.";
 PICKUP_SUPPLYBEACON                     = "Picked up a supply drop beacon.";
 PICKUP_TELEPORTER                       = "Picked up a portable teleporter.";
+
+SUPERSTIM_HELPTEXT                      = "\cd<<< \cjSUPER STIMPACK \cd>>>\c-\n\n\nSuper stimpacks give a rapid\nbut short boost to\nhealth regeneration.\n\n\Press altfire to use on someone else.\n\n\cgDO NOT OVERDOSE.";

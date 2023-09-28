@@ -536,7 +536,7 @@ class DSDInterface : HDBackpack
 				sb.DrawString(sb.mAmountFont, sb.FormatNumber(selItem.Amounts[i] > 1000 ? selItem.Amounts[i] - 1000 : selItem.Amounts[i], 1, 4), Off + (0, 12), sb.DI_SCREEN_CENTER | sb.DI_TEXT_ALIGN_CENTER, Font.CR_YELLOW);
 			}
 		}
-		else if (selItem.ItemClass is 'HDMagAmmo' && !(selItem.ItemClass is 'HDInjectorMaker' && GetDefaultByType((class<HDMagAmmo>)(selItem.ItemClass)).MaxPerUnit == 0))
+		else if (selItem.ItemClass is 'HDMagAmmo' && GetDefaultByType((class<HDMagAmmo>)(selItem.ItemClass)).MaxPerUnit)
 		{
 			int size = selItem.Amounts.Size();
 			for (int i = 0; i < size; ++i)
