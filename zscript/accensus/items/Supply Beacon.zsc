@@ -28,7 +28,7 @@ class SupplyOrder play
 				break;
 		}
 
-		return isValidAnyway || item is 'HDAmmo' && !item.bCHEATNOGIVE && (item is 'HDInjectorMaker' || !item.bINVBAR);
+		return isValidAnyway || item is 'HDAmmo' && !item.bCHEATNOGIVE && (item is 'PortableStimpack' || !item.bINVBAR);
 	}
 
 	clearscope int, int GetDropAmount(int itemCount)
@@ -45,7 +45,7 @@ class SupplyOrder play
 			{
 				finalDiv += 15;
 			}
-			if (Type is 'HDInjectorMaker')
+			if (Type is 'PortableStimpack')
 			{
 				finalDiv += 15;
 			}

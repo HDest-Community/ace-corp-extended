@@ -318,7 +318,7 @@ class HDMagazineReloader : HDWeapon
 						while (it.Next())
 						{
 							let mag = HDMagAmmo(it.thing);
-							if (!mag || invoker.Distance3D(mag) > SearchRange || invoker.ChargeUp < 360 || mag.vel.length() > 0.4 || mag is 'HDInjectorMaker' || !mag.RoundType || invoker.FactoryAction == FAction_Reload && mag.Mags[0] == mag.MaxPerUnit || invoker.FactoryAction == FAction_Unload && mag.Mags[0] == 0)
+							if (!mag || invoker.Distance3D(mag) > SearchRange || invoker.ChargeUp < 360 || mag.vel.length() > 0.4 || !mag.RoundType || invoker.FactoryAction == FAction_Reload && mag.Mags[0] == mag.MaxPerUnit || invoker.FactoryAction == FAction_Unload && mag.Mags[0] == 0)
 							{
 								continue;
 							}
