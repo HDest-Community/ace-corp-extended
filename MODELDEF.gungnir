@@ -2,6 +2,6 @@ Model GungnirRaySegment
 {
 	USEACTORPITCH
 	DONTCULLBACKFACES
-	Path "Models" DONTCULLBACKFACES Scale 3.333333 6.0 6.0
+	Path "Models/Gungnir" DONTCULLBACKFACES Scale 3.333333 6.0 6.0
 	Model 0 "GungnirRaySegment.obj" FrameIndex GNGY A 0 0
 }
