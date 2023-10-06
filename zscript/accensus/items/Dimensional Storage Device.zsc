@@ -626,6 +626,10 @@ class DSDInterface : HDBackpack
 		Tag "$TAG_DSD";
 		HDWeapon.RefId "dsd";
 		Scale 0.5;
+		HDWeapon.loadoutcodes "
+			\cucap - 0-???, Overrides the capacity of the Dimensional Storage Device.
+			\cuNOTE: THIS IS CONSIDERED A CHEAT.
+		";
 	}
 	
 	States
