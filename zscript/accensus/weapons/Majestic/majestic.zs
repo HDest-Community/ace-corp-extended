@@ -248,6 +248,9 @@ class HDMajestic : HDHandgun
 		Scale 0.2;
 		Tag "$TAG_MAJESTIC";
 		HDWeapon.Refid HDLD_MAJESTIC;
+		HDWeapon.loadoutcodes "
+			\cuaccel - 0/1, Makes the gun charge faster.
+		";
 	}
 
 	States

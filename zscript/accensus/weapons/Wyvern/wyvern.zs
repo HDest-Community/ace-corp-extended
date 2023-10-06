@@ -15,6 +15,9 @@ class HDWyvern : HDWeapon {
 		weapon.BobRangeY 0.7;
 		tag "$TAG_WYVERN";
 		HDWeapon.Refid HDLD_WYVERN;
+		HDWeapon.loadoutcodes "
+			\cuauto - 0/1, Makes reloading from side saddles faster.
+		";
 	}
 
 	override string, double GetPickupSprite() {

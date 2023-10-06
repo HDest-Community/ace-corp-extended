@@ -281,6 +281,12 @@ class HDBlackhawk : HDWeapon
 		Scale 0.25;
 		Tag "$TAG_BLACKHAWK";
 		HDWeapon.Refid HDLD_BLACKHAWK;
+		HDWeapon.loadoutcodes "
+			\cusemiauto - 0/1, Automatically pulls the string back after firing.
+			\cuNote: Only works when cycling to the next bolt.
+			\cubolts - <codes>, start with these specific bolts loaded. 
+			\cuExample: bolts:rneir for Regular, Nuclear, Electric, Incendiary, Regular in that order.
+		";
 	}
 
 	States

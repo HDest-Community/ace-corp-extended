@@ -191,6 +191,10 @@ class HDViper : HDHandgun
 		Scale 0.5;
 		Tag "$TAG_VIPER";
 		HDWeapon.Refid HDLD_VIPER;
+		HDWeapon.loadoutcodes "
+			\cuhframe - 0/1, Trades weight for lessened recoil.
+			\cuhextended - 0/1, Higher projectile velocity but heavier gun.
+		";
 	}
 
 	States

@@ -124,6 +124,9 @@ class HDJackdaw : HDWeapon
 		Scale 0.28;
 		Tag "$TAG_JACKDAW";
 		HDWeapon.Refid HDLD_JACKDAW;
+		HDWeapon.loadoutcodes "
+			\curapid - 0/1, Locks the weapon to hyperburst RoF, though keeps it in full-auto.
+		";
 	}
 
 	States
