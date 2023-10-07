@@ -247,8 +247,9 @@ class AceCorpsWepsHandler : EventHandler {
 
         // Blackjack
         Array<AceCorpsSpawnItemEntry> spawns_blackjack;
-        spawns_blackjack.push(addItemEntry('HDAmBoxUnarmed', blackjack_clipbox_spawn_bias));
-        spawns_blackjack.push(addItemEntry('HDAmBox', blackjack_clipbox_spawn_bias));
+        spawns_blackjack.push(addItemEntry('HDSMG', blackjack_smg_spawn_bias));
+        spawns_blackjack.push(addItemEntry('Hunter', blackjack_hunter_spawn_bias));
+        spawns_blackjack.push(addItemEntry('Slayer', blackjack_slayer_spawn_bias));
         addItem('BlackjackRandom', spawns_blackjack, blackjack_persistent_spawning);
 
         // Gungnir
@@ -264,7 +265,7 @@ class AceCorpsWepsHandler : EventHandler {
 
         // Jackdaw
         Array<AceCorpsSpawnItemEntry> spawns_jackdaw;
-        spawns_jackdaw.push(addItemEntry('Vulcanette', jackdaw_vulcanette_spawn_bias));
+        spawns_jackdaw.push(addItemEntry('HDSMG', jackdaw_smg_spawn_bias));
         addItem('JackdawRandom', spawns_jackdaw, jackdaw_persistent_spawning);
 
         // Majestic
@@ -281,13 +282,14 @@ class AceCorpsWepsHandler : EventHandler {
 
         // Scorpion
         Array<AceCorpsSpawnItemEntry> spawns_scorpion;
-        spawns_scorpion.push(addItemEntry('BrontornisSpawner', scorpion_bronto_spawn_bias));
+        spawns_scorpion.push(addItemEntry('BFG9K', scorpion_bfg_spawn_bias));
         addItem('ScorpionSpawner', spawns_scorpion, scorpion_persistent_spawning);
 
         // Viper
         Array<AceCorpsSpawnItemEntry> spawns_viper;
         spawns_viper.push(addItemEntry('HDPistol', viper_pistol_spawn_bias));
         spawns_viper.push(addItemEntry('Hunter', viper_hunter_spawn_bias));
+        spawns_viper.push(addItemEntry('Slayer', viper_slayer_spawn_bias));
         addItem('ViperRandom', spawns_viper, viper_persistent_spawning);
 
         // Wyvern
@@ -308,7 +310,7 @@ class AceCorpsWepsHandler : EventHandler {
 
         // Blackjack .355 Mag
         Array<AceCorpsSpawnItemEntry> spawns_blackjack_355mag;
-        spawns_blackjack_355mag.push(addItemEntry('ClipMagPickup', blackjack355mag_clip_spawn_bias));
+        spawns_blackjack_355mag.push(addItemEntry('HD4mMag', blackjack355mag_clipmag_spawn_bias));
         addItem('HDBlackjackMag355', spawns_blackjack_355mag, blackjack355mag_persistent_spawning);
 
         // Blackjack 12ga Shell Mag
@@ -318,7 +320,7 @@ class AceCorpsWepsHandler : EventHandler {
 
         // Majestic Magazine
         Array<AceCorpsSpawnItemEntry> spawns_majesticmag;
-        spawns_majesticmag.push(addItemEntry('HD9mMag15', majesticmag_clipmag_spawn_bias));
+        spawns_majesticmag.push(addItemEntry('HD9mMag30', majesticmag_clipmag_spawn_bias));
         addItem('HDMajesticMag', spawns_majesticmag, majesticmag_persistent_spawning);
 
         // Viper Magazine

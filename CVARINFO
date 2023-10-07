@@ -20,7 +20,9 @@ server bool blackhawk_persistent_spawning = false;
 
 // Blackjack
 server bool blackjack_allowBackpacks = true;
-server int  blackjack_clipbox_spawn_bias  = 9;
+server int  blackjack_smg_spawn_bias  = 9;
+server int  blackjack_hunter_spawn_bias  = 9;
+server int  blackjack_slayer_spawn_bias  = 9;
 server bool blackjack_persistent_spawning = false;
 
 // Gungnir
@@ -36,7 +38,7 @@ server bool hammerhead_persistent_spawning = false;
 
 // Jackdaw
 server bool jackdaw_allowBackpacks = true;
-server int jackdaw_vulcanette_spawn_bias = 49;
+server int jackdaw_smg_spawn_bias = 49;
 server bool jackdaw_persistent_spawning = false;
 
 // Majestic
@@ -53,7 +55,7 @@ server bool redline_persistent_spawning = false;
 
 // Scorpion
 server bool scorpion_allowBackpacks = true;
-server int scorpion_bronto_spawn_bias = 9;
+server int scorpion_bfg_spawn_bias = 9;
 server bool scorpion_persistent_spawning = false;
 
 // Viper
@@ -81,7 +83,7 @@ server bool blackhawkBolts_persistent_spawning = false;
 
 // Blackjack .355 Mag
 server bool blackjack355mag_allowBackpacks = true;
-server int  blackjack355mag_clip_spawn_bias     = 14;
+server int  blackjack355mag_clipmag_spawn_bias  = 14;
 server bool blackjack355mag_persistent_spawning = false;
 
 // Blackjack Shell Mag
