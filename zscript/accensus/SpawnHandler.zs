@@ -387,6 +387,9 @@ class AceCorpsWepsHandler : EventHandler {
 
     override void checkReplacement(ReplaceEvent e) {
 
+        // Populates the main arrays if they haven't been already. 
+        if (!cvarsAvailable) init();
+
         // If there's nothing to replace or if the replacement is final, quit.
         if (!e.replacee || e.isFinal) return;
 
@@ -402,6 +405,9 @@ class AceCorpsWepsHandler : EventHandler {
     }
 
     override void worldThingSpawned(WorldEvent e) {
+
+        // Populates the main arrays if they haven't been already. 
+        if (!cvarsAvailable) init();
 
         // If thing spawned doesn't exist, quit.
         if (!e.thing) return;
