@@ -147,10 +147,10 @@ class HDHammerhead : HDCellWeapon
 	override void DrawSightPicture(HDStatusBar sb, HDWeapon hdw, HDPlayerPawn hpl, bool sightbob, vector2 bob, double fov, bool scopeview, actor hpc, string whichdot)
 	{
 		double dotoff = max(abs(bob.x), abs(bob.y));
-		if (dotoff < 6)
+		if (dotoff < 40)
 		{
 			string whichdot = sb.ChooseReflexReticle(WeaponStatus[HHProp_Dot]);
-			sb.DrawImage(whichdot, (0, 0) + bob * 3, sb.DI_SCREEN_CENTER | sb.DI_ITEM_CENTER, alpha: 0.8 - dotoff * 0.04, col: 0xFF000000 | sb.crosshaircolor.GetInt());
+			sb.DrawImage(whichdot, (0, 0) + bob * 1.1, sb.DI_SCREEN_CENTER | sb.DI_ITEM_CENTER, alpha: 0.8 - dotoff * 0.01, col: 0xFF000000 | sb.crosshaircolor.GetInt());
 		}
 
 		sb.DrawImage("HAMRSITE", (0, 0) + bob, sb.DI_SCREEN_CENTER | sb.DI_ITEM_CENTER);
