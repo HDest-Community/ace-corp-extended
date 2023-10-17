@@ -293,7 +293,7 @@ class HDBlackjack : HDWeapon
 				A_StartSound("Blackjack/Fire", CHAN_WEAPON);
 				A_ZoomRecoil(0.995);
 				A_MuzzleClimb(-frandom(0.3, 0.35), -frandom(0.40, 0.5), -frandom(0.3, 0.35), -frandom(0.40, 0.5));
-				A_Light1();
+				A_GunFlash("Flash");
 			}
 			BJKG A 2 Offset(0, 36)
 			{
@@ -339,7 +339,7 @@ class HDBlackjack : HDWeapon
 				A_StartSound("Blackjack/AltFire", CHAN_WEAPON);
 				A_ZoomRecoil(0.995);
 				A_MuzzleClimb(-frandom(1, 1.2), -frandom(1.5, 2.0), -frandom(1, 1.2), -frandom(1.5, 2.0));
-				A_Light1();
+				A_GunFlash("Flash");
 			}
 			BJKG A 1 Offset(0, 39)
 			{
@@ -365,6 +365,9 @@ class HDBlackjack : HDWeapon
 			BJKG A 1;
 			BJKG A 0 A_Refire();
 			Goto Ready;
+		Flash:
+			TNT1 A 1 A_Light1();
+			goto lightdone;
 
 		Unload:
 			BJKG A 0
