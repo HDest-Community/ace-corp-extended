@@ -270,7 +270,7 @@ class AceCorpsWepsHandler : EventHandler {
 
         // Majestic
         Array<AceCorpsSpawnItemEntry> spawns_majestic;
-        spawns_majestic.push(addItemEntry('HDPistol', majestic_pistol_spawn_bias));
+        spawns_majestic.push(addItemEntry('HDAutoPistol', majestic_pistol_spawn_bias));
         spawns_majestic.push(addItemEntry('HunterRandom', majestic_hunter_spawn_bias));
         spawns_majestic.push(addItemEntry('SlayerRandom', majestic_slayer_spawn_bias));
         addItem('MajesticRandom', spawns_majestic, majestic_persistent_spawning);
@@ -287,7 +287,7 @@ class AceCorpsWepsHandler : EventHandler {
 
         // Viper
         Array<AceCorpsSpawnItemEntry> spawns_viper;
-        spawns_viper.push(addItemEntry('HDPistol', viper_pistol_spawn_bias));
+        spawns_viper.push(addItemEntry('HDAutoPistol', viper_pistol_spawn_bias));
         spawns_viper.push(addItemEntry('HunterRandom', viper_hunter_spawn_bias));
         spawns_viper.push(addItemEntry('SlayerRandom', viper_slayer_spawn_bias));
         addItem('ViperRandom', spawns_viper, viper_persistent_spawning);
