@@ -277,7 +277,7 @@ class AceCorpsWepsHandler : EventHandler {
 
         // Redline
         Array<AceCorpsSpawnItemEntry> spawns_redline;
-        spawns_redline.push(addItemEntry('ThunderBuster', redline_thunderbuster_spawn_bias));
+        spawns_redline.push(addItemEntry('PlasmaReplaces', redline_thunderbuster_spawn_bias));
         addItem('RedlineRandom', spawns_redline, redline_persistent_spawning);
 
         // Scorpion
