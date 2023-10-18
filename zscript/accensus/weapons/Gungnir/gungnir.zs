@@ -365,7 +365,7 @@ class HDGungnir : HDCellWeapon
 
 			texman.setcameratotexture(hpc, "HDXCAM_BOSS", 5);
 			let cam  = texman.CheckForTexture("HDXCAM_BOSS",TexMan.Type_Any);
-			sb.DrawCircle(cam,(0,scaledyoffset)+bob*3,.11,usePixelRatio:true);
+			sb.DrawCircle(cam,(0,scaledyoffset)+bob*3,.125,usePixelRatio:true);
 
 			sb.DrawImage("SCOPHOLE", (0, ScaledYOffset) + bob * 5, sb.DI_SCREEN_CENTER | sb.DI_ITEM_CENTER, scale: (1.5, 1.5));
 			Screen.SetClipRect(cx, cy, cw, ch);
