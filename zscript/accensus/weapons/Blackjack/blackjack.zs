@@ -299,7 +299,7 @@ class HDBlackjack : HDWeapon
 			{
 				if (invoker.WeaponStatus[BJProp_ChamberPrimary] == 1)
 				{
-					A_EjectCasing("HDSpent355",frandom(-1,2),(6,-frandom(79, 81),frandom(6.0, 6.5)),(0,0,-2));
+					A_EjectCasing("HDSpent355",frandom(-1,2),(frandom(0.2,0.3),-frandom(7,7.5),frandom(0,0.2)),(0,0,-2));
 					//A_EjectCasing('HDSpent355', 6, -random(79, 81), frandom(6.0, 6.5));
 					invoker.WeaponStatus[BJProp_ChamberPrimary] = 0;
 				}
@@ -345,7 +345,7 @@ class HDBlackjack : HDWeapon
 			{
 				if (invoker.WeaponStatus[BJProp_ChamberSecondary] == 1)
 				{
-					A_EjectCasing("HDSpentShell",frandom(-1,2),(11,-frandom(79, 81),frandom(6.0, 6.5)),(0,0,-2));
+					A_EjectCasing("HDSpentShell",frandom(-1,2),(frandom(0.2,0.3),-frandom(7,7.5),frandom(0,0.2)),(0,0,-2));
 					//A_EjectCasing('HDSpentShell', 11, -random(79, 81), frandom(6.0, 6.5));
 					invoker.WeaponStatus[BJProp_ChamberSecondary] = 0;
 				}
