@@ -43,6 +43,16 @@ class HDWeaponCrate : HDUPK
 
 	override bool OnGrab(Actor other)
 	{
+		if (Distance3D(picktarget) <= 50) {
+			if (UseTimer <= 0) {
+				UseTimer = 10;
+				vel.z = 2;
+				A_SetRoll(frandompick(-5, 5), SPF_INTERPOLATE);
+			} else {
+				SetStateLabel("DropGoods");
+			}
+		}
+
 		return false;
 	}
 
@@ -69,26 +79,6 @@ class HDWeaponCrate : HDUPK
 		Spawn:
 			WPCR T -1;
 			Stop;
-		Grab:
-			WPCR T 1
-			{
-				if (Distance3D(picktarget) > 50)
-				{
-					return;
-				}
-
-				if (UseTimer <= 0)
-				{
-					UseTimer = 10;
-					vel.z = 2;
-					A_SetRoll(frandompick(-5, 5), SPF_INTERPOLATE);
-				}
-				else
-				{
-					SetStateLabel("DropGoods");
-				}
-			}
-			Goto Spawn;
 		DropGoods:
 			TNT1 A 1
 			{
