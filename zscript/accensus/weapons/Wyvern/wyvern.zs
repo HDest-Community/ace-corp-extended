@@ -85,14 +85,14 @@ class HDWyvern : HDWeapon {
 
 		[cx, cy, cw, ch] = Screen.GetClipRect();
 		sb.SetClipRect(
-			-16 + bob.x, -4 + bob.y, 32, 12,
+			-16 + bob.x, -32 + bob.y, 32, 38,
 			sb.DI_SCREEN_CENTER
 		);
-		vector2 bob2 = bob * 3;
-		bob2.y = clamp(bob2.y, -8, 8);
+		vector2 bob2 = bob * 1.1;
+		//bob2.y = clamp(bob2.y, -8, 8);
 		sb.DrawImage(
-			"FRNTSITE", bob2, sb.DI_SCREEN_CENTER | sb.DI_ITEM_TOP,
-			scale: (0.7, 1.0)
+			"DBFRNTSIT", bob2, sb.DI_SCREEN_CENTER | sb.DI_ITEM_TOP,
+			scale:(0.7,1.0)
 		);
 		sb.SetClipRect(cx, cy, cw, ch);
 		sb.DrawImage(

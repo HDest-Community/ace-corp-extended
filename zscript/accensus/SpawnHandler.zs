@@ -3,13 +3,13 @@ class AceCorpsSpawnItem play {
 
     // ID by string for spawner
     string spawnName;
-    
+
     // ID by string for spawnees
     Array<AceCorpsSpawnItemEntry> spawnReplaces;
-    
+
     // Whether or not to persistently spawn.
     bool isPersistent;
-    
+
     // Whether or not to replace the original item.
     bool replaceItem;
 
@@ -40,10 +40,10 @@ class AceCorpsSpawnAmmo play {
 
     // ID by string for the header ammo.
     string ammoName;
-    
+
     // ID by string for weapons using that ammo.
     Array<string> weaponNames;
-    
+
     string toString() {
 
         let weapons = "[";
@@ -153,9 +153,9 @@ class AceCorpsWepsHandler : EventHandler {
 
     // Populates the replacement and association arrays.
     void init() {
-        
+
         cvarsAvailable = true;
-        
+
         //-----------------
         // Backpack Spawns
         //-----------------
@@ -170,7 +170,7 @@ class AceCorpsWepsHandler : EventHandler {
         if (!scorpion_allowBackpacks)          backpackBlacklist.push((Class<Inventory>)('HDScorpion'));
         if (!viper_allowBackpacks)             backpackBlacklist.push((Class<Inventory>)('HDViper'));
         if (!wyvern_allowBackpacks)            backpackBlacklist.push((Class<Inventory>)('HDWyvern'));
-        
+
         if (!blackhawkBolts_allowBackpacks)    backpackBlacklist.push((Class<Inventory>)('HDBlackhawkBoltRegular'));
         if (!blackhawkBolts_allowBackpacks)    backpackBlacklist.push((Class<Inventory>)('HDBlackhawkBoltIncendiary'));
         if (!blackhawkBolts_allowBackpacks)    backpackBlacklist.push((Class<Inventory>)('HDBlackhawkBoltElectric'));
@@ -217,8 +217,8 @@ class AceCorpsWepsHandler : EventHandler {
         wep_12gaShell.push('HDBlackjack');
         addAmmo('HDShellAmmo', wep_12gaShell);
 
-        // HDBattery. 
-        Array<string> wep_battery;  
+        // HDBattery.
+        Array<string> wep_battery;
         wep_battery.push('HDGungnir');
         wep_battery.push('HDHammerhead');
         wep_battery.push('HDRedline');
@@ -260,58 +260,61 @@ class AceCorpsWepsHandler : EventHandler {
 
         // Blackhawk
         Array<AceCorpsSpawnItemEntry> spawns_blackhawk;
-        spawns_blackhawk.push(addItemEntry('HDRL', blackhawk_launcher_spawn_bias));
+        spawns_blackhawk.push(addItemEntry('RLReplaces', blackhawk_launcher_spawn_bias));
         addItem('BlackhawkRandom', spawns_blackhawk, blackhawk_persistent_spawning);
 
         // Blackjack
         Array<AceCorpsSpawnItemEntry> spawns_blackjack;
-        spawns_blackjack.push(addItemEntry('HDAmBoxUnarmed', blackjack_clipbox_spawn_bias));
-        spawns_blackjack.push(addItemEntry('HDAmBox', blackjack_clipbox_spawn_bias));
+        spawns_blackjack.push(addItemEntry('ClipBoxPickup2', blackjack_clipbox_spawn_bias));
+        spawns_blackjack.push(addItemEntry('HunterRandom', blackjack_hunter_spawn_bias));
+        spawns_blackjack.push(addItemEntry('SlayerRandom', blackjack_slayer_spawn_bias));
         addItem('BlackjackRandom', spawns_blackjack, blackjack_persistent_spawning);
 
         // Gungnir
         Array<AceCorpsSpawnItemEntry> spawns_gungnir;
-        spawns_gungnir.push(addItemEntry('BFG9K', gungnir_bfg_spawn_bias));
+        spawns_gungnir.push(addItemEntry('BFGReplaces', gungnir_bfg_spawn_bias));
         addItem('GungnirRandom', spawns_gungnir, gungnir_persistent_spawning);
 
         // Hammerhead
         Array<AceCorpsSpawnItemEntry> spawns_hammerhead;
-        spawns_hammerhead.push(addItemEntry('Vulcanette', hammerhead_chaingun_spawn_bias));
-        spawns_hammerhead.push(addItemEntry('Thunderbuster', hammerhead_thunderbuster_spawn_bias));
+        spawns_hammerhead.push(addItemEntry('ChaingunReplaces', hammerhead_chaingun_spawn_bias));
+        spawns_hammerhead.push(addItemEntry('PlasmaReplaces', hammerhead_plasma_spawn_bias));
         addItem('HammerheadRandom', spawns_hammerhead, hammerhead_persistent_spawning);
 
         // Jackdaw
         Array<AceCorpsSpawnItemEntry> spawns_jackdaw;
-        spawns_jackdaw.push(addItemEntry('Vulcanette', jackdaw_vulcanette_spawn_bias));
+        spawns_jackdaw.push(addItemEntry('ClipBoxPickup2', jackdaw_clipbox_spawn_bias));
         addItem('JackdawRandom', spawns_jackdaw, jackdaw_persistent_spawning);
 
         // Majestic
         Array<AceCorpsSpawnItemEntry> spawns_majestic;
-        spawns_majestic.push(addItemEntry('HDPistol', majestic_pistol_spawn_bias));
-        spawns_majestic.push(addItemEntry('Hunter', majestic_hunter_spawn_bias));
-        spawns_majestic.push(addItemEntry('Slayer', majestic_slayer_spawn_bias));
+        spawns_majestic.push(addItemEntry('PistolReplaces', majestic_pistol_spawn_bias));
+        spawns_majestic.push(addItemEntry('HunterRandom', majestic_hunter_spawn_bias));
+        spawns_majestic.push(addItemEntry('SlayerRandom', majestic_slayer_spawn_bias));
         addItem('MajesticRandom', spawns_majestic, majestic_persistent_spawning);
 
         // Redline
         Array<AceCorpsSpawnItemEntry> spawns_redline;
-        spawns_redline.push(addItemEntry('Thunderbuster', redline_thunderbuster_spawn_bias));
+        spawns_redline.push(addItemEntry('PlasmaReplaces', redline_plasma_spawn_bias));
         addItem('RedlineRandom', spawns_redline, redline_persistent_spawning);
 
         // Scorpion
         Array<AceCorpsSpawnItemEntry> spawns_scorpion;
-        spawns_scorpion.push(addItemEntry('BrontornisSpawner', scorpion_bronto_spawn_bias));
+        spawns_scorpion.push(addItemEntry('BFGReplaces', scorpion_bfg_spawn_bias));
         addItem('ScorpionSpawner', spawns_scorpion, scorpion_persistent_spawning);
 
         // Viper
         Array<AceCorpsSpawnItemEntry> spawns_viper;
-        spawns_viper.push(addItemEntry('HDPistol', viper_pistol_spawn_bias));
-        spawns_viper.push(addItemEntry('Hunter', viper_hunter_spawn_bias));
+        spawns_viper.push(addItemEntry('PistolReplaces', viper_pistol_spawn_bias));
+        spawns_viper.push(addItemEntry('HunterRandom', viper_hunter_spawn_bias));
+        spawns_viper.push(addItemEntry('SlayerRandom', viper_slayer_spawn_bias));
         addItem('ViperRandom', spawns_viper, viper_persistent_spawning);
 
         // Wyvern
         Array<AceCorpsSpawnItemEntry> spawns_wyvern;
-        spawns_wyvern.push(addItemEntry('Hunter', wyvern_hunter_spawn_bias));
-        spawns_wyvern.push(addItemEntry('Slayer', wyvern_slayer_spawn_bias));
+        spawns_wyvern.push(addItemEntry('HunterRandom', wyvern_hunter_spawn_bias));
+        spawns_wyvern.push(addItemEntry('SlayerRandom', wyvern_slayer_spawn_bias));
+        spawns_wyvern.push(addItemEntry('PlasmaReplaces', wyvern_plasma_spawn_bias));
         addItem('WyvernRandom', spawns_wyvern, wyvern_persistent_spawning);
 
 
@@ -321,27 +324,27 @@ class AceCorpsWepsHandler : EventHandler {
 
         // Blackhawk Bolts
         Array<AceCorpsSpawnItemEntry> spawns_blackhawkBolts;
-        spawns_blackhawkBolts.push(addItemEntry('HDRocketAmmo', blackhawkBolts_rocket_spawn_bias));
+        spawns_blackhawkBolts.push(addItemEntry('RocketAmmo', blackhawkBolts_rocket_spawn_bias));
         addItem('HDBlackhawkBoltBundle', spawns_blackhawkBolts, blackhawkBolts_persistent_spawning);
 
         // Blackjack .355 Mag
         Array<AceCorpsSpawnItemEntry> spawns_blackjack_355mag;
-        spawns_blackjack_355mag.push(addItemEntry('ClipMagPickup', blackjack355mag_clip_spawn_bias));
+        spawns_blackjack_355mag.push(addItemEntry('ClipMagPickup', blackjack355mag_clipmag_spawn_bias));
         addItem('HDBlackjackMag355', spawns_blackjack_355mag, blackjack355mag_persistent_spawning);
 
         // Blackjack 12ga Shell Mag
         Array<AceCorpsSpawnItemEntry> spawns_blackjack_shellmag;
-        spawns_blackjack_shellmag.push(addItemEntry('HDShellAmmo', blackjackshellmag_shell_spawn_bias));
+        spawns_blackjack_shellmag.push(addItemEntry('ShellRandom', blackjackshellmag_shell_spawn_bias));
         addItem('HDBlackjackMagShells', spawns_blackjack_shellmag, blackjackshellmag_persistent_spawning);
 
         // Majestic Magazine
         Array<AceCorpsSpawnItemEntry> spawns_majesticmag;
-        spawns_majesticmag.push(addItemEntry('HD9mMag15', majesticmag_clipmag_spawn_bias));
+        spawns_majesticmag.push(addItemEntry('ClipMagPickup', majesticmag_clipmag_spawn_bias));
         addItem('HDMajesticMag', spawns_majesticmag, majesticmag_persistent_spawning);
 
         // Viper Magazine
         Array<AceCorpsSpawnItemEntry> spawns_vipermag;
-        spawns_vipermag.push(addItemEntry('HD9mMag15', vipermag_clipmag_spawn_bias));
+        spawns_vipermag.push(addItemEntry('ClipMagPickup', vipermag_clipmag_spawn_bias));
         addItem('HDViperMag', spawns_vipermag, vipermag_persistent_spawning);
 
 
@@ -404,16 +407,27 @@ class AceCorpsWepsHandler : EventHandler {
         return false;
     }
 
-    // Tries to create the item via random spawning.
-    bool tryCreateItem(Actor thing, string spawnName, int chance, bool rep) {
+    // Tries to replace the item during spawning.
+    bool tryReplaceItem(ReplaceEvent e, string spawnName, int chance) {
         if (giveRandom(chance)) {
-            if (Actor.Spawn(spawnName, thing.pos) && rep) {
-                if (hd_debug) console.printf(thing.getClassName().." -> "..spawnName);
+            if (hd_debug) console.printf(e.replacee.getClassName().." -> "..spawnName);
 
-                thing.destroy();
+            e.replacement = spawnName;
 
-                return true;
-            }
+            return true;
+        }
+
+        return false;
+    }
+
+    // Tries to create the item via random spawning.
+    bool tryCreateItem(Actor thing, string spawnName, int chance) {
+        if (giveRandom(chance)) {
+            if (hd_debug) console.printf(thing.getClassName().." + "..spawnName);
+
+            Actor.Spawn(spawnName, thing.pos);
+
+            return true;
         }
 
         return false;
@@ -421,23 +435,48 @@ class AceCorpsWepsHandler : EventHandler {
 
     override void worldLoaded(WorldEvent e) {
 
-        // Populates the main arrays if they haven't been already. 
+        // Populates the main arrays if they haven't been already.
         if (!cvarsAvailable) init();
 
         foreach (bl : backpackBlacklist) {
             if (hd_debug) console.printf("Removing "..bl.getClassName().." from Backpack Spawn Pool");
-                
+
             BPSpawnPool.removeItem(bl);
         }
     }
 
+    override void checkReplacement(ReplaceEvent e) {
+
+        // Populates the main arrays if they haven't been already.
+        if (!cvarsAvailable) init();
+
+        // If there's nothing to replace or if the replacement is final, quit.
+        if (!e.replacee || e.isFinal) return;
+
+        // If thing being replaced is blacklisted, quit.
+        foreach (bl : blacklist) if (e.replacee is bl) return;
+
+        string candidateName = e.replacee.getClassName();
+
+        // If current map is Range, quit.
+        if (level.MapName == 'RANGE') return;
+
+        handleWeaponReplacements(e, candidateName);
+    }
+
     override void worldThingSpawned(WorldEvent e) {
 
-        // If thing spawned doesn't exist, quit
+        // Populates the main arrays if they haven't been already.
+        if (!cvarsAvailable) init();
+
+        // If thing spawned doesn't exist, quit.
         if (!e.thing) return;
 
-        // If thing spawned is blacklisted, quit
+        // If thing spawned is blacklisted, quit.
         foreach (bl : blacklist) if (e.thing is bl) return;
+
+        // Handle Ammo Box Loot Table Filtering
+        if (e.thing is 'HDAmBox' && !ammoBoxList) handleAmmoBoxLootTable();
 
         string candidateName = e.thing.getClassName();
 
@@ -447,28 +486,22 @@ class AceCorpsWepsHandler : EventHandler {
         // If the thing spawned is an ammunition, add any and all items that can use this.
         if (ammo) handleAmmoUses(ammo, candidateName);
 
-        // Return if range before replacing things.
+        // If current map is Range, quit.
         if (level.MapName == 'RANGE') return;
 
-        if (e.thing is 'HDAmBox') {
-            handleAmmoBoxLootTable();
-        } else {
-            handleWeaponReplacements(e.thing, ammo, candidateName);
-        }
+        handleWeaponSpawns(e.thing, ammo, candidateName);
     }
 
     private void handleAmmoBoxLootTable() {
-        if (!ammoBoxList) {
-            ammoBoxList = HDAmBoxList.Get();
+        ammoBoxList = HDAmBoxList.Get();
 
-            foreach (bl : backpackBlacklist) {
-                let index = ammoBoxList.invClasses.find(bl.getClassName());
+        foreach (bl : backpackBlacklist) {
+            let index = ammoBoxList.invClasses.find(bl.getClassName());
 
-                if (index != ammoBoxList.invClasses.Size()) {
-                    if (hd_debug) console.printf("Removing "..bl.getClassName().." from Ammo Box Loot Table");
+            if (index != ammoBoxList.invClasses.Size()) {
+                if (hd_debug) console.printf("Removing "..bl.getClassName().." from Ammo Box Loot Table");
 
-                    ammoBoxList.invClasses.Delete(index);
-                }
+                ammoBoxList.invClasses.Delete(index);
             }
         }
     }
@@ -484,7 +517,27 @@ class AceCorpsWepsHandler : EventHandler {
         }
     }
 
-    private void handleWeaponReplacements(Actor thing, HDAmmo ammo, string candidateName) {
+    private void handleWeaponReplacements(ReplaceEvent e, string candidateName) {
+
+        // Checks if the level has been loaded more than 1 tic.
+        bool prespawn = !(level.maptime > 1);
+
+        // Iterates through the list of item candidates for e.thing.
+        foreach (itemSpawn : itemSpawnList) {
+
+            if ((prespawn || itemSpawn.isPersistent) && itemSpawn.replaceItem) {
+                foreach (spawnReplace : itemSpawn.spawnReplaces) {
+                    if (spawnReplace.name ~== candidateName) {
+                        if (hd_debug) console.printf("Attempting to replace "..candidateName.." with "..itemSpawn.spawnName.."...");
+
+                        if (tryReplaceItem(e, itemSpawn.spawnName, spawnReplace.chance)) return;
+                    }
+                }
+            }
+        }
+    }
+
+    private void handleWeaponSpawns(Actor thing, HDAmmo ammo, string candidateName) {
 
         // Checks if the level has been loaded more than 1 tic.
         bool prespawn = !(level.maptime > 1);
@@ -495,12 +548,16 @@ class AceCorpsWepsHandler : EventHandler {
             // if an item is owned or is an ammo (doesn't retain owner ptr),
             // do not replace it.
             let item = Inventory(thing);
-            if ((prespawn || itemSpawn.isPersistent) && (!(item && item.owner) && (!ammo || prespawn))) {
+            if (
+                (prespawn || itemSpawn.isPersistent)
+             && (!(item && item.owner) && (!ammo || prespawn))
+             && !itemSpawn.replaceItem
+            ) {
                 foreach (spawnReplace : itemSpawn.spawnReplaces) {
                     if (spawnReplace.name ~== candidateName) {
-                        if (hd_debug) console.printf("Attempting to replace "..candidateName.." with "..itemSpawn.spawnName.."...");
+                        if (hd_debug) console.printf("Attempting to spawn "..itemSpawn.spawnName.." with "..candidateName.."...");
 
-                        if (tryCreateItem(thing, itemSpawn.spawnName, spawnReplace.chance, itemSpawn.replaceItem)) return;
+                        if (tryCreateItem(thing, itemSpawn.spawnName, spawnReplace.chance)) return;
                     }
                 }
             }

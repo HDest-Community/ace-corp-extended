@@ -157,7 +157,7 @@ class HDBlackjack : HDWeapon
 		int cx, cy, cw, ch;
 		[cx, cy, cw, ch] = Screen.GetClipRect();
 		sb.SetClipRect(-16 + bob.x, -4 + bob.y, 32, 12, sb.DI_SCREEN_CENTER);
-		vector2 bob2 = bob * 2;
+		vector2 bob2 = bob * 1.14;
 		bob2.y = clamp(bob2.y, -8, 8);
 		sb.DrawImage("BJCKFRNT", bob2, sb.DI_SCREEN_CENTER | sb.DI_ITEM_TOP, alpha: 0.9, scale: (0.8, 0.6));
 		sb.SetClipRect(cx, cy, cw, ch);
@@ -293,13 +293,13 @@ class HDBlackjack : HDWeapon
 				A_StartSound("Blackjack/Fire", CHAN_WEAPON);
 				A_ZoomRecoil(0.995);
 				A_MuzzleClimb(-frandom(0.3, 0.35), -frandom(0.40, 0.5), -frandom(0.3, 0.35), -frandom(0.40, 0.5));
-				A_Light1();
+				A_GunFlash("Flash");
 			}
 			BJKG A 2 Offset(0, 36)
 			{
 				if (invoker.WeaponStatus[BJProp_ChamberPrimary] == 1)
 				{
-					A_EjectCasing("HDSpent355",frandom(-1,2),(6,-frandom(79, 81),frandom(6.0, 6.5)),(0,0,-2));
+					A_EjectCasing("HDSpent355",frandom(-1,2),(frandom(0.2,0.3),-frandom(7,7.5),frandom(0,0.2)),(0,0,-2));
 					//A_EjectCasing('HDSpent355', 6, -random(79, 81), frandom(6.0, 6.5));
 					invoker.WeaponStatus[BJProp_ChamberPrimary] = 0;
 				}
@@ -339,13 +339,13 @@ class HDBlackjack : HDWeapon
 				A_StartSound("Blackjack/AltFire", CHAN_WEAPON);
 				A_ZoomRecoil(0.995);
 				A_MuzzleClimb(-frandom(1, 1.2), -frandom(1.5, 2.0), -frandom(1, 1.2), -frandom(1.5, 2.0));
-				A_Light1();
+				A_GunFlash("Flash");
 			}
 			BJKG A 1 Offset(0, 39)
 			{
 				if (invoker.WeaponStatus[BJProp_ChamberSecondary] == 1)
 				{
-					A_EjectCasing("HDSpentShell",frandom(-1,2),(11,-frandom(79, 81),frandom(6.0, 6.5)),(0,0,-2));
+					A_EjectCasing("HDSpentShell",frandom(-1,2),(frandom(0.2,0.3),-frandom(7,7.5),frandom(0,0.2)),(0,0,-2));
 					//A_EjectCasing('HDSpentShell', 11, -random(79, 81), frandom(6.0, 6.5));
 					invoker.WeaponStatus[BJProp_ChamberSecondary] = 0;
 				}
@@ -365,6 +365,9 @@ class HDBlackjack : HDWeapon
 			BJKG A 1;
 			BJKG A 0 A_Refire();
 			Goto Ready;
+		Flash:
+			TNT1 A 1 A_Light1();
+			goto lightdone;
 
 		Unload:
 			BJKG A 0
