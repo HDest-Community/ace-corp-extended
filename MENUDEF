@@ -462,8 +462,8 @@ OptionMenu "psgSpawning" {
 
 	StaticText "$MENU_SPAWNOPTIONS", "FAK_Blue"
     StaticText "$MENU_PSG_BLUEARMOR_SPAWNTEXT", "White"
-	Option "$MENU_WEPSPAWNRATE", "psg_battlearmor_spawn_bias", "SpawnBias"
-	SafeCommand "$MENU_RESETWEP", "resetcvar psg_battlearmor_spawn_bias"
+	Option "$MENU_WEPSPAWNRATE", "psg_bluearmour_spawn_bias", "SpawnBias"
+	SafeCommand "$MENU_RESETWEP", "resetcvar psg_bluearmour_spawn_bias"
  	StaticText ""
 	
 	StaticText "$MENU_PSG_BACKPACKS", "White"
@@ -521,9 +521,9 @@ OptionMenu "superstimSpawning" {
     StaticText ""
 
 	StaticText "$MENU_SPAWNOPTIONS", "FAK_Blue"
-    StaticText "$MENU_SUPERSTIM_MEDICAL_SPAWNTEXT", "White"
-	Option "$MENU_WEPSPAWNRATE", "superstim_medical_spawn_bias", "SpawnBias"
-	SafeCommand "$MENU_RESETWEP", "resetcvar superstim_medical_spawn_bias"
+    StaticText "$MENU_SUPERSTIM_STIMPACK_SPAWNTEXT", "White"
+	Option "$MENU_WEPSPAWNRATE", "superstim_stimpack_spawn_bias", "SpawnBias"
+	SafeCommand "$MENU_RESETWEP", "resetcvar superstim_stimpack_spawn_bias"
  	StaticText ""
 	
 	StaticText "$MENU_SUPERSTIM_BACKPACKS", "White"
@@ -713,9 +713,9 @@ OptionMenu "crateSpawning" {
     StaticText ""
 
 	StaticText "$MENU_SPAWNOPTIONS", "FAK_Blue"
-    StaticText "$MENU_WEAPONCRATE_RL_SPAWNTEXT", "White"
-	Option "$MENU_WEPSPAWNRATE", "weaponcrate_rl_spawn_bias", "SpawnBias"
-	SafeCommand "$MENU_RESETWEP", "resetcvar weaponcrate_rl_spawn_bias"
+    StaticText "$MENU_WEAPONCRATE_LAUNCHER_SPAWNTEXT", "White"
+	Option "$MENU_WEPSPAWNRATE", "weaponcrate_launcher_spawn_bias", "SpawnBias"
+	SafeCommand "$MENU_RESETWEP", "resetcvar weaponcrate_launcher_spawn_bias"
 	StaticText ""
 
 	StaticText "$MENU_PERSISTENCYOPTIONS", "FAK_Blue"
@@ -730,7 +730,7 @@ OptionMenu "crateSpawning" {
 }
 
 OptionMenu "barricadeSpawning" {
-    Title "$MENU_DEPLOYABLEBARRICADE_TITLE"
+    Title "$MENU_BARRICADE_TITLE"
     StaticText ""
 
    	StaticText "$MENU_NOTICE", "FAK_Blue"
@@ -739,9 +739,9 @@ OptionMenu "barricadeSpawning" {
     StaticText ""
 
 	StaticText "$MENU_SPAWNOPTIONS", "FAK_Blue"
-    StaticText "$MENU_DEPLOYABLEBARRICADE_RL_SPAWNTEXT", "White"
-	Option "$MENU_WEPSPAWNRATE", "deployablebarricade_rl_spawn_bias", "SpawnBias"
-	SafeCommand "$MENU_RESETWEP", "resetcvar deployablebarricade_rl_spawn_bias"
+    StaticText "$MENU_BARRICADE_LAUNCHER_SPAWNTEXT", "White"
+	Option "$MENU_WEPSPAWNRATE", "deployablebarricade_launcher_spawn_bias", "SpawnBias"
+	SafeCommand "$MENU_RESETWEP", "resetcvar deployablebarricade_launcher_spawn_bias"
 	StaticText ""
 
 	StaticText "$MENU_PERSISTENCYOPTIONS", "FAK_Blue"

@@ -106,16 +106,16 @@ server bool vipermag_persistent_spawning = false;
 // Items
 //------------
 
-server int deployablebarricade_rl_spawn_bias = 24;
+server int deployablebarricade_launcher_spawn_bias = 24;
 server bool deployablebarricade_persistent_spawning = false;
 
 server bool ladderlauncher_allowBackpacks = true;
 server int ladderlauncher_rocketbox_spawn_bias = 24;
-server int ladderlauncher_cellpack_spawn_bias = 24;
+server int ladderlauncher_battery_spawn_bias = 24;
 server bool ladderlauncher_persistent_spawning = false;
 
 server bool psg_allowBackpacks = true;
-server int psg_battlearmor_spawn_bias = 19;
+server int psg_bluearmour_spawn_bias = 19;
 server bool psg_persistent_spawning = false;
 
 server bool secretfinder_allowBackpacks = true;
@@ -123,10 +123,10 @@ server int secretfinder_map_spawn_bias = 19;
 server bool secretfinder_persistent_spawning = false;
 
 server bool superstim_allowBackpacks = true;
-server int superstim_medical_spawn_bias = 19;
+server int superstim_stimpack_spawn_bias = 19;
 server bool superstim_persistent_spawning = false;
 
-server int weaponcrate_rl_spawn_bias = 19;
+server int weaponcrate_launcher_spawn_bias = 19;
 server bool weaponcrate_persistent_spawning = false;
 
 server bool dsd_allowBackpacks = true;

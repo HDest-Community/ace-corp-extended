@@ -354,18 +354,18 @@ class AceCorpsWepsHandler : EventHandler {
 
         // Deployable Barricade
         Array<AceCorpsSpawnItemEntry> spawns_deployablebarricade;
-        spawns_deployablebarricade.push(addItemEntry('HDRL', deployablebarricade_rl_spawn_bias));
+        spawns_deployablebarricade.push(addItemEntry('RLReplaces', deployablebarricade_launcher_spawn_bias));
         addItem('HDDeployableBarricade', spawns_deployablebarricade, deployablebarricade_persistent_spawning);
 
         // Ladder Launcher
         Array<AceCorpsSpawnItemEntry> spawns_ladderlauncher;
-        spawns_ladderlauncher.push(addItemEntry('RocketBigPickup', ladderlauncher_rocketbox_spawn_bias));
-        spawns_ladderlauncher.push(addItemEntry('HDBattery', ladderlauncher_cellpack_spawn_bias));
+        spawns_ladderlauncher.push(addItemEntry('RocketBoxRandom', ladderlauncher_rocketbox_spawn_bias));
+        spawns_ladderlauncher.push(addItemEntry('CellRandom', ladderlauncher_battery_spawn_bias));
         addItem('LadderLauncher', spawns_ladderlauncher, ladderlauncher_persistent_spawning);
 
         // Personal Shield Generator
         Array<AceCorpsSpawnItemEntry> spawns_psg;
-        spawns_psg.push(addItemEntry('BattleArmour', psg_battlearmor_spawn_bias));
+        spawns_psg.push(addItemEntry('BattleArmour', psg_bluearmour_spawn_bias));
         addItem('PsgRandom', spawns_psg, psg_persistent_spawning);
 
         // Secret Finder
@@ -375,17 +375,17 @@ class AceCorpsWepsHandler : EventHandler {
 
         // Soul Cube
         Array<AceCorpsSpawnItemEntry> spawns_soulcube;
-        spawns_soulcube.push(addItemEntry('Lumberjack', soulcube_chainsaw_spawn_bias));
+        spawns_soulcube.push(addItemEntry('ChainsawReplaces', soulcube_chainsaw_spawn_bias));
         addItem('HDSoulCube', spawns_soulcube, soulcube_persistent_spawning);
 
         // Super Stimpack
         Array<AceCorpsSpawnItemEntry> spawns_superstim;
-        spawns_superstim.push(addItemEntry('PortableMedicalItem', superstim_medical_spawn_bias));
+        spawns_superstim.push(addItemEntry('PortableHealingItem', superstim_stimpack_spawn_bias));
         addItem('PortableSuperStimpack', spawns_superstim, superstim_persistent_spawning);
 
         // Weapon Crate
         Array<AceCorpsSpawnItemEntry> spawns_weaponcrate;
-        spawns_weaponcrate.push(addItemEntry('HDRL', weaponcrate_rl_spawn_bias));
+        spawns_weaponcrate.push(addItemEntry('RLReplaces', weaponcrate_launcher_spawn_bias));
         addItem('HDWeaponCrate', spawns_weaponcrate, weaponcrate_persistent_spawning);
 
         // Dimensional Storage Device

@@ -151,14 +151,9 @@ MENU_SECRETFINDER_TITLE                 = "------ Secret Finder Options ------";
 MENU_SECRETFINDER_MAP_SPAWNTEXT         = "Control the spawn rate of the Secret Finder on automaps:";
 MENU_SECRETFINDER_BACKPACKS             = "Control whether the Secret Finder spawns in Backpacks:";
 
-// Secret Finder Options Text
-MENU_SECRETFINDER_TITLE                 = "------ Secret Finder Options ------";
-MENU_SECRETFINDER_MAP_SPAWNTEXT         = "Control the spawn rate of the Secret Finder on automaps:";
-MENU_SECRETFINDER_BACKPACKS             = "Control whether the Secret Finder spawns in Backpacks:";
-
 // Super Stim Options Text
 MENU_SUPERSTIM_TITLE                    = "------ Super Stimpack Options ------";
-MENU_SUPERSTIM_MEDICAL_SPAWNTEXT        = "Control the spawn rate of the Super Stimpack on medical supplies:";
+MENU_SUPERSTIM_STIMPACK_SPAWNTEXT       = "Control the spawn rate of the Super Stimpack on Stimpacks:";
 MENU_SUPERSTIM_BACKPACKS                = "Control whether the Super Stimpack spawns in Backpacks:";
 
 // Field Assembly Kit Options Text
@@ -197,11 +192,11 @@ MENU_SOULCUBE_BACKPACKS                 = "Control whether the Soul Cube spawns 
 
 // Weapon Crate Options Text
 MENU_WEAPONCRATE_TITLE                  = "------ Weapon Crate Options ------";
-MENU_WEAPONCRATE_RL_SPAWNTEXT           = "Control the spawn rate of the Weapon Crate on Rocket Launchers:";
+MENU_WEAPONCRATE_LAUNCHER_SPAWNTEXT     = "Control the spawn rate of the Weapon Crate on Rocket Launchers:";
 
 // Deployable Barricade Options Text
-MENU_DEPLOYABLEBARRICADE_TITLE          = "------ Deployable Barricade Options ------";
-MENU_DEPLOYABLEBARRICADE_RL_SPAWNTEXT   = "Control the spawn rate of the Deployable Barricade on Rocket Launchers:";
+MENU_BARRICADE_TITLE                    = "------ Deployable Barricade Options ------";
+MENU_BARRICADE_LAUNCHER_SPAWNTEXT       = "Control the spawn rate of the Deployable Barricade on Rocket Launchers:";
 
 // Magazine Reloader Options Text
 MENU_MAGRELOADER_TITLE                  = "------ Magazine Reloader Options ------";
