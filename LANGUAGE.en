@@ -57,7 +57,7 @@ MENU_BLACKHAWK_INVERT                   = "Invert Bolt Selection Order";
 
 // Blackjack Options Text
 MENU_BLACKJACK_TITLE                    = "------ 'Blackjack' .355 Rifle Options ------";
-MENU_BLACKJACK_SMG_SPAWNTEXT            = "Control the spawn rate of the blackjack on SMGs:";
+MENU_BLACKJACK_CLIPBOX_SPAWNTEXT        = "Control the spawn rate of the blackjack on Clip Boxes:";
 MENU_BLACKJACK_HUNTER_SPAWNTEXT         = "Control the spawn rate of the blackjack on Hunter Shotguns:";
 MENU_BLACKJACK_SLAYER_SPAWNTEXT         = "Control the spawn rate of the blackjack on Slayer Shotguns:";
 MENU_BLACKJACK_BACKPACKS                = "Control whether the Blackjack spawns in Backpacks:";
@@ -86,7 +86,7 @@ MENU_HAMMERHEAD_BACKPACKS               = "Control whether the Hammerhead spawns
 
 // Jackdaw Options Text
 MENU_JACKDAW_TITLE                      = "------ 'Jackdaw' 9mm SMG Options ------";
-MENU_JACKDAW_SMG_SPAWNTEXT              = "Control the spawn rate of the jackdaw on SMGs:";
+MENU_JACKDAW_CLIPBOX_SPAWNTEXT          = "Control the spawn rate of the jackdaw on Clip Boxes:";
 MENU_JACKDAW_BACKPACKS                  = "Control whether the Jackdaw spawns in Backpacks:";
 
 // Majestic Options Text
@@ -125,6 +125,7 @@ MENU_VIPERMAG_BACKPACKS                 = "Control whether Viper Magazines spawn
 MENU_WYVERN_TITLE                       = "------ 'Wyvern' .50 cal. Double-Barrel Rifle Options ------";
 MENU_WYVERN_HUNTER_SPAWNTEXT            = "Control the spawn rate of the Wyvern on Hunter Shotguns:";
 MENU_WYVERN_SLAYER_SPAWNTEXT            = "Control the spawn rate of the Wyvern on Slayer Shotguns:";
+MENU_WYVERN_PLASMA_SPAWNTEXT            = "Control the spawn rate of the Wyvern on Thunderbusters:";
 MENU_WYVERN_BACKPACKS                   = "Control whether the Wyvern spawns in Backpacks:";
 
 // Item Tags
