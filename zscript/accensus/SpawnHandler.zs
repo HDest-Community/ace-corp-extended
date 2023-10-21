@@ -3,13 +3,13 @@ class AceCorpsSpawnItem play {
 
     // ID by string for spawner
     string spawnName;
-    
+
     // ID by string for spawnees
     Array<AceCorpsSpawnItemEntry> spawnReplaces;
-    
+
     // Whether or not to persistently spawn.
     bool isPersistent;
-    
+
     // Whether or not to replace the original item.
     bool replaceItem;
 
@@ -40,10 +40,10 @@ class AceCorpsSpawnAmmo play {
 
     // ID by string for the header ammo.
     string ammoName;
-    
+
     // ID by string for weapons using that ammo.
     Array<string> weaponNames;
-    
+
     string toString() {
 
         let weapons = "[";
@@ -153,9 +153,9 @@ class AceCorpsWepsHandler : EventHandler {
 
     // Populates the replacement and association arrays.
     void init() {
-        
+
         cvarsAvailable = true;
-        
+
         //-----------------
         // Backpack Spawns
         //-----------------
@@ -170,7 +170,7 @@ class AceCorpsWepsHandler : EventHandler {
         if (!scorpion_allowBackpacks)          backpackBlacklist.push((Class<Inventory>)('HDScorpion'));
         if (!viper_allowBackpacks)             backpackBlacklist.push((Class<Inventory>)('HDViper'));
         if (!wyvern_allowBackpacks)            backpackBlacklist.push((Class<Inventory>)('HDWyvern'));
-        
+
         if (!blackhawkBolts_allowBackpacks)    backpackBlacklist.push((Class<Inventory>)('HDBlackhawkBoltRegular'));
         if (!blackhawkBolts_allowBackpacks)    backpackBlacklist.push((Class<Inventory>)('HDBlackhawkBoltIncendiary'));
         if (!blackhawkBolts_allowBackpacks)    backpackBlacklist.push((Class<Inventory>)('HDBlackhawkBoltElectric'));
@@ -200,8 +200,8 @@ class AceCorpsWepsHandler : EventHandler {
         wep_12gaShell.push('HDBlackjack');
         addAmmo('HDShellAmmo', wep_12gaShell);
 
-        // HDBattery. 
-        Array<string> wep_battery;  
+        // HDBattery.
+        Array<string> wep_battery;
         wep_battery.push('HDGungnir');
         wep_battery.push('HDHammerhead');
         wep_battery.push('HDRedline');
@@ -247,47 +247,47 @@ class AceCorpsWepsHandler : EventHandler {
 
         // Blackjack
         Array<AceCorpsSpawnItemEntry> spawns_blackjack;
-        spawns_blackjack.push(addItemEntry('ClipBoxPickup2', blackjack_smg_spawn_bias));
+        spawns_blackjack.push(addItemEntry('ClipBoxPickup2', blackjack_clipbox_spawn_bias));
         spawns_blackjack.push(addItemEntry('HunterRandom', blackjack_hunter_spawn_bias));
         spawns_blackjack.push(addItemEntry('SlayerRandom', blackjack_slayer_spawn_bias));
         addItem('BlackjackRandom', spawns_blackjack, blackjack_persistent_spawning);
 
         // Gungnir
         Array<AceCorpsSpawnItemEntry> spawns_gungnir;
-        spawns_gungnir.push(addItemEntry('BFG9K', gungnir_bfg_spawn_bias));
+        spawns_gungnir.push(addItemEntry('BFGReplaces', gungnir_bfg_spawn_bias));
         addItem('GungnirRandom', spawns_gungnir, gungnir_persistent_spawning);
 
         // Hammerhead
         Array<AceCorpsSpawnItemEntry> spawns_hammerhead;
         spawns_hammerhead.push(addItemEntry('ChaingunReplaces', hammerhead_chaingun_spawn_bias));
-        spawns_hammerhead.push(addItemEntry('PlasmaReplaces', hammerhead_thunderbuster_spawn_bias));
+        spawns_hammerhead.push(addItemEntry('PlasmaReplaces', hammerhead_plasma_spawn_bias));
         addItem('HammerheadRandom', spawns_hammerhead, hammerhead_persistent_spawning);
 
         // Jackdaw
         Array<AceCorpsSpawnItemEntry> spawns_jackdaw;
-        spawns_jackdaw.push(addItemEntry('ClipBoxPickup2', jackdaw_smg_spawn_bias));
+        spawns_jackdaw.push(addItemEntry('ClipBoxPickup2', jackdaw_clipbox_spawn_bias));
         addItem('JackdawRandom', spawns_jackdaw, jackdaw_persistent_spawning);
 
         // Majestic
         Array<AceCorpsSpawnItemEntry> spawns_majestic;
-        spawns_majestic.push(addItemEntry('HDAutoPistol', majestic_pistol_spawn_bias));
+        spawns_majestic.push(addItemEntry('PistolReplaces', majestic_pistol_spawn_bias));
         spawns_majestic.push(addItemEntry('HunterRandom', majestic_hunter_spawn_bias));
         spawns_majestic.push(addItemEntry('SlayerRandom', majestic_slayer_spawn_bias));
         addItem('MajesticRandom', spawns_majestic, majestic_persistent_spawning);
 
         // Redline
         Array<AceCorpsSpawnItemEntry> spawns_redline;
-        spawns_redline.push(addItemEntry('PlasmaReplaces', redline_thunderbuster_spawn_bias));
+        spawns_redline.push(addItemEntry('PlasmaReplaces', redline_plasma_spawn_bias));
         addItem('RedlineRandom', spawns_redline, redline_persistent_spawning);
 
         // Scorpion
         Array<AceCorpsSpawnItemEntry> spawns_scorpion;
-        spawns_scorpion.push(addItemEntry('BFG9K', scorpion_bfg_spawn_bias));
+        spawns_scorpion.push(addItemEntry('BFGReplaces', scorpion_bfg_spawn_bias));
         addItem('ScorpionSpawner', spawns_scorpion, scorpion_persistent_spawning);
 
         // Viper
         Array<AceCorpsSpawnItemEntry> spawns_viper;
-        spawns_viper.push(addItemEntry('HDAutoPistol', viper_pistol_spawn_bias));
+        spawns_viper.push(addItemEntry('PistolReplaces', viper_pistol_spawn_bias));
         spawns_viper.push(addItemEntry('HunterRandom', viper_hunter_spawn_bias));
         spawns_viper.push(addItemEntry('SlayerRandom', viper_slayer_spawn_bias));
         addItem('ViperRandom', spawns_viper, viper_persistent_spawning);
@@ -296,6 +296,7 @@ class AceCorpsWepsHandler : EventHandler {
         Array<AceCorpsSpawnItemEntry> spawns_wyvern;
         spawns_wyvern.push(addItemEntry('HunterRandom', wyvern_hunter_spawn_bias));
         spawns_wyvern.push(addItemEntry('SlayerRandom', wyvern_slayer_spawn_bias));
+        spawns_wyvern.push(addItemEntry('PlasmaReplaces', wyvern_plasma_spawn_bias));
         addItem('WyvernRandom', spawns_wyvern, wyvern_persistent_spawning);
 
 
@@ -375,19 +376,19 @@ class AceCorpsWepsHandler : EventHandler {
 
     override void worldLoaded(WorldEvent e) {
 
-        // Populates the main arrays if they haven't been already. 
+        // Populates the main arrays if they haven't been already.
         if (!cvarsAvailable) init();
 
         foreach (bl : backpackBlacklist) {
             if (hd_debug) console.printf("Removing "..bl.getClassName().." from Backpack Spawn Pool");
-                
+
             BPSpawnPool.removeItem(bl);
         }
     }
 
     override void checkReplacement(ReplaceEvent e) {
 
-        // Populates the main arrays if they haven't been already. 
+        // Populates the main arrays if they haven't been already.
         if (!cvarsAvailable) init();
 
         // If there's nothing to replace or if the replacement is final, quit.
@@ -406,7 +407,7 @@ class AceCorpsWepsHandler : EventHandler {
 
     override void worldThingSpawned(WorldEvent e) {
 
-        // Populates the main arrays if they haven't been already. 
+        // Populates the main arrays if they haven't been already.
         if (!cvarsAvailable) init();
 
         // If thing spawned doesn't exist, quit.
@@ -414,6 +415,9 @@ class AceCorpsWepsHandler : EventHandler {
 
         // If thing spawned is blacklisted, quit.
         foreach (bl : blacklist) if (e.thing is bl) return;
+
+        // Handle Ammo Box Loot Table Filtering
+        if (e.thing is 'HDAmBox' && !ammoBoxList) handleAmmoBoxLootTable();
 
         string candidateName = e.thing.getClassName();
 
@@ -426,25 +430,19 @@ class AceCorpsWepsHandler : EventHandler {
         // If current map is Range, quit.
         if (level.MapName == 'RANGE') return;
 
-        if (e.thing is 'HDAmBox') {
-            handleAmmoBoxLootTable();
-        } else {
-            handleWeaponSpawns(e.thing, ammo, candidateName);
-        }
+        handleWeaponSpawns(e.thing, ammo, candidateName);
     }
 
     private void handleAmmoBoxLootTable() {
-        if (!ammoBoxList) {
-            ammoBoxList = HDAmBoxList.Get();
+        ammoBoxList = HDAmBoxList.Get();
 
-            foreach (bl : backpackBlacklist) {
-                let index = ammoBoxList.invClasses.find(bl.getClassName());
+        foreach (bl : backpackBlacklist) {
+            let index = ammoBoxList.invClasses.find(bl.getClassName());
 
-                if (index != ammoBoxList.invClasses.Size()) {
-                    if (hd_debug) console.printf("Removing "..bl.getClassName().." from Ammo Box Loot Table");
+            if (index != ammoBoxList.invClasses.Size()) {
+                if (hd_debug) console.printf("Removing "..bl.getClassName().." from Ammo Box Loot Table");
 
-                    ammoBoxList.invClasses.Delete(index);
-                }
+                ammoBoxList.invClasses.Delete(index);
             }
         }
     }

@@ -20,7 +20,7 @@ server bool blackhawk_persistent_spawning = false;
 
 // Blackjack
 server bool blackjack_allowBackpacks = true;
-server int  blackjack_smg_spawn_bias  = 9;
+server int  blackjack_clipbox_spawn_bias  = 9;
 server int  blackjack_hunter_spawn_bias  = 9;
 server int  blackjack_slayer_spawn_bias  = 9;
 server bool blackjack_persistent_spawning = false;
@@ -33,12 +33,12 @@ server bool gungnir_persistent_spawning = false;
 // Hammerhead
 server bool hammerhead_allowBackpacks = true;
 server int hammerhead_chaingun_spawn_bias = 14;
-server int hammerhead_thunderbuster_spawn_bias = 9;
+server int hammerhead_plasma_spawn_bias = 9;
 server bool hammerhead_persistent_spawning = false;
 
 // Jackdaw
 server bool jackdaw_allowBackpacks = true;
-server int jackdaw_smg_spawn_bias = 49;
+server int jackdaw_clipbox_spawn_bias = 49;
 server bool jackdaw_persistent_spawning = false;
 
 // Majestic
@@ -50,7 +50,7 @@ server bool majestic_persistent_spawning = false;
 
 // Redline
 server bool redline_allowBackpacks = true;
-server int redline_thunderbuster_spawn_bias = 9;
+server int redline_plasma_spawn_bias = 9;
 server bool redline_persistent_spawning = false;
 
 // Scorpion
@@ -69,6 +69,7 @@ server bool viper_persistent_spawning = false;
 server bool wyvern_allowBackpacks = true;
 server int wyvern_hunter_spawn_bias = 99;
 server int wyvern_slayer_spawn_bias = 49;
+server int wyvern_plasma_spawn_bias = 24;
 server bool wyvern_persistent_spawning = false;
 
 
