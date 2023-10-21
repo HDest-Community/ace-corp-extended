@@ -27,6 +27,56 @@ class FAK_HLAR_HairTrigger : FAK_Upgrade
 	override void DoDowngrade(HDWeapon wpn, HDPickup pkp) { wpn.WeaponStatus[0] |= 4; }
 }
 
+class FAK_Slayer_SawnOff : FAK_Upgrade
+{
+	override string GetItem() { return "Slayer"; }
+	override string GetDisplayName() { return "Sawn-Off"; }
+	override void DoUpgrade(HDWeapon wpn, HDPickup pkp)
+	{
+		Actor plr = wpn.owner;
+
+		int leftChamber = wpn.WeaponStatus[SLAYS_CHAMBER1];
+		int rightChamber = wpn.WeaponStatus[SLAYS_CHAMBER2];
+		int saddles = wpn.WeaponStatus[SHOTS_SIDESADDLE];
+		wpn.Destroy();
+
+		if (saddles > 0)
+		{
+			plr.A_GiveInventory('HDShellAmmo', saddles);
+		}
+
+		Name cls = 'SawedSlayer';
+		HDWeapon sawedOff;
+		if (plr.FindInventory(cls))
+		{
+			sawedOff = HDWeapon(Actor.Spawn(cls, plr.pos + (0, 0, plr.height / 2)));
+			sawedOff.angle = plr.angle;
+			sawedOff.A_ChangeVelocity(1, 0, 1, CVF_RELATIVE);
+		}
+		else
+		{
+			sawedOff = HDWeapon(plr.GiveInventoryType(cls));
+		}
+		sawedOff.WeaponStatus[1] = leftChamber;
+		sawedOff.WeaponStatus[2] = rightChamber;
+	}
+	override int HasUpgrade(HDWeapon wpn, HDPickup pkp) { return HUResult_Destructive; }
+	override bool CheckPrerequisites(HDWeapon wpn, HDPickup pkp)
+	{
+		Name cls = 'SawedSlayer';
+		return (class<Actor>)(cls);
+	}
+	override string GetFailMessage(HDWeapon wpn, HDPickup pkp, int type)
+	{
+		Name cls = 'SawedSlayer';
+		if (type == FMType_Requirements && !((class<Actor>)(cls)))
+		{
+			return "You don't have a saw on hand.";
+		}
+		return Super.GetFailMessage(wpn, pkp, type);
+	}
+}
+
 class FAK_ScopedSlayer_MaxChoke : FAK_Slayer_MaxChoke
 {
 	override string GetItem() { return "ScopedSlayer"; }

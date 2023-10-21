@@ -72,3 +72,60 @@ class FAK_HushPuppy_Suppressor : FAK_Upgrade
 		GiveCore(plr, 0.5);
 	}
 }
+
+class FAK_Boss_SawnOff : FAK_Upgrade
+{
+	override string GetItem() { return "BossRifle"; }
+	override string GetDisplayName() { return "Sawn-Off"; }
+	override void DoUpgrade(HDWeapon wpn, HDPickup pkp)
+	{
+		Actor plr = wpn.owner;
+
+		int status = wpn.WeaponStatus[0];
+		int chamber = wpn.WeaponStatus[BOSSS_CHAMBER];
+		int mag = wpn.WeaponStatus[BOSSS_MAG];
+		int zoom = wpn.WeaponStatus[BOSSS_ZOOM];
+		int dropAdjust = wpn.WeaponStatus[BOSSS_DROPADJUST];
+		int heat = wpn.WeaponStatus[BOSSS_HEAT];
+		int grime = wpn.WeaponStatus[BOSSS_GRIME];
+		int recasts = wpn.WeaponStatus[BOSSS_RECASTS];
+		wpn.Destroy();
+
+		Name cls = 'ObrozzPistol';
+		HDWeapon obrozz;
+		if (plr.FindInventory(cls))
+		{
+			obrozz = HDWeapon(Actor.Spawn(cls, plr.pos + (0, 0, plr.height / 2)));
+			obrozz.angle = plr.angle;
+			obrozz.A_ChangeVelocity(1, 0, 1, CVF_RELATIVE);
+		}
+		else
+		{
+			obrozz = HDWeapon(plr.GiveInventoryType(cls));
+		}
+
+		obrozz.WeaponStatus[0] = status;
+		obrozz.WeaponStatus[1] = chamber;
+		obrozz.WeaponStatus[2] = mag;
+		obrozz.WeaponStatus[3] = zoom;
+		obrozz.WeaponStatus[4] = dropAdjust;
+		obrozz.WeaponStatus[5] = heat;
+		obrozz.WeaponStatus[6] = grime;
+		obrozz.WeaponStatus[7] = recasts;
+	}
+	override int HasUpgrade(HDWeapon wpn, HDPickup pkp) { return HUResult_Destructive; }
+	override bool CheckPrerequisites(HDWeapon wpn, HDPickup pkp)
+	{
+		Name cls = 'ObrozzPistol';
+		return (class<Actor>)(cls);
+	}
+	override string GetFailMessage(HDWeapon wpn, HDPickup pkp, int type)
+	{
+		Name cls = 'ObrozzPistol';
+		if (type == FMType_Requirements && !((class<Actor>)(cls)))
+		{
+			return "You don't have a saw on hand.";
+		}
+		return Super.GetFailMessage(wpn, pkp, type);
+	}
+}
