@@ -70,7 +70,7 @@ class FAK_Boss_NoScopeBoss : FAK_Upgrade
 		nsBoss.WeaponStatus[6] = grime;
 		nsBoss.WeaponStatus[7] = recasts;
 
-		GiveCore(wpn.owner, 0.2);
+		GiveCore(plr, 0.2);
 	}
 	override bool CheckPrerequisites(HDWeapon wpn, HDPickup pkp)
 	{

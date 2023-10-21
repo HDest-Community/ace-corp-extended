@@ -62,7 +62,7 @@ class FAK_ScopedRevolver_Revolver : FAK_Upgrade
 		revolver.WeaponStatus[BUGS_CYL5] = cyl5;
 		revolver.WeaponStatus[BUGS_CYL6] = cyl6;
 
-		GiveCore(wpn.owner, 0.2); 
+		GiveCore(plr, 0.2); 
 	}
 	override bool CheckPrerequisites(HDWeapon wpn, HDPickup pkp)
 	{
@@ -219,7 +219,7 @@ class FAK_ScopedSlayer_Slayer : FAK_Upgrade
 		slayer.WeaponStatus[SLAYS_CHOKE2] = rightChoke;
 		slayer.WeaponStatus[SHOTS_SIDESADDLE] = saddles;
 
-		GiveCore(wpn.owner, 0.2); 
+		GiveCore(plr, 0.2); 
 	}
 	override bool CheckPrerequisites(HDWeapon wpn, HDPickup pkp)
 	{
