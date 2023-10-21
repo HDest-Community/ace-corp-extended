@@ -1,0 +1,74 @@
+class FAK_HDPistol_Suppressor : FAK_Upgrade
+{
+	override string GetItem() { return "HDPistol"; }
+	override string GetDisplayName() { return "Suppressor"; }
+	override void DoUpgrade(HDWeapon wpn, HDPickup pkp) {
+		Actor plr = wpn.owner;
+
+		int mag = wpn.WeaponStatus[PISS_MAG];
+		int chamber = wpn.WeaponStatus[PISS_CHAMBER];
+		int selectFire = wpn.WeaponStatus[PISS_FLAGS] &= PISF_SELECTFIRE;
+		wpn.destroy();
+
+		Name cls = 'HushPuppyPistol';
+		HDWeapon pistol;
+		if (plr.FindInventory(cls)) {
+			pistol = HDWeapon(Actor.Spawn(cls, plr.pos + (0, 0, plr.height / 2)));
+			pistol.angle = plr.angle;
+			pistol.A_ChangeVelocity(1, 0, 1, CVF_RELATIVE);
+		} else {
+			pistol = HDWeapon(plr.GiveInventoryType(cls));
+		}
+
+		pistol.WeaponStatus[PISS_MAG] = mag;
+		pistol.WeaponStatus[PISS_CHAMBER] = chamber;
+
+		if (selectFire) GiveCore(plr, 0.5);
+	}
+	override int HasUpgrade(HDWeapon wpn, HDPickup pkp) { return false; }
+	override void DoDowngrade(HDWeapon wpn, HDPickup pkp) { }
+	override bool CheckPrerequisites(HDWeapon wpn, HDPickup pkp)
+	{
+		Name cls = 'HushPuppyPistol';
+		return (class<Actor>)(cls);
+	}
+	override string GetFailMessage(HDWeapon wpn, HDPickup pkp, int type)
+	{
+		Name cls = 'HushPuppyPistol';
+		if (type == FMType_Requirements && !((class<Actor>)(cls)))
+		{
+			return "You don't have a suppressor on hand.";
+		}
+		return Super.GetFailMessage(wpn, pkp, type);
+	}
+}
+
+class FAK_HushPuppy_Suppressor : FAK_Upgrade
+{
+	override string GetItem() { return "HushpuppyPistol"; }
+	override string GetDisplayName() { return "Suppressor"; }
+	override void DoUpgrade(HDWeapon wpn, HDPickup pkp) { }
+	override int HasUpgrade(HDWeapon wpn, HDPickup pkp) { return true; }
+	override void DoDowngrade(HDWeapon wpn, HDPickup pkp) {
+		Actor plr = wpn.owner;
+
+		int mag = wpn.WeaponStatus[PISS_MAG];
+		int chamber = wpn.WeaponStatus[PISS_CHAMBER];
+		wpn.destroy();
+
+		Name cls = 'HDPistol';
+		HDWeapon pistol;
+		if (plr.FindInventory(cls)) {
+			pistol = HDWeapon(Actor.Spawn(cls, plr.pos + (0, 0, plr.height / 2)));
+			pistol.angle = plr.angle;
+			pistol.A_ChangeVelocity(1, 0, 1, CVF_RELATIVE);
+		} else {
+			pistol = HDWeapon(plr.GiveInventoryType(cls));
+		}
+
+		pistol.WeaponStatus[PISS_MAG] = mag;
+		pistol.WeaponStatus[PISS_CHAMBER] = chamber;
+
+		GiveCore(plr, 0.5);
+	}
+}
