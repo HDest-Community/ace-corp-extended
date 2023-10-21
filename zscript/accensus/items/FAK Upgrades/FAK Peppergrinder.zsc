@@ -82,6 +82,106 @@ class FAK_ScopedSlayer_MaxChoke : FAK_Slayer_MaxChoke
 	override string GetItem() { return "ScopedSlayer"; }
 }
 
+class FAK_ScopedSlayer_Slayer : FAK_Upgrade
+{
+	override string GetItem() { return "ScopedSlayer"; }
+	override string GetDisplayName() { return "Scope"; }
+	override void DoUpgrade(HDWeapon wpn, HDPickup pkp) { }
+	override int HasUpgrade(HDWeapon wpn, HDPickup pkp) { return true; }
+	override void DoDowngrade(HDWeapon wpn, HDPickup pkp) {
+		Actor plr = wpn.owner;
+
+		int leftChamber = wpn.WeaponStatus[SLAYS_CHAMBER1];
+		int rightChamber = wpn.WeaponStatus[SLAYS_CHAMBER2];
+		int leftChoke = wpn.WeaponStatus[SLAYS_CHOKE1];
+		int rightChoke = wpn.WeaponStatus[SLAYS_CHOKE2];
+		int saddles = wpn.WeaponStatus[SHOTS_SIDESADDLE];
+		wpn.Destroy();
+
+		Name cls = 'Slayer';
+		HDWeapon slayer;
+
+		if (plr.FindInventory(cls)) {
+			slayer = HDWeapon(Actor.Spawn(cls, plr.pos + (0, 0, plr.height / 2)));
+			slayer.angle = plr.angle;
+			slayer.A_ChangeVelocity(1, 0, 1, CVF_RELATIVE);
+		} else {
+			slayer = HDWeapon(plr.GiveInventoryType(cls));
+		}
+		
+		slayer.WeaponStatus[SLAYS_CHAMBER1] = leftChamber;
+		slayer.WeaponStatus[SLAYS_CHAMBER2] = rightChamber;
+		slayer.WeaponStatus[SLAYS_CHOKE1] = leftChoke;
+		slayer.WeaponStatus[SLAYS_CHOKE2] = rightChoke;
+		slayer.WeaponStatus[SHOTS_SIDESADDLE] = saddles;
+
+		GiveCore(wpn.owner, 0.2); 
+	}
+	override bool CheckPrerequisites(HDWeapon wpn, HDPickup pkp)
+	{
+		Name cls = 'Slayer';
+		return (class<Actor>)(cls);
+	}
+	override string GetFailMessage(HDWeapon wpn, HDPickup pkp, int type)
+	{
+		Name cls = 'Slayer';
+		if (type == FMType_Requirements && !((class<Actor>)(cls)))
+		{
+			return "You don't have an assembly core.";
+		}
+		return Super.GetFailMessage(wpn, pkp, type);
+	}
+}
+
+class FAK_Slayer_ScopedSlayer : FAK_Upgrade
+{
+	override string GetItem() { return "Slayer"; }
+	override string GetDisplayName() { return "Scope"; }
+	override void DoUpgrade(HDWeapon wpn, HDPickup pkp)
+	{
+		Actor plr = wpn.owner;
+
+		int leftChamber = wpn.WeaponStatus[SLAYS_CHAMBER1];
+		int rightChamber = wpn.WeaponStatus[SLAYS_CHAMBER2];
+		int leftChoke = wpn.WeaponStatus[SLAYS_CHOKE1];
+		int rightChoke = wpn.WeaponStatus[SLAYS_CHOKE2];
+		int saddles = wpn.WeaponStatus[SHOTS_SIDESADDLE];
+		wpn.Destroy();
+
+		Name cls = 'ScopedSlayer';
+		HDWeapon scopedSlayer;
+
+		if (plr.FindInventory(cls)) {
+			scopedSlayer = HDWeapon(Actor.Spawn(cls, plr.pos + (0, 0, plr.height / 2)));
+			scopedSlayer.angle = plr.angle;
+			scopedSlayer.A_ChangeVelocity(1, 0, 1, CVF_RELATIVE);
+		} else {
+			scopedSlayer = HDWeapon(plr.GiveInventoryType(cls));
+		}
+		
+		scopedSlayer.WeaponStatus[SLAYS_CHAMBER1] = leftChamber;
+		scopedSlayer.WeaponStatus[SLAYS_CHAMBER2] = rightChamber;
+		scopedSlayer.WeaponStatus[SLAYS_CHOKE1] = leftChoke;
+		scopedSlayer.WeaponStatus[SLAYS_CHOKE2] = rightChoke;
+		scopedSlayer.WeaponStatus[SHOTS_SIDESADDLE] = saddles;
+	}
+	override int HasUpgrade(HDWeapon wpn, HDPickup pkp) { return false; }
+	override bool CheckPrerequisites(HDWeapon wpn, HDPickup pkp)
+	{
+		Name cls = 'ScopedSlayer';
+		return (class<Actor>)(cls);
+	}
+	override string GetFailMessage(HDWeapon wpn, HDPickup pkp, int type)
+	{
+		Name cls = 'ScopedSlayer';
+		if (type == FMType_Requirements && !((class<Actor>)(cls)))
+		{
+			return "You don't have a scope on hand.";
+		}
+		return Super.GetFailMessage(wpn, pkp, type);
+	}
+}
+
 class FAK_Wiseau_DoubleAction : FAK_Upgrade
 {
 	override string GetItem() { return "HDWiseau"; }
