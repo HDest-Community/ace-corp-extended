@@ -2,7 +2,7 @@ Model RedlineRaySegment
 {
 	USEACTORPITCH
 	DONTCULLBACKFACES
-	Path "Models" DONTCULLBACKFACES Scale 3.333333 1.0 1.0
+	Path "Models/Redline" DONTCULLBACKFACES Scale 3.333333 1.0 1.0
 	Model 0 "RedlineRaySegment.obj" FrameIndex RDLR A 0 0
 }
 
@@ -10,6 +10,6 @@ Model RedlineRaySegmentOverheated
 {
 	USEACTORPITCH
 	DONTCULLBACKFACES
-	Path "Models" DONTCULLBACKFACES Scale 3.333333 2.0 2.0
+	Path "Models/Redline" DONTCULLBACKFACES Scale 3.333333 2.0 2.0
 	Model 0 "RedlineRaySegment.obj" FrameIndex RDLR A 0 0
 }

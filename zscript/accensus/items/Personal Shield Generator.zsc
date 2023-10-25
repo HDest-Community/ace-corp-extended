@@ -615,6 +615,12 @@ class HDPersonalShieldGenerator : HDWeapon
 		Tag "$TAG_PSG";
 		HDWeapon.RefId "psg";
 		Scale 0.35;
+		HDWeapon.loadoutcodes "
+			\cuelem - 0/1, Adds elemental resistance to the psg.
+			\cumedical - 0/1, Makes the psg slowly heal you.
+			\cushock - 0/1, Makes the psg shock enemies attached to you.
+			\cucloak - 0/1, Makes the psg cloak you from enemies.
+		";
 	}
 
 	States

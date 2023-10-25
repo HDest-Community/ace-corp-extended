@@ -21,6 +21,8 @@ server bool blackhawk_persistent_spawning = false;
 // Blackjack
 server bool blackjack_allowBackpacks = true;
 server int  blackjack_clipbox_spawn_bias  = 9;
+server int  blackjack_hunter_spawn_bias  = 9;
+server int  blackjack_slayer_spawn_bias  = 9;
 server bool blackjack_persistent_spawning = false;
 
 // Gungnir
@@ -31,12 +33,12 @@ server bool gungnir_persistent_spawning = false;
 // Hammerhead
 server bool hammerhead_allowBackpacks = true;
 server int hammerhead_chaingun_spawn_bias = 14;
-server int hammerhead_thunderbuster_spawn_bias = 9;
+server int hammerhead_plasma_spawn_bias = 9;
 server bool hammerhead_persistent_spawning = false;
 
 // Jackdaw
 server bool jackdaw_allowBackpacks = true;
-server int jackdaw_vulcanette_spawn_bias = 49;
+server int jackdaw_clipbox_spawn_bias = 49;
 server bool jackdaw_persistent_spawning = false;
 
 // Majestic
@@ -48,12 +50,12 @@ server bool majestic_persistent_spawning = false;
 
 // Redline
 server bool redline_allowBackpacks = true;
-server int redline_thunderbuster_spawn_bias = 9;
+server int redline_plasma_spawn_bias = 9;
 server bool redline_persistent_spawning = false;
 
 // Scorpion
 server bool scorpion_allowBackpacks = true;
-server int scorpion_bronto_spawn_bias = 9;
+server int scorpion_bfg_spawn_bias = 9;
 server bool scorpion_persistent_spawning = false;
 
 // Viper
@@ -67,6 +69,7 @@ server bool viper_persistent_spawning = false;
 server bool wyvern_allowBackpacks = true;
 server int wyvern_hunter_spawn_bias = 99;
 server int wyvern_slayer_spawn_bias = 49;
+server int wyvern_plasma_spawn_bias = 24;
 server bool wyvern_persistent_spawning = false;
 
 
@@ -81,7 +84,7 @@ server bool blackhawkBolts_persistent_spawning = false;
 
 // Blackjack .355 Mag
 server bool blackjack355mag_allowBackpacks = true;
-server int  blackjack355mag_clip_spawn_bias     = 14;
+server int  blackjack355mag_clipmag_spawn_bias  = 14;
 server bool blackjack355mag_persistent_spawning = false;
 
 // Blackjack Shell Mag
@@ -103,16 +106,16 @@ server bool vipermag_persistent_spawning = false;
 // Items
 //------------
 
-server int deployablebarricade_rl_spawn_bias = 24;
+server int deployablebarricade_launcher_spawn_bias = 24;
 server bool deployablebarricade_persistent_spawning = false;
 
 server bool ladderlauncher_allowBackpacks = true;
 server int ladderlauncher_rocketbox_spawn_bias = 24;
-server int ladderlauncher_cellpack_spawn_bias = 24;
+server int ladderlauncher_battery_spawn_bias = 24;
 server bool ladderlauncher_persistent_spawning = false;
 
 server bool psg_allowBackpacks = true;
-server int psg_battlearmor_spawn_bias = 19;
+server int psg_bluearmour_spawn_bias = 19;
 server bool psg_persistent_spawning = false;
 
 server bool secretfinder_allowBackpacks = true;
@@ -120,10 +123,10 @@ server int secretfinder_map_spawn_bias = 19;
 server bool secretfinder_persistent_spawning = false;
 
 server bool superstim_allowBackpacks = true;
-server int superstim_medical_spawn_bias = 19;
+server int superstim_stimpack_spawn_bias = 19;
 server bool superstim_persistent_spawning = false;
 
-server int weaponcrate_rl_spawn_bias = 19;
+server int weaponcrate_launcher_spawn_bias = 19;
 server bool weaponcrate_persistent_spawning = false;
 
 server bool dsd_allowBackpacks = true;

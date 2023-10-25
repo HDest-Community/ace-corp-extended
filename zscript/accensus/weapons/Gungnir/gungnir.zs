@@ -348,7 +348,7 @@ class HDGungnir : HDCellWeapon
 		int cx, cy, cw, ch;
 		[cx, cy, cw, ch] = Screen.GetClipRect();
 		sb.SetClipRect(-16 + bob.x, -4 + bob.y, 32, 16, sb.DI_SCREEN_CENTER);
-		vector2 bobb = bob * 2;
+		vector2 bobb = bob * 1.14;
 		bobb.y = clamp(bobb.y, -8, 8);
 		sb.DrawImage("GNGRFRNT", bobb, sb.DI_SCREEN_CENTER | sb.DI_ITEM_TOP, alpha: 0.9);
 		sb.SetClipRect(cx, cy, cw, ch);
@@ -365,9 +365,8 @@ class HDGungnir : HDCellWeapon
 
 			texman.setcameratotexture(hpc, "HDXCAM_BOSS", 5);
 			let cam  = texman.CheckForTexture("HDXCAM_BOSS",TexMan.Type_Any);
-			sb.DrawCircle(cam,(0,scaledyoffset)+bob*3,.11,usePixelRatio:true);
+			sb.DrawCircle(cam,(0,scaledyoffset)+bob*3,.125,usePixelRatio:true);
 
-			sb.DrawImage("HDXCAM_BOSS", (0, ScaledYOffset) + bob, sb.DI_SCREEN_CENTER |  sb.DI_ITEM_CENTER, scale: ScaleHalf);
 			sb.DrawImage("SCOPHOLE", (0, ScaledYOffset) + bob * 5, sb.DI_SCREEN_CENTER | sb.DI_ITEM_CENTER, scale: (1.5, 1.5));
 			Screen.SetClipRect(cx, cy, cw, ch);
 			sb.DrawImage("GNRSCOPE", (0, ScaledYOffset) + bob, sb.DI_SCREEN_CENTER | sb.DI_ITEM_CENTER, scale: (1.24, 1.24));
@@ -465,6 +464,11 @@ class HDGungnir : HDCellWeapon
 		Scale 0.5;
 		Tag "$TAG_GUNGNIR";
 		HDWeapon.Refid HDLD_GUNGNIR;
+		HDWeapon.loadoutcodes "
+			\cuaccel - 0/1, Increases charge speed.
+			\cucap - 0/1, Gives an extra shot.
+			\cuproc - 0/1, Makes battery consumption more efficient.
+		";
 	}
 
 	States

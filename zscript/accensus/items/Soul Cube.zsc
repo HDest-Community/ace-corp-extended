@@ -624,6 +624,10 @@ class HDSoulCube : HDWeapon
 		Scale 0.5;
 		HDWeapon.RefId "slc";
 		Tag "$TAG_SOULCUBE";
+		HDWeapon.loadoutcodes "
+			\culevel - 0/1, Sets what level the Soul Cube starts at.
+			\cufrag - 0/1, Sets how much frag the Soul Cube starts with.
+		";
 	}
 
 	States

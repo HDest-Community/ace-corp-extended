@@ -79,3 +79,4 @@ const HDLD_WYVERN             = "wyv";
 #include "zscript/accensus/items/FAK Upgrades/FAK Potetobloke.zsc"
 #include "zscript/accensus/items/FAK Upgrades/FAK Mohl.zsc"
 #include "zscript/accensus/items/FAK Upgrades/FAK Peppergrinder.zsc"
+#include "zscript/accensus/items/FAK Upgrades/FAK Radtech.zsc"
