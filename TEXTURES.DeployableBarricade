@@ -1,0 +1,15 @@
+Sprite "DABRA0", 376, 192
+{
+	XScale 10.000
+	YScale 10.000
+	Offset 188, 192
+	Patch "BARRPKUP", 0, 0
+}
+
+Sprite "DABRB0", 376, 192
+{
+	XScale 12.000
+	YScale 14.000
+	Offset 188, 192
+	Patch "BARRPKUP", 0, 0
+}

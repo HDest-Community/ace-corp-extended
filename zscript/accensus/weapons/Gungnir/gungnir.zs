@@ -464,6 +464,11 @@ class HDGungnir : HDCellWeapon
 		Scale 0.5;
 		Tag "$TAG_GUNGNIR";
 		HDWeapon.Refid HDLD_GUNGNIR;
+		HDWeapon.loadoutcodes "
+			\cuaccel - 0/1, Increases charge speed.
+			\cucap - 0/1, Gives an extra shot.
+			\cuproc - 0/1, Makes battery consumption more efficient.
+		";
 	}
 
 	States

@@ -210,6 +210,9 @@ class HDRedline : HDCellWeapon
 		Scale 0.34;
 		Tag "$TAG_REDLINE";
 		HDWeapon.Refid HDLD_REDLINE;
+		HDWeapon.loadoutcodes "
+			\culockon - 0/1, Gives the redline lock-on capabilities.
+		";
 	}
 
 	States

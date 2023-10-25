@@ -1,0 +1,24 @@
+FAK_Blue
+{
+	#000027  #44AAFF
+}
+
+SC_BluesVLow { #000000 #c7e8ff }
+SC_BluesLow { #000000 #85ccff }
+SC_BluesMed { #000000 #42b0ff }
+SC_BluesHigh { #000000 #055dff }
+SC_BluesUlt { #000000 #0810e7 }
+SC_BluesAlmostGod { #000000 #3b0099 }
+SC_BluesGod { #000000 #b133ff }
+SC_BluesGoddamn { #000000 #57d5ff }
+
+SC_AggroNone { #000000 #38ff49 }
+SC_AggroVLow { #000000 #1bde2c }
+SC_AggroLow { #000000 #00940c }
+SC_AggroMed { #000000 #134e18 }
+SC_AggroHigh { #000000 #08210a }
+SC_AggroExtr { #000000 #676767 }
+SC_AggroUlt { #000000 #171717 }
+
+SC_Level_1 { #010f00 #10eb00 }
+SC_Level_2 { #0b1400 #7ef500 }

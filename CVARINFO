@@ -101,3 +101,58 @@ server bool majesticmag_persistent_spawning = false;
 server bool vipermag_allowBackpacks = true;
 server int vipermag_clipmag_spawn_bias = 24;
 server bool vipermag_persistent_spawning = false;
+
+//------------
+// Items
+//------------
+
+server int deployablebarricade_launcher_spawn_bias = 24;
+server bool deployablebarricade_persistent_spawning = false;
+
+server bool ladderlauncher_allowBackpacks = true;
+server int ladderlauncher_rocketbox_spawn_bias = 24;
+server int ladderlauncher_battery_spawn_bias = 24;
+server bool ladderlauncher_persistent_spawning = false;
+
+server bool psg_allowBackpacks = true;
+server int psg_bluearmour_spawn_bias = 19;
+server bool psg_persistent_spawning = false;
+
+server bool secretfinder_allowBackpacks = true;
+server int secretfinder_map_spawn_bias = 19;
+server bool secretfinder_persistent_spawning = false;
+
+server bool superstim_allowBackpacks = true;
+server int superstim_stimpack_spawn_bias = 19;
+server bool superstim_persistent_spawning = false;
+
+server int weaponcrate_launcher_spawn_bias = 19;
+server bool weaponcrate_persistent_spawning = false;
+
+server bool dsd_allowBackpacks = true;
+server int dsd_backpack_spawn_bias = 19;
+server bool dsd_persistent_spawning = false;
+
+server bool soulcube_allowBackpacks = true;
+server int soulcube_chainsaw_spawn_bias = 19;
+server bool soulcube_persistent_spawning = false;
+
+server bool fak_allowBackpacks = true;
+server bool boosterJets_allowBackpacks = true;
+server bool rearviewmirror_allowBackpacks = true;
+server bool roomba_allowBackpacks = true;
+server bool supplybeacon_allowBackpacks = true;
+server bool teleporter_allowBackpacks = true;
+server bool hackedreloader_allowBackpacks = true;
+server bool magreloader_allowBackpacks = true;
+server bool armorpatchkit_allowBackpacks = true;
+
+//------------
+// Miscellaneous
+//------------
+
+// Soul Cube
+server bool hdsc_archermode = false;
+
+// Supply Beacon
+user int sb_skin = 0;

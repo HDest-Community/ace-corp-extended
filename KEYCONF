@@ -10,3 +10,11 @@ alias viper_reset_cvars      "resetcvar viper_pistol_spawn_bias;          resetc
 alias wyvern_reset_cvars     "resetcvar wyvern_hunter_spawn_bias;         resetcvar wyvern_slayer_spawn_bias;                                                                                                                                   resetcvar wyvern_allowBackpacks;                                                                                           resetcvar wyvern_persistent_spawning;"
 
 alias AceCorp_Reset_Cvars "blackhawk_reset_cvars; blackjack_reset_cvars; gungnir_reset_cvars; hammerhead_reset_cvars; jackdaw_reset_cvars; majestic_reset_cvars; redline_reset_cvars; scorpion_reset_cvars; viper_reset_cvars; wyvern_reset_cvars;"
+
+alias SC_ReturnToOwner "netevent SC_ReturnToOwner"
+
+AddKeySection "Super Stimpack" HDSuperStimKeys
+AddMenuKey "Use Super Stimpack" "use PortableSuperStimpack"
+
+AddKeySection "HD Teleporter" HDTeleporterKeys
+AddMenuKey "Use Teleporter" "use HDTeleporter"
