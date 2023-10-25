@@ -132,6 +132,12 @@ OptionMenu "blackjackSpawning" {
     StaticText "$MENU_BLACKJACK_CLIPBOX_SPAWNTEXT", "White"
 	Option "$MENU_WEPSPAWNRATE", "blackjack_clipbox_spawn_bias", "SpawnBias"
 	SafeCommand "$MENU_RESETWEP", "resetcvar blackjack_clipbox_spawn_bias"
+    StaticText "$MENU_BLACKJACK_HUNTER_SPAWNTEXT", "White"
+	Option "$MENU_WEPSPAWNRATE", "blackjack_hunter_spawn_bias", "SpawnBias"
+	SafeCommand "$MENU_RESETWEP", "resetcvar blackjack_hunter_spawn_bias"
+    StaticText "$MENU_BLACKJACK_SLAYER_SPAWNTEXT", "White"
+	Option "$MENU_WEPSPAWNRATE", "blackjack_slayer_spawn_bias", "SpawnBias"
+	SafeCommand "$MENU_RESETWEP", "resetcvar blackjack_slayer_spawn_bias"
     StaticText ""
 	
 	StaticText "$MENU_BLACKJACK_BACKPACKS", "White"
@@ -140,8 +146,8 @@ OptionMenu "blackjackSpawning" {
 
 	StaticText "$MENU_MAGSPAWNOPTIONS", "Green"
     StaticText "$MENU_BLACKJACKMAG_355_CLIPMAG_SPAWNTEXT", "White"
-	Option "$MENU_MAGSPAWNRATE", "blackjack355mag_clip_spawn_bias", "SpawnBias"
-	SafeCommand "$MENU_RESETMAG", "resetcvar blackjack355mag_clip_spawn_bias"
+	Option "$MENU_MAGSPAWNRATE", "blackjack355mag_clipmag_spawn_bias", "SpawnBias"
+	SafeCommand "$MENU_RESETMAG", "resetcvar blackjack355mag_clipmag_spawn_bias"
     StaticText ""
 
 	StaticText "$MENU_BLACKJACKMAG_355_BACKPACKS", "White"
@@ -180,9 +186,9 @@ OptionMenu "jackdawSpawning" {
     StaticText ""
 
 	StaticText "$MENU_SPAWNOPTIONS", "Green"
-    StaticText "$MENU_JACKDAW_CHAINGUN_SPAWNTEXT", "White"
-	Option "$MENU_WEPSPAWNRATE", "jackdaw_vulcanette_spawn_bias", "SpawnBias"
-	SafeCommand "$MENU_RESETWEP", "resetcvar jackdaw_vulcanette_spawn_bias"
+    StaticText "$MENU_JACKDAW_CLIPBOX_SPAWNTEXT", "White"
+	Option "$MENU_WEPSPAWNRATE", "jackdaw_clipbox_spawn_bias", "SpawnBias"
+	SafeCommand "$MENU_RESETWEP", "resetcvar jackdaw_clipbox_spawn_bias"
     StaticText ""
 	
 	StaticText "$MENU_JACKDAW_BACKPACKS", "Green"
@@ -260,9 +266,9 @@ OptionMenu "scorpionSpawning" {
     StaticText ""
 
 	StaticText "$MENU_SPAWNOPTIONS", "Orange"
-    StaticText "$MENU_SCORPION_BRONTORNIS_SPAWNTEXT", "White"
-	Option "$MENU_WEPSPAWNRATE", "scorpion_bronto_spawn_bias", "SpawnBias"
-	SafeCommand "$MENU_RESETWEP", "resetcvar scorpion_bronto_spawn_bias"
+    StaticText "$MENU_SCORPION_BFG_SPAWNTEXT", "White"
+	Option "$MENU_WEPSPAWNRATE", "scorpion_bfg_spawn_bias", "SpawnBias"
+	SafeCommand "$MENU_RESETWEP", "resetcvar scorpion_bfg_spawn_bias"
     StaticText ""
 	
 	StaticText "$MENU_SCORPION_BACKPACKS", "Orange"
@@ -296,6 +302,9 @@ OptionMenu "wyvernSpawning" {
     StaticText "$MENU_WYVERN_SLAYER_SPAWNTEXT", "White"
 	Option "$MENU_WEPSPAWNRATE", "wyvern_slayer_spawn_bias", "SpawnBias"
 	SafeCommand "$MENU_RESETWEP", "resetcvar wyvern_slayer_spawn_bias"
+    StaticText "$MENU_WYVERN_PLASMA_SPAWNTEXT", "White"
+	Option "$MENU_WEPSPAWNRATE", "wyvern_plasma_spawn_bias", "SpawnBias"
+	SafeCommand "$MENU_RESETWEP", "resetcvar wyvern_plasma_spawn_bias"
     StaticText ""
 	
 	StaticText "$MENU_WYVERN_BACKPACKS", "Orange"
@@ -359,8 +368,8 @@ OptionMenu "hammerheadSpawning" {
 	Option "$MENU_WEPSPAWNRATE", "hammerhead_chaingun_spawn_bias", "SpawnBias"
 	SafeCommand "$MENU_RESETWEP", "resetcvar hammerhead_chaingun_spawn_bias"
     StaticText "$MENU_HAMMERHEAD_PLASMA_SPAWNTEXT", "White"
-	Option "$MENU_WEPSPAWNRATE", "hammerhead_thunderbuster_spawn_bias", "SpawnBias"
-	SafeCommand "$MENU_RESETWEP", "resetcvar hammerhead_thunderbuster_spawn_bias"
+	Option "$MENU_WEPSPAWNRATE", "hammerhead_plasma_spawn_bias", "SpawnBias"
+	SafeCommand "$MENU_RESETWEP", "resetcvar hammerhead_plasma_spawn_bias"
  	StaticText ""
 	
 	StaticText "$MENU_HAMMERHEAD_BACKPACKS", "White"
@@ -389,8 +398,8 @@ OptionMenu "redlineSpawning" {
 
 	StaticText "$MENU_SPAWNOPTIONS", "Cyan"
     StaticText "$MENU_REDLINE_PLASMA_SPAWNTEXT", "White"
-	Option "$MENU_WEPSPAWNRATE", "redline_thunderbuster_spawn_bias", "SpawnBias"
-	SafeCommand "$MENU_RESETWEP", "resetcvar redline_thunderbuster_spawn_bias"
+	Option "$MENU_WEPSPAWNRATE", "redline_plasma_spawn_bias", "SpawnBias"
+	SafeCommand "$MENU_RESETWEP", "resetcvar redline_plasma_spawn_bias"
  	StaticText ""
 	
 	StaticText "$MENU_REDLINE_BACKPACKS", "White"
@@ -453,8 +462,8 @@ OptionMenu "psgSpawning" {
 
 	StaticText "$MENU_SPAWNOPTIONS", "FAK_Blue"
     StaticText "$MENU_PSG_BLUEARMOR_SPAWNTEXT", "White"
-	Option "$MENU_WEPSPAWNRATE", "psg_battlearmor_spawn_bias", "SpawnBias"
-	SafeCommand "$MENU_RESETWEP", "resetcvar psg_battlearmor_spawn_bias"
+	Option "$MENU_WEPSPAWNRATE", "psg_bluearmour_spawn_bias", "SpawnBias"
+	SafeCommand "$MENU_RESETWEP", "resetcvar psg_bluearmour_spawn_bias"
  	StaticText ""
 	
 	StaticText "$MENU_PSG_BACKPACKS", "White"
@@ -512,9 +521,9 @@ OptionMenu "superstimSpawning" {
     StaticText ""
 
 	StaticText "$MENU_SPAWNOPTIONS", "FAK_Blue"
-    StaticText "$MENU_SUPERSTIM_MEDICAL_SPAWNTEXT", "White"
-	Option "$MENU_WEPSPAWNRATE", "superstim_medical_spawn_bias", "SpawnBias"
-	SafeCommand "$MENU_RESETWEP", "resetcvar superstim_medical_spawn_bias"
+    StaticText "$MENU_SUPERSTIM_STIMPACK_SPAWNTEXT", "White"
+	Option "$MENU_WEPSPAWNRATE", "superstim_stimpack_spawn_bias", "SpawnBias"
+	SafeCommand "$MENU_RESETWEP", "resetcvar superstim_stimpack_spawn_bias"
  	StaticText ""
 	
 	StaticText "$MENU_SUPERSTIM_BACKPACKS", "White"
@@ -704,9 +713,9 @@ OptionMenu "crateSpawning" {
     StaticText ""
 
 	StaticText "$MENU_SPAWNOPTIONS", "FAK_Blue"
-    StaticText "$MENU_WEAPONCRATE_RL_SPAWNTEXT", "White"
-	Option "$MENU_WEPSPAWNRATE", "weaponcrate_rl_spawn_bias", "SpawnBias"
-	SafeCommand "$MENU_RESETWEP", "resetcvar weaponcrate_rl_spawn_bias"
+    StaticText "$MENU_WEAPONCRATE_LAUNCHER_SPAWNTEXT", "White"
+	Option "$MENU_WEPSPAWNRATE", "weaponcrate_launcher_spawn_bias", "SpawnBias"
+	SafeCommand "$MENU_RESETWEP", "resetcvar weaponcrate_launcher_spawn_bias"
 	StaticText ""
 
 	StaticText "$MENU_PERSISTENCYOPTIONS", "FAK_Blue"
@@ -721,7 +730,7 @@ OptionMenu "crateSpawning" {
 }
 
 OptionMenu "barricadeSpawning" {
-    Title "$MENU_DEPLOYABLEBARRICADE_TITLE"
+    Title "$MENU_BARRICADE_TITLE"
     StaticText ""
 
    	StaticText "$MENU_NOTICE", "FAK_Blue"
@@ -730,9 +739,9 @@ OptionMenu "barricadeSpawning" {
     StaticText ""
 
 	StaticText "$MENU_SPAWNOPTIONS", "FAK_Blue"
-    StaticText "$MENU_DEPLOYABLEBARRICADE_RL_SPAWNTEXT", "White"
-	Option "$MENU_WEPSPAWNRATE", "deployablebarricade_rl_spawn_bias", "SpawnBias"
-	SafeCommand "$MENU_RESETWEP", "resetcvar deployablebarricade_rl_spawn_bias"
+    StaticText "$MENU_BARRICADE_LAUNCHER_SPAWNTEXT", "White"
+	Option "$MENU_WEPSPAWNRATE", "deployablebarricade_launcher_spawn_bias", "SpawnBias"
+	SafeCommand "$MENU_RESETWEP", "resetcvar deployablebarricade_launcher_spawn_bias"
 	StaticText ""
 
 	StaticText "$MENU_PERSISTENCYOPTIONS", "FAK_Blue"
