@@ -156,8 +156,10 @@ class HDJackdaw : HDWeapon
 					return;
 				}
 			}
-			JDWF A 2
+			JDWG A 2
 			{
+				A_Overlay(PSP_FLASH, 'Flash');
+
 				if (invoker.WeaponStatus[JDProp_Flags] & JDF_RapidFire)
 				{
 					A_SetTics(1);
@@ -184,6 +186,13 @@ class HDJackdaw : HDWeapon
 				A_TryLoadChamber();
 			}
 			Goto Ready;
+		Flash:
+			JDWF A 1 Bright
+			{
+				HDFlashAlpha(-200);
+				A_Light1();
+			}
+			goto lightdone;
 
 		ChamberManual:
 			JDWG A 0 A_JumpIf(invoker.WeaponStatus[JDProp_Chamber] == 2, "Nope");
