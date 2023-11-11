@@ -17,10 +17,8 @@ class HDMajestic : HDHandgun
 
 	override void DetachFromOwner()
 	{
-		if (Charge > 0)
-		{
-			A_FireMajestic(true);
-		}
+		if (Charge > 0) A_FireMajestic();
+
 		MustCancel = false;
 		A_ResetCharges();
 		Super.DetachFromOwner();
@@ -196,13 +194,8 @@ class HDMajestic : HDHandgun
 		invoker.Charge = 0;
 	}
 
-	private action void A_FireMajestic(bool fromDrop)
+	private action void A_FireMajestic()
 	{
-		// [Ace] Otherwise it freezes the game.
-		if (!fromDrop)
-		{
-			HDFlashAlpha(128);
-		}
 		A_Light1();
 		A_StartSound("Majestic/Fire", CHAN_WEAPON);
 		A_StartSound("Majestic/Fire", CHAN_WEAPON, CHANF_OVERLAP);
@@ -210,6 +203,7 @@ class HDMajestic : HDHandgun
 		int tier = invoker.Charge / (MaxCharge / Tiers);
 		HDB_500SWElectrified b = HDB_500SWElectrified(HDBulletActor.FireBullet(self, "HDB_500SWElectrified", speedfactor: frandom(0.98, 1.02) + 0.35 * tier));
 		b.Tier = tier;
+
 		A_ResetCharges();
 		A_AlertMonsters();
 		A_ZoomRecoil(1.15);
@@ -266,18 +260,20 @@ class HDMajestic : HDHandgun
 			{
 				A_CheckMajesticHand();
 				A_WeaponReady(WRF_NOFIRE | (invoker.Charge == 0 ? WRF_ALL : 0));
+
+				let psp = player.GetPSprite(PSP_WEAPON);
 				
-				if (PressingFire() && invoker.WeaponStatus[MJProp_Mag] > 0 || invoker.Charge > 0 && player.GetPSprite(PSP_WEAPON).frame == 1)
+				if (PressingFire() && invoker.WeaponStatus[MJProp_Mag] > 0 || invoker.Charge > 0 && psp.frame == 1)
 				{
 					if (PressingAltFire() || invoker.WeaponStatus[MJProp_Mag] <= 0 || invoker.MustCancel)
 					{
 						invoker.MustCancel = true;
 						A_ResetCharges();
-						if (player.GetPSprite(PSP_WEAPON).frame > 0)
+						if (psp.frame > 0)
 						{
 							A_MuzzleClimb(frandom(0.05, 0.1), frandom(0.4, 0.6), 0, -frandom(0.2, 0.4));
 							A_StartSound("Majestic/Hammer", 5);
-							player.GetPSprite(PSP_WEAPON).frame--;
+							psp.frame--;
 							A_WeaponOffset(0, 34);
 						}
 						else
@@ -289,11 +285,11 @@ class HDMajestic : HDHandgun
 					}
 
 					A_TakeInventory("IsMoving");
-					if (player.GetPSprite(PSP_WEAPON).frame < 2)
+					if (psp.frame < 2)
 					{
 						A_MuzzleClimb(-frandom(0.05, 0.1), -frandom(0.4, 0.6), 0, frandom(0.2, 0.4));
 						A_StartSound("Majestic/Hammer", 5);
-						player.GetPSprite(PSP_WEAPON).frame++;
+						psp.frame++;
 						A_WeaponOffset(0, 34);
 					}
 					
@@ -344,11 +340,22 @@ class HDMajestic : HDHandgun
 			{
 				HDPlayerPawn(self).gunbraced = false;
 			}
-			#### E 1 Bright A_FireMajestic(false);
+			#### A 1
+			{
+				A_FireMajestic();
+				A_Overlay(PSP_FLASH, 'Flash');
+			}
+			#### E 1;
 			#### F 1;
-			#### G 1;
 			#### A 2 A_CheckMajesticFrame();
 			Goto Ready;
+
+		Flash:
+			MJCF A 1 Bright
+			{
+				HDFlashAlpha(128);
+			}
+			goto lightdone;
 
 		Reload:
 		AltReload:
