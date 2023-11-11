@@ -302,8 +302,10 @@ class HDRedline : HDCellWeapon
 			#### A 0 A_MagManager("HDBattery");
 			Goto Ready;
 		Fire:
-			#### F 1 Bright
+			#### A 1
 			{
+				A_Overlay(PSP_FLASH, 'Flash');
+
 				A_Light0();
 				A_StartSound("Redline/Fire", CHAN_WEAPON);
 
@@ -343,6 +345,13 @@ class HDRedline : HDCellWeapon
 			#### B 1;
 			#### A 4 A_JumpIf(invoker.LockedTargets.Size() > 0, 'Fire');
 			Goto Ready;
+
+		Flash:
+			RDLG F 1 Bright
+			{
+				HDFlashAlpha(128);
+			}
+			goto lightdone;
 
 		Reload:
 			#### A 0
