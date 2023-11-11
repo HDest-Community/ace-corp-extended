@@ -330,7 +330,7 @@ class HDHammerhead : HDCellWeapon
 					return;
 				}
 			}
-			BLNF A 1 Bright
+			BLNG A 1 Bright
 			{
 				int active = A_GetActiveBatteryCount(true);
 				if (active == 0)
@@ -339,8 +339,13 @@ class HDHammerhead : HDCellWeapon
 					return;
 				}
 
-				let psp = player.GetPSprite(PSP_WEAPON);
-				psp.frame = random(0, 3);
+				switch (random(0, 3)) {
+					case 0: A_Overlay(PSP_FLASH, 'FlashA'); break;
+					case 1: A_Overlay(PSP_FLASH, 'FlashB'); break;
+					case 2: A_Overlay(PSP_FLASH, 'FlashC'); break;
+					case 3: A_Overlay(PSP_FLASH, 'FlashD'); break;
+					default: break;
+				}
 				
 				double rpmFac = invoker.WeaponStatus[HHProp_Rpm] / double(MaxRpm);
 				A_StartSound("Hammerhead/Fire", 8, pitch: 1.2 + 0.10 * rpmFac);
@@ -377,6 +382,31 @@ class HDHammerhead : HDCellWeapon
 			}
 			BLNG A 0 A_Refire('Fire');
 			Goto Ready;
+
+		FlashA:
+			BLNF A 1 Bright
+			{
+				HDFlashAlpha(128);
+			}
+			goto lightdone;
+		FlashB:
+			BLNF B 1 Bright
+			{
+				HDFlashAlpha(128);
+			}
+			goto lightdone;
+		FlashC:
+			BLNF C 1 Bright
+			{
+				HDFlashAlpha(128);
+			}
+			goto lightdone;
+		FlashD:
+			BLNF D 1 Bright
+			{
+				HDFlashAlpha(128);
+			}
+			goto lightdone;
 
 		Altfire:
 			BLNP A 3;
