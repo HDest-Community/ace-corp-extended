@@ -227,7 +227,7 @@ class HDScorpion : HDWeapon
 					return;
 				}
 			}
-			#### B 1 Bright Offset(0, 34)
+			#### A 1 Offset(0, 34)
 			{
 				A_GiveInventory("IsMoving", GunBraced() ? 2 : 7);
 
@@ -239,7 +239,8 @@ class HDScorpion : HDWeapon
 					A_ChangeVelocity(cos(pitch) * -frandom(2, 4), 0, sin(pitch) * frandom(2, 4), CVF_RELATIVE);
 				}
 
-				HDFlashAlpha(0, true);
+				A_Overlay(PSP_FLASH, 'Flash');
+
 				A_Light1();
 				A_StartSound("Scorpion/Fire", CHAN_WEAPON);
 
@@ -270,6 +271,14 @@ class HDScorpion : HDWeapon
 				}
  			}
 			Goto Nope;
+
+		Flash:
+			SCRP B 1 Bright
+			{
+				HDFlashAlpha(0, true);
+			}
+			goto lightdone;
+
 		AltFire:
 			#### A 1 Offset(0, 34) A_WeaponBusy();
 			#### C 1 Offset(1, 35);
