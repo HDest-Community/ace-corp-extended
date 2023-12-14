@@ -124,13 +124,14 @@ class HDScorpion : HDWeapon
 		);
 
 		if(scopeview){
+			double degree=6.;
 			int scaledwidth=89;
-			int scaledyoffset=60;
-			double degree=0.1*hdw.weaponstatus[BOSSS_ZOOM];
-			double deg=1/degree;
+			int scaledyoffset=(scaledwidth>>1)+16;
 			int cx,cy,cw,ch;
 			[cx,cy,cw,ch]=screen.GetClipRect();
-			sb.SetClipRect(-44+bob.x,16+bob.y,scaledwidth,scaledwidth,
+			sb.SetClipRect(
+				bob.x-(scaledwidth>>1),bob.y+scaledyoffset-(scaledwidth>>1),
+				scaledwidth,scaledwidth,
 				sb.DI_SCREEN_CENTER
 			);
 
@@ -139,7 +140,7 @@ class HDScorpion : HDWeapon
 				88,88,sb.DI_SCREEN_CENTER|sb.DI_ITEM_CENTER
 			);
 
-			texman.setcameratotexture(hpc,"HDXCAM_BOSS",4);
+			texman.setcameratotexture(hpc,"HDXCAM_BOSS",degree);
 			let cam     = texman.CheckForTexture("HDXCAM_BOSS",TexMan.Type_Any);
 			let reticle = texman.CheckForTexture("bossret1",TexMan.Type_Any);
 
@@ -153,7 +154,7 @@ class HDScorpion : HDWeapon
 			if((bob.y/fov)<0.4){
 				let reticleScale = camSize / texman.GetSize(reticle);
 				if(hdw.weaponstatus[0]&BOSSF_FRONTRETICLE){
-					sb.DrawCircle(reticle, frontoffs, .5*reticleScale, bob*deg*5-bob, 1.6*deg);
+					sb.DrawCircle(reticle, frontoffs, .5*reticleScale, bob*(1/degree)*5-bob, 1.6*(1/degree));
 				}else{
 					sb.DrawCircle(reticle, (0,scaledyoffset)+bob, .5*reticleScale,uvScale:.5);
 				}
@@ -227,7 +228,7 @@ class HDScorpion : HDWeapon
 					return;
 				}
 			}
-			#### B 1 Bright Offset(0, 34)
+			#### A 1 Offset(0, 34)
 			{
 				A_GiveInventory("IsMoving", GunBraced() ? 2 : 7);
 
@@ -239,7 +240,8 @@ class HDScorpion : HDWeapon
 					A_ChangeVelocity(cos(pitch) * -frandom(2, 4), 0, sin(pitch) * frandom(2, 4), CVF_RELATIVE);
 				}
 
-				HDFlashAlpha(0, true);
+				A_Overlay(PSP_FLASH, 'Flash');
+
 				A_Light1();
 				A_StartSound("Scorpion/Fire", CHAN_WEAPON);
 
@@ -270,6 +272,14 @@ class HDScorpion : HDWeapon
 				}
  			}
 			Goto Nope;
+
+		Flash:
+			SCRP B 1 Bright
+			{
+				HDFlashAlpha(0, true);
+			}
+			goto lightdone;
+
 		AltFire:
 			#### A 1 Offset(0, 34) A_WeaponBusy();
 			#### C 1 Offset(1, 35);

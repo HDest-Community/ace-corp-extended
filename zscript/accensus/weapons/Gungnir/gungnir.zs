@@ -417,6 +417,8 @@ class HDGungnir : HDCellWeapon
 
 	private action void A_FireGungnir()
 	{
+		A_Overlay(PSP_FLASH, 'Flash');
+
 		int tier = invoker.Charge / A_GetChargePerTier();
 
 		A_Light0();
@@ -600,10 +602,17 @@ class HDGungnir : HDCellWeapon
 			}
 			Stop;
 		Shoot:
-			#### F 2 Bright Offset(0, 44) A_FireGungnir();
+			#### C 2 Bright Offset(0, 44) A_FireGungnir();
 			#### B 2 Offset(0, 38);
 			#### B 1 Offset(0, 32);
 			Goto Nope;
+		Flash:
+			GNGR F 2 Bright
+			{
+				HDFlashAlpha(128);
+			}
+			goto lightdone;
+
 		Charge:
 			#### B 1;
 		ActualCharge:

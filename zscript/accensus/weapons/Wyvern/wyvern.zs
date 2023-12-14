@@ -162,24 +162,54 @@ class HDWyvern : HDWeapon {
 		A_AlertMonsters();
 		let psp = player.GetPSprite(PSP_WEAPON);
 
+		int flashFrame = -1;
+
+		// Fire Left Chamber
 		if (barrel & 1) {
-			psp.frame = invoker.weaponStatus[WYVS_CHAMBER2] > 1 ? 0 : 1;
+			let rightChamber = invoker.weaponStatus[WYVS_CHAMBER2] > 1;
+			psp.frame = rightChamber ? 2 : 3;
+			flashFrame = rightChamber ? 0 : 1;
 			A_MuzzleClimb(0, 0, -0.2, -0.8, -frandom(0.5, 0.9), -frandom(3.2, 4.0), -frandom(0.5, 0.9), -frandom(3.2, 4.0));
 			HDBulletActor.FireBullet(self, "HDB_50OMG");
 			invoker.weaponStatus[WYVS_CHAMBER1] = 1;
 			A_StartSound("Wyvern/Fire", CHAN_WEAPON, CHANF_OVERLAP);
 		}
 
+		// Fire Right Chamber
 		if (barrel & 2) {
-			psp.frame = invoker.weaponStatus[WYVS_CHAMBER1] > 1 ? 2 : 3;
+			let leftChamber = invoker.weaponStatus[WYVS_CHAMBER1] > 1;
+			psp.frame = leftChamber ? 1 : 3;
+			flashFrame = leftChamber ? 2 : 3;
 			A_MuzzleClimb(0, 0, 0.2, -0.8, frandom(0.5, 0.9), -frandom(3.2, 4.0), frandom(0.5, 0.9), -frandom(3.2, 4.0));
 			HDBulletActor.FireBullet(self, "HDB_50OMG");
 			invoker.weaponStatus[WYVS_CHAMBER2] = 1;
 			A_StartSound("Wyvern/Fire", CHAN_WEAPON, CHANF_OVERLAP);
 		}
 
+		// Fire Both Chambers
 		if (barrel & 1 && barrel & 2) {
-			psp.frame = 4;
+			psp.frame = 3;
+			flashFrame = 4;
+		}
+
+		switch (flashFrame) {
+			case 0:
+				A_Overlay(10, 'FlashA');
+				break;
+			case 1:
+				A_Overlay(10, 'FlashB');
+				break;
+			case 2:
+				A_Overlay(11, 'FlashC');
+				break;
+			case 3:
+				A_Overlay(11, 'FlashD');
+				break;
+			case 4:
+				A_Overlay(12, 'FlashE');
+				break;
+			default:
+				break;
 		}
 	}
 
@@ -262,21 +292,56 @@ class HDWyvern : HDWeapon {
 			Goto ReadyEnd;
 
 		ShootLeft:
-			WYVF # 1 Bright A_WyvernFire(1);
+			WYVG # 1 A_WyvernFire(1);
 			WYVG # 1 Offset(0, 44) A_CheckIdleHammer();
 			WYVG # 1 Offset(0, 38);
 			Goto Ready;
 		ShootRight:
-			WYVF # 1 Bright A_WyvernFire(2);
+			WYVG # 1 A_WyvernFire(2);
 			WYVG # 1 Offset(0, 44) A_CheckIdleHammer();
 			WYVG # 1 Offset(0, 38);
 			Goto Ready;
 		ShootBoth:
-			WYVF # 1 Bright A_WyvernFire(3);
+			WYVG # 1 A_WyvernFire(3);
 			WYVG # 1 Offset(0, 52) A_CheckIdleHammer();
 			WYVG # 1 Offset(0, 42);
 			WYVG # 1 Offset(0, 36);
 			Goto Ready;
+
+		FlashA:
+			WYVF A 1 Bright
+			{
+				HDFlashAlpha(72);
+			}
+			goto lightdone;
+
+		FlashB:
+			WYVF B 1 Bright
+			{
+				HDFlashAlpha(72);
+			}
+			goto lightdone;
+
+		FlashC:
+			WYVF C 1 Bright
+			{
+				HDFlashAlpha(72);
+			}
+			goto lightdone;
+
+		FlashD:
+			WYVF D 1 Bright
+			{
+				HDFlashAlpha(72);
+			}
+			goto lightdone;
+
+		FlashE:
+			WYVF E 1 Bright
+			{
+				HDFlashAlpha(72);
+			}
+			goto lightdone;
 
 		AltReload:
 			WYVG # 0 {

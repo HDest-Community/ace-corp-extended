@@ -210,7 +210,7 @@ class HDViper : HDHandgun
 		Ready:
 			VPRG A 0 A_CheckViperHand();
 			#### A 0 A_JumpIf(invoker.WeaponStatus[VPProp_Chamber] > 0, 2);
-			#### D 0;
+			#### C 0;
 			#### # 1 A_WeaponReady(WRF_ALL);
 			Goto ReadyEnd;
 		Select0:
@@ -224,13 +224,13 @@ class HDViper : HDHandgun
 				A_CheckViperHand();
 			}
 			#### A 0 A_JumpIf(invoker.WeaponStatus[VPProp_Chamber] > 0, 2);
-			#### D 0;
+			#### C 0;
 			#### # 0;
 			Goto Select0Small;
 		Deselect0:
 			VPRG A 0 A_CheckViperHand();
 			#### A 0 A_JumpIf(invoker.WeaponStatus[VPProp_Chamber] > 0, 2);
-			#### D 0;
+			#### C 0;
 			#### # 0;
 			Goto Deselect0Small;
 		User3:
@@ -258,9 +258,9 @@ class HDViper : HDHandgun
 					HDPlayerPawn(self).gunbraced = false;
 				}
 			}
-			#### C 1 Offset(0, 36)
+			#### B 1 Offset(0, 36)
 			{
-				HDFlashAlpha(128);
+				A_Overlay(PSP_FLASH, 'Flash');
 				A_Light1();
 				A_StartSound("Viper/Fire", CHAN_WEAPON);
 
@@ -288,7 +288,7 @@ class HDViper : HDHandgun
 
 				invoker.WeaponStatus[VPProp_Chamber] = 1;
 			}
-			#### D 1 Offset(0, 44)
+			#### C 1 Offset(0, 44)
 			{
 				if (invoker.WeaponStatus[VPProp_Chamber] == 1)
 				{
@@ -312,6 +312,13 @@ class HDViper : HDHandgun
 			Goto Ready;
 		Hold:
 			Goto Nope;
+
+		Flash:
+			VPRF A 1 Bright
+			{
+				HDFlashAlpha(128);
+			}
+			goto lightdone;
 
 		Reload:
 			#### # 0
@@ -419,7 +426,7 @@ class HDViper : HDHandgun
 		ChamberManual:
 			#### # 0 A_JumpIf(!(invoker.WeaponStatus[VPProp_Flags] & VPF_JustUnload) && (invoker.WeaponStatus[VPProp_Chamber] == 2 || invoker.WeaponStatus[VPProp_Mag] <= 0), "Nope");
 			#### # 3 Offset(0, 34);
-			#### D 4 Offset(0, 37)
+			#### C 4 Offset(0, 37)
 			{
 				if (invoker.WeaponStatus[VPProp_Chamber] > 0)
 				{
@@ -445,15 +452,15 @@ class HDViper : HDHandgun
 			Goto Nope;
 		LoadChamber:
 			#### # 0 A_JumpIf(invoker.WeaponStatus[VPProp_Chamber] > 0, "Nope");
-			#### D 1 Offset(0, 36) A_StartSound("weapons/pocket",9);
-			#### D 1 Offset(2, 40);
-			#### D 1 Offset(2, 50);
-			#### D 1 Offset(3, 60);
-			#### D 2 Offset(5, 90);
-			#### D 2 Offset(7, 80);
-			#### D 2 Offset(10, 90);
-			#### D 2 Offset(8, 96);
-			#### D 3 Offset(6, 88)
+			#### C 1 Offset(0, 36) A_StartSound("weapons/pocket",9);
+			#### C 1 Offset(2, 40);
+			#### C 1 Offset(2, 50);
+			#### C 1 Offset(3, 60);
+			#### C 2 Offset(5, 90);
+			#### C 2 Offset(7, 80);
+			#### C 2 Offset(10, 90);
+			#### C 2 Offset(8, 96);
+			#### C 3 Offset(6, 88)
 			{
 				if (CheckInventory("HD50AM_Ammo", 1))
 				{
