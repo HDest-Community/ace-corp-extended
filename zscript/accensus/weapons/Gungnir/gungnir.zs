@@ -349,7 +349,7 @@ class HDGungnir : HDCellWeapon
 		[cx, cy, cw, ch] = Screen.GetClipRect();
 		sb.SetClipRect(-16 + bob.x, -4 + bob.y, 32, 16, sb.DI_SCREEN_CENTER);
 		vector2 bobb = bob * 1.14;
-		bobb.y = clamp(bobb.y, -8, 8);
+		//bobb.y = clamp(bobb.y, -8, 8);
 		sb.DrawImage("GNGRFRNT", bobb, sb.DI_SCREEN_CENTER | sb.DI_ITEM_TOP, alpha: 0.9);
 		sb.SetClipRect(cx, cy, cw, ch);
 		sb.DrawImage("GNGRBACK", (0, 3) + bob, sb.DI_SCREEN_CENTER | sb.DI_ITEM_CENTER);
