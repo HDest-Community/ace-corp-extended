@@ -32,7 +32,7 @@ class HDPersonalShieldGenerator : HDWeapon
 	override HDWeapon GetSpareWeapon(actor newowner , bool reverse, bool doselect) { return GetSpareWeaponRegular(newowner, reverse, doselect); }
 	override string, double GetPickupSprite()
 	{
-		string main = "PSG"..min(Tiers, (WeaponStatus[PSProp_UpgradePoints]));
+		string main = "PSH"..min(Tiers, (WeaponStatus[PSProp_UpgradePoints]));
 		return main..(GetBatteriesLoaded(1) > 0 && Enabled ? "B" : "A").."0", 0.2;
 	}
 	override string GetHelpText()
@@ -609,11 +609,11 @@ class HDPersonalShieldGenerator : HDWeapon
 		+INVENTORY.INVBAR
 		+WEAPON.WIMPY_WEAPON
 		-HDWEAPON.DROPTRANSLATION
-		Inventory.Icon "PSG0A0";
+		Inventory.Icon "PSH0A0";
 		Inventory.PickupSound "weapons/pocket";
 		Inventory.PickupMessage "You picked up a personal shield generator.";
-		Tag "$TAG_PSG";
-		HDWeapon.RefId "psg";
+		Tag "$TAG_PSH";
+		HDWeapon.RefId "psh";
 		Scale 0.35;
 		HDWeapon.loadoutcodes "
 			\cuelem - 0/1, Adds elemental resistance to the psg.
@@ -626,10 +626,10 @@ class HDPersonalShieldGenerator : HDWeapon
 	States
 	{
 		RegisterSprites:
-			PSG0 A 0; PSG1 A 0; PSG2 A 0; PSG3 A 0; PSG4 A 0; PSG5 A 0; PSG6 A 0; PSG7 A 0;
+			PSH0 A 0; PSH1 A 0; PSH2 A 0; PSH3 A 0; PSH4 A 0; PSH5 A 0; PSH6 A 0; PSH7 A 0;
 
 		Spawn:
-			PSG0 A 1
+			PSH0 A 1
 			{
 				if (!invoker.owner && invoker.Enabled)
 				{
