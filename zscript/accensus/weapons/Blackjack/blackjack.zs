@@ -158,7 +158,7 @@ class HDBlackjack : HDWeapon
 		[cx, cy, cw, ch] = Screen.GetClipRect();
 		sb.SetClipRect(-16 + bob.x, -4 + bob.y, 32, 12, sb.DI_SCREEN_CENTER);
 		vector2 bob2 = bob * 1.14;
-		bob2.y = clamp(bob2.y, -8, 8);
+		//bob2.y = clamp(bob2.y, -8, 8);
 		sb.DrawImage("BJCKFRNT", bob2, sb.DI_SCREEN_CENTER | sb.DI_ITEM_TOP, alpha: 0.9, scale: (0.8, 0.6));
 		sb.SetClipRect(cx, cy, cw, ch);
 		sb.DrawImage("BJCKBACK", bob, sb.DI_SCREEN_CENTER | sb.DI_ITEM_TOP, scale: (1.0, 0.8));
@@ -568,7 +568,7 @@ class HDBlackjack : HDWeapon
 
 				if (invoker.WeaponStatus[chamberIndex] == 1)
 				{
-					A_EjectCasing(casingCls,frandom(-1,2),(6,-frandom(79, 81),frandom(6.0, 6.5)),(0,0,-2));
+					A_EjectCasing(casingCls,frandom(-1,2),(frandom(0.2,0.3),-frandom(7,7.5),frandom(0,0.2)),(0,0,-2));
 					//A_EjectCasing(casingCls, 6, -random(79, 81), frandom(6.0, 6.5));
 				}
 				
