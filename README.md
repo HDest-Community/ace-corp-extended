@@ -2,7 +2,7 @@
 
 _Requires [BulletLib - Recasted](https://github.com/HDest-Community/HDBulletLib-Recasted) and [AceCoreLib](https://github.com/HDest-Community/AceCoreLib), by the HDest Community._
 
-This mod aims to maintain and improve Accensus' Arsenal, by updating them to the latest HDest main, as well as tweaking/fixing any bugs that come along the way.  All weapons can be found naturally, as well as dropping from [Weapon Crates](https://github.com/HDest-Community/weapon-crate) and being sold by the [Merchant](https://github.com/HDest-Community/merchant). 
+This mod aims to maintain and improve Accensus' Arsenal, by updating them to the latest HDest main, as well as tweaking/fixing any bugs that come along the way.  All weapons can be found naturally, as well as dropping from Weapon Crates, and being sold by the [Merchant](https://github.com/HDest-Community/merchant). 
 
 ## Weapons
 ---
@@ -73,6 +73,30 @@ This mod aims to maintain and improve Accensus' Arsenal, by updating them to the
 ---
 - The loadout code is `scr`.
 
+### Soul Cube
+---
+- Loadout code is `slc`.
+- Configuration codes are:
+	- `frag`: Starting frag.
+	- `level`: Starting level.
+- Type `SC_ReturnToOwner` in the console to force the cube to return to you if you are within sight.
+#### How it works
+- Double-tap Use to pick up a floating cube.
+- The cube passively collects frag only while it's in your inventory.
+- It needs at least 5 frag to become active.
+- Max frag capacity is 20 + 5 for each extra level.
+- Max level is 4. Cube starts at level 0.
+- Level is increased by gaining experience. Experience is gained by using the cube.
+- Each level increases damage and rate of fire, and also the effectiveness of certain things.
+- Frag collection frequency increases with level. Range does not.
+- Attacks up to 3 enemies at once, dealing a flat amount of damage and ignoring shields/armor. Each attack costs 1 frag.
+- Frag can be expended manually through the various modes the cube has.
+- Some effects are amplified if the cube is overcharged.
+#### While it is out, it has these passive effects:
+- Helps put out fire faster.
+- Helps with incap.
+- Compels pained archviles to show up sooner.
+
 ### Viper
 ---
 - The loadout codes are `vpr`, `50m`, and `50r` for weapon, mag, and rounds, respectively.
@@ -89,13 +113,25 @@ This mod aims to maintain and improve Accensus' Arsenal, by updating them to the
 ## Items
 ---
 
-### Deployable Barricade
+### Booster Jets
+---
+- Use Item: Turn on.
+- Use + Use Item: If turned off, enable charging.
+- Jump: If turned on, gain boost to current momentum.
+- Sprint + Jump: Same as above but trade vertical velocity boost for horizontal.
 
+#### Notes
+- Cost scales with how encumbered you are.
+- You can and probably will incap yourself with it so watch out.
+- Booster jets are found naturally in the world. They are also sold by the [Merchant](https://gitlab.com/accensi/hd-addons/merchant) if you have that loaded.
+- Loadout code is `bsj`.
+
+### Deployable Barricade
+---
 - Use Item: Drops barricade and deploys it.
 - Spam Use on the barricade to make it collapse back into a pickup.
 
 #### Notes
----
 - The loadout code for the barricade is `dab`.
 - The barricade has 5000 health. Mind the damage. Can only be repaired with Arcanum.
 
@@ -110,6 +146,140 @@ This mod aims to maintain and improve Accensus' Arsenal, by updating them to the
 - Each operation costs 2 battery charges. Device will be useless without batteries.
 - The device itself does not hold any items. Meaning two different devices will point to the same storage.
 - To expand your storage, hold Zoom and Firemode when picking up a DSD to consume the item and gain extra storage
+
+### Field Assembly Kit
+---
+- FAKs can only be found in backpacks. 
+- Loadout code is `fak`.
+- There is a chance to gain an assembly core from downgrading weapons.
+- Finding all secrets and killing 90% of all monsters in the level will reward you with an assembly core upon exiting the level.
+- Cores can also drop from Archviles sometimes and much more often from bosses.
+
+#### Vanilla Upgrades
+Revolver:
+- Speedloader: if the cylinder is empty, tapping reload fills it up in one go. Works with 9mm as well.
+
+Hunter:
+- Feeder: automatically loads the tube with shells from the side saddles.
+
+Slayer:
+- Autoloader: faster reloading.
+
+ZM66:
+- Heat Exhaust: prevent cooking off.
+- Dejammer: Space age piece of shit. Prevents jamming.
+
+Rocket Launcher:
+- Rapid Fire: spammable rocket mode.
+- Recoil Dampener: reduces recoil for rocket mode.
+- No Safety: removes the minimum distance for rockets and grenades. Allows you to blast stuff at point blank range.
+
+Blooper:
+- No Safety: same as above.
+
+Liberator:
+- Brass Catcher: catches brass so you don't have to.
+
+Thunderbuster:
+- Chiller: allows continuous plasma mode fire.
+- Stabilizer: makes plasma mode battery consumption slightly more effective.
+- Amplifier: bust faster.
+
+BFG:
+- Accelerator: charge batteries faster (only when used on person) and shoot sooner.
+
+Mag Manager:
+- Speedloader: no time to explain, must load mags at turbo speed.
+
+### Hacked Reloader
+---
+- Works exactly the same as the vanilla reloader. All it does is it chucks rounds faster and rounds have a higher chance of exploding. It still does 7 rounds per throw.
+
+#### Notes
+- Hacked reloaders can only be found in backpacks. They are also sold by the [Merchant](https://github.com/HDest-Community/Merchant) if you have that loaded.
+- Loadout code is `7hr`.
+
+### Ladder Launcher
+---
+- The loadout code is `llc`.
+
+### Magazine Reloader
+---
+- Magazine reloaders can only be found in backpacks. They are also sold by the [Merchant](https://github.com/HDest-Community/Merchant) if you have that loaded.
+- Loadout code is `mrl`.
+
+### Personal Shield Generator
+---
+- The Personal Shield Generator can be found both in the wild and in backpacks.
+- Loadout code is `psh`.
+- Configuration codes are:
+	- `points`: Start with this many upgrade points.
+	- `elem`: Shield fully absorbs any elemental projectiles and generated heat, at the cost of dealing higher hard flux damage. This upgrade only works for heat in 360 degrees mode as fire is omnidirectional.
+	- `medical`: Shield will help close wounds, regenerate health, and heal burns.
+	- `shock`: Shield will damage latched babuins and eventually kill them.
+	- `cloak`: Bravo six, going dark. Cloaks you if below 25% flux. Side effect is that it hides your sights. Disabling the shield also disables cloaking.
+- Use + Use Item can be used to quickly toggle the shield on and off without having to bring up the interface.
+
+#### Mechanics
+- The generator needs at least one battery with 1 charge in it.
+- Taking damage generates soft flux. A fraction of that is hard flux. The latter cannot be vented without disabling the shield. Soft flux cannot go under the hard flux amount.
+- Taking *too much* damage will overload the shield, causing the following effects:
+	- Battery charge will be partially depleted. This may result in battery loss if the initial charge was low to begin with.
+	- Disable the generator and prevent reactivation until all flux is vented.
+	- Set you on fire a little.
+- The generator has two modes: full-coverage and frontal. The former makes you virtually impervious to attacks, but shields will take 100% damage, meaning faster flux build-up. Frontal shield makes you open to flanking, but damage to shields is greatly reduced.
+- The generator is designed to work with three full batteries. The more charges the batteries are missing, the bigger the penalties to flux dissipation rate.
+- Shields block all damage completely.
+- Hold Firemode with your PSG selected when picking up another generator to consume the item and gain upgrade points. This is a passive bonus.
+
+### Rearview Mirror
+---
+- Rearview mirrors can only be found in backpacks. They are also sold by the [Merchant](https://gitlab.com/accensi/hd-addons/merchant) if you have that loaded.
+- Loadout code is `rvm`.
+- Using the item toggles it on and off. Do this if you notice significant performance drops as it has to render the scene once for each mirror.
+- Use + Use Item switches shoulder mount. Only works if you have one mirror for obvious reasons.
+- Up to two mirrors can be utilized, one for each shoulder.
+
+### Roomba
+---
+- Use Item: Drop roomba to collect brass or materials for the [Universal Reloader](https://github.com/HDest-Community/Universal-Reloader).
+- Sprint + Use Item: Same as above but yeet it.
+- To pick it up, double-tap Use on it.
+
+#### Notes
+- Roombas can only be found in backpacks. They are also sold by the [Merchant](https://github.com/HDest-Community/Merchant) if you have that loaded.
+- The loadout code for the roomba is `rmb`.
+
+### Secret Finder
+---
+- The item can spawn either in backpacks or be found randomly in the wild in place of computer area maps.
+- Loadout code is `fdr`.
+- The higher the range, the faster battery is drained.
+
+### Super Stimpack
+- Loadout code is `sst`.
+- You can fumble for the stim while incapped if you mash the dedicated key. See the controls.
+- Super stims reduce the incap timer, allowing you to get up sooner.
+- Having blues doubles the effectiveness of the stim at the cost of some blues and the drugs being absorbed twice as fast.
+- All healing effects scale with how much of the drug you have left in your system.
+- When the effect runs out, you will suffer a short and mild comedown.
+
+### Supply Beacon
+---
+- The beacons can only be found in backpacks.
+- Loadout code is `spb`.
+- CVars are:
+	- `sb_skin` (0-1): Changes what the supply pod looks like.
+- You need at least 1 of any type as a "sample" to use with the beacon.
+
+### Teleporter
+---
+- Teleporters can only be found in backpacks. They are also sold by the [Merchant](https://github.com/HDest-Community/Merchant) if you have that loaded.
+- The loadout code for the teleporter is `ptp`.
+- You can fumble for the teleporter while incapped if you mash the dedicated key. See the controls.
+- Fire will instantly teleport you 20m from where you're aiming. Watch out for the velocity boost!
+- Alt-fire will open a rift 2m in front of you for a minute. Pressing alt-fire again will teleport you to that rift.
+- Teleportation will cause minor burns.
 
 ## Credits
 ---
