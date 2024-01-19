@@ -323,3 +323,17 @@ PICKUP_SUPPLYBEACON                     = "Picked up a supply drop beacon.";
 PICKUP_TELEPORTER                       = "Picked up a portable teleporter.";
 
 SUPERSTIM_HELPTEXT                      = "\cd<<< \cjSUPER STIMPACK \cd>>>\c-\n\n\nSuper stimpacks give a rapid\nbut short boost to\nhealth regeneration.\n\n\Press altfire to use on someone else.\n\n\cgDO NOT OVERDOSE.";
+
+DSD_TOP                                 = "\c[DarkBrown][] [] [] \c[Cyan]Dimensional Storage Device \c[DarkBrown][] [] []";
+DSD_INOPERABLE                          = "!!! INOPERABLE !!!";
+DSD_OPERATIONSLEFT                      = "\c[Brown]Operations left: \c-";
+DSD_TOOFULL                             = "Your storage is full.";
+DSD_INBAG                               = "In Device:  ";
+DSD_INSERTREMOVE                        = "Insert/Remove:  ";
+DSD_SEARCHING                           = "Searching:  ";
+
+DSDWH_FMODPUD                           = "  Adjust operation amount\n";
+DSDWH_ENTER                             = "  Search mode/apply search\n";
+DSDWH_USEALTRELOAD                      = "  Sort descending/ascending\n";
+DSDWH_USERELOAD                         = "  Load battery\n";
+DSDWH_USEUNLOAD                         = "  Remove battery";
