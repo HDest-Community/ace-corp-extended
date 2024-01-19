@@ -477,7 +477,7 @@ class HDViper : HDHandgun
 			#### A 3 Offset(0, 34);
 			Goto ReadyEnd;
 
-
+		AltReload:
 		Firemode:
 		SwapPistols:
 			#### A 0 A_SwapHandguns();
