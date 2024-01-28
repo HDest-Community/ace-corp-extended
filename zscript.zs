@@ -19,6 +19,8 @@ const HDLD_VIPER              = "vpr";
 const HDLD_VIPERMAG           = "vpm";
 const HDLD_WYVERN             = "wyv";
 
+const HDLD_DSD                = "dsd";
+
 // Core
 #include "zscript/accensus/SpawnHandler.zs"
 
