@@ -25,6 +25,16 @@ class FAK_GFB_Capacitor : FAK_Upgrade
 	override void DoDowngrade(HDWeapon wpn, HDPickup pkp) { wpn.WeaponStatus[0] &= ~1; GiveCore(wpn.owner, 0.8); }
 }
 
+class FAK_PD42_ReflexSights : FAK_Upgrade
+{
+	override string GetItem() { return "HDPDFour"; }
+	override string GetDisplayName() { return "Reflex Sights"; }
+	override int GetCost() { return 0; }
+	override void DoUpgrade(HDWeapon wpn, HDPickup pkp) { wpn.WeaponStatus[0] |= 8; }
+	override int HasUpgrade(HDWeapon wpn, HDPickup pkp) { return wpn.WeaponStatus[0] & 8 > 0; }
+	override void DoDowngrade(HDWeapon wpn, HDPickup pkp) { wpn.WeaponStatus[0] &= ~8; }
+}
+
 class FAK_PD42_Slugger : FAK_Upgrade
 {
 	override string GetItem() { return "HDPDFour"; }
