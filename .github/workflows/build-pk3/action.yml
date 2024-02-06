@@ -1,0 +1,9 @@
+name: Build PK3
+description: Builds the PK3
+runs:
+  using: "composite"
+  steps:
+  - uses: actions/checkout@v4
+  - uses: montudor/action-zip@v1
+    with:
+      args: zip -r "ace-corp-extended-${{ env.SUFFIX }}.pk3" . -i brightmaps/* graphics/* models/* patches/* sounds/* sprites/* zscript/* ANIMDEFS CVARINFO DECALDEF.* GLDEFS.* KEYCONF LANGUAGE LICENSE MAPINFO MENUDEF MODELDEF.* README.* SNDINFO.* TEXTCOLO TEXTURES.* WTBLKLST zscript.zs
