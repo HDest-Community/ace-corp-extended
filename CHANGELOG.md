@@ -20,38 +20,38 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 -   Update DSD logic to better match vanilla Backpacks (#30).
 -   Update Build Scripts (#33, #34, #35).
 
-## [v1.2.0]
+## [v1.2.0] - 2023-12-18
 
 ### Changed
 
 -   Remove vertical clamps from front sight bob (#23).
 -   Update PSG Loadout Code & Sprite Index to remove conflict with PB's B&M (#24).
 
-## [v1.1.4]
+## [v1.1.4] - 2023-12-14
 
 ### Changed
 
 -   Updated muzzle flashes to properly use `A_Overlay` sprites (#21).
 
-## [v1.1.3]
+## [v1.1.3] - 2023-10-29
 
 ### Changed
 
 -   Add remaining folders to build scripts (#20).
 
-## [v1.1.2]
+## [v1.1.2] - 2023-10-28
 
 ### Changed
 
 -   Fix ZSCRIPT.zs filename in project root (#19).
 
-## [v1.1.1]
+## [v1.1.1] - 2023-10-28
 
 ### Changed
 
 -   Unify ZScript Filenames (#18).
 
-## [v1.1.0]
+## [v1.1.0] - 2023-10-25
 
 ### Added
 
@@ -64,20 +64,20 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 -   Updated sight bob logic (#16, #17).
 -   Refined spawning slots (#15).
 
-## [v1.0.2]
+## [v1.0.2] - 2023-07-18
 
 ### Changed
 
 -   Tweaked Majestic's Sprites & Sound definitions (#12).
 -   Added ability to swap hands back.
 
-## [v1.0.1]
+## [v1.0.1] - 2023-07-14
 
 ### Changed
 
 -   Fixed Readme's Filename
 
-## [v1.0.0]
+## [v1.0.0] - 2023-07-14
 
 ### Added
 
