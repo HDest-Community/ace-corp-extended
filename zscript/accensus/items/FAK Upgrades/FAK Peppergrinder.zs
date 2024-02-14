@@ -8,6 +8,25 @@ class FAK_Oddball_Pump : FAK_Upgrade
 	override int HasUpgrade(HDWeapon wpn, HDPickup pkp) { return wpn.WeaponStatus[0] & 8 > 0; }
 }
 
+class FAK_BPX_ReflexSight : FAK_Upgrade
+{
+	override string GetItem() { return "HDBPX"; }
+	override string GetDisplayName() { return "Reflex Sight"; }
+	override int GetCost() { return 0; }
+	override void DoUpgrade(HDWeapon wpn, HDPickup pkp) { wpn.WeaponStatus[6] = 1; }
+	override int HasUpgrade(HDWeapon wpn, HDPickup pkp) { return wpn.WeaponStatus[6] == 1 ? HUResult_Installed : HUResult_Unique; }
+	override void DoDowngrade(HDWeapon wpn, HDPickup pkp) { wpn.WeaponStatus[6] = 0; }
+}
+
+class FAK_BPX_Scope : FAK_Upgrade
+{
+	override string GetItem() { return "HDBPX"; }
+	override string GetDisplayName() { return "Scope"; }
+	override void DoUpgrade(HDWeapon wpn, HDPickup pkp) { wpn.WeaponStatus[6] = 2; }
+	override int HasUpgrade(HDWeapon wpn, HDPickup pkp) { return wpn.WeaponStatus[6] == 2 ? HUResult_Installed : HUResult_Unique; }
+	override void DoDowngrade(HDWeapon wpn, HDPickup pkp) { wpn.WeaponStatus[6] = 0; GiveCore(wpn.owner, 0.25); }
+}
+
 class FAK_HLAR_SelectFire : FAK_Upgrade
 {
 	override string GetItem() { return "HDHLAR"; }
