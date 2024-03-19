@@ -82,3 +82,4 @@ const HDLD_DSD                = "dsd";
 #include "zscript/accensus/items/FAK Upgrades/FAK Mohl.zs"
 #include "zscript/accensus/items/FAK Upgrades/FAK Peppergrinder.zs"
 #include "zscript/accensus/items/FAK Upgrades/FAK Radtech.zs"
+#include "zscript/accensus/items/FAK Upgrades/FAK XPulse.zs"
