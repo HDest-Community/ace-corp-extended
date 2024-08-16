@@ -320,7 +320,21 @@ class HDRedline : HDCellWeapon
 				bool overheated = invoker.WeaponStatus[RDProp_Flags] & RDF_Overheated;
 
 				int dmg = int(random(110, 140) * (overheated ? 1.5 : 1.0));
-				A_RailAttack(dmg, 0, false, "", "", RGF_NOPIERCING | RGF_NORANDOMPUFFZ | RGF_SILENT, 0, "RedlineRayImpact"..(overheated ? "Overheated" : ""), 0, 0, HDCONST_ONEMETRE * 300, 0, 10.0, 0, "RedlineRaySegment"..(overheated ? "Overheated" : ""), player.crouchfactor < 1.0 ? 1.1 : 2);
+				let wepbob = HDPlayerPawn(invoker.owner).wepbob;
+
+				A_RailAttack(
+					dmg,
+					wepbob.x * 0.2,
+					false,
+					"", "",
+					RGF_NOPIERCING|RGF_NORANDOMPUFFZ|RGF_SILENT,
+					puffType: "RedlineRayImpact"..(overheated ? "Overheated" : ""),
+					range: HDCONST_ONEMETRE * 300,
+					sparsity: 10.0,
+					driftSpeed: 0,
+					spawnClass: "RedlineRaySegment"..(overheated ? "Overheated" : ""),
+					spawnOfs_Z: player.crouchfactor < 1.0 ? 1.1 : 2
+				);
 				
 				invoker.WeaponStatus[RDProp_Heat] += int((dmg / 4) * frandom(0.925, 1.05));
 				invoker.WeaponStatus[RDProp_Battery] -= overheated ? 2 : 1;
