@@ -536,6 +536,9 @@ OptionMenu "fakSpawning" {
 	
 	// In the future I want to make a cvar for if Assembly Cores spawn on Archviles or not, don't have that done yet though. - [Ted]
 
+	Option "$MENU_FAK_GIVECORE_MAPEND", "fak_giveCores_mapEnd", "OnOff"
+	Slider "$MENU_FAK_COREREFUND_RATIO", "fak_coreRefund_ratio", 0.0, 10.0, 0.5, 1
+
 	StaticText "$MENU_FAK_BACKPACKS", "White"
 	Option "$MENU_BACKPACKSALLOWED", "fak_allowBackpacks", "OnOff"
  	StaticText ""

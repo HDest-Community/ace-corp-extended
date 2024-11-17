@@ -156,3 +156,6 @@ server bool hdsc_archermode = false;
 
 // Supply Beacon
 user int sb_skin = 0;
+
+server bool fak_giveCores_mapEnd = true;
+server float fak_coreRefund_ratio = 1.0;
