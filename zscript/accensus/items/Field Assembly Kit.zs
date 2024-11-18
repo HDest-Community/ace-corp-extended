@@ -18,15 +18,17 @@ class FAK_Handler : EventHandler
 
 	override void WorldUnloaded(WorldEvent e)
 	{
-		if (!GaveCore && level.total_secrets > 0 && level.found_secrets == level.total_secrets && level.total_monsters > 0 && level.killed_monsters >= level.total_monsters * 0.9)
-		{
-			for (int i = 0; i < MAXPLAYERS; ++i)
-			{
+		if (
+			fak_giveCores_mapEnd
+			&& !GaveCore
+			&& level.total_secrets > 0 && level.found_secrets == level.total_secrets
+			&& level.total_monsters > 0 && level.killed_monsters >= level.total_monsters * 0.9
+		) {
+			for (int i = 0; i < MAXPLAYERS; ++i) {
 				let plr = players[i].mo;
-				if (!plr)
-				{
-					continue;
-				}
+
+				if (!plr) continue;
+
 				plr.A_GiveInventory('AssemblyCore', 1);
 			}
 			GaveCore = true;
@@ -65,12 +67,27 @@ class FAK_Upgrade abstract
 
 	virtual play void DoDowngrade(HDWeapon wpn, HDPickup pkp) { }
 	virtual bool CanDowngrade() { return true; }
-	play void GiveCore(Actor other, double chance)
-	{
-		if (frandom(0.01, 1.00) <= chance)
-		{
-			other.A_Log('You have obtained an assembly core from this downgrade.', true);
-			other.A_GiveInventory('AssemblyCore', 1);
+	play void GiveCore(Actor other, double chance) {
+		if (fak_coreRefund_ratio > 0.0) {
+			let gaveCore = false;
+			let scaledChance = chance * fak_coreRefund_ratio;
+
+			if (hd_debug) console.printf('Original Chance: '..chance..', Scaled Chance: '..scaledChance);
+
+			while (scaledChance > 1.0) {
+				other.A_GiveInventory('AssemblyCore', 1);
+				scaledChance -= 1.0;
+				gaveCore = true;
+			}
+	
+			if (frandom(0.01, 1.00) <= scaledChance) {
+				other.A_GiveInventory('AssemblyCore', 1);
+				gaveCore = true;
+			}
+
+			if (gaveCore) {
+				other.A_Log('You have obtained an assembly core from this downgrade.', true);
+			}
 		}
 	}
 

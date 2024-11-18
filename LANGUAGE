@@ -165,6 +165,8 @@ MENU_SUPERSTIM_BACKPACKS                = "Control whether the Super Stimpack sp
 // Field Assembly Kit Options Text
 MENU_FAK_TITLE                          = "------ Field Assembly Kit Options ------";
 MENU_FAK_BACKPACKS                      = "Control whether the Field Assembly Kit spawns in Backpacks:";
+MENU_FAK_GIVECORE_MAPEND                = "Reward players with an Assembly Core if all secrets are found and at least 90% of monsters are kiled.";
+MENU_FAK_COREREFUND_RATIO               = "Ratio of number of cores to give when downgrading equipment";
 
 // Booster Jets Options Text
 MENU_BOOSTERJET_TITLE                   = "------ Booster Jets Options ------";
