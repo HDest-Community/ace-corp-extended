@@ -416,8 +416,8 @@ OptionMenu "ladlauncherSpawning" {
 	SafeCommand "$MENU_RESETWEP", "resetcvar ladderlauncher_rocketbox_spawn_bias"
  	StaticText ""
     StaticText "$MENU_LADLAUNCHER_CELLPACK_SPAWNTEXT", "White"
-	ScaleSlider "$MENU_WEPSPAWNRATE", "ladderlauncher_cellpack_spawn_bias", -1, 999, 1, "$MENU_REPLACEALL", "$MENU_DISABLED"
-	SafeCommand "$MENU_RESETWEP", "resetcvar ladderlauncher_cellpack_spawn_bias"
+	ScaleSlider "$MENU_WEPSPAWNRATE", "ladderlauncher_battery_spawn_bias", -1, 999, 1, "$MENU_REPLACEALL", "$MENU_DISABLED"
+	SafeCommand "$MENU_RESETWEP", "resetcvar ladderlauncher_battery_spawn_bias"
  	StaticText ""
 	
 	StaticText "$MENU_LADLAUNCHER_BACKPACKS", "White"
