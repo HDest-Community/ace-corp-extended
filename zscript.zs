@@ -84,3 +84,6 @@ const HDLD_DSD                = "dsd";
 #include "zscript/accensus/items/FAK Upgrades/FAK Radtech.zs"
 #include "zscript/accensus/items/FAK Upgrades/FAK RightInfinity.zs"
 #include "zscript/accensus/items/FAK Upgrades/FAK XPulse.zs"
+
+// Services
+#include "zscript/accensus/services/PersonalShieldGeneratorService.zs"
