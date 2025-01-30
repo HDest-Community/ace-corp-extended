@@ -51,7 +51,7 @@ class FAK_Boss_NoScopeBoss : FAK_Upgrade
 		int recasts = wpn.WeaponStatus[BOSSS_RECASTS];
 		wpn.Destroy();
 
-		Name cls = 'NoScopeBoss';
+		Name cls = 'HexaNoScopeBoss';
 		HDWeapon nsBoss;
 		if (plr.FindInventory(cls)) {
 			nsBoss = HDWeapon(Actor.Spawn(cls, plr.pos + (0, 0, plr.height / 2)));
@@ -79,7 +79,7 @@ class FAK_Boss_NoScopeBoss : FAK_Upgrade
 	}
 	override string GetFailMessage(HDWeapon wpn, HDPickup pkp, int type)
 	{
-		Name cls = 'NoScopeBoss';
+		Name cls = 'HexaNoScopeBoss';
 		if (type == FMType_Requirements && !((class<Actor>)(cls)))
 		{
 			return "The scope is permanently attached.";
@@ -90,7 +90,7 @@ class FAK_Boss_NoScopeBoss : FAK_Upgrade
 
 class FAK_NSB_Boss : FAK_Upgrade
 {
-	override string GetItem() { return "NoScopeBoss"; }
+	override string GetItem() { return "HexaNoScopeBoss"; }
 	override string GetDisplayName() { return "Scope"; }
 	override void DoUpgrade(HDWeapon wpn, HDPickup pkp)
 	{
@@ -145,7 +145,7 @@ class FAK_NSB_Boss : FAK_Upgrade
 
 class FAK_NSB_CustomChamber : FAK_Upgrade
 {
-	override string GetItem() { return "NoScopeBoss"; }
+	override string GetItem() { return "HexaNoScopeBoss"; }
 	override string GetDisplayName() { return "Custom Chamber"; }
 	override void DoUpgrade(HDWeapon wpn, HDPickup pkp) { wpn.WeaponStatus[0] |= BOSSF_CUSTOMCHAMBER; }
 	override int HasUpgrade(HDWeapon wpn, HDPickup pkp) { return wpn.WeaponStatus[0] & BOSSF_CUSTOMCHAMBER > 0; }
