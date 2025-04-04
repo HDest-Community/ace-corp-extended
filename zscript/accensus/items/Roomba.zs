@@ -88,8 +88,6 @@ class HDRoombaHover : HDUPK
 
 				foreach (vacuumable : vacuumableUPKs)
 				{
-					console.printF("[HDUPK] "..hdp.GetClassName().." is vacuumable? "..(hdp is vacuumable)..", currently holding: "..CountInv(hdp.PickupType)..", max amount: "..GetDefaultByType(hdp.PickupType).maxAmount);
-
 					if (hdp && hdp is vacuumable && CountInv(hdp.PickupType) < GetDefaultByType(hdp.PickupType).maxAmount)
 					{
 						hdp.pickTarget = self;
@@ -124,8 +122,6 @@ class HDRoombaHover : HDUPK
 
 				foreach (vacuumable : vacuumablePickups)
 				{
-					console.printF("[HDPickup] "..hdp.GetClassName().." is vacuumable? "..(hdp is vacuumable)..", currently holding: "..CountInv(hdp.GetClass())..", max amount: "..hdp.maxAmount);
-
 					if (hdp && hdp is vacuumable && CountInv(hdp.GetClass()) < hdp.maxAmount)
 					{
 						hdp.ActualPickup(self);
