@@ -42,7 +42,7 @@ class HDRoomba : HDPickup
 }
 
 class HDRoombaHover : HDUPK
-{
+{	
 	private void TurnOff()
 	{
 		if (!TurnedOff)
@@ -59,35 +59,83 @@ class HDRoombaHover : HDUPK
 	private void VacuumItems()
 	{
 		int itemsCollected = 0;
-		BlockThingsIterator it = BlockThingsIterator.Create(self, 192);
+		let it = BlockThingsIterator.Create(self, 192);
+
 		while (it.Next())
 		{
-			if (Distance3D(it.thing) > 192 || !CheckSight(it.thing))
-			{
-				continue;
-			}
+			if (Distance3D(it.thing) > 192 || !CheckSight(it.thing)) continue;
 
-			Name uniRelMatClsName = 'HDRel_CraftingMaterial';
-			if (it.thing.GetClassName() == 'HDSpent7mm')
+			if (it.thing is 'HDUPK')
 			{
-				let casing = HDUPK(it.thing);
-				if (CountInv(casing.PickupType) < 1000)
+				let hdp = HDUPK(it.thing);
+
+				name vacuumableUPKs[] = {
+					// Vanilla 7mm Brass
+					'HDSpent7mm',
+
+					// HDBulletLib Brasses
+					'SpentSavage300',
+					'HDSpent3006',
+					'HDSpent10mm',
+					'HDSpent762Tokarev',
+
+					// Bryans' Brasses
+					'BRoundSpent',
+
+					// Merchant's Mercenary Bucks
+					'MercenaryBucks100'
+				};
+
+				foreach (vacuumable : vacuumableUPKs)
 				{
-					casing.picktarget = self;
-					casing.A_HDUPKGive();
-					itemsCollected++;
+					console.printF("[HDUPK] "..hdp.GetClassName().." is vacuumable? "..(hdp is vacuumable)..", currently holding: "..CountInv(hdp.PickupType)..", max amount: "..GetDefaultByType(hdp.PickupType).maxAmount);
+
+					if (hdp && hdp is vacuumable && CountInv(hdp.PickupType) < GetDefaultByType(hdp.PickupType).maxAmount)
+					{
+						hdp.pickTarget = self;
+						hdp.A_HDUPKGive();
+						itemsCollected++;
+					}
 				}
 			}
-			else if ((it.thing is 'SevenMilBrass' || it.thing is uniRelMatClsName) && CountInv(HDPickup(it.thing).GetClass()) < 1000)
+			else if (it.thing is 'HDPickup')
 			{
-				HDPickup(it.thing).ActualPickup(self);
-				itemsCollected++;
+				let hdp = HDPickup(it.thing);
+
+				name vacuumablePickups[] = {
+					// Vanilla 7mm Brass
+					'SevenMilBrass',
+
+					// HDBulletLib Brasses
+					'Savage300Brass',
+					'ThirtyAughtSixBrass',
+					'TenMilBrass',
+					'TokarevBrass',
+
+					// Bryans' Brasses
+					'BRoundShell',
+
+					// URL Crafting Materials
+					'HDRel_CraftingMaterial',
+
+					// Merchant's Mercenary Bucks
+					'MercenaryBucks'
+				};
+
+				foreach (vacuumable : vacuumablePickups)
+				{
+					console.printF("[HDPickup] "..hdp.GetClassName().." is vacuumable? "..(hdp is vacuumable)..", currently holding: "..CountInv(hdp.GetClass())..", max amount: "..hdp.maxAmount);
+
+					if (hdp && hdp is vacuumable && CountInv(hdp.GetClass()) < hdp.maxAmount)
+					{
+						hdp.ActualPickup(self);
+						itemsCollected++;
+					}
+				}
 			}
 
-			if (itemsCollected == 3)
-			{
-				break;
-			}
+			// Once we've collected at least three, quit.
+			if (itemsCollected >= 3) break;
 		}
 	}
 
@@ -114,7 +162,7 @@ class HDRoombaHover : HDUPK
 			next = next.Inv;
 			if (cur.Amount > 0)
 			{
-				int maxGiveAmount = 1000 - grabber.CountInv(cur.GetClass());
+				int maxGiveAmount = cur.maxAmount - grabber.CountInv(cur.GetClass());
 				int giveAmount = min(cur.Amount, maxGiveAmount);
 
 				HDF.Give(grabber, cur.GetClass(), GiveAmount);
