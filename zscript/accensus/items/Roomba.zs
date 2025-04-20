@@ -83,7 +83,8 @@ class HDRoombaHover : HDUPK
 					'BRoundSpent',
 
 					// Merchant's Mercenary Bucks
-					'MercenaryBucks100'
+					'BaseCurrencyPickup',
+					'MercenaryBucks'
 				};
 
 				foreach (vacuumable : vacuumableUPKs)
