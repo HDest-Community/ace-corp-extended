@@ -10,8 +10,10 @@ class HDMagazineReloader : HDWeapon
 	override string, double GetPickupSprite() { return "MRLDA0", 1.0; }
 	override string GetHelpText()
 	{
-		return WEPHELP_RELOAD.."  Drop in reload mode\n"
-		..WEPHELP_UNLOAD.."  Drop in unload mode\n";
+		LocalizeHelp();
+		return 
+		LWPHELP_RELOAD..Stringtable.Localize("$MRL_HELPTEXT_1")
+		..LWPHELP_UNLOAD..Stringtable.Localize("$MRL_HELPTEXT_2");
 	}
 	override double GunMass() { return 0; }
 	override double WeaponBulk() { return 35; }

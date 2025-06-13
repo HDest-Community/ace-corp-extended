@@ -159,10 +159,12 @@ class HDSupplyBeacon : HDWeapon
 	override string, double GetPickupSprite() { return "SPBCZ0", 1.0; }
 	override string GetHelpText()
 	{
-		return WEPHELP_FIREMODE.."+"..WEPHELP_FIRE.."(hold)  Deploy\n"
-		..WEPHELP_FIRE.."/"..WEPHELP_ALTFIRE.."  Cycle ammo\n"
-		..WEPHELP_RELOAD.."  Load ammo\n"
-		..WEPHELP_UNLOAD.."  Unload ammo";
+		LocalizeHelp();
+		return 
+		LWPHELP_FIREMODE.."+"..LWPHELP_FIRE..Stringtable.Localize("$SUPBEACON_HELPTEXT_1")
+		..LWPHELP_FIRE.."/"..LWPHELP_ALTFIRE..Stringtable.Localize("$SUPBEACON_HELPTEXT_2")
+		..LWPHELP_RELOAD..Stringtable.Localize("$SUPBEACON_HELPTEXT_3")
+		..LWPHELP_UNLOAD..Stringtable.Localize("$SUPBEACON_HELPTEXT_4");
 	}
 	override double WeaponBulk() { return 40; }
 	override void DrawHUDStuff(HDStatusBar sb, HDWeapon hdw, HDPlayerPawn hpl)

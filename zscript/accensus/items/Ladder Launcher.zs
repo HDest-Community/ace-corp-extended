@@ -35,9 +35,11 @@ class LadderLauncher : HDWeapon
 	}
 	override string GetHelpText()
 	{
-		return WEPHELP_FIRESHOOT
-		..WEPHELP_RELOADRELOAD
-		..WEPHELP_UNLOADUNLOAD;
+		LocalizeHelp();
+		return 
+		LWPHELP_FIRESHOOT
+		..LWPHELP_RELOADRELOAD
+		..LWPHELP_UNLOADUNLOAD;
 	}
 	override void DrawSightPicture(HDStatusBar sb, HDWeapon hdw, HDPlayerPawn hpl, bool sightbob, vector2 bob, double fov, bool scopeview, actor hpc, string whichdot)
 	{

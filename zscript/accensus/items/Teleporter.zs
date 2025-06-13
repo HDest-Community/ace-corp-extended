@@ -81,12 +81,14 @@ class HDTeleporter : HDWeaponGrabber
 
 	override string GetHelpText()
 	{
-		return WEPHELP_FIRE.."  Open rift and teleport\n"
-		..WEPHELP_ALTFIRE.."  Open rift/teleport to rift\n"
-		..WEPHELP_ZOOM.."+"..WEPHELP_FIRE.." (hold)  Charge teleporter\n"
-		..WEPHELP_RELOADRELOAD
-		..WEPHELP_UNLOADUNLOAD
-		..WEPHELP_FIREMODE.."  Grab/drag";
+		LocalizeHelp();
+		return 
+		LWPHELP_FIRE..Stringtable.Localize("$TP_HELPTEXT_1")
+		..LWPHELP_ALTFIRE..Stringtable.Localize("$TP_HELPTEXT_2")
+		..LWPHELP_ZOOM.."+"..LWPHELP_FIRE..Stringtable.Localize("$TP_HELPTEXT_3")
+		..LWPHELP_RELOADRELOAD
+		..LWPHELP_UNLOADUNLOAD
+		..LWPHELP_FIREMODE..Stringtable.Localize("$TP_HELPTEXT_4");
 	}
 
 	override void DropOneAmmo(int amt)

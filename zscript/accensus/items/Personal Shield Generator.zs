@@ -37,11 +37,13 @@ class HDPersonalShieldGenerator : HDWeapon
 	}
 	override string GetHelpText()
 	{
-		return WEPHELP_RELOAD.."  Reload battery\n"
-		..WEPHELP_UNLOAD.."  Unload battery\n"
-		..WEPHELP_FIRE.." or "..WEPHELP_ALTFIRE.."  Change slider position\n"
-		..WEPHELP_ZOOM.."  Toggle on/off\n"
-		..WEPHELP_FIREMODE.."+"..WEPHELP_USE.."  Strip picked up generator";
+		LocalizeHelp();
+		return 
+		LWPHELP_RELOAD..Stringtable.Localize("$PSG_HELPTEXT_1")
+		..LWPHELP_UNLOAD..Stringtable.Localize("$PSG_HELPTEXT_2")
+		..LWPHELP_FIRE..Stringtable.Localize("$PSG_HELPTEXT_3")..LWPHELP_ALTFIRE..Stringtable.Localize("$PSG_HELPTEXT_4")
+		..LWPHELP_ZOOM..Stringtable.Localize("$PSG_HELPTEXT_5")
+		..LWPHELP_FIREMODE.."+"..LWPHELP_USE..Stringtable.Localize("$PSG_HELPTEXT_6");
 	}
 	override double WeaponBulk()
 	{
