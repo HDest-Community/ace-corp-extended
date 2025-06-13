@@ -55,9 +55,11 @@ class HDSoulCube : HDWeapon
 	override string, double GetPickupSprite() { return "SLCBA3A7", 0.5; }
 	override string GetHelpText()
 	{
-		return WEPHELP_FIRE.."  Attack/Use\n"
-		..WEPHELP_ALTFIRE.."  Anchor to something\n"
-		..WEPHELP_FIREMODE.. "  Cycle modes";
+		LocalizeHelp();
+		return 
+		LWPHELP_FIRE..Stringtable.Localize("$CUBE_HELPTEXT_1")
+		..LWPHELP_ALTFIRE..Stringtable.Localize("$CUBE_HELPTEXT_2")
+		..LWPHELP_FIREMODE.. Stringtable.Localize("$CUBE_HELPTEXT_3");
 	}
 	override double WeaponBulk() { return 40; }
 

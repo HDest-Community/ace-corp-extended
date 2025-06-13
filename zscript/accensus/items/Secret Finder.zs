@@ -44,10 +44,12 @@ class HDSecretFinder : HDWeapon
 	override string, double GetPickupSprite() { return WeaponStatus[SFNProp_Battery] > 0 && Active ? "FNDRA0" : "FNDRE0", 0.3; }
 	override string GetHelpText()
 	{
-		return WEPHELP_RELOAD.."  Reload battery\n"
-		..WEPHELP_UNLOAD.."  Unload battery\n"
-		..WEPHELP_ZOOM.."  Toggle on/off\n"
-		..WEPHELP_FIREMODE.."+"..WEPHELP_UPDOWN.."  Adjust operation range";
+		LocalizeHelp();
+		return 
+		LWPHELP_RELOAD..Stringtable.Localize("$SFNDR_HELPTEXT_1")
+		..LWPHELP_UNLOAD..Stringtable.Localize("$SFNDR_HELPTEXT_2")
+		..LWPHELP_ZOOM..Stringtable.Localize("$SFNDR_HELPTEXT_3")
+		..LWPHELP_FIREMODE.."+"..LWPHELP_UPDOWN..Stringtable.Localize("$SFNDR_HELPTEXT_4");
 	}
 	override double WeaponBulk() { return 15 + (WeaponStatus[SFNProp_Battery] >= 0 ? ENC_BATTERY_LOADED : 0); }
 	override void InitializeWepStats(bool idfa)

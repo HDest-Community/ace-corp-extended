@@ -106,6 +106,7 @@ class FAK_Upgrade abstract
 	}
 }
 
+
 class HDFieldAssemblyKit : HDWeapon
 {
 	
@@ -160,10 +161,12 @@ class HDFieldAssemblyKit : HDWeapon
 
 	override string GetHelpText()
 	{
-		return WEPHELP_FIRE.."  Apply upgrade\n"
-		..WEPHELP_ALTFIRE.."  Apply downgrade\n"
-		..WEPHELP_ZOOM.."+"..WEPHELP_FIRE.."/"..WEPHELP_ALTFIRE.."  Cycle weapons\n"
-		..WEPHELP_FIREMODE.."+"..WEPHELP_FIRE.."/"..WEPHELP_ALTFIRE.."  Cycle upgrades\n";
+		LocalizeHelp();
+		return 
+		LWPHELP_FIRE..Stringtable.Localize("$FAK_HELPTEXT_1")
+		..LWPHELP_ALTFIRE..Stringtable.Localize("$FAK_HELPTEXT_2")
+		..LWPHELP_ZOOM.."+"..LWPHELP_FIRE.."/"..LWPHELP_ALTFIRE..Stringtable.Localize("$FAK_HELPTEXT_3")
+		..LWPHELP_FIREMODE.."+"..LWPHELP_FIRE.."/"..LWPHELP_ALTFIRE..Stringtable.Localize("$FAK_HELPTEXT_4");
 	}
 	override string, double GetPickupSprite() { return "FAKTA0", 0.5; }
 	override double GunMass() { return 0; }

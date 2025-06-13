@@ -97,11 +97,13 @@ class HDHammerhead : HDCellWeapon
 
 	override string GetHelpText()
 	{
-		return String.Format(WEPHELP_FIRE.."  Shoot\n"
-		..WEPHELP_ALTFIRE.." (hold)  Vent heat\n"
-		..WEPHELP_FIREMODE.."  Switch mode\n"
-		..WEPHELP_RELOADRELOAD
-		..WEPHELP_UNLOADUNLOAD);
+		LocalizeHelp();
+		return 
+		String.Format(LWPHELP_FIRE..Stringtable.Localize("$HMHD_HELPTEXT_1")
+		..LWPHELP_ALTFIRE..Stringtable.Localize("$HMHD_HELPTEXT_2")
+		..LWPHELP_FIREMODE..Stringtable.Localize("$HMHD_HELPTEXT_3")
+		..LWPHELP_RELOADRELOAD
+		..LWPHELP_UNLOADUNLOAD);
 	}
 
 	override string PickupMessage()

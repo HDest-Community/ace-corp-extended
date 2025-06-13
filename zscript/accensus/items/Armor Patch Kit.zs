@@ -19,9 +19,11 @@ class HDArmorPatchKit : HDWeapon
 
 	override string GetHelpText()
 	{
-		return WEPHELP_FIRE.." (Hold)".."+"..WEPHELP_RELOAD.." (Hold)  Repair armor\n"
-		..WEPHELP_ALTFIRE.." (Hold)".."+"..WEPHELP_RELOAD.." (Hold)  Disassemble armor\n"
-		..WEPHELP_FIREMODE.."+"..WEPHELP_FIRE.."/"..WEPHELP_ALTFIRE.."  Cycle armors\n";
+		LocalizeHelp();
+		return 
+		LWPHELP_FIRE..Stringtable.Localize("$APK_HELPTEXT_1").."+"..LWPHELP_RELOAD..Stringtable.Localize("$APK_HELPTEXT_2")
+		..LWPHELP_ALTFIRE..Stringtable.Localize("$APK_HELPTEXT_1").."+"..LWPHELP_RELOAD..Stringtable.Localize("$APK_HELPTEXT_3")
+		..LWPHELP_FIREMODE.."+"..LWPHELP_FIRE.."/"..LWPHELP_ALTFIRE..Stringtable.Localize("$APK_HELPTEXT_4");
 	}
 	override string, double GetPickupSprite(){ return "APKTA0", 1.0; }
 	override double GunMass() { return 0; }

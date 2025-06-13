@@ -345,3 +345,107 @@ DSDWH_ENTER                             = "  Search mode/apply search\n";
 DSDWH_USEALTRELOAD                      = "  Sort descending/ascending\n";
 DSDWH_USERELOAD                         = "  Load battery\n";
 DSDWH_USEUNLOAD                         = "  Remove battery";
+
+// Helptext
+
+// Field Assembly Kit
+FAK_HELPTEXT_1 = "  Apply upgrade\n";
+FAK_HELPTEXT_2 = "  Apply downgrade\n";
+FAK_HELPTEXT_3 = "  Cycle weapons\n";
+FAK_HELPTEXT_4 = "  Cycle upgrades\n";
+
+// Armor Patching Kit
+APK_HELPTEXT_1 = " (Hold) ";
+APK_HELPTEXT_2 = " (Hold)  Repair armor\n";
+APK_HELPTEXT_3 = " (Hold)  Disassemble armor\n";
+APK_HELPTEXT_4 = "  Cycle armors\n";
+
+// Magainze Reloader
+MRL_HELPTEXT_1 = "  Drop in reload mode\n";
+MRL_HELPTEXT_2 = "  Drop in unload mode\n";
+
+// Personal Shield Generator
+PSG_HELPTEXT_1 = "  Reload battery\n";
+PSG_HELPTEXT_2 = "  Unload battery\n";
+PSG_HELPTEXT_3 = " or ";
+PSG_HELPTEXT_4 = "  Change slider position\n";
+PSG_HELPTEXT_5 = "  Toggle on/off\n";
+PSG_HELPTEXT_6 = "  Strip picked up generator";
+
+// Secret Finder
+SFNDR_HELPTEXT_1 = "  Reload battery\n";
+SFNDR_HELPTEXT_2 = "  Unload battery\n";
+SFNDR_HELPTEXT_3 = "  Toggle on/off\n";
+SFNDR_HELPTEXT_4 = "  Adjust operation range";
+
+// Soul Cube
+CUBE_HELPTEXT_1 = "  Attack/Use\n";
+CUBE_HELPTEXT_2 = "  Anchor to something\n";
+CUBE_HELPTEXT_3 = "  Cycle modes";
+
+// Supply Beacon
+SUPBEACON_HELPTEXT_1 = "(hold)  Deploy\n";
+SUPBEACON_HELPTEXT_2 = "  Cycle ammo\n";
+SUPBEACON_HELPTEXT_3 = "  Load ammo\n";
+SUPBEACON_HELPTEXT_4 = "  Unload ammo";
+
+// Teleporter
+TP_HELPTEXT_1 = "  Open rift and teleport\n";
+TP_HELPTEXT_2 = "  Open rift/teleport to rift\n";
+TP_HELPTEXT_3 = " (hold)  Charge teleporter\n";
+TP_HELPTEXT_4 = "  Grab/drag";
+
+// Blackhawk
+BHWK_HELPTEXT_1 = "  Shoot\n";
+BHWK_HELPTEXT_2 = "  Pull string\n";
+BHWK_HELPTEXT_3 = " (hold)  Reload mode\n";
+BHWK_HELPTEXT_4 = "  Insert bolt\n";
+BHWK_HELPTEXT_5 = "  Remove bolt\n";
+BHWK_HELPTEXT_6 = "  Cycle next bolt type";
+
+// Blackjack
+BJCK_HELPTEXT_1 = "  Shoot ";
+BJCK_HELPTEXT_2 = "  Reload ";
+BJCK_HELPTEXT_3 = " mag\n";
+BJCK_HELPTEXT_4 = "  Unload ";
+BJCK_HELPTEXT_5 = " chamber\n";
+
+// Gungir
+GNGR_HELPTEXT_1 = "  Shoot\n";
+GNGR_HELPTEXT_2 = "  Charge/Lock\n";
+GNGR_HELPTEXT_3 = "  Abort charge/Reload battery\n";
+
+// Hammerhead
+HMHD_HELPTEXT_1 = "  Shoot\n";
+HMHD_HELPTEXT_2 = " (hold)  Vent heat\n";
+HMHD_HELPTEXT_3 = "  Switch mode\n";
+
+// Majestic
+MJST_HELPTEXT_1 = " (hold)  Shoot/Charge\n";
+MJST_HELPTEXT_2 = "  Cancel charging\n";
+MJST_HELPTEXT_3 = "  Quick-Swap (if available)\n";
+MJST_HELPTEXT_4 = "  Reload mag\n";
+MJST_HELPTEXT_5 = "  Reload battery\n";
+MJST_HELPTEXT_6 = "  Unload mag/battery\n";
+
+// Redline
+RDLN_HELPTEXT_1 = " (hold to lock-on)";
+RDLN_HELPTEXT_2 = "  Shoot%s\n";
+RDLN_HELPTEXT_3 = "  Cancel lockon\n";
+
+// Scorpion
+SCRP_HELPTEXT_1 = "  Work bolt\n";
+SCRP_HELPTEXT_2 = "  Reload rounds\n";
+
+// Viper
+VPR_HELPTEXT_1 = "  Quick-Swap (if available)\n";
+VPR_HELPTEXT_2 = "  Reload mag\n";
+VPR_HELPTEXT_3 = "  Reload chamber\n";
+
+// Wyvern
+WYVR_HELPTEXT_1 = "  Shoot Left\n";
+WYVR_HELPTEXT_2 = "  Shoot Right\n";
+WYVR_HELPTEXT_3 = "  Reload (side saddles first)\n";
+WYVR_HELPTEXT_4 = "  Reload (pockets only)\n";
+WYVR_HELPTEXT_5 = "  Hold to force double shot\n";
+WYVR_HELPTEXT_6 = "  Load side saddles\n";
