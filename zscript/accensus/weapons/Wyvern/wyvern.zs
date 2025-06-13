@@ -66,13 +66,15 @@ class HDWyvern : HDWeapon {
 	}
 
 	override string GetHelpText() {
-		return WEPHELP_FIRE.."  Shoot Left\n"
-		..WEPHELP_ALTFIRE.."  Shoot Right\n"
-		..WEPHELP_RELOAD.."  Reload (side saddles first)\n"
-		..WEPHELP_ALTRELOAD.."  Reload (pockets only)\n"
-		..WEPHELP_FIREMODE.."  Hold to force double shot\n"
-		..WEPHELP_FIREMODE.."+"..WEPHELP_RELOAD.."  Load side saddles\n"
-		..WEPHELP_UNLOADUNLOAD;
+		LocalizeHelp();
+		return 
+		LWPHELP_FIRE..Stringtable.Localize("$WYVR_HELPTEXT_1")
+		..LWPHELP_ALTFIRE..Stringtable.Localize("$WYVR_HELPTEXT_2")
+		..LWPHELP_RELOAD..Stringtable.Localize("$WYVR_HELPTEXT_3")
+		..LWPHELP_ALTRELOAD..Stringtable.Localize("$WYVR_HELPTEXT_4")
+		..LWPHELP_FIREMODE..Stringtable.Localize("$WYVR_HELPTEXT_5")
+		..LWPHELP_FIREMODE.."+"..LWPHELP_RELOAD..Stringtable.Localize("$WYVR_HELPTEXT_6")
+		..LWPHELP_UNLOADUNLOAD;
 	}
 
 	override void DrawSightPicture(

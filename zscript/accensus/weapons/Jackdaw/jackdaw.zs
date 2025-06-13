@@ -33,7 +33,7 @@ class HDJackdaw : HDWeapon
 
 	override string GetHelpText()
 	{
-		return WEPHELP_FIRESHOOT;
+		return LWPHELP_FIRESHOOT;
 	}
 
 	override string PickupMessage()

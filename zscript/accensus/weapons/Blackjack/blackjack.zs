@@ -74,18 +74,20 @@ class HDBlackjack : HDWeapon
 
 	override string GetHelpText()
 	{
+		LocalizeHelp();
 		string prim = InvertFire && InvertFire.GetBool() ? "shotgun" : "rifle";
 		string sec = InvertFire && InvertFire.GetBool() ? "rifle" : "shotgun";
 
-		return String.Format(WEPHELP_FIRE.. "  Shoot "..prim.."\n"
-		..WEPHELP_ALTFIRE.. "  Shoot "..sec.."\n"
-		..WEPHELP_RELOAD.."  Reload "..prim.." mag\n"
-		..WEPHELP_ALTRELOAD.."  Reload "..sec.." mag\n"
-		..WEPHELP_UNLOAD.. "  Unload "..prim.." mag\n"
-		..WEPHELP_USE.."+"..WEPHELP_UNLOAD.. "  Unload "..sec.." mag\n"
-		..WEPHELP_USE.."+"..WEPHELP_RELOAD.."  Reload "..prim.." chamber\n"
-		..WEPHELP_USE.."+"..WEPHELP_ALTRELOAD.."  Reload "..sec.." chamber\n"
-		.."("..WEPHELP_USE..")+"..WEPHELP_MAGMANAGER);
+		return 
+		String.Format(LWPHELP_FIRE.. Stringtable.Localize("$BJCK_HELPTEXT_1")..prim.."\n"
+		..LWPHELP_ALTFIRE.. Stringtable.Localize("$BJCK_HELPTEXT_1")..sec.."\n"
+		..LWPHELP_RELOAD..Stringtable.Localize("$BJCK_HELPTEXT_2")..prim..Stringtable.Localize("$BJCK_HELPTEXT_3")
+		..LWPHELP_ALTRELOAD..Stringtable.Localize("$BJCK_HELPTEXT_2")..sec..Stringtable.Localize("$BJCK_HELPTEXT_3")
+		..LWPHELP_UNLOAD.. Stringtable.Localize("$BJCK_HELPTEXT_4")..prim..Stringtable.Localize("$BJCK_HELPTEXT_3")
+		..LWPHELP_USE.."+"..LWPHELP_UNLOAD.. Stringtable.Localize("$BJCK_HELPTEXT_4")..sec..Stringtable.Localize("$BJCK_HELPTEXT_3")
+		..LWPHELP_USE.."+"..LWPHELP_RELOAD..Stringtable.Localize("$BJCK_HELPTEXT_2")..prim..Stringtable.Localize("$BJCK_HELPTEXT_5")
+		..LWPHELP_USE.."+"..LWPHELP_ALTRELOAD..Stringtable.Localize("$BJCK_HELPTEXT_2")..sec..Stringtable.Localize("$BJCK_HELPTEXT_5")
+		.."("..LWPHELP_USE..")+"..LWPHELP_MAGMANAGER);
 	}
 
 	override string PickupMessage()

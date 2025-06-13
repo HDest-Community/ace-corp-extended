@@ -95,10 +95,12 @@ class HDScorpion : HDWeapon
 
 	override string GetHelpText()
 	{
-		return WEPHELP_FIRESHOOT
-		..WEPHELP_ALTFIRE.."  Work bolt\n"
-		..WEPHELP_RELOAD.."  Reload rounds\n"
-		..WEPHELP_UNLOADUNLOAD;
+		LocalizeHelp();
+		return 
+		LWPHELP_FIRESHOOT
+		..LWPHELP_ALTFIRE..Stringtable.Localize("$SCRP_HELPTEXT_1")
+		..LWPHELP_RELOAD..Stringtable.Localize("$SCRP_HELPTEXT_2")
+		..LWPHELP_UNLOADUNLOAD;
 	}
 
 	override void SetReflexReticle(int which) { weaponstatus[SCRProp_Dot] = which; }

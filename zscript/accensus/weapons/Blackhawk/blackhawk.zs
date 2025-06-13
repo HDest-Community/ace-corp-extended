@@ -215,12 +215,14 @@ class HDBlackhawk : HDWeapon
 
 	override string GetHelpText()
 	{
-		return WEPHELP_FIRE.."  Shoot\n"
-		..WEPHELP_ALTFIRE.."  Pull string\n"
-		..WEPHELP_RELOAD.." (hold)  Reload mode\n"
-		.."  + "..WEPHELP_ALTRELOAD.."  Insert bolt\n"
-		.."  + "..WEPHELP_UNLOAD.."  Remove bolt\n"
-		.."  + "..WEPHELP_FIRE.."/"..WEPHELP_ALTFIRE.."  Cycle next bolt type";
+		LocalizeHelp();
+		return 
+		LWPHELP_FIRE..Stringtable.Localize("$BHWK_HELPTEXT_1")
+		..LWPHELP_ALTFIRE..Stringtable.Localize("$BHWK_HELPTEXT_2")
+		..LWPHELP_RELOAD..Stringtable.Localize("$BHWK_HELPTEXT_3")
+		.."  + "..LWPHELP_ALTRELOAD..Stringtable.Localize("$BHWK_HELPTEXT_4")
+		.."  + "..LWPHELP_UNLOAD..Stringtable.Localize("$BHWK_HELPTEXT_5")
+		.."  + "..LWPHELP_FIRE.."/"..LWPHELP_ALTFIRE..Stringtable.Localize("$BHWK_HELPTEXT_6");
 	}
 
 	override string PickupMessage()

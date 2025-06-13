@@ -126,12 +126,14 @@ class HDViper : HDHandgun
 
 	override string GetHelpText()
 	{
-		return WEPHELP_FIRESHOOT
-		..WEPHELP_ALTRELOAD.."/"..WEPHELP_FIREMODE.."  Quick-Swap (if available)\n"
-		..WEPHELP_RELOAD.."  Reload mag\n"
-		..WEPHELP_USE.."+"..WEPHELP_RELOAD.."  Reload chamber\n"
-		..WEPHELP_MAGMANAGER
-		..WEPHELP_UNLOADUNLOAD;
+		LocalizeHelp();
+		return 
+		LWPHELP_FIRESHOOT
+		..LWPHELP_ALTRELOAD.."/"..LWPHELP_FIREMODE..Stringtable.Localize("$VPR_HELPTEXT_1")
+		..LWPHELP_RELOAD..Stringtable.Localize("$VPR_HELPTEXT_2")
+		..LWPHELP_USE.."+"..LWPHELP_RELOAD..Stringtable.Localize("$VPR_HELPTEXT_3")
+		..LWPHELP_MAGMANAGER
+		..LWPHELP_UNLOADUNLOAD;
 	}
 
 	override string PickupMessage()

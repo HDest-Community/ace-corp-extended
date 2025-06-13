@@ -273,10 +273,12 @@ class HDGungnir : HDCellWeapon
 
 	override string GetHelpText()
 	{
-		return WEPHELP_FIRE.."  Shoot\n"
-		..WEPHELP_ALTFIRE.."  Charge/Lock\n"
-		..WEPHELP_RELOAD.."  Abort charge/Reload battery\n"
-		..WEPHELP_UNLOADUNLOAD;
+		LocalizeHelp();
+		return 
+		LWPHELP_FIRE..Stringtable.Localize("$GNGR_HELPTEXT_1")
+		..LWPHELP_ALTFIRE..Stringtable.Localize("$GNGR_HELPTEXT_2")
+		..LWPHELP_RELOAD..Stringtable.Localize("$GNGR_HELPTEXT_3")
+		..LWPHELP_UNLOADUNLOAD;
 	}
 
 	override string PickupMessage()

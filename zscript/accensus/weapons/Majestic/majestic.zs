@@ -105,14 +105,16 @@ class HDMajestic : HDHandgun
 
 	override string GetHelpText()
 	{
-		return WEPHELP_FIRE.." (hold)  Shoot/Charge\n"
-		..WEPHELP_ALTFIRE.."  Cancel charging\n"
-		..WEPHELP_FIREMODE.."  Quick-Swap (if available)\n"
-		..WEPHELP_RELOAD.."  Reload mag\n"
-		..WEPHELP_ALTRELOAD.."  Reload battery\n"
-		.."("..WEPHELP_USE..")+"..WEPHELP_UNLOAD.."  Unload mag/battery\n"
-		..WEPHELP_MAGMANAGER
-		..WEPHELP_UNLOADUNLOAD;
+		LocalizeHelp();
+		return 
+		LWPHELP_FIRE..Stringtable.Localize("$MJST_HELPTEXT_1")
+		..LWPHELP_ALTFIRE..Stringtable.Localize("$MJST_HELPTEXT_2")
+		..LWPHELP_FIREMODE..Stringtable.Localize("$MJST_HELPTEXT_3")
+		..LWPHELP_RELOAD..Stringtable.Localize("$MJST_HELPTEXT_4")
+		..LWPHELP_ALTRELOAD..Stringtable.Localize("$MJST_HELPTEXT_5")
+		.."("..LWPHELP_USE..")+"..LWPHELP_UNLOAD..Stringtable.Localize("$MJST_HELPTEXT_6")
+		..LWPHELP_MAGMANAGER
+		..LWPHELP_UNLOADUNLOAD;
 	}
 
 	override string PickupMessage()
