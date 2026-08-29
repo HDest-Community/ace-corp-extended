@@ -62,11 +62,11 @@ class FAK_UpgradeThinker : Thinker
 		}
 		else if (wpn is 'ZM66AssaultRifle')
 		{
-			if (wpn.WeaponStatus[ZM66S_FLAGS] & 2048)
+			if (wpn.WeaponStatus[0] & 2048)
 			{
 				wpn.DrainHeat(ZM66S_HEAT, 12);
 			}
-			if (wpn.WeaponStatus[ZM66S_FLAGS] & 4096)
+			if (wpn.WeaponStatus[0] & 4096)
 			{
 				// [Ace] Technically this should make the condition in brokenround() always false so the gun doesn't jam.
 				wpn.WeaponStatus[ZM66S_BORESTRETCHED] = -200;
@@ -91,11 +91,11 @@ class FAK_UpgradeThinker : Thinker
 		}
 		else if (wpn is 'ThunderBuster')
 		{
-			if (wpn.WeaponStatus[TBS_FLAGS] & 128)
+			if (wpn.WeaponStatus[0] & 128)
 			{
 				wpn.DrainHeat(TBS_HEAT, 12);
 			}
-			if (wpn.WeaponStatus[TBS_FLAGS] & 256 && wpn.WeaponStatus[TBS_FLAGS] & TBF_ALT)
+			if (wpn.WeaponStatus[0] & 256 && wpn.WeaponStatus[0] & TBF_ALT)
 			{
 				if (LastBatteryCharge < wpn.WeaponStatus[TBS_BATTERY])
 				{

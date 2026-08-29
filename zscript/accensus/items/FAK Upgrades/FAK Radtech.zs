@@ -7,7 +7,7 @@ class FAK_HDPistol_Suppressor : FAK_Upgrade
 
 		int mag = wpn.WeaponStatus[PISS_MAG];
 		int chamber = wpn.WeaponStatus[PISS_CHAMBER];
-		int selectFire = wpn.WeaponStatus[PISS_FLAGS] &= PISF_SELECTFIRE;
+		int selectFire = wpn.WeaponStatus[0] &= PISF_SELECTFIRE;
 		wpn.destroy();
 
 		Name cls = 'HushPuppyPistol';

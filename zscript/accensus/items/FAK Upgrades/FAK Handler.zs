@@ -20,7 +20,7 @@ extend class FAK_Handler
 			if (spot.target && spot.target.player && spot.target.player.ReadyWeapon && !spot.bSTANDSTILL) // [Ace] The flag is to avoid recursion. It's completely arbitrary.
 			{
 				let wpn = HDWeapon(spot.target.player.ReadyWeapon);
-				if (wpn is 'ThunderBuster' && !(wpn.WeaponStatus[TBS_FLAGS] & TBF_ALT) && wpn.WeaponStatus[TBS_FLAGS] & 512)
+				if (wpn is 'ThunderBuster' && !(wpn.WeaponStatus[0] & TBF_ALT) && wpn.WeaponStatus[0] & 512)
 				{
 					for (int i = 0; i < 2; ++i)
 					{
@@ -44,7 +44,7 @@ extend class FAK_Handler
 					continue;
 				}
 
-				if (plr.player.ReadyWeapon is 'LiberatorRifle' && LiberatorRifle(plr.player.ReadyWeapon).WeaponStatus[LIBS_FLAGS] & 16384 && e.Thing.Distance2DSquared(plr) < plr.radius * 2 ** 2)
+				if (plr.player.ReadyWeapon is 'LiberatorRifle' && LiberatorRifle(plr.player.ReadyWeapon).WeaponStatus[0] & 16384 && e.Thing.Distance2DSquared(plr) < plr.radius * 2 ** 2)
 				{
 					let pkp = HDUPK(e.Thing);
 					pkp.picktarget = plr;
