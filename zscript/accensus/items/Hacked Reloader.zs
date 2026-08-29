@@ -4,12 +4,11 @@ class HackedReloader : AutoReloader
 	{
 		return "HRLDA0", 1.0;
 	}
-	override void DrawHUDStuff(HDStatusBar sb, HDWeapon hdw, HDPlayerPawn hpl) // [Ace] I won't bother fixing the spacing on this right now.
-	{
+	override void DrawHUDStuff(HDStatusBar sb,HDWeapon hdw,HDPlayerPawn hpl){
 		vector2 bob=hpl.wepbob*0.3;
 		int brass=hpl.countinv("SevenMilBrass");
 		int fourm=hpl.countinv("FourMilAmmo");
-		double lph=(brass&&fourm>=4)?1.:0.6;
+		double lph=(brass&&fourm>=HDCONST_FOURFORSEVEN)?1.:0.6;
 		sb.drawimage("HRLDA0",(0,-64)+bob,
 			sb.DI_SCREEN_CENTER_BOTTOM|sb.DI_ITEM_CENTER,
 			alpha:lph,scale:(2,2)
@@ -33,20 +32,33 @@ class HackedReloader : AutoReloader
 			fourm?Font.CR_LIGHTBLUE:Font.CR_DARKGRAY,alpha:lph
 		);
 	}
+
 	override double WeaponBulk()
 	{
 		return 30 * amount;
 	}
 	void A_MakeRound()
 	{
-		if (brass < 1 || powders < 4)
+		if(weaponstatus[RELS_BRASS]<1 || weaponstatus[RELS_POWDER]<HDCONST_FOURFORSEVEN)
 		{
 			makinground = false;
-			SetStateLabel("spawn");
+			SetStateLabel("spawn");//spit out any remaining materials
+				if(weaponstatus[RELS_BRASS]>0){
+					let bbb=inventory(spawn("SevenMilBrass",(pos.xy,pos.z+height)));
+					bbb.vel.z+=1;
+					bbb.amount=weaponstatus[RELS_BRASS];
+					weaponstatus[RELS_BRASS]=0;
+				}
+				if(weaponstatus[RELS_POWDER]>0){
+					let bbb=inventory(spawn("FourMilAmmo",(pos.xy,pos.z+height)));
+					bbb.vel.z+=1;
+					bbb.amount=weaponstatus[RELS_POWDER];
+					weaponstatus[RELS_POWDER]=0;
+				}
 			return;
 		}
-		brass--;
-		powders -= 4;
+		weaponstatus[RELS_BRASS]--;
+		weaponstatus[RELS_POWDER] -= HDCONST_FOURFORSEVEN;
 
 		A_StartSound("roundmaker/pop", 10);
 
@@ -70,7 +82,7 @@ class HackedReloader : AutoReloader
 	States
 	{
 		Spawn:
-			HRLD A -1 NoDelay A_JumpIf(invoker.makinground && invoker.brass > 0 && invoker.powders >= 3, "Chug");
+			HRLD A -1 NoDelay A_JumpIf(invoker.makinground && invoker.weaponstatus[RELS_BRASS] > 0 && invoker.weaponstatus[RELS_POWDER] >= 3, "Chug");
 			Stop;
 		Chug:
 			---- AAAAAAAAAA 3

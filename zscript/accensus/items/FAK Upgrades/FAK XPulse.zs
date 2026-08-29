@@ -3,9 +3,9 @@ class FAK_XPulseTB_Chiller : FAK_Upgrade
 	override string GetItem() { return "CrossPulseThunderBuster"; }
 	override string GetDisplayName() { return "Chiller"; }
 	override int GetCost() { return 3; }
-	override void DoUpgrade(HDWeapon wpn, HDPickup pkp) { wpn.WeaponStatus[TBS_FLAGS] |= 128; }
-	override void DoDowngrade(HDWeapon wpn, HDPickup pkp) { wpn.WeaponStatus[TBS_FLAGS] &= ~128; GiveCore(wpn.owner, 1.0); }
-	override int HasUpgrade(HDWeapon wpn, HDPickup pkp) { return wpn.WeaponStatus[TBS_FLAGS] & 128 > 0; }
+	override void DoUpgrade(HDWeapon wpn, HDPickup pkp) { wpn.WeaponStatus[0] |= 128; }
+	override void DoDowngrade(HDWeapon wpn, HDPickup pkp) { wpn.WeaponStatus[0] &= ~128; GiveCore(wpn.owner, 1.0); }
+	override int HasUpgrade(HDWeapon wpn, HDPickup pkp) { return wpn.WeaponStatus[0] & 128 > 0; }
 }
 
 class FAK_XPulseTB_Stabilizer : FAK_Upgrade
@@ -13,9 +13,9 @@ class FAK_XPulseTB_Stabilizer : FAK_Upgrade
 	override string GetItem() { return "CrossPulseThunderBuster"; }
 	override string GetDisplayName() { return "Stabilizer"; }
 	override int GetCost() { return 3; }
-	override void DoUpgrade(HDWeapon wpn, HDPickup pkp) { wpn.WeaponStatus[TBS_FLAGS] |= 256; }
-	override void DoDowngrade(HDWeapon wpn, HDPickup pkp) { wpn.WeaponStatus[TBS_FLAGS] &= ~256; GiveCore(wpn.owner, 1.0); }
-	override int HasUpgrade(HDWeapon wpn, HDPickup pkp) { return wpn.WeaponStatus[TBS_FLAGS] & 256 > 0; }
+	override void DoUpgrade(HDWeapon wpn, HDPickup pkp) { wpn.WeaponStatus[0] |= 256; }
+	override void DoDowngrade(HDWeapon wpn, HDPickup pkp) { wpn.WeaponStatus[0] &= ~256; GiveCore(wpn.owner, 1.0); }
+	override int HasUpgrade(HDWeapon wpn, HDPickup pkp) { return wpn.WeaponStatus[0] & 256 > 0; }
 }
 
 class FAK_XPulseTB_Amplifier : FAK_Upgrade
@@ -23,9 +23,9 @@ class FAK_XPulseTB_Amplifier : FAK_Upgrade
 	override string GetItem() { return "CrossPulseThunderBuster"; }
 	override string GetDisplayName() { return "Amplifier"; }
 	override int GetCost() { return 3; }
-	override void DoUpgrade(HDWeapon wpn, HDPickup pkp) { wpn.WeaponStatus[TBS_FLAGS] |= 512; }
-	override void DoDowngrade(HDWeapon wpn, HDPickup pkp) { wpn.WeaponStatus[TBS_FLAGS] &= ~512; GiveCore(wpn.owner, 1.0); }
-	override int HasUpgrade(HDWeapon wpn, HDPickup pkp) { return wpn.WeaponStatus[TBS_FLAGS] & 512 > 0; }
+	override void DoUpgrade(HDWeapon wpn, HDPickup pkp) { wpn.WeaponStatus[0] |= 512; }
+	override void DoDowngrade(HDWeapon wpn, HDPickup pkp) { wpn.WeaponStatus[0] &= ~512; GiveCore(wpn.owner, 1.0); }
+	override int HasUpgrade(HDWeapon wpn, HDPickup pkp) { return wpn.WeaponStatus[0] & 512 > 0; }
 }
 
 class FAK_XPulseTB_ThunderBuster : FAK_Upgrade
@@ -37,7 +37,7 @@ class FAK_XPulseTB_ThunderBuster : FAK_Upgrade
 	override void DoDowngrade(HDWeapon wpn, HDPickup pkp) {
 		Actor plr = wpn.owner;
 
-        int flags = wpn.WeaponStatus[TBS_FLAGS];
+        int flags = wpn.WeaponStatus[0];
 		int battery = wpn.WeaponStatus[TBS_BATTERY];
 		wpn.Destroy();
 
@@ -52,7 +52,7 @@ class FAK_XPulseTB_ThunderBuster : FAK_Upgrade
 			tb = HDWeapon(plr.GiveInventoryType(cls));
 		}
 		
-        tb.WeaponStatus[TBS_FLAGS] = flags;
+        tb.WeaponStatus[0] = flags;
 		tb.WeaponStatus[TBS_BATTERY] = battery;
 
 		GiveCore(plr, 1.0); 
@@ -82,7 +82,7 @@ class FAK_ThunderBuster_XPulseTB : FAK_Upgrade
 	{
 		Actor plr = wpn.owner;
 
-        int flags = wpn.WeaponStatus[TBS_FLAGS];
+        int flags = wpn.WeaponStatus[0];
 		int battery = wpn.WeaponStatus[TBS_BATTERY];
 		wpn.Destroy();
 
@@ -97,7 +97,7 @@ class FAK_ThunderBuster_XPulseTB : FAK_Upgrade
 			xtb = HDWeapon(plr.GiveInventoryType(cls));
 		}
 		
-        xtb.WeaponStatus[TBS_FLAGS] = flags;
+        xtb.WeaponStatus[0] = flags;
 		xtb.WeaponStatus[TBS_BATTERY] = battery;
 	}
 	override int HasUpgrade(HDWeapon wpn, HDPickup pkp) { return false; }
